@@ -1,0 +1,76 @@
+//@version=6
+strategy("Qullamaggie Style Breakout Strategy", overlay=true, pyramiding=0, initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=20, commission_type=strategy.commission.percent, commission_value=0.05)
+
+momentumLookback = input.int(60, "Momentum Lookback", minval=20)
+minRunupPct = input.float(30.0, "Minimum Prior Runup %", minval=5.0, step=1.0)
+baseLookback = input.int(20, "Base Lookback", minval=10, maxval=60)
+maxBaseDepthPct = input.float(25.0, "Maximum Base Depth %", minval=5.0, step=1.0)
+volumeMultiplier = input.float(1.5, "Breakout Volume Multiplier", minval=0.5, step=0.1)
+atrShortLength = input.int(5, "Short ATR Length", minval=2)
+atrLongLength = input.int(20, "Long ATR Length", minval=5)
+adrLength = input.int(20, "ADR Length", minval=5)
+partialHoldBars = input.int(5, "Scale-Out After Bars", minval=1)
+partialQtyPct = input.float(50.0, "Scale-Out Qty %", minval=1.0, maxval=99.0, step=1.0)
+trailMaLength = input.int(10, "Trail EMA Length", minval=2)
+
+ema10 = ta.ema(close, 10)
+ema20 = ta.ema(close, 20)
+sma50 = ta.sma(close, 50)
+trailEma = ta.ema(close, trailMaLength)
+avgVolume = ta.sma(volume, 20)
+atrShort = ta.atr(atrShortLength)
+atrLong = ta.atr(atrLongLength)
+adrPct = 100 * (ta.sma(high / low, adrLength) - 1)
+atrPct = 100 * atrLong / close
+
+priorHigh = ta.highest(high[1], momentumLookback)
+priorLow = ta.lowest(low[1], momentumLookback)
+priorRunupPct = priorLow > 0 ? 100 * (priorHigh / priorLow - 1) : 0.0
+
+baseHigh = ta.highest(high[1], baseLookback)
+baseLow = ta.lowest(low[1], baseLookback)
+baseDepthPct = baseHigh > 0 ? 100 * (baseHigh - baseLow) / baseHigh : 0.0
+rangeTightening = atrLong > 0 and atrShort < atrLong
+higherLows = ta.lowest(low, 5) > ta.lowest(low[5], 5)
+trendFilter = close > ema10 and close > ema20 and close > sma50 and ema10 > ema20 and ema20 > sma50 and ema10 > ema10[1] and ema20 > ema20[1]
+baseFilter = low > ema20 and baseDepthPct <= maxBaseDepthPct and rangeTightening and higherLows
+volumeFilter = volume > avgVolume * volumeMultiplier
+breakoutSignal = strategy.position_size == 0 and priorRunupPct >= minRunupPct and trendFilter and baseFilter and volumeFilter and close > baseHigh
+
+var float initialStopPrice = na
+var int entryBarIndex = na
+var bool partialTaken = false
+
+if breakoutSignal
+    strategy.entry("Long", strategy.long)
+    maxStopPct = math.min(adrPct, atrPct)
+    maxAllowedStop = close * (1 - maxStopPct / 100)
+    initialStopPrice := math.max(low, maxAllowedStop)
+
+if strategy.position_size > 0 and strategy.position_size[1] <= 0
+    entryBarIndex := bar_index
+    partialTaken := false
+
+barsHeld = strategy.position_size > 0 and not na(entryBarIndex) ? bar_index - entryBarIndex : 0
+
+if strategy.position_size > 0
+    protectiveStop = partialTaken ? math.max(initialStopPrice, strategy.position_avg_price) : initialStopPrice
+    strategy.exit("Long Stop", from_entry="Long", stop=protectiveStop)
+
+    if not partialTaken and barsHeld >= partialHoldBars
+        strategy.close("Long", qty_percent=partialQtyPct, comment="Scale Out")
+        partialTaken := true
+
+    if partialTaken and close < trailEma
+        strategy.close("Long", comment="Trail Exit")
+
+if strategy.position_size <= 0
+    entryBarIndex := na
+    partialTaken := false
+    initialStopPrice := na
+
+plot(ema10, title="EMA 10", color=color.orange, linewidth=2)
+plot(ema20, title="EMA 20", color=color.blue, linewidth=2)
+plot(sma50, title="SMA 50", color=color.green, linewidth=2)
+plot(baseHigh, title="Base High", color=color.new(color.fuchsia, 40), style=plot.style_linebr)
+plotshape(breakoutSignal, title="Breakout", style=shape.triangleup, location=location.belowbar, color=color.lime, size=size.tiny, text="BO")

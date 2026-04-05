@@ -1,0 +1,46 @@
+//@version=6
+strategy("Rob Hoffman IRB Trend Strategy", overlay=true, pyramiding=0, initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, commission_type=strategy.commission.percent, commission_value=0.0)
+
+fastEmaLength = input.int(20, "Fast EMA Length", minval=1)
+higherTf = input.timeframe("W", "Higher Timeframe")
+higherTfEmaLength = input.int(20, "Higher TF EMA Length", minval=1)
+irbThreshold = input.float(0.60, "IRB Threshold", minval=0.10, maxval=0.95, step=0.05)
+validBars = input.int(10, "Setup Valid Bars", minval=1, maxval=50)
+stopLossPct = input.float(3.0, "Stop Loss %", minval=0.1, step=0.1)
+targetProfitPct = input.float(15.0, "Target Profit %", minval=0.1, step=0.1)
+
+fastEma = ta.ema(close, fastEmaLength)
+higherTfEma = request.security(syminfo.tickerid, higherTf, ta.ema(close, higherTfEmaLength), lookahead=barmerge.lookahead_off)
+
+barRange = high - low
+bullishIrb = barRange > 0 and (high - open) / barRange >= irbThreshold and (high - close) / barRange >= irbThreshold
+trendUp = close > fastEma and fastEma > higherTfEma
+
+var float triggerHigh = na
+var int triggerBar = na
+
+if strategy.position_size == 0 and bullishIrb and trendUp
+    triggerHigh := high
+    triggerBar := bar_index
+
+setupActive = strategy.position_size == 0 and not na(triggerHigh) and not na(triggerBar) and bar_index > triggerBar and bar_index <= triggerBar + validBars
+
+if setupActive
+    strategy.entry("Long", strategy.long, stop=triggerHigh)
+else
+    strategy.cancel("Long")
+
+if not na(triggerBar) and bar_index > triggerBar + validBars
+    triggerHigh := na
+    triggerBar := na
+
+if strategy.position_size > 0
+    triggerHigh := na
+    triggerBar := na
+    stopPrice = strategy.position_avg_price * (1 - stopLossPct / 100)
+    targetPrice = strategy.position_avg_price * (1 + targetProfitPct / 100)
+    strategy.exit("Long Exit", from_entry="Long", stop=stopPrice, limit=targetPrice)
+
+plot(fastEma, title="Fast EMA", color=color.orange, linewidth=2)
+plot(higherTfEma, title="Higher TF EMA", color=color.blue, linewidth=2)
+plotshape(bullishIrb and trendUp, title="Bullish IRB", style=shape.triangleup, location=location.belowbar, color=color.lime, size=size.tiny)
