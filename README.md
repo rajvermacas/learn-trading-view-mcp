@@ -4,11 +4,12 @@ windows:
 devpod:
 curl -H 'Host: localhost' http://host.docker.internal:9222/json
 
-git clone https://github.com/LewisWJackson/tradingview-mcp-jackson.git
-
 apt-get update && apt-get install -y socat
 socat TCP-LISTEN:9222,bind=127.0.0.1,reuseaddr,fork TCP:host.docker.internal:9222
 curl -H 'Host: localhost' http://localhost:9222/json
+
+
+git clone https://github.com/LewisWJackson/tradingview-mcp-jackson.git
 
 ~/.codex/config.toml
 [mcp_servers.tradingview]
