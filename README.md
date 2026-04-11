@@ -9,10 +9,12 @@ socat TCP-LISTEN:9222,bind=127.0.0.1,reuseaddr,fork TCP:host.docker.internal:922
 curl -H 'Host: localhost' http://localhost:9222/json
 
 
-git clone https://github.com/LewisWJackson/tradingview-mcp-jackson.git
+git clone https://github.com/LewisWJackson/tradingview-mcp-jackson.git ~/tradingview-mcp-jackson
 
 ~/.codex/config.toml
 [mcp_servers.tradingview]
 command = "node"
-args = ["/workspaces/learn-trading-view-mcp/tradingview-mcp-jackson/src/server.js"]
+args = ["/root/tradingview-mcp-jackson/src/server.js"]
 enabled = true
+
+claude mcp add tradingview -s user -- node /root/tradingview-mcp-jackson/src/server.js
