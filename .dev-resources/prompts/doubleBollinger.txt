@@ -1,0 +1,99 @@
+Role: You are an expert Pine Script (Version 5) developer specializing in algorithmic trading strategies.
+
+Task: Create a complete, fully functional TradingView strategy script (strategy()) based on a specific "Double Bollinger Band" system. The script must include visual plots, clear entry/exit logic, risk management, and dynamic support/resistance (supply/demand) calculations.
+
+1. Indicator Setup (The "Double B" Framework)
+The strategy relies exclusively on two specific Bollinger Bands:
+
+Bollinger Band 1 (The "1B" or Fast Band):
+
+Period (Length): 4
+
+Standard Deviation (Multiplier): 4
+
+Source: open
+
+Visuals: Plot the upper and lower bands in Red.
+
+Bollinger Band 2 (The Standard Band):
+
+Period (Length): 20
+
+Standard Deviation (Multiplier): 2
+
+Source: close
+
+Visuals: Plot the upper, lower, and basis (middle) bands in White.
+
+2. Dynamic Support/Resistance (Supply & Demand Zones)
+The strategy requires knowing if price is interacting with a previous high or low to validate breakouts and reversals.
+
+Implement a Pivot High and Pivot Low lookback system (e.g., ta.pivothigh and ta.pivotlow with a configurable left/right bars length, default to 10).
+
+Store the most recent Pivot High as the current "Resistance / Supply Zone".
+
+Store the most recent Pivot Low as the current "Support / Demand Zone".
+
+3. State Definitions & Triggers
+To execute a trade, price must interact with both Bollinger Bands simultaneously.
+
+Upper Touch: The current candle's high is >= the Upper 1B AND >= the Upper Standard BB.
+
+Lower Touch: The current candle's low is <= the Lower 1B AND <= the Lower Standard BB.
+
+4. Entry Logic & Algorithms
+Implement the following three entry conditions:
+
+Condition A: Reversal Type 1 (The Wick Rejection)
+
+Short Entry: An Upper Touch occurs. The candle closes below the Upper Standard BB, leaving a clear upper wick (indicating failure to make a new high).
+
+Long Entry: A Lower Touch occurs. The candle closes above the Lower Standard BB, leaving a clear lower wick (indicating failure to make a new low).
+
+Condition B: Reversal Type 2 (Failed Breakout at Resistance/Support)
+
+Short Entry: An Upper Touch occurs, and the candle closes above both upper bands. HOWEVER, the high of this candle is <= the current Pivot High (Resistance). The very next candle closes bearish (close < open). Enter Short on the close of the bearish candle.
+
+Long Entry: A Lower Touch occurs, and the candle closes below both lower bands. HOWEVER, the low of this candle is >= the current Pivot Low (Support). The very next candle closes bullish (close > open). Enter Long on the close of the bullish candle.
+
+Condition C: The Real Breakout (Trend Continuation)
+
+Long Entry: An Upper Touch occurs. The candle cleanly breaks and closes above both upper bands AND it closes above the current Pivot High (Resistance zone cleared). This is a confirmed breakout with acceptance.
+
+Short Entry: A Lower Touch occurs. The candle cleanly breaks and closes below both lower bands AND it closes below the current Pivot Low (Support zone cleared).
+
+5. Exit & Risk Management Logic
+Traders need a defined risk-to-reward ratio (aiming for roughly 1:3).
+
+Take Profit (Target):
+
+For Longs: Target the Upper Standard BB (20-period).
+
+For Shorts: Target the Lower Standard BB (20-period).
+
+(Note: Because the bands are dynamic, the TP should be evaluated bar-by-bar, or you can code a fixed TP based on the band's value at entry).
+
+Stop Loss:
+
+For Reversals (Type 1 & 2): Place the stop loss just beyond the extreme wick of the entry setup (e.g., slightly above the high for shorts, slightly below the low for longs).
+
+For Breakouts: Place the stop loss back inside the band (e.g., if long, stop loss triggers if price closes back below the Upper Standard BB).
+
+6. Code Requirements & Aesthetics
+
+Use strategy() with realistic commission and slippage settings.
+
+Include inputs for all parameters (BB lengths, BB multipliers, Pivot lookbacks) so they can be optimized later.
+
+Color-code the background slightly (e.g., bgcolor) when a valid setup occurs to help the user visually backtest.
+
+Ensure the code is heavily commented, explaining exactly where Reversal Type 1, Type 2, and Breakouts are evaluated.
+
+Include a strategy.close_all() or specific exit conditions based on the logic provided above.
+
+
+When  you are done with the strategy run it on tradingview using the mcp and share 
+Total P&L in Strategy Report
+max equity drawdown in Strategy 
+Porfitable trades in Strategy Report 
+Total trades in Strategy Report

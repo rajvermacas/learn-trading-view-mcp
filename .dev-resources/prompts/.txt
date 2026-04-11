@@ -1,18 +1,23 @@
 Read https://github.com/karpathy/autoresearch.git
 --
 
-1. is the Total P&L in Strategy Report above than 5000%
+1. is the Total P&L in Strategy Report above than 100%
 2. Is the max equity drawdown in Strategy Report below 20%
-3. Is the Porfitable trades in Strategy Report greater than 20%
+3. Is the Porfitable trades in Strategy Report greater than 60%
+4. Total trades in Strategy Report is greater than 100
 -----
 
 I want you to use the auto-research convention in the above repo in order to build out a self-
 improving system for my project in this director. The eval suite I'd like you to run is the 3
 constraints above.
 
-What I want to occur is every two minutes, I want you to generate 5 pinescript strategies for a specific function.
+What I want to occur is every 5 minutes, I want you to generate 5 pinescript strategies for a specific function.
 Whatever those functions are is okay, and then I want you to pass them through this eval test suite, rate
 how many of those made it, and the
 where it's knocking 10/10 out of the park
 
 Remember what I am trying to do here is I want to use autoresearch to build a pinescript strategy and run it using tradingview mcp to maximise profit and minimise drawdown
+
+Try the strategies on multiple nifty 50 stocks.
+Also search the internet for different promisable strategies.
+

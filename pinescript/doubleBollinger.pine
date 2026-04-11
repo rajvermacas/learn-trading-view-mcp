@@ -1,0 +1,206 @@
+//@version=5
+strategy("Double Bollinger Band Strategy", shorttitle="Double BB",
+         overlay=true,
+         commission_type=strategy.commission.percent, commission_value=0.1,
+         slippage=2,
+         default_qty_type=strategy.percent_of_equity, default_qty_value=10,
+         max_bars_back=500)
+
+// ═══════════════════════════════════════════════════════════════
+//  INPUTS
+// ═══════════════════════════════════════════════════════════════
+grp_bb1       = "Fast BB (1B) — Red"
+bb1_length    = input.int  (4,   "BB1 Length",     group=grp_bb1, minval=1)
+bb1_mult      = input.float(4.0, "BB1 Multiplier", group=grp_bb1, minval=0.1, step=0.1)
+
+grp_bb2       = "Standard BB — White"
+bb2_length    = input.int  (20,  "BB2 Length",     group=grp_bb2, minval=1)
+bb2_mult      = input.float(2.0, "BB2 Multiplier", group=grp_bb2, minval=0.1, step=0.1)
+
+grp_pivot     = "Pivot S/R Settings"
+pivot_left    = input.int  (10,  "Pivot Left Bars",  group=grp_pivot, minval=1)
+pivot_right   = input.int  (10,  "Pivot Right Bars", group=grp_pivot, minval=1)
+
+grp_risk      = "Risk Management"
+sl_buffer_pct = input.float(0.2, "SL Buffer %", group=grp_risk, minval=0.01, step=0.01, tooltip="Extra % beyond wick extreme for reversal stop losses")
+
+// ═══════════════════════════════════════════════════════════════
+//  BOLLINGER BAND CALCULATIONS
+// ═══════════════════════════════════════════════════════════════
+// BB1: Fast Band — source: open, length: 4, mult: 4 — plotted RED
+bb1_basis = ta.sma(open, bb1_length)
+bb1_dev   = bb1_mult * ta.stdev(open, bb1_length)
+bb1_upper = bb1_basis + bb1_dev
+bb1_lower = bb1_basis - bb1_dev
+
+// BB2: Standard Band — source: close, length: 20, mult: 2 — plotted WHITE
+bb2_basis = ta.sma(close, bb2_length)
+bb2_dev   = bb2_mult * ta.stdev(close, bb2_length)
+bb2_upper = bb2_basis + bb2_dev
+bb2_lower = bb2_basis - bb2_dev
+
+// ═══════════════════════════════════════════════════════════════
+//  DYNAMIC SUPPORT / RESISTANCE (Pivot Zones)
+// ═══════════════════════════════════════════════════════════════
+raw_ph = ta.pivothigh(high, pivot_left, pivot_right)
+raw_pl = ta.pivotlow (low,  pivot_left, pivot_right)
+
+var float resistance = na  // Most recent Pivot High → Resistance / Supply Zone
+var float support    = na  // Most recent Pivot Low  → Support / Demand Zone
+
+if not na(raw_ph)
+    resistance := raw_ph
+if not na(raw_pl)
+    support := raw_pl
+
+// ═══════════════════════════════════════════════════════════════
+//  STATE TRIGGERS — Both Bands Must Be Touched Simultaneously
+// ═══════════════════════════════════════════════════════════════
+upper_touch = high >= bb1_upper and high >= bb2_upper  // high tags both upper bands
+lower_touch = low  <= bb1_lower and low  <= bb2_lower  // low  tags both lower bands
+
+// ═══════════════════════════════════════════════════════════════
+//  ENTRY CONDITIONS
+// ═══════════════════════════════════════════════════════════════
+
+// ── Condition A: Reversal Type 1 — Wick Rejection ──────────────
+// Short: Upper Touch + close below Upper BB2 (bearish wick failure at top)
+condA_short = upper_touch and close < bb2_upper
+// Long:  Lower Touch + close above Lower BB2 (bullish wick failure at bottom)
+condA_long  = lower_touch and close > bb2_lower
+
+// ── Condition B: Reversal Type 2 — Failed Breakout at S/R ──────
+// Setup bar (Short): closes above both upper bands, but high is capped by Resistance
+condB_short_setup = (upper_touch and close >= bb2_upper and close >= bb1_upper and not na(resistance) and high <= resistance)
+// Setup bar (Long): closes below both lower bands, but low is held by Support
+condB_long_setup  = (lower_touch and close <= bb2_lower and close <= bb1_lower and not na(support) and low >= support)
+
+// Entry fires on the NEXT bar after setup — confirmation candle closes in reversal direction
+condB_short = condB_short_setup[1] and close < open  // next bar is bearish → enter short
+condB_long  = condB_long_setup[1]  and close > open  // next bar is bullish → enter long
+
+// ── Condition C: Real Breakout — Trend Continuation ────────────
+// Long:  closes above BOTH upper bands AND above Resistance (confirmed breakout up)
+condC_long  = (upper_touch and close >= bb1_upper and close >= bb2_upper and not na(resistance) and close > resistance)
+// Short: closes below BOTH lower bands AND below Support (confirmed breakout down)
+condC_short = (lower_touch and close <= bb1_lower and close <= bb2_lower and not na(support) and close < support)
+
+// ═══════════════════════════════════════════════════════════════
+//  ENTRY TYPE TRACKER (drives breakout failure exit logic)
+// ═══════════════════════════════════════════════════════════════
+var int active_long_type  = 0  // 1 = Reversal, 2 = Breakout
+var int active_short_type = 0
+
+// ═══════════════════════════════════════════════════════════════
+//  ENTRY EXECUTION — Single-Position Model
+// ═══════════════════════════════════════════════════════════════
+in_long  = strategy.position_size > 0
+in_short = strategy.position_size < 0
+no_pos   = strategy.position_size == 0
+
+if no_pos
+    // Resolve signal priority: Breakout C (3) > Reversal A (1) > Reversal B (2)
+    long_sig  = condC_long  ? 3 : condA_long  ? 1 : condB_long  ? 2 : 0
+    short_sig = condC_short ? 3 : condA_short ? 1 : condB_short ? 2 : 0
+
+    // Skip ambiguous bars where both long and short signal simultaneously
+    if long_sig > 0 and short_sig == 0
+        if long_sig == 3
+            // ── Breakout C Long ──────────────────────────────────
+            // SL: back below Upper BB2; TP: 3× risk above entry
+            sl   = bb2_upper
+            risk = math.abs(close - sl)
+            tp   = close + 3.0 * risk
+            strategy.entry("Long", strategy.long, comment="Break Long")
+            strategy.exit ("Exit_Long", from_entry="Long", limit=tp, stop=sl)
+            active_long_type := 2
+        else if long_sig == 1
+            // ── Reversal A Long ──────────────────────────────────
+            // SL: just below wick low; TP: Upper Standard BB (mean reversion)
+            sl = low  * (1.0 - sl_buffer_pct / 100.0)
+            tp = bb2_upper
+            strategy.entry("Long", strategy.long, comment="Rev1 Long")
+            strategy.exit ("Exit_Long", from_entry="Long", limit=tp, stop=sl)
+            active_long_type := 1
+        else
+            // ── Reversal B Long ──────────────────────────────────
+            // SL: just below setup bar low; TP: Upper Standard BB
+            sl = low[1] * (1.0 - sl_buffer_pct / 100.0)
+            tp = bb2_upper
+            strategy.entry("Long", strategy.long, comment="Rev2 Long")
+            strategy.exit ("Exit_Long", from_entry="Long", limit=tp, stop=sl)
+            active_long_type := 1
+
+    else if short_sig > 0 and long_sig == 0
+        if short_sig == 3
+            // ── Breakout C Short ─────────────────────────────────
+            // SL: back above Lower BB2; TP: 3× risk below entry
+            sl   = bb2_lower
+            risk = math.abs(close - sl)
+            tp   = close - 3.0 * risk
+            strategy.entry("Short", strategy.short, comment="Break Short")
+            strategy.exit ("Exit_Short", from_entry="Short", limit=tp, stop=sl)
+            active_short_type := 2
+        else if short_sig == 1
+            // ── Reversal A Short ─────────────────────────────────
+            // SL: just above wick high; TP: Lower Standard BB (mean reversion)
+            sl = high * (1.0 + sl_buffer_pct / 100.0)
+            tp = bb2_lower
+            strategy.entry("Short", strategy.short, comment="Rev1 Short")
+            strategy.exit ("Exit_Short", from_entry="Short", limit=tp, stop=sl)
+            active_short_type := 1
+        else
+            // ── Reversal B Short ─────────────────────────────────
+            // SL: just above setup bar high; TP: Lower Standard BB
+            sl = high[1] * (1.0 + sl_buffer_pct / 100.0)
+            tp = bb2_lower
+            strategy.entry("Short", strategy.short, comment="Rev2 Short")
+            strategy.exit ("Exit_Short", from_entry="Short", limit=tp, stop=sl)
+            active_short_type := 1
+
+// ═══════════════════════════════════════════════════════════════
+//  DYNAMIC BREAKOUT FAILURE EXIT (bar-by-bar evaluation)
+// ═══════════════════════════════════════════════════════════════
+// Breakout long fails when price closes back below Upper BB2
+if in_long and active_long_type == 2 and close < bb2_upper
+    strategy.close("Long", comment="Break Failed")
+    active_long_type := 0
+
+// Breakout short fails when price closes back above Lower BB2
+if in_short and active_short_type == 2 and close > bb2_lower
+    strategy.close("Short", comment="Break Failed")
+    active_short_type := 0
+
+// Reset trackers whenever position is flat
+if not in_long
+    active_long_type  := 0
+if not in_short
+    active_short_type := 0
+
+// ═══════════════════════════════════════════════════════════════
+//  VISUAL PLOTS
+// ═══════════════════════════════════════════════════════════════
+// BB1 — Fast Band (Red)
+plot(bb1_upper, title="BB1 Upper (Fast)", color=color.red,   linewidth=1)
+plot(bb1_lower, title="BB1 Lower (Fast)", color=color.red,   linewidth=1)
+
+// BB2 — Standard Band (White)
+plot(bb2_upper, title="BB2 Upper (Std)",  color=color.white, linewidth=2)
+plot(bb2_basis, title="BB2 Basis (Std)",  color=color.white, linewidth=1, style=plot.style_circles)
+plot(bb2_lower, title="BB2 Lower (Std)",  color=color.white, linewidth=2)
+
+// Pivot S/R step-line plots so levels are clearly visible
+plot(resistance, "Resistance / Supply", color=color.new(color.orange, 20), linewidth=1, style=plot.style_stepline)
+plot(support,    "Support / Demand",    color=color.new(color.aqua,   20), linewidth=1, style=plot.style_stepline)
+
+// ═══════════════════════════════════════════════════════════════
+//  BACKGROUND HIGHLIGHTS — Signal Visualization
+// ═══════════════════════════════════════════════════════════════
+bgcolor(condA_long        ? color.new(color.green,  82) : na, title="Rev1 Long Signal")
+bgcolor(condA_short       ? color.new(color.red,    82) : na, title="Rev1 Short Signal")
+bgcolor(condB_long_setup  ? color.new(color.lime,   88) : na, title="Rev2 Long Setup Bar")
+bgcolor(condB_short_setup ? color.new(color.orange, 88) : na, title="Rev2 Short Setup Bar")
+bgcolor(condB_long        ? color.new(color.green,  75) : na, title="Rev2 Long Entry")
+bgcolor(condB_short       ? color.new(color.red,    75) : na, title="Rev2 Short Entry")
+bgcolor(condC_long        ? color.new(color.blue,   80) : na, title="Break Long Signal")
+bgcolor(condC_short       ? color.new(color.purple, 80) : na, title="Break Short Signal")
