@@ -1,0 +1,4 @@
+Here is the youtube video transcript, I want you to create a full blown prompt using this video's strategy which I can give to my ai coding agent to have a pinescript strategy that should run on trading view. Cover the algorithm of the strategy in the tiniest details possible
+
+The transcript is given below:
+[Paste Here]
