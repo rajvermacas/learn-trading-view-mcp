@@ -1,0 +1,4 @@
+/Users/user/Desktop/Development-Charlie-2/Charlieautomates/graphify-out
+
+Reference this in the Claude.md to use as a RAG system when looking for
+data in my codebase

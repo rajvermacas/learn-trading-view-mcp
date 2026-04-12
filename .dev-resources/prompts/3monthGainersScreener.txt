@@ -1,0 +1,38 @@
+First check if the below command is already running, if not running then run it first:
+socat TCP-LISTEN:9222,bind=127.0.0.1,reuseaddr,fork TCP:host.docker.internal:9222
+
+Above is prerequisite to use the tradingview mcp
+----------
+
+fetch stocks from https://www.screener.in/screens/3474384/return-over-3-months/ using - remember all the pages. there can be stocks in other pages also.
+DO NOT USE https://www.screener.in/screens/3474384/return-over-3-months/?limit=50&page=1&format=json because it asks for sign in.
+
+For each of the stocks do fundamental and technical analysis to find out which stock is good for swing trading and why along with entry and exit levels with reasoning on why this entry, exit and stoploss.
+
+I need a clear picture of why you suggested a particular entry and target and stoploss price.
+
+Use tradingview mcp for doing technical analysis. On the chart you should be able to see the indicator 10 in 1 MAs which has:
+10, 20, 50, 100 and 200 EMA on close.
+To do technical analysis use weekly, daily and hourly candles for better visualisation of the scenario.
+doing technical analysis use the Exponential Moving Averages.
+
+For the whole analysis create a markdown report in docs/swing-trading folder explaining each numbers you come up with like entry, exit, stoploss, target and whatever number you mentioned.
+Create a table for better visualisation in the markdown.
+
+Please not: I can only have stop loss not more than 3%.
+
+My trading mindset is:
+I should buy a stock which should have maximum difficulty going down 3%. There should be technical explanations on why among all the stocks these selected stocks have very less likelyhood of going 3% down from current market price.
+
+I want to acheive such type of stats. Below is just a sample from Trader Martin Luk who is my idol:
+2025 stats:
+Win: 209
+Loss: 731
+Average win: 14.12%
+Average loss: -2.08%
+Win-rate: 22.23%
+Average winner holding period: 3.79 days
+Average loser holding period: 1.31 days
+
+So you can see here winrate is just above 20% but since the stop loss is within 3% and the average profit is aournd 15% Martin Luk was able to cross 900% profit in the year 2025.
+-----------
