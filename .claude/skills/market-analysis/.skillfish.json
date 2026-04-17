@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "market-analysis",
+  "owner": "akhilgurrapu",
+  "repo": "kubera",
+  "path": ".claude/skills/market-analysis",
+  "branch": "main",
+  "sha": "e266f072709785afb3d96542f61acfce1e762508",
+  "source": "manual"
+}

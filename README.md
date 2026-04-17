@@ -24,3 +24,19 @@ enabled = true
 
 claude mcp add tradingview -s user -- node /root/tradingview-mcp-jackson/src/server.js
 ------------
+
+Tauric/Research/TrdingAgents
+git clone https://github.com/TauricResearch/TradingAgents.git
+cd TradingAgents
+
+Install miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+conda create -n tradingagents python=3.13
+conda activate tradingagents
+
+pip install .
+
+npx skillfish add akhilgurrapu/kubera market-analysis
+-------------
