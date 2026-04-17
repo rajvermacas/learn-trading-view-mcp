@@ -1,0 +1,4 @@
+interface:
+  display_name: "TradingAgents Market Analysis"
+  short_description: "Standalone no-key market analysis"
+  default_prompt: "Use $tradingagents-market-analysis to analyze a stock with technicals, fundamentals, and news using the built-in no-key workflow."
