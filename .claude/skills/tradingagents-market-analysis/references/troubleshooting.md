@@ -105,8 +105,30 @@ Cause: Yahoo Finance news coverage is often sparse for smaller or regional ticke
 
 Fix: treat the empty result as a data limitation, mention it explicitly in the analysis, and avoid inferring a bullish or bearish narrative from the absence of articles.
 
+### Manual inspection shows `Total rows: 0` even though `record_count` is non-zero
+
+Cause: you likely read the wrong key from `stock.json`. The price history lives under `records`, not `history`.
+
+Fix: inspect the payload shape first, then read the correct array:
+
+```bash
+python3 -c 'import json,sys; data=json.load(sys.stdin); print(data["record_count"]); print(len(data["records"]))' < "$TMP_DIR/stock.json"
+```
+
 ### `fetch_indicator_bundle.py` succeeds but the indicator values are all `null`
 
 Cause: some tickers come back with insufficient or misaligned source data for `stockstats`, even though the OHLCV history itself is present.
 
 Fix: treat the bundle as unavailable for that ticker instead of fabricating signals. Use `stock.json` to analyze price structure, trend, and volume directly, and manually derive a minimal set of indicators from OHLCV if needed. State that fallback explicitly in the final report.
+
+### `TypeError: 'NoneType' object is not subscriptable` while printing article summaries
+
+Cause: news payloads can contain `summary: null`, and ad-hoc inspection code often assumes `summary` is always a string.
+
+Fix: guard nullable fields explicitly:
+
+```bash
+python3 -c 'import json,sys; data=json.load(sys.stdin); [print((article.get("summary") or "")[:150]) for article in data["articles"]]' < "$TMP_DIR/global-news.json"
+```
+
+Do the same for `published_at`, `publisher`, and `link` if you format them in quick inspection scripts.

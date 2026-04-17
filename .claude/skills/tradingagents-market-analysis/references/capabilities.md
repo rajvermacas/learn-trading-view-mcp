@@ -24,6 +24,7 @@
 - `yfinance` can be incomplete or sparse for some tickers, especially on news and fundamentals.
 - Fundamental statement filtering by date is best-effort and depends on source timestamps.
 - Indicator output can return `null` for warm-up periods, non-trading days, or ticker-specific source alignment issues.
+- News payload fields such as `summary` and `published_at` can be `null` even when an article is otherwise valid.
 
 ## Output Conventions
 
@@ -35,3 +36,4 @@
 - Do not infer missing company news or missing statement data as positive or negative signals by default.
 - `generate_market_report.py` accepts file paths to existing JSON payloads, not inline JSON text.
 - The generated markdown file is a draft scaffold that still requires Codex-written synthesis.
+- Read the exact payload keys from `references/output-schemas.md`; do not assume alternative keys such as `history`.

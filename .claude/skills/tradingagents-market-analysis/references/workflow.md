@@ -3,6 +3,7 @@
 ## Typical Technical Plus Fundamental Analysis
 
 Use a deterministic temp-directory workflow. The report generator expects file paths, not inline JSON.
+Before you inspect any JSON manually, review `references/output-schemas.md` so you use the correct keys.
 
 1. Resolve exact dates and file locations first:
 
@@ -88,6 +89,12 @@ If you merge stderr into stdout while capturing these files, the JSON becomes in
 
 If the indicator bundle returns entries whose current values are all `null`, treat the bundle as unavailable for that ticker. Keep the generated scaffold, but base your final technical write-up on OHLCV price structure and any manual indicator calculations you derive from `stock.json`.
 
+When you inspect the payloads:
+
+- read stock rows from `stock.json["records"]`, not `stock.json["history"]`
+- read news rows from `company-news.json["articles"]` and `global-news.json["articles"]`
+- treat `article["summary"]` and `article["published_at"]` as nullable fields
+
 8. Assemble and save the markdown draft under `docs/market-analysis/`:
 
 ```bash
@@ -107,6 +114,7 @@ python3 .claude/skills/tradingagents-market-analysis/scripts/generate_market_rep
 
 - Validate the ticker format before the fetches. For Indian equities, prefer exchange-qualified symbols such as `ATLANTAELE.NS`.
 - Use `references/indicators.md` for exact indicator names.
+- Use `references/output-schemas.md` for exact payload keys and nullable fields.
 - If you want to parallelize, parallelize steps 2 through 6 only after you have confirmed the argument shapes.
 - If news or fundamentals are sparse, report that limitation explicitly instead of filling the gap with speculation.
 

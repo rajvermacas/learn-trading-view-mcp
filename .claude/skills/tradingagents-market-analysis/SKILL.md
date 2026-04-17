@@ -24,6 +24,7 @@ Start with the repo-native workflow in `references/workflow.md`. Do not improvis
 
 If the user provides an unqualified ticker, resolve it to the exchange-qualified symbol before fetching data, for example `ATLANTAELE.NS` instead of `ATLANTAELE`.
 When saving JSON outputs, keep stdout and stderr separate. Do not use `2>&1` when redirecting script output into `*.json` files because logs are emitted on stderr.
+Before synthesizing the report, inspect `references/output-schemas.md` so you read the actual payload keys instead of guessing field names.
 
 ## Workflow
 
@@ -63,6 +64,7 @@ Parallelize only after the command shapes are correct. In transcript-driven sess
 - If an external source is empty or sparse, scripts may return empty result lists plus availability metadata instead of aborting the whole workflow.
 - Do not merge stderr into captured JSON files. A mixed log-plus-JSON file will break `generate_market_report.py`.
 - `generate_market_report.py` writes the report to `docs/market-analysis/<TICKER>-<DATE>.md` and prints the path.
+- Read the documented JSON keys exactly as emitted. For example, stock-history rows live under `records`, not `history`.
 
 ## Analysis Rules
 
@@ -72,11 +74,13 @@ Parallelize only after the command shapes are correct. In transcript-driven sess
 - Prefer date-qualified reasoning. If the user asks about "today" or "recent", anchor the analysis to exact dates.
 - If company news is empty, say so explicitly and avoid inventing a catalyst narrative.
 - If the indicator bundle returns `null` values for a ticker, say so explicitly and base the write-up on price structure plus any manually derived indicators you compute from OHLCV.
+- Treat news article fields as nullable unless the schema says otherwise. In particular, `summary` and `published_at` may be `null`, so do not slice or format them blindly in ad-hoc inspection commands.
 - Use exact supported indicator names. Do not guess indicator identifiers or inspect private internals unless the documented list is insufficient.
 
 ## References
 
 - Capability and limits: `references/capabilities.md`
 - Supported indicators and interpretation guidance: `references/indicators.md`
+- Output payload shapes and nullable fields: `references/output-schemas.md`
 - Suggested end-to-end workflow: `references/workflow.md`
 - Transcript-driven failure fixes: `references/troubleshooting.md`
