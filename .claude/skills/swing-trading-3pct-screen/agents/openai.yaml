@@ -1,4 +1,4 @@
 interface:
   display_name: "Swing Trading 3% Screen"
-  short_description: "Analyze Screener stocks with deep multi-timeframe 3% support and resistance validation"
-  default_prompt: "Use $swing-trading-3pct-screen to analyze a Screener.in stock screen for fundamentally strong swing trades with a hard 3% stop, including weekly, daily, hourly, 30 minute, and 15 minute moving-average plus market-structure support and resistance mapping."
+  short_description: "Analyze Screener stocks with sequential per-stock sub-agents, multi-timeframe structure, and practical 2% to 4% stop survivability"
+  default_prompt: "Use $swing-trading-3pct-screen to analyze a Screener.in stock screen for fundamentally strong swing trades using a practical 2% to 4% stop zone around the usual 3% reference. Fetch the universe first, verify the TradingView EMA setup, then analyze each stock in its own sub-agent sequentially, never in parallel, because TradingView MCP chart state is shared and race-prone. Use weekly, daily, hourly, 30 minute, and 15 minute moving-average plus market-structure support and resistance mapping, then synthesize the five-file ranked report set."

@@ -12,6 +12,10 @@ The current skill text says to use multi-timeframe structure, but the sample run
 2. The final report did not include a full-universe ranking from safest to weakest against the stop area.
 3. Rejection writeups were too compressed in the wrong way: they were short, but they hid the actual reasoning and therefore did not show enough research quality.
 
+There is also an execution-model gap:
+
+4. A single agent handled the universe and the per-stock chart reading in one thread, which bloated context and made the workflow fragile.
+
 ## Design Summary
 
 Keep `3%` as the center reference, but stop treating it as a hard binary wall. The skill should evaluate a practical `2%` to `4%` downside zone and judge whether price is structurally likely to hold above that area. The decision model should rank names by `stop survivability`, not by one EMA being barely inside or outside a fixed threshold.
@@ -23,6 +27,38 @@ The redesigned skill will:
 - forbid blanket rejection by extrapolation without minimum direct chart review
 - produce `5` report files per run instead of `4`
 - add a ranked universe file that orders all analyzed stocks from least likely to most likely to break the `2%` to `4%` stop zone
+- require stock-by-stock delegation after universe fetch so the main agent stays focused on orchestration and synthesis
+- require those stock-analysis sub-agents to run sequentially, not in parallel, because TradingView MCP uses shared chart state and parallel access can corrupt data
+
+## Execution Architecture
+
+The workflow should be split into two layers.
+
+### Main Agent
+
+The main agent should:
+
+- fetch and parse the Screener HTML universe
+- verify TradingView connectivity and EMA-study configuration once
+- dispatch one stock-analysis sub-agent per ticker
+- run those stock-analysis sub-agents strictly one at a time
+- collect normalized stock-level outputs
+- build the selection list, rejection list, ranked universe, and README from those outputs
+
+The main agent must not carry the raw chart-reading detail for the whole universe in one thread.
+
+### Stock-Analysis Sub-Agent
+
+Each stock-analysis sub-agent should:
+
+- own exactly one stock
+- inspect `Weekly`, `Daily`, `60`, `30`, and `15`
+- evaluate both market structure and EMA context
+- return a compact structured payload for synthesis rather than long narrative chart logs
+
+### Concurrency Rule
+
+The skill must explicitly forbid parallel stock-analysis sub-agents. TradingView MCP uses a shared mutable chart session, so two workers changing symbols or timeframes at once can create race conditions and corrupt the analysis.
 
 ## Evaluation Model
 
@@ -200,6 +236,7 @@ Update `.claude/skills/swing-trading-3pct-screen/SKILL.md` to:
 - redefine the technical decision model around stop survivability
 - soften the exact `3%` boundary into a `2%` to `4%` evaluation band
 - forbid rejection by single-indicator logic or broad extrapolation
+- require sequential one-stock-per-sub-agent analysis after universe fetch
 - require the fifth report file
 - require concise but complete reasoning in all output files
 
@@ -207,6 +244,8 @@ Update `.claude/skills/swing-trading-3pct-screen/references/methodology.md` to:
 
 - redefine the methodology around practical stop-zone survivability
 - document how to rank names from safest to weakest
+- define the main-agent versus stock-sub-agent execution contract
+- forbid parallel stock-analysis workers against TradingView MCP
 - specify the minimum evidence needed before rejection
 - define the concise output format for the ranked and rejected files
 

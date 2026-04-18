@@ -1,5 +1,6 @@
 {
   "enabledPlugins": {
-    "last30days@last30days-skill": true
+    "last30days@last30days-skill": true,
+    "claude-mem@thedotmack": true
   }
 }
