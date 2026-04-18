@@ -37,6 +37,7 @@ Do not make a technical verdict from:
 - one timeframe alone
 - clustered EMAs treated as independent support without structural confirmation
 - a higher-timeframe chart that looks fine while lower timeframes break the support path into the stop zone
+- lower-timeframe weakness ignored because one daily or weekly reference still looks attractive
 
 ## Output Schema
 
