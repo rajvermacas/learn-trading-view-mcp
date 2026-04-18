@@ -2,123 +2,305 @@
 
 ## Goal
 
-Improve the `swing-trading-3pct-screen` skill so the agent evaluates Indian swing-trade candidates by multi-timeframe stop survivability rather than by a rigid single-indicator cutoff, and so every run produces a ranked full-universe report ordered from least likely to most likely to break a practical `2%` to `4%` stop zone.
+Redesign the `swing-trading-3pct-screen` skill so it:
+
+- investigates the full Screener universe fundamentally before chart triage
+- ranks the full universe from strongest to weakest fundamental sponsorship
+- performs technical analysis in that ranked order
+- evaluates stop survivability across a practical `2%` to `4%` downside zone around the usual `3%` reference
+- produces concise but complete report files that remain useful even when technical coverage is intentionally limited
+
+The redesigned skill must help the agent answer two questions:
+
+1. `Is this stock's momentum credibly sponsored by recent business evidence?`
+2. `If yes, is the current chart structure likely to defend a practical 2% to 4% stop zone?`
 
 ## Problems In The Current Skill
 
-The current skill text says to use multi-timeframe structure, but the sample run still allowed early rejection based mainly on daily `EMA 10` distance and pattern extrapolation. That created three concrete problems:
+The current skill still leaves too much room for shallow execution. The transcript exposed these gaps:
 
-1. Names were rejected too early because one timeframe or one moving average failed, even when lower timeframes or nearby structure may have offered a defendable setup.
-2. The final report did not include a full-universe ranking from safest to weakest against the stop area.
-3. Rejection writeups were too compressed in the wrong way: they were short, but they hid the actual reasoning and therefore did not show enough research quality.
-
-There is also an execution-model gap:
-
-4. A single agent handled the universe and the per-stock chart reading in one thread, which bloated context and made the workflow fragile.
+1. Technical analysis drifted toward `daily EMA 10` distance as an early rejection shortcut.
+2. The skill did not force a `full-universe fundamental ranking` before chart work began.
+3. The skill did not guarantee a `descending strongest-to-weakest` master ranking across the whole universe.
+4. Delegated workers were not defined with enough precision, so fresh-session sub-agents could miss the real goal.
+5. The technical method was still too EMA-centered and did not explicitly require `support/resistance`, `supply/demand`, `chart patterns`, and `market structure` across all required timeframes.
+6. The reporting contract did not clearly distinguish `reviewed` names from `pending technical review` names in limited runs.
+7. The execution model for fundamentals versus technicals was not separated cleanly enough.
 
 ## Design Summary
 
-Keep `3%` as the center reference, but stop treating it as a hard binary wall. The skill should evaluate a practical `2%` to `4%` downside zone and judge whether price is structurally likely to hold above that area. The decision model should rank names by `stop survivability`, not by one EMA being barely inside or outside a fixed threshold.
+The skill should run in two stages:
 
-The redesigned skill will:
+1. `Fundamental stage`
+   Analyze every stock in the fetched universe, rank them by sponsorship strength, and produce a full-universe fundamental ordering.
+2. `Technical stage`
+   Analyze stocks in that ranked order, one stock per technical sub-agent, strictly sequentially because TradingView MCP is shared mutable state.
 
-- use `weekly`, `daily`, `60`, `30`, and `15` minute structure for every serious candidate
-- require both market-structure references and EMA references in the support case
-- forbid blanket rejection by extrapolation without minimum direct chart review
-- produce `5` report files per run instead of `4`
-- add a ranked universe file that orders all analyzed stocks from least likely to most likely to break the `2%` to `4%` stop zone
-- require stock-by-stock delegation after universe fetch so the main agent stays focused on orchestration and synthesis
-- require those stock-analysis sub-agents to run sequentially, not in parallel, because TradingView MCP uses shared chart state and parallel access can corrupt data
+This is a `fundamental-first ranked pipeline`, not a rolling mixed loop.
+
+The skill must stop treating `3%` as a hard binary wall. It should keep `3% Floor = CMP x 0.97` as the anchor, but judge a practical `2%` to `4%` downside band using multi-timeframe structure rather than one indicator.
 
 ## Execution Architecture
 
-The workflow should be split into two layers.
-
-### Main Agent
+### Main Agent Responsibilities
 
 The main agent should:
 
-- fetch and parse the Screener HTML universe
-- verify TradingView connectivity and EMA-study configuration once
-- dispatch one stock-analysis sub-agent per ticker
-- run those stock-analysis sub-agents strictly one at a time
-- collect normalized stock-level outputs
-- build the selection list, rejection list, ranked universe, and README from those outputs
+- parse the user prompt for an optional technical coverage limit such as `analyze 12 stocks`
+- fetch the user-provided Screener URL as HTML across all pages
+- extract a compact `screen thesis` from the visible title and filters
+- normalize and deduplicate the full stock universe
+- dispatch `fundamental sub-agents` for every stock with bounded parallelism
+- collect all stock-level fundamental results
+- build the full-universe fundamental ranking
+- dispatch `technical sub-agents` in ranked order only after the ranking exists
+- run technical sub-agents strictly one at a time
+- synthesize the five report files
+- keep report status honest when technical review is intentionally limited
 
-The main agent must not carry the raw chart-reading detail for the whole universe in one thread.
+The main agent must stay focused on orchestration and synthesis rather than carrying raw per-stock investigation detail for the entire run.
 
-### Stock-Analysis Sub-Agent
+### Screen-Thesis Extraction
 
-Each stock-analysis sub-agent should:
+Before any sub-agent is dispatched, the main agent must build a compact context package:
 
-- own exactly one stock
-- inspect `Weekly`, `Daily`, `60`, `30`, and `15`
-- evaluate both market structure and EMA context
-- return a compact structured payload for synthesis rather than long narrative chart logs
+- `screen title`
+- `visible filter rules`
+- `why this universe is momentum-biased`
+- `what kind of sponsorship the analysis is trying to validate`
+- `coverage mode`
+  - full universe, or
+  - top `N` technically reviewed names
 
-### Concurrency Rule
+This context must be passed into every delegated worker. The skill must not hardcode assumptions such as `30% over 3 months`, because the user can provide different momentum-biased screens.
 
-The skill must explicitly forbid parallel stock-analysis sub-agents. TradingView MCP uses a shared mutable chart session, so two workers changing symbols or timeframes at once can create race conditions and corrupt the analysis.
+### Fundamental Sub-Agents
 
-## Evaluation Model
+Fundamental sub-agents should:
 
-### Reference Zone
+- own one stock each
+- analyze the stock in the context of the parsed screen thesis
+- decide whether current momentum appears credibly sponsored by recent business evidence
+- use news only as an exception-based escalation layer
+- return concise structured outputs for ranking
 
-- `CMP` remains the decision price
-- `3% Floor` remains `CMP x 0.97`
-- the actual evaluation band becomes roughly `2%` to `4%` below `CMP`
-- supports slightly above or slightly below the exact `3%` floor remain valid context if the structure is strong enough
+Fundamental sub-agents may run in parallel, but only with bounded concurrency.
 
-This means the agent must not reject a setup merely because support sits `0.5%` to `1.0%` outside the exact `3%` line. It must instead judge whether the broader stop area is defendable.
+### Technical Sub-Agents
 
-### Required Technical Checks
+Technical sub-agents should:
 
-For every serious candidate, the agent must assess:
+- own one stock each
+- receive the stock's fundamental rank and sponsorship result
+- inspect `weekly`, `daily`, `60`, `30`, and `15`
+- determine whether the current structure is likely to defend a practical `2%` to `4%` stop zone
+- return concise structured outputs for ranking and reporting
 
-- `Weekly`: trend health, extension risk, major higher low, major resistance
-- `Daily`: breakout base, retest quality, recent higher low, nearest meaningful resistance
-- `60`: local invalidation level, demand shelf, support density near price
-- `30`: main lower-timeframe support map, EMA layering, breakout retest, base quality
-- `15`: micro higher lows, rejection behavior, air-pocket risk into the stop zone
+Technical sub-agents must run strictly sequentially. No overlap is allowed because TradingView MCP uses a shared chart session.
 
-### Support Classification
+## Coverage Logic
 
-The support case must distinguish between:
+The skill should treat the user prompt as the authority on technical review depth.
 
-- structural support: swing lows, pullback bases, breakout retests, prior resistance turned support, consolidation shelves
-- dynamic support: EMA 10, 20, 50, 100, 200 where visible and relevant
+- If the user says `analyze 12 stocks`, the agent must:
+  - complete fundamental analysis for the full universe
+  - build the full-universe fundamental ranking
+  - run technical analysis only for the top `12` fundamentally ranked names
 
-The agent must not treat multiple nearby EMAs as enough by themselves. Structural references must be present or the name must be downgraded.
+- If the user does not specify a technical coverage limit, the agent must:
+  - complete fundamental analysis for the full universe
+  - build the full-universe fundamental ranking
+  - continue technical analysis from the top downward until the full universe is covered
 
-### Verdict Buckets
+This rule exists so an interrupted or limited run still spends technical effort on the strongest fundamentally sponsored names first.
 
-- `Selected Now`: stop area looks defendable now, structure is aligned, and nearby resistance still allows a sensible trade
-- `Watchlist / Near-Valid`: setup is close, but price needs tighter entry, one more higher low, or clearer confirmation around the stop zone
-- `Rejected For Now`: support is too thin, too low-quality, too widely spaced, or contradicted by lower-timeframe structure
+## Fundamental Sponsorship Model
 
-## Ranking Logic
+The fundamental stage should not behave like long-term investing analysis and should not depend on rigid absolute thresholds. Its job is narrower:
 
-Every run must rank the full analyzed universe in descending order of stop safety:
+`Determine whether the stock's current momentum is being credibly sponsored by recent business evidence, catalyst context, and acceptable near-term fragility.`
 
-- `Rank 1` = least likely to break the `2%` to `4%` stop area
-- last rank = most likely to break and trade through that stop area
+### Required Fundamental Dimensions
 
-Ranking should consider:
+Every fundamental worker should investigate:
 
-- fundamental quality relative to peers
-- weekly and daily alignment
-- number of independent support references near the stop area
-- quality of structural support, not just quantity
-- spacing of support through the band
-- lower-timeframe air-pocket risk
-- entry extension versus nearby support
-- quality of resistance map and practical risk-reward
+1. `Recent trigger`
+   What likely put the stock into this screen now.
+2. `Operating evidence`
+   Sales direction, profit direction, margin direction, acceleration or deceleration.
+3. `Earnings quality read`
+   Whether the improvement is clean or noisy.
+4. `Balance-sheet comfort`
+   Not as a hard cutoff, but as a fragility read.
+5. `Catalyst status`
+   Company-specific or sector/macro support for the move.
+6. `Evidence-to-price alignment`
+   Whether price strength is justified, slightly ahead of proof, or far ahead of proof.
+7. `Event-risk modifier`
+   Only when relevant and likely to matter for a short swing.
 
-The skill should require the agent to explain rank with concise evidence, not long narrative paragraphs.
+### News Usage
 
-## Report Output
+News should not be a default research step for every stock.
 
-Each run must create a new timestamped directory under `docs/swing-trading/YYYY-MM-DD-HHMMSS-utc/` and write these `5` files:
+Use news only when needed to:
+
+- resolve contradiction between price and fundamentals
+- validate a suspected company-specific catalyst
+- validate a likely sector or macro catalyst
+- assess short-horizon event risk
+
+### Fundamental Outputs
+
+Each stock must receive:
+
+- `Fundamental Rank`
+- `Sponsorship Label`
+- `Why it got that label`
+- `Whether news escalation was needed`
+- `Whether technical review has been run yet`
+
+Recommended labels:
+
+- `Strongly Sponsored`
+- `Moderately Sponsored`
+- `Mixed`
+- `Weakly Sponsored`
+
+## Technical Stop-Survivability Model
+
+The technical stage should answer:
+
+`Can this stock, at or near current location, realistically defend a practical 2% to 4% downside zone around the usual 3% reference?`
+
+### Required Timeframes
+
+Every technically reviewed stock must be analyzed on:
+
+- `Weekly`
+- `Daily`
+- `60`
+- `30`
+- `15`
+
+### Required Technical Factors
+
+On those timeframes, the worker must evaluate all relevant factors, not just EMA distance:
+
+- `EMA context`
+- `support and resistance zones`
+- `supply and demand zones`
+- `chart patterns`
+- `market structure`
+
+The skill must explicitly forbid:
+
+- selecting or rejecting from EMA distance alone
+- selecting or rejecting from one timeframe alone
+- treating clustered EMAs as multiple independent reasons unless structure confirms them
+
+### Timeframe Roles
+
+- `Weekly`
+  Trend health, extension risk, major higher low, major resistance.
+- `Daily`
+  Active swing, breakout base, retest quality, recent meaningful higher low, visible resistance.
+- `60`
+  Local invalidation, demand shelf, support density, sloppiness versus control.
+- `30`
+  Main lower-timeframe execution and support-mapping frame.
+- `15`
+  Micro-structure and air-pocket check into the stop zone.
+
+### Technical Labels
+
+Recommended technical labels:
+
+- `Best Aligned`
+- `Constructive`
+- `Near-Valid`
+- `Fragile`
+- `Likely To Break`
+
+The final report may still translate these into `Selected`, `Watchlist`, and `Rejected`, but analysis should stay more nuanced internally.
+
+## Delegation Contract
+
+Every main-agent to sub-agent handoff must include:
+
+- `Goal`
+- `Context`
+- `Few-shot examples`
+- `Output schema`
+
+If any of those four pieces are missing, the delegation should be treated as invalid.
+
+### Fundamental Handoff Requirements
+
+The fundamental worker handoff must include:
+
+- the worker goal:
+  - determine whether this stock's current momentum is credibly sponsored by recent business evidence
+- the screen context:
+  - title, filters, screen thesis, and why the stock is in this universe
+- phase context:
+  - this is a `fundamental-ranking` task, not long-term investing analysis
+- exception-based news rules
+- few-shot examples covering:
+  - `Strongly Sponsored`
+  - `Mixed`
+  - `Weakly Sponsored`
+  - `News escalation needed`
+- output schema fields
+
+### Technical Handoff Requirements
+
+The technical worker handoff must include:
+
+- the worker goal:
+  - determine whether this stock can defend a practical `2%` to `4%` stop zone
+- context:
+  - symbol
+  - screen thesis
+  - fundamental rank
+  - sponsorship label
+  - ranking reason
+  - coverage mode
+- required timeframe list:
+  - `weekly`, `daily`, `60`, `30`, `15`
+- required factor list:
+  - EMA context
+  - support/resistance zones
+  - supply/demand zones
+  - chart patterns
+  - market structure
+- few-shot examples covering:
+  - `Best Aligned`
+  - `Near-Valid`
+  - `Likely To Break`
+  - `bad EMA-only analysis`
+- output schema fields
+
+## Ranking Views
+
+The redesigned skill should maintain three ranking views:
+
+1. `Fundamental ranking`
+   Full universe, strongest sponsorship to weakest sponsorship.
+2. `Technical ranking`
+   Only among technically reviewed names, least likely to most likely to break the stop zone.
+3. `Combined ranking`
+   Default master ranking with status made explicit when technical review is pending.
+
+The combined ranking must not pretend equal certainty for technically reviewed and not-yet-reviewed names in limited runs.
+
+## Report Contract
+
+Every run must create a fresh timestamped directory:
+
+- `docs/swing-trading/YYYY-MM-DD-HHMMSS-utc/`
+
+Each run must produce these files:
 
 1. `README.md`
 2. `3pct-selected-and-watchlist.md`
@@ -128,127 +310,132 @@ Each run must create a new timestamped directory under `docs/swing-trading/YYYY-
 
 ### README.md
 
-Purpose:
+This should be the quick control panel for the run. It should contain:
 
-- concise run summary
-- counts by verdict
-- methodology summary
-- top-ranked names preview
-- explicit explanation of how the fifth ranked file should be read
-- explicit mention that the fifth file contains three sections:
-  - fundamentally strongest top ten
-  - technically strongest top ten
-  - overall combined universe ranking in descending order of fundamental plus technical strength
+- run date and screen URL
+- parsed screen thesis
+- universe size
+- user coverage mode
+- counts of:
+  - fundamentally analyzed stocks
+  - technically reviewed stocks
+  - selected
+  - watchlist
+  - rejected
+  - pending technical review
+- top previews:
+  - top `5` fundamentally strongest
+  - top `5` technically strongest among reviewed names
+  - top `5` overall combined
+- a short explanation of the fifth file and its three sections
 
 ### 3pct-selected-and-watchlist.md
 
-Purpose:
+This should contain only names that deserve full trade-level writeups.
 
-- full but structured writeups for `Selected Now` and `Watchlist / Near-Valid`
+For each name, include:
 
-For each name, require:
-
-- fundamental snapshot
-- weekly, daily, `60`, `30`, `15` structure blocks
-- support inventory
-- resistance inventory
+- rank header
+- one compact verdict block
+- compact fundamental confirmation bullets
+- one short technical block each for `Weekly`, `Daily`, `60`, `30`, and `15`
+- support inventory table
+- resistance inventory table
 - entry / stop / first trouble area / swing target
-- concise verdict block explaining why the stop area is or is not defendable now
+- one short block on why the stop is or is not defendable now
 
 ### 3pct-rejected.md
 
-Purpose:
+This should be concise, table-first, and evidence-based.
 
-- concise but evidence-based rejection summaries
+For each stock, include:
 
-For each rejected name, require:
+- `symbol`
+- `fundamental rank`
+- `technical review status`
+- `primary rejection reason`
+- `sponsorship label`
+- `best support found`
+- `why it was insufficient`
+- `re-check or hard reject`
 
-- verdict reason in one line
-- primary failing timeframe or structure issue
-- best support found near the stop area
-- why that support was insufficient
-- whether the name is a hard reject or only a future re-check candidate
-
-This file must avoid wall-of-text prose. It should be compact, scan-friendly, and still preserve the reasoning.
+If a stock was not technically reviewed because of a user-imposed limit, it must not be presented as a full technical reject. It should be labeled as `technical review not run in this execution`.
 
 ### screen-universe.md
 
-Purpose:
+This is the audit appendix. It should prove:
 
-- prove full HTML coverage across all Screener pages
-- show the raw captured universe and the fields used in filtering and ranking
+- full HTML coverage across all pages
+- pagination handling
+- deduplication
+- the normalized raw universe used for analysis
 
 ### 3pct-ranked-by-stop-safety.md
 
-Purpose:
-
-- rank every analyzed stock from safest to weakest against the practical stop zone
-- separate pure fundamental leadership, pure technical leadership, and the default combined ranking
-
-This file must contain three sections:
+This is the default decision surface and must contain three sections:
 
 1. `Fundamentally Strongest Top Ten`
 2. `Technically Strongest Top Ten`
 3. `Overall Combined Ranking`
 
-Section rules:
-
-- `Fundamentally Strongest Top Ten`: rank the ten strongest businesses in the universe by the skill's quality framework, independent of whether the current entry is technically ideal
-- `Technically Strongest Top Ten`: rank the ten names whose current structure is strongest against breaking the practical `2%` to `4%` stop zone
-- `Overall Combined Ranking`: rank the full universe in descending order using both fundamental quality and technical stop-survivability, with the top name being the least aligned toward breaking the stop zone and the last name being the most likely to break it
-
-Each row should include concise, information-dense fields such as:
-
-- rank
-- symbol
-- verdict
-- `CMP`
-- reference stop zone
-- support count
-- structural support grade
-- air-pocket risk
-- fundamental quality grade
-- short reason
-
-The ordering rules must be explicit:
+Rules:
 
 - the first two sections are top-ten only
-- the third section must include every stock in the analyzed universe
+- the third section must include every stock in the universe
 - the third section is the default master ranking
-- the top row in the third section is the stock least likely to break the `2%` to `4%` stop zone after combining fundamental and technical evidence
-- the bottom row in the third section is the stock most likely to break and trade through that stop zone
+- each row must show whether the stock has been technically reviewed
+- reviewed and pending names must be distinguishable
 
-## Writing Style
+Recommended row fields:
 
-The report language must be:
+- `Overall Rank`
+- `Symbol`
+- `Fundamental Rank`
+- `Sponsorship Label`
+- `Technical Review Status`
+- `Technical Label`
+- `Combined Verdict`
+- `Key Reason`
 
-- concise
-- precise
-- surgical
-- complete
+## Files To Update
 
-It must not become a wall of text. The skill should explicitly favor short evidence blocks, compact tables, and reason summaries that retain decision-critical information.
+The implementation should update:
 
-## Skill Changes Required
+- `.claude/skills/swing-trading-3pct-screen/SKILL.md`
+- `.claude/skills/swing-trading-3pct-screen/references/methodology.md`
+- `.claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
 
-Update `.claude/skills/swing-trading-3pct-screen/SKILL.md` to:
+The implementation should likely add focused reference files to keep the skill concise:
 
-- redefine the technical decision model around stop survivability
-- soften the exact `3%` boundary into a `2%` to `4%` evaluation band
-- forbid rejection by single-indicator logic or broad extrapolation
-- require sequential one-stock-per-sub-agent analysis after universe fetch
-- require the fifth report file
-- require concise but complete reasoning in all output files
+- `references/fundamental-worker-contract.md`
+- `references/technical-worker-contract.md`
+- `references/delegation-examples.md`
+- `references/reporting-contract.md`
 
-Update `.claude/skills/swing-trading-3pct-screen/references/methodology.md` to:
+## Implementation Guidance
 
-- redefine the methodology around practical stop-zone survivability
-- document how to rank names from safest to weakest
-- define the main-agent versus stock-sub-agent execution contract
-- forbid parallel stock-analysis workers against TradingView MCP
-- specify the minimum evidence needed before rejection
-- define the concise output format for the ranked and rejected files
+When implementation begins, use the `skill-creator` skill for the skill-authoring workflow and the `writing-skills` skill as the validation lens.
+
+The implementation should prefer progressive disclosure:
+
+- keep orchestration rules in `SKILL.md`
+- keep detailed decision logic in `references/`
+- keep delegation contracts and few-shot examples out of the top-level skill body unless they are short enough to justify the token cost
 
 ## Scope Check
 
-This remains one focused skill redesign. It does not require creating a new plugin, adding new external dependencies, or changing TradingView tooling.
+This remains one focused skill redesign. It does not require:
+
+- changes to TradingView MCP itself
+- changes to Screener access patterns beyond HTML parsing
+- new external services
+- a new plugin
+
+## Spec Review Notes
+
+Inline self-review targets for implementation:
+
+- do not reintroduce hardcoded screen assumptions
+- do not let technical logic collapse back into EMA-only behavior
+- do not blur the difference between full-universe fundamental ranking and limited technical coverage
+- do not let delegation proceed without goal, context, few-shots, and output schema
