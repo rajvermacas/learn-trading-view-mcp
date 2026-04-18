@@ -16,14 +16,16 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 1. Fetch the user-provided Screener.in URL as HTML across every page.
 2. Extract a compact screen thesis from the title, visible filters, and screen intent.
 3. Build the full stock universe and deduplicate it.
-4. Dispatch fundamental sub-agents for the entire universe using bounded parallelism.
-5. Collect the full-universe fundamental sponsorship ranking before any technical work starts.
-6. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
-7. Dispatch technical sub-agents only after the ranking exists.
-8. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-9. Run technical sub-agents strictly sequentially because TradingView MCP is shared mutable state.
-10. Track whether technical coverage is full or intentionally limited by the user.
-11. Write the five-file report set with reviewed versus pending technical status explicit.
+4. Read `docs/swing-trading/fundamentals/index.md`.
+5. Derive which current-universe names are runtime `missing`, `fresh`, `review_due`, and `hard_stale`.
+6. Dispatch fundamental sub-agents for all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+7. Reuse cached dossiers for all `fresh` and remaining `review_due`.
+8. Build the full-universe fundamental ranking from authoritative stock dossiers only.
+9. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
+10. Dispatch technical sub-agents only after the ranking exists.
+11. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
+12. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
+13. Overwrite refreshed stock dossiers, update `index.md`, and write the five-file report set with reviewed versus pending technical status explicit.
 
 ## Delegation Rules
 
@@ -35,6 +37,13 @@ Every main-agent to sub-agent handoff must include all of the following:
 - Output schema
 
 If any of those pieces are missing, the handoff is invalid and must be rejected.
+
+## Cache Rules
+
+- `index.md` is a registry only.
+- The main agent must never rank from `index.md`.
+- The main agent must treat a reused cached stock dossier as equivalent to a previously accepted fundamental sub-agent response.
+- The main agent must write refreshed stock dossiers in the exact canonical markdown structure defined in [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md).
 
 ## Analysis Rules
 
@@ -63,6 +72,6 @@ The report must make technical status explicit:
 - pending technical review names
 - technical review not run because of a user-imposed coverage limit
 
-Use [references/fundamental-worker-contract.md](references/fundamental-worker-contract.md), [references/technical-worker-contract.md](references/technical-worker-contract.md), [references/delegation-examples.md](references/delegation-examples.md), and [references/reporting-contract.md](references/reporting-contract.md) for the detailed worker and report contracts.
+Use [references/fundamental-cache-contract.md](references/fundamental-cache-contract.md), [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md), [references/fundamental-worker-contract.md](references/fundamental-worker-contract.md), [references/technical-worker-contract.md](references/technical-worker-contract.md), [references/delegation-examples.md](references/delegation-examples.md), and [references/reporting-contract.md](references/reporting-contract.md) for the detailed cache, worker, and report contracts.
 
 Use [references/methodology.md](references/methodology.md) for ranking logic, filters, and number discipline.
