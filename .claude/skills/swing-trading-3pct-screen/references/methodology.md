@@ -1,213 +1,281 @@
 # Swing Trading 3% Methodology
 
-## Goal
+## Purpose
 
-Find the stocks in a Screener.in universe that are fundamentally strong and least likely to break a practical `2%` to `4%` stop zone around the usual `3%` reference.
+Rank a user-provided Screener.in stock screen by sponsorship strength and stop survivability around a practical `2%` to `4%` downside zone centered on the usual `3%` reference.
+
+The skill must:
+
+- extract the screen thesis from the user-provided screen before analysis starts
+- rank the full universe by fundamental sponsorship first
+- run technical review only after the fundamental ranking exists
+- keep technical review sequential because TradingView MCP is shared mutable state
+- write a five-file report set with reviewed versus pending status made explicit
+
+If any required input, chart state, or company data is missing, stop with a clear exception. Do not invent values.
 
 ## Required Inputs
 
 - Screener.in HTML screen URL
 - TradingView MCP access
-- the ability to run stock-analysis sub-agents sequentially
-- `10 in 1 Different Moving Averages` study configured as:
-  - `MA 1 = EMA 10 on Close`
-  - `MA 2 = EMA 20 on Close`
-  - `MA 3 = EMA 50 on Close`
-  - `MA 4 = EMA 100 on Close`
-  - `MA 5 = EMA 200 on Close`
-- Fundamental data required for each shortlisted candidate:
-  - quarterly sales growth
-  - quarterly profit growth
-  - ROCE
-  - debt quality or leverage context from the screen or company page
+- sequential stock-analysis sub-agents
+- `10 in 1 Different Moving Averages` configured as:
+  - `EMA 10`
+  - `EMA 20`
+  - `EMA 50`
+  - `EMA 100`
+  - `EMA 200`
 
-If any required chart state or required fundamental data cannot be verified, stop or reject with a clear reason. Do not assume missing values.
+## Execution Order
 
-## Execution Model
+1. Fetch the full Screener universe across all HTML pages.
+2. Extract the screen thesis from the screen title, visible filters, and the user’s stated intent.
+3. Dispatch fundamental workers for the full universe.
+4. Build the full-universe fundamental sponsorship ranking.
+5. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch technical workers only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
+6. Dispatch technical workers only after the ranking exists.
+7. Run technical workers strictly one at a time.
+8. Synthesize three ranking views and five output files.
 
-Keep the main agent focused on orchestration and synthesis:
+The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
 
-- fetch the full Screener universe
-- verify TradingView connectivity and EMA study configuration once
-- dispatch one stock-analysis sub-agent per ticker
-- run those stock-analysis sub-agents strictly one at a time
-- synthesize the returned stock-level evidence into selections, rejections, and rankings
+## Screen Thesis Extraction
 
-Treat TradingView MCP as a single shared chart session:
+Before any stock-level work starts, build a compact thesis package from the screen:
 
-- never run stock-analysis sub-agents in parallel
-- never let two workers mutate chart symbol or timeframe at the same time
-- fail fast if the orchestration layer cannot guarantee sequential chart access
+- screen title
+- visible filter rules
+- screen intent
+- what kind of sponsorship the screen is trying to surface
+- whether the run is full-universe or coverage-limited
 
-Each stock-analysis sub-agent must return a compact structured payload with:
+Use that thesis in every worker handoff. The thesis is the lens for both fundamental and technical interpretation.
 
-- symbol
-- CMP
-- `3% Floor`
-- practical stop zone
-- verdict
-- fundamental quality summary
-- `Weekly`, `Daily`, `60`, `30`, and `15` notes
-- support inventory
-- resistance inventory
-- primary risk
-- ranking reason
+## Fundamental Sponsorship Model
 
-If a stock-analysis sub-agent omits a required field, that stock result is invalid and must be rerun or explicitly marked as analysis-failed.
+The fundamental stage answers one question:
 
-## Timeframes
+`What stocks in this screen are most credibly sponsored by recent business evidence, catalyst context, and acceptable near-term fragility?`
 
-- `Weekly`: trend, major higher low, major resistance, extension risk
-- `Daily`: active swing, breakout base, retest quality, nearest meaningful resistance
-- `60`: local invalidation, demand shelf, support density near price
-- `30`: main lower-timeframe support map, EMA layering, breakout retest, base quality
-- `15`: micro higher lows, rejection behavior, air-pocket risk into the stop zone
+Fundamental workers must examine:
 
-## Fundamental Filter
+- recent trigger
+- operating evidence
+- earnings quality
+- balance-sheet comfort
+- catalyst status
+- evidence-to-price alignment
+- event-risk modifier when relevant
 
-Use the screen columns first, then the Screener company page when a shortlisted name needs missing context confirmed.
+Use screen columns first, then the company page only when context is missing or needs confirmation.
 
-Require for `Selected Now` names:
+### Sponsorship Labels
 
-- positive quarterly profit growth
-- positive quarterly sales growth
-- acceptable or strong ROCE relative to the screen universe
-- no obvious balance-sheet stress, profit collapse, or business deterioration
+Use these labels:
 
-Allow `Watchlist / Near-Valid` names only when:
+- `Strongly Sponsored`
+- `Moderately Sponsored`
+- `Mixed`
+- `Weakly Sponsored`
 
-- the business quality is still acceptable
-- one quality field is merely average rather than clearly strong
-- the technical setup is close but not yet actionable
+Assign labels by evidence quality, not by whether the chart looks attractive.
 
-Downgrade or reject when:
+### News Escalation
 
-- profit growth is sharply negative
-- sales growth is sharply negative
-- ROCE is weak relative to the universe
-- debt or leverage profile is clearly unsafe for a tight-stop swing
-- the chart is good but fundamentals are too weak to justify a tight-stop swing
+News is exception-based, not mandatory.
 
-## Technical Filter
+Use news only when needed to:
 
-`Selected Now`:
+- resolve a contradiction between price and fundamentals
+- validate a company-specific catalyst
+- validate a sector or macro catalyst
+- assess near-term event risk
 
-- weekly trend is bullish or clearly constructive
-- daily structure is bullish and clean
-- hourly structure is constructive and not sloppy
-- `30` minute structure confirms the hourly thesis with visible support layering and clean resistance mapping
-- `15` minute structure confirms there is no obvious air pocket straight into the stop zone
-- the support case includes both structural references and EMA references
-- price is close enough to the support cluster that a defendable stop can sit inside or close to the usual `3%` reference
+Do not browse news for every stock by default.
 
-`Watchlist / Near-Valid`:
+### Fundamental Ranking Rule
 
-- the broader trend is good
-- support exists near the practical stop zone
-- the entry is still too extended, the support stack is not dense enough yet, or `60`, `30`, or `15` structure is not clean enough
+The full universe must be ranked from strongest sponsorship to weakest sponsorship before any technical review begins.
 
-`Reject For Now`:
+Technical review may not reorder the fundamental stage. It only refines stop survivability after sponsorship exists.
 
-- no credible support map exists near the practical stop zone
-- the support case relies mostly on duplicate EMAs and lacks real structure
-- lower timeframes show an air pocket into the stop area
-- daily, hourly, `30`, or `15` structure is too messy for a tight-stop swing
-- fundamentals are too weak relative to the rest of the screen
-- every rejection must cite the primary failing timeframe or structure issue
+## Technical Stop-Survivability Model
+
+The technical stage answers:
+
+`Can this stock defend a practical 2% to 4% stop zone at or near the current location?`
+
+Every technically reviewed stock must be analyzed across:
+
+- `Weekly`
+- `Daily`
+- `60`
+- `30`
+- `15`
+
+Every timeframe must consider all relevant factors, not just EMA distance:
+
+- EMA context
+- support and resistance zones
+- supply and demand zones
+- chart patterns
+- market structure
+
+EMA context can support the case, but it cannot be the case.
+
+### Timeframe Roles
+
+- `Weekly`: trend health, major higher low, major resistance, extension risk
+- `Daily`: active swing, breakout base, retest quality, visible resistance
+- `60`: local invalidation, demand shelf, support density, sloppiness versus control
+- `30`: execution frame, lower-timeframe support map, breakout retest, base quality
+- `15`: micro higher lows, rejection behavior, and air-pocket risk into the stop zone
+
+### Hard Bans
+
+Do not make a decision from:
+
+- EMA distance alone
+- one timeframe alone
+- duplicate EMAs treated as separate reasons when structure does not confirm them
+- a chart that looks fine on one timeframe but breaks on lower timeframes
+
+Reject or downgrade any setup where lower timeframes contradict the higher-timeframe thesis near the trade location.
 
 ## Support Layer Logic
 
-Count support references near the practical `2%` to `4%` stop zone below `CMP`. Stronger cases usually have several of these clustered together:
+Judge the practical stop zone by the density and quality of support references below `CMP`.
 
-- `30` minute EMA20
-- `30` minute EMA50
-- `30` minute EMA100
-- `30` minute EMA200
-- `30` minute swing low
-- `30` minute pullback base or consolidation shelf
-- `30` minute breakout retest
-- `15` minute swing low
-- `15` minute pullback base or consolidation shelf
-- `15` minute breakout retest
-- `60` EMA20
-- `60` EMA50
-- `60` EMA100
-- `60` EMA200
+Useful support references include:
+
+- `30` EMA20, EMA50, EMA100, EMA200
+- `30` swing low
+- `30` pullback base or consolidation shelf
+- `30` breakout retest
+- `15` swing low
+- `15` pullback base or consolidation shelf
+- `15` breakout retest
+- `60` EMA20, EMA50, EMA100, EMA200
 - `60` swing low
 - `60` pullback base or prior resistance turned support
-- `Daily` EMA10
-- `Daily` EMA20
+- `Daily` EMA10, EMA20
 - recent `Daily` swing low
 - `Daily` breakout retest shelf
-- `Weekly` higher low or base if it sits near the stop zone
+- `Weekly` higher low or base when it sits near the stop zone
 
-Do not count duplicated references at nearly the same price as separate support unless they come from clearly different timeframes or structure types.
+Do not count nearly identical levels twice unless they come from clearly different timeframes or structure types.
 
-Judge both density and spacing. A support stack is stronger when:
+Prefer support stacks that are:
 
-- supports are independently justified
-- supports are distributed through the band instead of sitting at one tight cluster
-- structural supports exist, not just moving averages
-- lower timeframes confirm there is no clean air pocket from `CMP` to the stop zone
+- independently justified
+- spread across the stop band instead of stacked at one point
+- structural, not just moving averages
+- confirmed on lower timeframes with no clean air pocket from `CMP` to the stop zone
 
-## Market Structure Checks
+## Ranking Views
 
-For every serious stock, read the chart from higher to lower timeframe:
+Maintain three ranking views:
 
-- `Weekly`: confirm the broader trend, major higher low, and whether price is extended into resistance
-- `Daily`: map the active swing, nearest resistance, prior breakout zone, and the most recent meaningful higher low
-- `60`: identify the active pullback, local demand shelf, and where the setup becomes structurally invalid
-- `30`: map the lower-timeframe support stack, nearest resistance shelves, EMA alignment, and the key levels that define whether price still has room to hold above the stop zone
-- `15`: inspect the immediate path below `CMP` for micro higher lows, rejection candles, base building, or an air pocket straight to the stop area
+1. `Fundamental`
+   Full universe, strongest sponsorship to weakest sponsorship.
+2. `Technical`
+   Only technically reviewed names, least likely to most likely to break the stop zone.
+3. `Combined`
+   Default master ranking with technical review status made explicit.
 
-Reject or downgrade the setup if lower timeframes contradict the higher-timeframe thesis near the trade location.
+The combined ranking must not pretend equal certainty for reviewed and pending names in limited runs.
 
-## Ranking Logic
+## Technical Review Status
 
-Rank higher when a stock has:
+Every stock in the output must be clearly marked as one of:
 
-- stronger fundamentals than peers in the same screen
-- clear `Weekly` and `Daily` alignment
-- more independently justified supports near the stop zone
-- better distribution of supports across `Daily`, `60`, `30`, and `15`
-- cleaner lower-timeframe structure with fewer air pockets
-- a support case built from both structure and EMA context
-- a workable resistance map and acceptable risk-reward
+- `technically reviewed`
+- `pending technical review`
 
-Rank lower when:
+If coverage is limited, pending names must not be presented as full technical rejects.
 
-- the name is extended from support
-- support depends mostly on one level or one support type
-- lower timeframes are loose or contradictory
-- the fundamental case is merely acceptable rather than strong
-- the stock result is incomplete, weakly evidenced, or suspicious because sequential TradingView access was not preserved
+When the user explicitly requests a coverage limit, technical review must start at rank `#1` and proceed downward through the fundamentally ranked list until that limit is reached.
 
 ## Number Definitions
 
 - `CMP`: current TradingView price used for the decision
 - `3% Floor`: `CMP x 0.97`
 - `Practical Stop Zone`: roughly `2%` to `4%` below `CMP`, centered on the usual `3%` reference
-- `Entry`: current price only if support is already underneath, otherwise define a narrower pullback entry zone
+- `Entry`: current price only if support is already underneath; otherwise a narrower pullback entry zone
 - `Stoploss`: below the lowest defendable support that still respects the practical stop zone logic
 - `First Trouble Area`: nearest obvious resistance where a stall is likely
-- `Swing Target`: broader target that still respects visible resistance and supports a roughly `2R` style payoff
-- `Support Map`: the exact layers near the stop zone with timeframe, support type, level, and distance below `CMP`
+- `Swing Target`: broader target that still respects visible resistance and a roughly `2R` payoff idea
+- `Support Map`: the support layers near the stop zone with timeframe, support type, level, and distance below `CMP`
 
-## Output Structure
+## Output Contract
 
 Create a fresh timestamped directory on each run:
 
 - `docs/swing-trading/YYYY-MM-DD-HHMMSS-utc/`
 
-Produce five files inside that directory:
+Produce exactly five files:
 
-- `README.md`: summary, counts, methodology snapshot, top-ranked preview, and how to read the fifth file
-- `3pct-selected-and-watchlist.md`: full writeups for selected and watch names
-- `3pct-rejected.md`: concise but evidence-based rejection summaries
-- `screen-universe.md`: all names scraped from all HTML pages
-- `3pct-ranked-by-stop-safety.md`: structured ranking file
+1. `README.md`
+2. `3pct-selected-and-watchlist.md`
+3. `3pct-rejected.md`
+4. `screen-universe.md`
+5. `3pct-ranked-by-stop-safety.md`
 
-The ranked file must contain three sections:
+### README.md
+
+Include:
+
+- run date and screen URL
+- parsed screen thesis
+- universe size
+- coverage mode
+- counts for fundamentally analyzed, technically reviewed, selected, watchlist, rejected, and pending technical review
+- top `5` fundamentally strongest
+- top `5` technically strongest among reviewed names
+- top `5` overall combined
+- a short explanation of how to read the fifth file
+
+### 3pct-selected-and-watchlist.md
+
+Include only names that deserve full trade-level writeups.
+
+For each name, include:
+
+- rank header
+- verdict block
+- fundamental snapshot with the exact fields used
+- `Weekly` note
+- `Daily` note
+- `60` note
+- `30` note
+- `15` note
+- support inventory table
+- resistance inventory table
+- entry, stoploss, first trouble area, and swing target with reasoning
+- explicit technical review status
+
+### 3pct-rejected.md
+
+Keep rejects compact but evidence-based.
+
+For each reject, include:
+
+- one-line verdict reason
+- primary failing timeframe or structure issue
+- best support found near the stop zone
+- why that support was insufficient
+- whether the stock is a re-check candidate or a hard reject
+- technical review status if the name was not reviewed
+
+### screen-universe.md
+
+List every stock parsed from the full HTML universe.
+
+### 3pct-ranked-by-stop-safety.md
+
+This is the master ranking file.
+
+It must contain three sections:
 
 1. `Fundamentally Strongest Top Ten`
 2. `Technically Strongest Top Ten`
@@ -216,39 +284,26 @@ The ranked file must contain three sections:
 Ordering rules:
 
 - the first two sections are top-ten only
-- the third section must include every stock in the analyzed universe
-- the third section is the default master ranking
-- the top row in the third section is the stock least likely to break the practical stop zone after combining fundamental and technical evidence
-- the bottom row in the third section is the stock most likely to break and trade through that stop zone
+- the combined section includes every stock in the analyzed universe
+- the combined section is the default master ranking
+- the top row in the combined section is the stock least likely to break the practical stop zone after combining fundamental and technical evidence
+- the bottom row is the stock most likely to break and trade through that stop zone
 
-Each selected or watchlist writeup must show:
+Every row in the ranking file must show:
 
-- fundamental quality snapshot with the exact fields used
-- `Weekly` structure note
-- `Daily` structure note
-- `60` structure note
-- `30` minute structure note
-- `15` minute structure note
-- support inventory table with timeframe and support type
-- resistance inventory table with timeframe and structure type
-- entry, stoploss, first trouble area, and swing target with reasoning
-- one concise verdict block on stop survivability
+- symbol
+- fundamental rank
+- sponsorship label
+- technical review status
+- technical label or combined verdict
+- combined rank
+- key reason
 
-Each rejected name must still preserve reasoning in compact form:
+## Reporting Rules
 
-- verdict reason in one line
-- primary failing timeframe or structure issue
-- best support found near the stop zone
-- why that support was insufficient
-- whether the name is a hard reject or a future re-check candidate
-
-## Writing Style
-
-- explain why each chosen setup is less likely than peers to break the practical stop zone
-- be direct about weak setups
-- if nothing qualifies, say so clearly
-- use exact numbers and tie each number back to structure or EMA support
-- name the timeframe whenever citing a support or resistance level
-- mention the date so the report is clearly point-in-time
-- keep the language concise, precise, surgical, and complete
-- avoid wall-of-text output by preferring compact tables and short evidence blocks
+- Full-universe fundamental ranking comes first.
+- Technical review happens only after that ranking exists.
+- Technical analysis must use weekly, daily, 60, 30, and 15.
+- Decisions must use EMA context plus structure, not EMA context alone.
+- Decisions must use multiple timeframes, not one timeframe alone.
+- The practical stop zone should be treated as a `2%` to `4%` band around the usual `3%` reference.

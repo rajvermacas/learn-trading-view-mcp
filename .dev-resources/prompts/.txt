@@ -296,3 +296,14 @@ https://www.screener.in/screens/3474384/return-over-3-months/
 ✻ Worked for 21m 22s
 
 ※ recap: Screened 74 stocks from the Screener.in universe for 3%-stop swing trades. Found zero selected names and one watchlist name (NATCOPHARM). Watch for a pullback to 1086–1095 before entering. (disable recaps in /config)
+
+
+----------------
+
+Also ensure that when main agent deploys sub agent for fundamental analysis, each sub agent should have proper context of what their goal is. And what the
+whole context is. The goal is to find out the sponsorship. The context is that stock is already in momentum for which we want to know the reason is legit
+or not.
+
+And also make sure that you improve the whole skill and not just methodology.
+The source code of skills is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
+swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
