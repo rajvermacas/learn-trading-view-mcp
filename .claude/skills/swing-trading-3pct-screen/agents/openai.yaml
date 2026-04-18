@@ -1,0 +1,4 @@
+interface:
+  display_name: "Swing Trading 3% Screen"
+  short_description: "Analyze Screener stocks with deep multi-timeframe 3% support and resistance validation"
+  default_prompt: "Use $swing-trading-3pct-screen to analyze a Screener.in stock screen for fundamentally strong swing trades with a hard 3% stop, including weekly, daily, hourly, 30 minute, and 15 minute moving-average plus market-structure support and resistance mapping."
