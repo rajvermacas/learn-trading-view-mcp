@@ -1,13 +1,13 @@
 <claude-mem-context>
 # Memory Context
 
-# [learn-trading-view-mcp] recent context, 2026-04-18 7:56am UTC
+# [learn-trading-view-mcp] recent context, 2026-04-18 10:19am UTC
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 31 obs (13,442t read) | 212,456t work | 94% savings
+Stats: 46 obs (19,366t read) | 285,148t work | 93% savings
 
 ### Apr 18, 2026
 13 6:23a 🔵 Swing Trading 3% Screen Methodology File Contents Revealed
@@ -41,6 +41,21 @@ Stats: 31 obs (13,442t read) | 212,456t work | 94% savings
 41 7:54a 🟣 Swing Trading 3% Screen Skill Redesigned with Contract-Based Sub-Agent Architecture
 42 7:55a 🟣 Swing Trading Skill Restructured: SKILL.md Rewritten and Four Reference Contracts Created
 43 " 🟣 Swing Trading 3pct Screen Skill Redesign Complete — All 4 Tasks Marked Done
+44 7:57a 🟣 Coverage Limit Logic Added to SKILL.md Workflow
+45 " 🟣 Delegation Examples Expanded With 3 Missing Few-Shot Cases
+46 " 🟣 Technical Worker Contract and Reporting Contract Patched With Missing Decision Discipline and Row Fields
+47 " ✅ Updated openai.yaml Agent Metadata for Swing-Trading-3pct-Screen Skill (Task 3)
+48 " 🟣 methodology.md Patched With Coverage Limit Ordering Rule and Rejection/Ranking Row Fields
+49 7:58a ✅ openai.yaml Metadata Rewritten for Redesigned Swing-Trading-3pct-Screen Workflow
+50 " 🟣 Final Skill Surface Line Count and Stale-Shortcut Scan Passed
+51 " 🟣 All Post-Patch Contract Terms Verified Across Skill Surface — Ready to Commit
+64 8:49a ⚖️ Disk-Based Fundamental Analysis Cache Design for Swing Trade Skill
+65 " 🔵 Existing swing-trading-3pct-screen Skill Structure Discovered
+66 9:08a ⚖️ Stock Analysis Pipeline: Screener → Fundamentals → Technicals Workflow
+67 9:15a ⚖️ Stock Markdown Files Must Be Verbose with Full Fundamental Analysis Details
+68 9:34a ⚖️ Remove "invalidated" stock cache category from refresh logic
+69 9:51a 🔵 Ambiguous Partial-Refresh Logic in Review Queue
+70 10:14a 🔴 Robust Markdown Parsing and Strict Output Structure Enforcement
 
-Access 212k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 285k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
