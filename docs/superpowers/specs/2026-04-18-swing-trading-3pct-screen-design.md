@@ -98,7 +98,11 @@ Purpose:
 - counts by verdict
 - methodology summary
 - top-ranked names preview
-- explicit explanation of how the ranked file should be read
+- explicit explanation of how the fifth ranked file should be read
+- explicit mention that the fifth file contains three sections:
+  - fundamentally strongest top ten
+  - technically strongest top ten
+  - overall combined universe ranking in descending order of fundamental plus technical strength
 
 ### 3pct-selected-and-watchlist.md
 
@@ -143,6 +147,19 @@ Purpose:
 Purpose:
 
 - rank every analyzed stock from safest to weakest against the practical stop zone
+- separate pure fundamental leadership, pure technical leadership, and the default combined ranking
+
+This file must contain three sections:
+
+1. `Fundamentally Strongest Top Ten`
+2. `Technically Strongest Top Ten`
+3. `Overall Combined Ranking`
+
+Section rules:
+
+- `Fundamentally Strongest Top Ten`: rank the ten strongest businesses in the universe by the skill's quality framework, independent of whether the current entry is technically ideal
+- `Technically Strongest Top Ten`: rank the ten names whose current structure is strongest against breaking the practical `2%` to `4%` stop zone
+- `Overall Combined Ranking`: rank the full universe in descending order using both fundamental quality and technical stop-survivability, with the top name being the least aligned toward breaking the stop zone and the last name being the most likely to break it
 
 Each row should include concise, information-dense fields such as:
 
@@ -157,7 +174,13 @@ Each row should include concise, information-dense fields such as:
 - fundamental quality grade
 - short reason
 
-The ordering must run from least likely to break the `2%` to `4%` stop zone at the top to most likely at the bottom.
+The ordering rules must be explicit:
+
+- the first two sections are top-ten only
+- the third section must include every stock in the analyzed universe
+- the third section is the default master ranking
+- the top row in the third section is the stock least likely to break the `2%` to `4%` stop zone after combining fundamental and technical evidence
+- the bottom row in the third section is the stock most likely to break and trade through that stop zone
 
 ## Writing Style
 
