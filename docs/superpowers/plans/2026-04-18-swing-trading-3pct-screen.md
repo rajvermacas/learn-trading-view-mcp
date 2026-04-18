@@ -2,216 +2,417 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Redesign the `swing-trading-3pct-screen` skill so it evaluates practical `2%` to `4%` stop survivability, requires multi-timeframe structural reasoning, analyzes each stock through its own sequential sub-agent, and outputs a five-file report set including a structured ranked-universe file.
+**Goal:** Redesign the `swing-trading-3pct-screen` skill so it performs full-universe fundamental sponsorship ranking first, then ranked technical review with strict sequential TradingView workers, and writes a five-file report set that stays useful under limited technical coverage.
 
-**Architecture:** The change is documentation-driven and limited to the skill entrypoint, its methodology reference, and the agent prompt metadata. The skill file will describe the workflow, sequential sub-agent orchestration, and required output artifacts. The methodology file will define the decision model, ranking logic, rejection discipline, and concise reporting format. The agent prompt metadata will reinforce the same execution contract.
+**Architecture:** Keep orchestration rules in `SKILL.md`, move detailed worker contracts and reporting rules into focused reference files, keep the methodology centered on screen-derived sponsorship plus multi-factor stop survivability, and refresh `agents/openai.yaml` so the UI prompt matches the new workflow. The implementation is documentation-first but must still be treated like a behavior change: every touched file must align on execution order, worker handoff rules, and reporting semantics.
 
-**Tech Stack:** Markdown skill files, existing TradingView MCP workflow, existing Screener HTML workflow, git verification commands
+**Tech Stack:** Markdown skill files, YAML skill metadata, existing Screener HTML workflow, existing TradingView MCP workflow, `skill-creator` guidance, repo verification via `rg`, `sed`, `wc`, and `git diff`
 
 ---
 
-### Task 1: Rewrite The Skill Contract
+### Task 1: Restructure The Skill Surface
 
 **Files:**
 - Modify: `.claude/skills/swing-trading-3pct-screen/SKILL.md`
-- Test: `rg -n "2%|4%|3pct-ranked-by-stop-safety|single-indicator|sub-agent|sequential|parallel" .claude/skills/swing-trading-3pct-screen/SKILL.md`
+- Create: `.claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md`
+- Create: `.claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md`
+- Create: `.claude/skills/swing-trading-3pct-screen/references/delegation-examples.md`
+- Create: `.claude/skills/swing-trading-3pct-screen/references/reporting-contract.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/SKILL.md`
 
-- [ ] **Step 1: Write the failing expectation list**
+- [ ] **Step 1: Confirm the current skill surface is missing the new decomposition**
 
-Create a local checklist for the missing contract items:
+Run: `find .claude/skills/swing-trading-3pct-screen -maxdepth 2 -type f | sort`
+Expected: the current skill has only `SKILL.md`, `agents/openai.yaml`, `references/methodology.md`, and `scripts/ensure_socat.sh`, so the worker-contract and reporting references do not yet exist.
 
-```text
-- hard 3% wording still present as a binary rule
-- report output still lists 4 files
-- no ranked-universe file requirement
-- no explicit ban on single-indicator rejection logic
-- no explicit sequential per-stock sub-agent contract
-- no requirement for concise but complete reasoning
-```
+- [ ] **Step 2: Rewrite `SKILL.md` as the orchestration contract**
 
-- [ ] **Step 2: Run grep to verify the old contract is still present**
-
-Run: `rg -n "hard 3%|four files|3% rule|3pct-ranked-by-stop-safety|extended by pattern|sub-agent|parallel" .claude/skills/swing-trading-3pct-screen/SKILL.md`
-Expected: matches show the old binary framing and missing ranked file references
-
-- [ ] **Step 3: Rewrite the skill file**
-
-Replace the old wording with content shaped like:
+Replace the top-level workflow so it explicitly says:
 
 ```md
-## Overview
-
-Use this skill for screening Indian stocks from Screener.in and ranking them by multi-timeframe stop survivability. Keep `3%` as the central reference, but evaluate a practical `2%` to `4%` downside zone instead of using a rigid binary cutoff.
-
 ## Workflow
 
-7. Dispatch one isolated sub-agent per stock after universe fetch and setup verification.
-8. Run those stock-analysis sub-agents sequentially, never in parallel, because TradingView MCP chart state is shared.
-9. Require each stock sub-agent to analyze weekly, daily, `60`, `30`, and `15` for its assigned ticker only.
-10. Build a market-structure map using both structural support and EMA support.
-11. Rank the full universe from least likely to most likely to break the practical stop zone.
-12. Write the five-file markdown report set inside the timestamped directory.
-
-## TradingView Rules
-
-- Do not reject a name from one indicator or one timeframe alone.
-- Do not use blanket extrapolation such as "extended by pattern" without minimum direct chart evidence.
-- Never run stock-analysis sub-agents in parallel against TradingView MCP.
-- Treat supports slightly above or slightly below the exact `3% Floor` as valid context when the broader `2%` to `4%` stop zone is structurally defendable.
+1. Fetch the user-provided Screener URL as HTML across all pages.
+2. Parse the screen title and visible filters into a compact `screen thesis`.
+3. Build the full stock universe and deduplicate it.
+4. Dispatch fundamental sub-agents for every stock using bounded parallelism.
+5. Collect the full-universe fundamental sponsorship ranking.
+6. Dispatch technical sub-agents only after the full ranking exists.
+7. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
+8. Respect a user-provided technical coverage limit such as `analyze 12 stocks`; otherwise continue through the whole universe.
+9. Write the five-file report set with technically reviewed versus pending status made explicit.
 ```
 
-- [ ] **Step 4: Run grep to verify the new contract exists**
+Also add a dedicated delegation rule section that says every handoff must include:
 
-Run: `rg -n "2%|4%|3pct-ranked-by-stop-safety|Do not reject a name from one indicator|sub-agent|sequential|parallel" .claude/skills/swing-trading-3pct-screen/SKILL.md`
-Expected: matches confirm the new stop-band framing, ranked file requirement, ban on one-indicator rejection, and sequential sub-agent contract
+```md
+- Goal
+- Context
+- Few-shot examples
+- Output schema
+```
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 3: Create the fundamental worker contract reference**
+
+Create `.claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md` with sections shaped like:
+
+```md
+# Fundamental Worker Contract
+
+## Goal
+
+Determine whether the stock's current momentum is credibly sponsored by recent business evidence.
+
+## Context Required From Main Agent
+
+- screen title
+- visible filters
+- screen thesis
+- why the stock is in this universe
+- phase: `fundamental-ranking`
+- coverage mode
+
+## Required Investigation
+
+- recent trigger
+- operating evidence
+- earnings quality read
+- balance-sheet comfort
+- catalyst status
+- evidence-to-price alignment
+- event-risk modifier
+
+## News Rule
+
+Use news only when needed to resolve contradiction, validate a catalyst, or assess near-term event risk.
+
+## Output Schema
+
+- symbol
+- screen_context
+- recent_trigger
+- operating_evidence
+- earnings_quality_read
+- balance_sheet_comfort
+- catalyst_status
+- news_escalation
+- evidence_to_price_alignment
+- sponsorship_label
+- confidence
+- ranking_reason
+```
+
+- [ ] **Step 4: Create the technical worker contract reference**
+
+Create `.claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md` with sections shaped like:
+
+```md
+# Technical Worker Contract
+
+## Goal
+
+Determine whether the stock can defend a practical `2%` to `4%` downside zone around the usual `3%` reference.
+
+## Context Required From Main Agent
+
+- symbol
+- screen thesis
+- fundamental rank
+- sponsorship label
+- ranking reason
+- coverage mode
+
+## Required Timeframes
+
+- Weekly
+- Daily
+- 60
+- 30
+- 15
+
+## Required Factors On Each Relevant Timeframe
+
+- EMA context
+- support and resistance zones
+- supply and demand zones
+- chart patterns
+- market structure
+
+## Output Schema
+
+- symbol
+- cmp
+- 3pct_floor
+- practical_stop_zone
+- weekly_note
+- daily_note
+- 60_note
+- 30_note
+- 15_note
+- support_inventory
+- resistance_inventory
+- entry_zone
+- stop_zone
+- first_trouble_area
+- swing_target
+- technical_verdict
+- stop_survivability_label
+- primary_failure_risk
+- ranking_reason
+```
+
+- [ ] **Step 5: Create the delegation examples reference**
+
+Create `.claude/skills/swing-trading-3pct-screen/references/delegation-examples.md` with short calibration examples for:
+
+```md
+# Delegation Examples
+
+## Fundamental Few-Shots
+
+### Example: Strongly Sponsored
+- Input context
+- What the worker noticed
+- Correct verdict
+- Why
+
+### Example: Mixed
+...
+
+## Technical Few-Shots
+
+### Example: Best Aligned
+- Input context
+- What the worker noticed
+- Correct verdict
+- Why
+
+### Example: Bad EMA-Only Analysis
+- Why this reasoning is invalid
+```
+
+- [ ] **Step 6: Create the reporting contract reference**
+
+Create `.claude/skills/swing-trading-3pct-screen/references/reporting-contract.md` with file-by-file requirements shaped like:
+
+```md
+# Reporting Contract
+
+## README.md
+- run date and URL
+- screen thesis
+- universe size
+- coverage mode
+- counts
+- top previews
+
+## 3pct-ranked-by-stop-safety.md
+- Fundamentally Strongest Top Ten
+- Technically Strongest Top Ten
+- Overall Combined Ranking
+- technically reviewed status on every row
+```
+
+- [ ] **Step 7: Verify the new skill surface exists**
+
+Run: `find .claude/skills/swing-trading-3pct-screen -maxdepth 2 -type f | sort`
+Expected: the new worker-contract, delegation-example, and reporting-contract references appear alongside the existing files.
+
+- [ ] **Step 8: Commit**
 
 ```bash
-git add .claude/skills/swing-trading-3pct-screen/SKILL.md
-git commit -m "docs: redesign swing trading skill contract"
+git add .claude/skills/swing-trading-3pct-screen/SKILL.md \
+  .claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md \
+  .claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md \
+  .claude/skills/swing-trading-3pct-screen/references/delegation-examples.md \
+  .claude/skills/swing-trading-3pct-screen/references/reporting-contract.md
+git commit -m "docs: restructure swing trading skill contracts"
 ```
 
-### Task 2: Rewrite The Methodology Reference
+### Task 2: Rewrite The Methodology Around Sponsorship First
 
 **Files:**
 - Modify: `.claude/skills/swing-trading-3pct-screen/references/methodology.md`
-- Test: `rg -n "2%|4%|Overall Combined Ranking|Fundamentally Strongest Top Ten|Technically Strongest Top Ten|Reject|sub-agent|sequential|parallel" .claude/skills/swing-trading-3pct-screen/references/methodology.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/references/methodology.md`
 
-- [ ] **Step 1: Write the failing expectation list**
+- [ ] **Step 1: Verify the old methodology does not express the approved model**
 
-Create a local checklist for the methodology gaps:
+Run: `rg -n "hard 3%|Fundamental Filter|Technical Filter|Produce five files|screen thesis|Sponsorship Label|technical review" .claude/skills/swing-trading-3pct-screen/references/methodology.md`
+Expected: matches show older framing and missing terms for screen-thesis extraction, sponsorship-first ranking, and reviewed-versus-pending reporting.
 
-```text
-- ranking logic still keyed to exact 3% floor only
-- output structure still lists 4 files
-- no three-section definition for the ranked file
-- rejection criteria allow over-reliance on moving averages
-- writing style does not force concise, information-dense output
-- no execution contract forcing sequential one-stock-per-sub-agent analysis
-```
+- [ ] **Step 2: Replace the goal and execution model**
 
-- [ ] **Step 2: Run grep to verify the old methodology wording**
-
-Run: `rg -n "inside 3%|Produce four files|Explain why each chosen setup is less likely than peers to break 3%|Reject:|sub-agent|parallel" .claude/skills/swing-trading-3pct-screen/references/methodology.md`
-Expected: matches confirm the old strict-floor phrasing and four-file output contract
-
-- [ ] **Step 3: Rewrite the methodology file**
-
-Replace the old methodology with content shaped like:
+Rewrite the top of `methodology.md` so it opens with content shaped like:
 
 ```md
 ## Goal
 
-Find the stocks in a Screener.in universe that are fundamentally strong and least likely to break a practical `2%` to `4%` stop zone around the usual `3%` reference.
+Find the stocks in a user-provided momentum-biased Screener universe that are most credibly sponsored by recent business evidence and least likely to break a practical `2%` to `4%` stop zone.
 
 ## Execution Model
 
-- Main agent fetches the universe and verifies chart setup once.
-- Each stock gets its own analysis sub-agent.
-- Stock-analysis sub-agents run strictly sequentially, never in parallel.
-- TradingView MCP chart state is shared, so parallel workers are invalid.
+- main agent fetches the screen and extracts the screen thesis
+- fundamental analysis runs for the full universe first
+- fundamental workers may run in parallel with bounded concurrency
+- technical analysis begins only after the full fundamental ranking exists
+- technical workers run strictly sequentially because TradingView MCP is shared mutable state
+```
 
-## Technical Filter
+- [ ] **Step 3: Add the sponsorship model**
 
-Selected now:
-- structure is defendable around the stop zone now
-- support case includes structural references plus EMA references
+Add sections that define:
 
-Watch only:
-- support is close, but entry or confirmation is not clean enough yet
+```md
+## Fundamental Sponsorship Model
 
-Reject for now:
-- no credible support map near the stop zone
-- support depends mostly on duplicate EMAs
-- lower timeframes show an air pocket into the stop area
-- rejection must cite the failing timeframe or structure issue
+- recent trigger
+- operating evidence
+- earnings quality read
+- balance-sheet comfort
+- catalyst status
+- evidence-to-price alignment
+- event-risk modifier
+
+Recommended labels:
+- Strongly Sponsored
+- Moderately Sponsored
+- Mixed
+- Weakly Sponsored
+```
+
+Also make news explicitly exception-based rather than mandatory per stock.
+
+- [ ] **Step 4: Add the technical multi-factor model**
+
+Replace EMA-heavy language with content shaped like:
+
+```md
+## Technical Stop-Survivability Model
+
+Required timeframes:
+- Weekly
+- Daily
+- 60
+- 30
+- 15
+
+Required factors:
+- EMA context
+- support and resistance zones
+- supply and demand zones
+- chart patterns
+- market structure
+
+Do not:
+- reject from EMA distance alone
+- decide from one timeframe alone
+- count clustered EMAs as multiple independent supports unless structure confirms them
+```
+
+- [ ] **Step 5: Replace the ranking and output sections**
+
+Rewrite the ranking and output structure so they define:
+
+```md
+## Ranking Views
+
+1. Fundamental ranking
+2. Technical ranking
+3. Combined ranking
 
 ## Output Structure
 
-Produce five files inside the timestamped directory:
-- `README.md`
-- `3pct-selected-and-watchlist.md`
-- `3pct-rejected.md`
-- `screen-universe.md`
-- `3pct-ranked-by-stop-safety.md`
+Produce five files:
+- README.md
+- 3pct-selected-and-watchlist.md
+- 3pct-rejected.md
+- screen-universe.md
+- 3pct-ranked-by-stop-safety.md
 
 The ranked file must contain:
-1. `Fundamentally Strongest Top Ten`
-2. `Technically Strongest Top Ten`
-3. `Overall Combined Ranking`
+1. Fundamentally Strongest Top Ten
+2. Technically Strongest Top Ten
+3. Overall Combined Ranking
 ```
 
-- [ ] **Step 4: Run grep to verify the new methodology exists**
+Also require explicit `technical review status` when coverage is limited.
 
-Run: `rg -n "2%|4%|Produce five files|Fundamentally Strongest Top Ten|Technically Strongest Top Ten|Overall Combined Ranking|Reject for now|sub-agent|sequential|parallel" .claude/skills/swing-trading-3pct-screen/references/methodology.md`
-Expected: matches confirm the practical stop-zone model, structured ranked-file contract, and sequential sub-agent execution model
+- [ ] **Step 6: Verify the methodology now contains the approved model**
 
-- [ ] **Step 5: Commit**
+Run: `rg -n "screen thesis|Sponsorship Label|Strongly Sponsored|evidence-to-price alignment|support and resistance zones|supply and demand zones|chart patterns|Overall Combined Ranking|technical review status" .claude/skills/swing-trading-3pct-screen/references/methodology.md`
+Expected: matches confirm that the methodology now encodes the sponsorship-first, multi-factor, reviewed-versus-pending model.
+
+- [ ] **Step 7: Commit**
 
 ```bash
 git add .claude/skills/swing-trading-3pct-screen/references/methodology.md
-git commit -m "docs: update swing trading methodology"
+git commit -m "docs: rewrite swing trading methodology"
 ```
 
-### Task 3: Update Agent Prompt Metadata
+### Task 3: Refresh The Agent Prompt Metadata
 
 **Files:**
 - Modify: `.claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
-- Test: `rg -n "hard 3%|2% to 4%|sub-agent|sequential|parallel|five-file" .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
+- Test: `.claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
 
-- [ ] **Step 1: Rewrite the prompt metadata**
+- [ ] **Step 1: Rewrite the prompt metadata to match the new workflow**
 
-Update the display metadata so it no longer advertises a hard `3%` stop and instead reinforces:
+Update `agents/openai.yaml` so the `default_prompt` advertises:
 
-- practical `2%` to `4%` stop-zone evaluation
-- per-stock sub-agent analysis
-- sequential execution only
-- final five-file report synthesis
+```yaml
+interface:
+  display_name: "Swing Trading 3% Screen"
+  short_description: "Rank Screener stocks by sponsorship strength and practical stop survivability"
+  default_prompt: "Use $swing-trading-3pct-screen to analyze a user-provided Screener stock screen. Fetch the full HTML universe, extract the screen thesis, run fundamental sponsorship analysis for every stock using bounded-parallel sub-agents, build the full-universe ranking, then run technical analysis in ranked order using one TradingView sub-agent at a time. Pass goal, context, few-shot examples, and output schema into every worker. Judge stop survivability with EMA context, support/resistance zones, supply/demand zones, chart patterns, and market structure across weekly, daily, 60, 30, and 15. Write the five-file report set with reviewed versus pending technical status made explicit."
+```
 
-- [ ] **Step 2: Verify the prompt metadata**
+- [ ] **Step 2: Verify the metadata matches the skill**
 
-Run: `rg -n "2% to 4%|sub-agent|sequential|parallel|five-file" .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
-Expected: the agent prompt metadata matches the redesigned workflow
+Run: `rg -n "screen thesis|bounded-parallel|one TradingView sub-agent at a time|goal, context, few-shot examples, and output schema|support/resistance zones|supply/demand zones|reviewed versus pending" .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
+Expected: the prompt metadata now reflects the actual approved execution model.
 
 - [ ] **Step 3: Commit**
 
 ```bash
 git add .claude/skills/swing-trading-3pct-screen/agents/openai.yaml
-git commit -m "docs: align swing trading agent prompt"
+git commit -m "docs: align swing trading agent prompt metadata"
 ```
 
-### Task 4: Verify Consistency And Repo Constraints
+### Task 4: Verify Cross-File Consistency And Repo Constraints
 
 **Files:**
 - Modify: `docs/superpowers/plans/2026-04-18-swing-trading-3pct-screen.md`
 - Test: `.claude/skills/swing-trading-3pct-screen/SKILL.md`
 - Test: `.claude/skills/swing-trading-3pct-screen/references/methodology.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/references/delegation-examples.md`
+- Test: `.claude/skills/swing-trading-3pct-screen/references/reporting-contract.md`
 - Test: `.claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
 
-- [ ] **Step 1: Check file sizes**
+- [ ] **Step 1: Check file size discipline**
 
-Run: `wc -l .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
-Expected: all files remain below `800` lines
+Run: `wc -l .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md .claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md .claude/skills/swing-trading-3pct-screen/references/delegation-examples.md .claude/skills/swing-trading-3pct-screen/references/reporting-contract.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
+Expected: every file stays below `800` lines.
 
-- [ ] **Step 2: Check required deliverables are aligned**
+- [ ] **Step 2: Verify the critical contract terms align across files**
 
-Run: `rg -n "3pct-ranked-by-stop-safety|Fundamentally Strongest Top Ten|Technically Strongest Top Ten|Overall Combined Ranking|sub-agent|sequential|parallel" .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
-Expected: all files reference the same ranking contract and sequential sub-agent model
+Run: `rg -n "screen thesis|Strongly Sponsored|goal|Context|Few-shot|Output schema|support and resistance zones|supply and demand zones|chart patterns|technical review status|Overall Combined Ranking" .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/*.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
+Expected: the same worker contract, ranking model, and reporting semantics appear consistently across the skill surface.
 
-- [ ] **Step 3: Check for old binary-rule leftovers**
+- [ ] **Step 3: Verify no stale shortcuts remain**
 
-Run: `rg -n "hard 3% stop|Produce four files|extended by pattern|inside 3% below CMP|parallel workers are valid" .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
-Expected: no misleading old-rule leftovers that conflict with the redesign
+Run: `rg -n "hard 3% stop|do not use news|EMA 10 only|four files|parallel technical|single-indicator" .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/*.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml`
+Expected: no old wording remains that contradicts the approved redesign.
 
-- [ ] **Step 4: Review git diff**
+- [ ] **Step 4: Review the final diff**
 
-Run: `git diff -- .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml docs/superpowers/plans/2026-04-18-swing-trading-3pct-screen.md`
-Expected: diff shows only the intended redesign of skill behavior, sequential delegation contract, and reporting rules
+Run: `git diff -- .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/references/fundamental-worker-contract.md .claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md .claude/skills/swing-trading-3pct-screen/references/delegation-examples.md .claude/skills/swing-trading-3pct-screen/references/reporting-contract.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml docs/superpowers/plans/2026-04-18-swing-trading-3pct-screen.md`
+Expected: the diff shows only the intended skill redesign and its implementation plan.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add .claude/skills/swing-trading-3pct-screen/SKILL.md .claude/skills/swing-trading-3pct-screen/references/methodology.md .claude/skills/swing-trading-3pct-screen/agents/openai.yaml docs/superpowers/plans/2026-04-18-swing-trading-3pct-screen.md
-git commit -m "docs: finalize swing trading skill redesign"
+git add docs/superpowers/plans/2026-04-18-swing-trading-3pct-screen.md
+git commit -m "docs: refresh swing trading implementation plan"
 ```
