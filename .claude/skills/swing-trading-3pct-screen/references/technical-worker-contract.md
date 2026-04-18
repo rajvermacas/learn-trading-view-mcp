@@ -4,9 +4,12 @@
 
 Determine whether the stock can defend a practical `2%` to `4%` downside zone around the usual `3%` reference.
 
+The worker owns exactly one stock. If the handoff contains multiple stocks, a batch, or a tranche, reject it and require a one-stock redo.
+
 ## Context Required From Main Agent
 
 - symbol
+- company
 - screen thesis
 - fundamental rank
 - sponsorship label
@@ -60,3 +63,5 @@ Do not make a technical verdict from:
 - stop_survivability_label
 - primary_failure_risk
 - ranking_reason
+
+The output must cover one stock only.

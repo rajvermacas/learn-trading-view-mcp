@@ -1,13 +1,13 @@
 <claude-mem-context>
 # Memory Context
 
-# [learn-trading-view-mcp] recent context, 2026-04-18 10:19am UTC
+# [learn-trading-view-mcp] recent context, 2026-04-18 11:04am UTC
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 46 obs (19,366t read) | 285,148t work | 93% savings
+Stats: 48 obs (20,521t read) | 291,468t work | 93% savings
 
 ### Apr 18, 2026
 13 6:23a 🔵 Swing Trading 3% Screen Methodology File Contents Revealed
@@ -56,6 +56,8 @@ Stats: 46 obs (19,366t read) | 285,148t work | 93% savings
 68 9:34a ⚖️ Remove "invalidated" stock cache category from refresh logic
 69 9:51a 🔵 Ambiguous Partial-Refresh Logic in Review Queue
 70 10:14a 🔴 Robust Markdown Parsing and Strict Output Structure Enforcement
+71 10:20a 🔵 Swing Trading 3pct Screen Skill Redesign Spec Discovered
+72 " 🔵 Swing Trading Skill Report Contract and File Structure Fully Specified
 
-Access 285k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 291k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>

@@ -18,11 +18,11 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 3. Build the full stock universe and deduplicate it.
 4. Read `docs/swing-trading/fundamentals/index.md`.
 5. Derive which current-universe names are runtime `missing`, `fresh`, `review_due`, and `hard_stale`.
-6. Dispatch fundamental sub-agents for all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+6. Dispatch one fundamental sub-agent per stock for all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
 7. Reuse cached dossiers for all `fresh` and remaining `review_due`.
 8. Build the full-universe fundamental ranking from authoritative stock dossiers only.
 9. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
-10. Dispatch technical sub-agents only after the ranking exists.
+10. Dispatch one technical sub-agent per stock only after the ranking exists.
 11. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
 12. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
 13. Overwrite refreshed stock dossiers, update `index.md`, and write the five-file report set with reviewed versus pending technical status explicit.
@@ -38,6 +38,19 @@ Every main-agent to sub-agent handoff must include all of the following:
 
 If any of those pieces are missing, the handoff is invalid and must be rejected.
 
+Ownership is always singular:
+
+- one fundamental sub-agent owns exactly one stock
+- one technical sub-agent owns exactly one stock
+
+A handoff that assigns multiple stocks, a tranche, or a batch to one sub-agent is invalid and must be redone.
+
+Responsibility split is strict:
+
+- the main agent compares one stock's fundamentals against another stock's fundamentals
+- the main agent assigns sponsorship rank across the universe
+- each fundamental sub-agent only analyzes the single stock it is given and returns that stock's dossier
+
 ## Cache Rules
 
 - `index.md` is a registry only.
@@ -48,8 +61,9 @@ If any of those pieces are missing, the handoff is invalid and must be rejected.
 ## Analysis Rules
 
 - Fundamental analysis comes first for every stock in the fetched universe.
-- Fundamental sub-agents may run in parallel, but only with bounded concurrency.
-- Technical sub-agents must run one at a time.
+- Fundamental sub-agents may be dispatched multiple at a time with bounded concurrency, but each fundamental sub-agent must process exactly one stock.
+
+- Technical sub-agents must run one at a time and only one stock per worker.
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
 - Technical review must use EMA context, support and resistance zones, supply and demand zones, chart patterns, and market structure together.
 - EMA proximity alone is not a valid decision rule.

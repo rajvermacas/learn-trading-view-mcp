@@ -31,18 +31,37 @@ If any required input, chart state, or company data is missing, stop with a clea
 1. Fetch the full Screener universe across all HTML pages.
 2. Extract the screen thesis from the screen title, visible filters, and the user’s stated intent.
 3. Read `docs/swing-trading/fundamentals/index.md`.
-4. Refresh all runtime `missing` and all `hard_stale`.
-5. Refresh exactly top `3` `review_due`.
+4. Create one fundamental worker task per stock for all runtime `missing` and all `hard_stale`.
+5. Create one fundamental worker task per stock for exactly top `3` `review_due`.
 6. Reuse all `fresh` and remaining `review_due`.
 7. Build the full-universe fundamental sponsorship ranking from dossiers only.
-8. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch technical workers only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
+8. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
 9. Dispatch technical workers only after the ranking exists.
 10. Run technical workers strictly one at a time.
 11. Synthesize three ranking views and five output files.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
+The main agent alone compares one stock's fundamentals against another stock's fundamentals and assigns the sponsorship ranking across the universe.
 
 `index.md` is a registry and freshness surface only. Per-stock markdown dossiers are the authoritative ranking inputs, and the main agent must never rank from index rows alone.
+
+## Dispatch Discipline
+
+Sub-agent ownership is always one worker to one stock.
+
+- One fundamental worker analyzes exactly one stock.
+- One technical worker analyzes exactly one stock.
+- Fundamental workers may be dispatched multiple at a time with bounded concurrency because they do not touch TradingView, but each fundamental worker must process exactly one stock.
+- Fundamental workers do not compare stocks against each other and do not assign cross-stock rank.
+- Technical workers must run sequentially because TradingView MCP is shared mutable state.
+
+The main agent must never assign:
+
+- multiple symbols to one worker
+- symbol batches such as `stocks 1-5`
+- tranche-based prompts such as `analyze these five names together`
+
+If a worker handoff or worker output covers more than one stock, the result is invalid and the main agent must redo that work with one-stock ownership.
 
 ## Screen Thesis Extraction
 
@@ -101,6 +120,7 @@ Do not browse news for every stock by default.
 ### Fundamental Ranking Rule
 
 The full universe must be ranked from strongest sponsorship to weakest sponsorship before any technical review begins.
+That comparison is the main agent's responsibility.
 
 Technical review may not reorder the fundamental stage. It only refines stop survivability after sponsorship exists.
 

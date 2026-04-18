@@ -2,10 +2,15 @@
 
 ## Goal
 
-Determine whether the stock's current momentum is credibly sponsored by recent business evidence and worthy of a strong `1-8` week swing ranking versus peers in the same screen.
+Determine whether the stock's current momentum is credibly sponsored by recent business evidence and worthy of a strong for a `1-8` week swing.
+
+The worker owns exactly one stock. If the handoff contains multiple stocks, a batch, or a tranche, reject it and require a one-stock redo.
+The worker analyzes only the stock it was given.  
 
 ## Context Required From Main Agent
 
+- symbol
+- company
 - screen title
 - visible filters
 - screen thesis
@@ -38,4 +43,5 @@ Return one canonical stock dossier candidate using the exact structure from `fun
 - `Ranking Packet`
 - `Sponsorship Reasoning`
 
-The dossier must be complete enough that the main agent can compare it against all peers without asking the worker for follow-up clarification.
+The dossier must be complete enough that the main agent can compare it against other stocks without asking the worker for follow-up clarification.
+It must cover one stock only.

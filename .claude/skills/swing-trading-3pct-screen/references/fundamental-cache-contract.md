@@ -41,7 +41,7 @@ Reuse:
 
 ## Review-Due Tie Breaker
 
-When more than `3` stocks are `review_due`, choose the refresh tranche in this exact order:
+When more than `3` stocks are `review_due`, choose the refresh selection in this exact order:
 
 1. earlier `Next Review On`
 2. earlier `Hard Stale On`

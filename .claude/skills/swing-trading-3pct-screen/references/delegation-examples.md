@@ -34,6 +34,14 @@
 - Why: news is not mandatory for every stock, but it should be used when catalyst clarity changes the ranking outcome.
 - Output shape: still return a dossier candidate after the targeted escalation, not a loose note.
 
+### Example: Invalid Batched Fundamental Handoff
+
+- Input context: the main agent sends one worker `SHILCTECH, GVT&D, ATLANTAELE, PREMIERENE, SCHNEIDER`.
+- What the worker should notice: ownership is malformed because one fundamental worker must own exactly one stock.
+- Correct verdict: reject the handoff and request a one-stock redo.
+- Why: batched ownership degrades ranking clarity, cache writes, and acceptance checks.
+- Output shape: do not return a multi-stock dossier.
+
 ## Technical Few-Shots
 
 ### Example: Best Aligned
@@ -63,3 +71,10 @@
 - What the worker noticed: there is no verified support shelf, no demand zone, and no clean retest.
 - Correct verdict: invalid analysis
 - Why: EMA clustering alone does not prove stop survivability.
+
+### Example: Invalid Batched Technical Handoff
+
+- Input context: the main agent sends one worker `analyze these top 5 charts together`.
+- What the worker should notice: ownership is malformed because one technical worker must own exactly one stock and TradingView work must stay sequential.
+- Correct verdict: reject the handoff and request a one-stock redo.
+- Why: shared-state chart work becomes ambiguous and error-prone when one worker owns more than one symbol.
