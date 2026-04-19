@@ -8,6 +8,7 @@
 - What the worker noticed: price strength is backed by improving business evidence, not just relative momentum.
 - Correct verdict: `Strongly Sponsored`
 - Why: the recent trigger, business evidence, and price action line up.
+- Output shape: return a full dossier with `Ranking Packet` and `Sponsorship Reasoning`.
 
 ### Example: Mixed
 
@@ -15,6 +16,7 @@
 - What the worker noticed: the move may be real, but the proof is not clean enough yet.
 - Correct verdict: `Mixed`
 - Why: the setup is plausible, but sponsorship is not decisive.
+- Output shape: keep the ranking packet explicit about what keeps the stock from ranking higher.
 
 ### Example: Weakly Sponsored
 
@@ -22,6 +24,7 @@
 - What the worker noticed: momentum looks disconnected from recent business support.
 - Correct verdict: `Weakly Sponsored`
 - Why: the stock should not be ranked near the top of the sponsorship list.
+- Output shape: explain clearly why stronger peers should outrank this stock.
 
 ### Example: News Escalation Needed
 
@@ -29,6 +32,39 @@
 - What the worker noticed: the stock may have a real catalyst, but that catalyst cannot be inferred confidently from screen data alone.
 - Correct verdict: escalate to targeted news or catalyst validation before finalizing the sponsorship label.
 - Why: news is not mandatory for every stock, but it should be used when catalyst clarity changes the ranking outcome.
+- Output shape: still return a dossier candidate after the targeted escalation, not a loose note.
+
+### Example: Invalid Batched Fundamental Handoff
+
+- Input context: the main agent sends one worker `SHILCTECH, GVT&D, ATLANTAELE, PREMIERENE, SCHNEIDER`.
+- What the worker should notice: ownership is malformed because one fundamental worker must own exactly one stock.
+- Correct verdict: reject the handoff and request a one-stock redo.
+- Why: batched ownership degrades ranking clarity, cache writes, and acceptance checks.
+- Output shape: do not return a multi-stock dossier.
+
+### Example: Immediate Cache Persistence After First Fundamental Result
+
+- Input context: six fundamental workers are inflight and one valid dossier for `SCHNEIDER` returns before the others.
+- What the main agent should notice: accepted fundamental outputs are cache-authoritative immediately, not only after the whole batch completes.
+- Correct verdict: write `by-symbol/SCHNEIDER.md` and update its `index.md` row before waiting for the remaining five workers.
+- Why: eager cache persistence prevents lost work and keeps the authoritative dossier surface current throughout the run.
+- Output shape: persist the canonical dossier first, then continue queue orchestration.
+
+### Example: Invalid Fundamental Over-Parallelization
+
+- Input context: the main agent launches `12` or `20` fundamental workers because the universe is large.
+- What the main agent should notice: bounded concurrency is violated because the fundamental inflight cap is `6`.
+- Correct verdict: stop dispatching, reduce inflight count to at most `6`, and continue only with queue-based replenishment.
+- Why: unbounded dispatch makes cache persistence harder to control and breaks the skill contract.
+- Output shape: no worker should be told to own more than one stock to compensate.
+
+### Example: Invalid Fundamental Sub-Agent Reuse
+
+- Input context: a fundamental sub-agent finishes `SCHNEIDER`, then the main agent sends the same sub-agent `PREMIERENE`.
+- What the main agent should notice: one stock per fundamental sub-agent means one stock for that sub-agent's full lifecycle, not one stock at a time with later reuse.
+- Correct verdict: do not reuse that sub-agent; create a new fundamental sub-agent for `PREMIERENE`.
+- Why: every fresh fundamental stock analysis must be isolated to its own newly created worker.
+- Output shape: one worker, one stock, one dossier, then stop using that worker for fundamentals.
 
 ## Technical Few-Shots
 
@@ -59,3 +95,10 @@
 - What the worker noticed: there is no verified support shelf, no demand zone, and no clean retest.
 - Correct verdict: invalid analysis
 - Why: EMA clustering alone does not prove stop survivability.
+
+### Example: Invalid Batched Technical Handoff
+
+- Input context: the main agent sends one worker `analyze these top 5 charts together`.
+- What the worker should notice: ownership is malformed because one technical worker must own exactly one stock and TradingView work must stay sequential.
+- Correct verdict: reject the handoff and request a one-stock redo.
+- Why: shared-state chart work becomes ambiguous and error-prone when one worker owns more than one symbol.

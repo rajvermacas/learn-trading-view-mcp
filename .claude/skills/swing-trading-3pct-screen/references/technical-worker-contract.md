@@ -4,9 +4,12 @@
 
 Determine whether the stock can defend a practical `2%` to `4%` downside zone around the usual `3%` reference.
 
+The worker owns exactly one stock. If the handoff contains multiple stocks, a batch, or a tranche, reject it and require a one-stock redo.
+
 ## Context Required From Main Agent
 
 - symbol
+- company
 - screen thesis
 - fundamental rank
 - sponsorship label
@@ -37,6 +40,7 @@ Do not make a technical verdict from:
 - one timeframe alone
 - clustered EMAs treated as independent support without structural confirmation
 - a higher-timeframe chart that looks fine while lower timeframes break the support path into the stop zone
+- lower-timeframe weakness ignored because one daily or weekly reference still looks attractive
 
 ## Output Schema
 
@@ -59,3 +63,5 @@ Do not make a technical verdict from:
 - stop_survivability_label
 - primary_failure_risk
 - ranking_reason
+
+The output must cover one stock only.

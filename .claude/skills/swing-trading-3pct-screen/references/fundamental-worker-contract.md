@@ -2,16 +2,24 @@
 
 ## Goal
 
-Determine whether the stock's current momentum is credibly sponsored by recent business evidence.
+Determine whether the stock's current momentum is credibly sponsored by recent business evidence and worthy of a strong for a `1-8` week swing.
+
+The worker owns exactly one stock. If the handoff contains multiple stocks, a batch, or a tranche, reject it and require a one-stock redo.
+The worker analyzes only the stock it was given.  
+The worker must not be reused for any other stock after completing that one-stock analysis.
 
 ## Context Required From Main Agent
 
+- symbol
+- company
 - screen title
 - visible filters
 - screen thesis
 - why the stock is in this universe
 - phase: `fundamental-ranking`
 - coverage mode
+- whether this is a first-time analysis or a refresh
+- prior analysis date and cached dossier path when this is a refresh
 
 ## Required Investigation
 
@@ -27,17 +35,15 @@ Determine whether the stock's current momentum is credibly sponsored by recent b
 
 Use news only when needed to resolve contradiction, validate a catalyst, or assess near-term event risk.
 
+## Output Requirement
+
+Return one canonical stock dossier candidate using the exact structure from `fundamental-dossier-contract.md`.
+The dossier must be cache-ready as returned so the main agent can persist it immediately after acceptance.
+
 ## Output Schema
 
-- symbol
-- screen_context
-- recent_trigger
-- operating_evidence
-- earnings_quality_read
-- balance_sheet_comfort
-- catalyst_status
-- news_escalation
-- evidence_to_price_alignment
-- sponsorship_label
-- confidence
-- ranking_reason
+- `Ranking Packet`
+- `Sponsorship Reasoning`
+
+The dossier must be complete enough that the main agent can compare it against other stocks without asking the worker for follow-up clarification.
+It must cover one stock only.

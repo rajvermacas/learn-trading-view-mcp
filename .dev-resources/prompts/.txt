@@ -2,308 +2,65 @@ I tested swing-trading-3pct-screen skill using claude code and below is the tran
 The source code of skills is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
 swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
 
-The gaps which I can see is in folder docs/swing-trading/2026-04-18-103000-utc - the files are created but I need one more file where all the stocks are arranged in descending order of their likelihood to go beyond 3% which is the overall target of the skill.
-
-If you see the /workspaces/learn-trading-view-mcp/docs/swing-trading/2026-04-18-103000-utc/3pct-rejected.md
-There are multiple rejections just because the daily 10 ema was below the 3% stop loss. But ideally we just don't really on a single indicator and timeframe. There are other market structure also which needs to be considered along with multiple timeframes spanning across 15minute, 30minute, 1 hour, daily and weekly.
-
-Also the document should be verbose so that I can confidentally say that the there has been some serious research happened to select or reject a stock.
-
-Below is the claude transcript of the session of using the skill:
-
-
- ▐▛███▜▌   Claude Code v2.1.112
-▝▜█████▛▘  Opus 4.7 (1M context) · Claude Max
-  ▘▘ ▝▝    /workspaces/learn-trading-view-mcp
-
-❯ /clear                                                                        
-  ⎿  (no content)
-
-❯ /swing-trading-3pct-screen                                                    
-https://www.screener.in/screens/3474384/return-over-3-months/                   
-
-● Bash(bash
-      /root/.claude/skills/swing-trading-3pct-screen/scripts/ensure_socat.sh
-      2>&1)
-  ⎿  [ensure_socat] socat tunnel already running
-
-  Read 1 file (ctrl+o to expand)
-
-● socat tunnel is running. Now fetching the Screener.in screen HTML.
-
-● Fetch(https://www.screener.in/screens/3474384/return-over-3-months/)
-  ⎿  Received 39KB (200 OK)
-
-  Called tradingview (ctrl+o to expand)
-
-● TradingView is connected. I have page 1 (25 stocks). Fetching pages 2 and 3
-  now.
-
-● Fetch(https://www.screener.in/screens/3474384/return-over-3-months/?page=2)
-  ⎿  Received 39.2KB (200 OK)
-
-● Fetch(https://www.screener.in/screens/3474384/return-over-3-months/?page=3)
-  ⎿  Received 38.6KB (200 OK)
-
-● All 74 stocks captured. Now checking TradingView chart state for the MA
-  indicator setup.
-
-  Called tradingview (ctrl+o to expand)
-
-● The "10 in 1" indicator is present. Switching to the top candidate SHILCTECH
-  to verify EMA configuration and begin technical analysis.
-
-  Called tradingview 2 times (ctrl+o to expand)
-
-● Only 3 MAs are showing. Need to enable MA 4 (EMA100) and MA 5 (EMA200). Trying
-   to fix the indicator configuration.
-
-  Called tradingview 2 times (ctrl+o to expand)
-
-● Only 3 MAs visible. Let me capture a screenshot to verify the chart visually
-  and check indicator configuration.
-  Read 1 file, called tradingview 2 times (ctrl+o to expand)
-
-● Good - the indicator legend confirms EMA 10/20/50/100/200 on Close is
-  correctly configured. The chart is still on NIFTY. Let me now switch to the
-  top fundamental candidates and do systematic technical analysis. Starting with
-   the strongest ROCE names that have sufficient history.
-
-  Called tradingview 4 times (ctrl+o to expand)
-
-● CGPOWER: CMP=774.80, 3% Floor=751.56. All 5 EMAs are at 683-730 — well below
-  the floor. No EMA support within the 3% band. Let me check weekly structure
-  and then move through candidates systematically.
-
-  Read 1 file, called tradingview 3 times (ctrl+o to expand)
-
-● Screenshots are cached but study values are accurate. CGPOWER weekly EMAs all
-  below 700 — no support within 3% band. Moving rapidly through the other top
-  candidates on daily to check EMA positions within the 3% band.
-
-  Called tradingview 4 times (ctrl+o to expand)
-
-● PREMIERENE: CMP=1034.60, Floor=1003.56. All EMAs at 866-972 — all below the
-  floor. Moving to next candidates.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● WAAREEENER: CMP=3466.20, Floor=3362.21. EMA 10=3296 — still below floor.
-  Checking LLOYDSME and VOLTAMP next.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● LLOYDSME: CMP=1623.30, Floor=1574.60. EMA 10=1491 — below floor. Checking
-  VOLTAMP now.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● VOLTAMP: CMP=10145, Floor=9840. EMA 10=9437 — below floor. All the high-ROCE
-  names are extended. Let me check the stocks with lower 3-month returns (less
-  extended) — INOXINDIA, NATCOPHARM, KSB — which might have EMAs closer to
-  price.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● INOXINDIA: CMP=1491.70, Floor=1446.95. EMA 10=1365 — below floor. Checking
-  NATCOPHARM and KSB.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● Interesting — NATCOPHARM's EMA 10=1078 is only 3.72% below CMP=1119.70.
-  Floor=1086. Very close to having support within band. Now checking KSB
-  properly.
-
-  Called tradingview 2 times (ctrl+o to expand)
-
-● KSB: CMP=968.20, EMA 10=897 — 7.3% below. Not in band. Let me check TDPOWERSYS
-   and APARINDS next, then do a deep dive on NATCOPHARM which is closest so far.
-
-  Called tradingview 2 times (ctrl+o to expand)
-
-● TDPOWERSYS: EMA 10=925 vs CMP~997, Floor=967 — below floor. Checking APARINDS.
-
-  Called tradingview 2 times (ctrl+o to expand)
-
-● APARINDS: EMA 10=10886 vs CMP=11482, Floor=11137 — below floor. Let me now do
-  full multi-timeframe deep-dive on NATCOPHARM (best candidate so far) and also
-  quickly check DATAPATTNS and RUBICON.
-  Called tradingview 4 times (ctrl+o to expand)
-
-● NATCOPHARM Weekly: EMAs at 922-1004, all below floor=1086. Recent weekly lows
-  at 1008 and 1070 (below floor). Checking daily now.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● Key NATCOPHARM daily structure: Breakout on Apr 8 (1008 low → 1082 close),
-  then consolidation April 14-17 with lows 1070-1082. Floor=1086 — daily lows
-  consistently just below floor. Checking 60min for closer support structure.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● Key finding: 60min EMA 50 = 1088.11 — the FIRST EMA within the 3% band
-  (floor=1086.11). Hourly support shelf at 1075-1082 (below floor). Today's
-  surge: 1081 low → 1129 high. Checking 30min for finer structure.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● 30min EMA stack is excellent: EMA 10=1117, EMA 20=1110, EMA 50=1099, EMA
-  100=1085 — all within the 3% band (1086-1120). Primary structural support
-  shelf at 1075-1082 is below the floor. Checking 15min for micro structure.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● 15min EMA stack: EMA 10=1120, EMA 20=1117, EMA 50=1107, EMA 100=1099 — all
-  within band. Air pocket concern: structural shelf at 1075-1082 is below the
-  floor. NATCOPHARM is a WATCHLIST candidate (fresh breakout, no structural
-  support inside band). Checking DATAPATTNS and RUBICON as final candidates.
-
-  Called tradingview 4 times (ctrl+o to expand)
-
-● DATAPATTNS: EMA 10=3352 vs CMP=3494, Floor=3389 — below floor. Checking
-  RUBICON last.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● RUBICON: EMA 10=833 vs CMP=899, Floor=872 — below floor. Let me check KRISHANA
-   and SKYGOLD — they have the lowest 3-month returns (~30%) which could mean
-  EMAs are closer to price.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● KRISHANA: EMA 10=586 vs CMP=626, Floor=607 — below floor. Checking SKYGOLD,
-  then I'll compile the full report.
-
-  Called tradingview 3 times (ctrl+o to expand)
-
-● SKYGOLD: EMA 10=393 vs CMP=423, Floor=411 — below floor. Screening complete.
-  The universal finding: every stock with 30%+ 3-month returns has daily EMA 10
-  well beyond the 3% floor. NATCOPHARM (with 30min/15min EMA stack inside the
-  band) is the sole watchlist candidate. Now writing the full report set.
-
-● Bash(mkdir -p /workspaces/learn-trading-view-mcp/docs/swing-trading/2026-04-18
-      -103000-utc)
-  ⎿  Done
-
-● Write(docs/swing-trading/2026-04-18-103000-utc/README.md)
-  ⎿  Wrote 70 lines to docs/swing-trading/2026-04-18-103000-utc/README.md
-       2 # Swing Screen — 2026-04-18 (NSE, 3% Stop Rule)
-       3 **Screen:** [Screener.in #3474384 — Return over 3 Months > 30% A
-         ND Market Cap > 3000 Cr](https://www.screener.in/screens/3474384
-         /return-over-3-months/)
-       4 **Universe:** 74 stocks, 3 pages
-       6 **Prices:** NSE closing prices, 18 April 2026
-       7 
-       8 ---
-       9 
-      10 ## Verdict Summary
-     … +93 lines (ctrl+o to expand)
-
-● Write(docs/swing-trading/2026-04-18-103000-utc/3pct-selected-and-watchlist.md)
-  ⎿  Wrote 136 lines to docs/swing-trading/2026-04-18-103000-utc/3pct-selec
-     ted-and-watchlist.md
-      2 # Selected & Watchlist — 2026-04-18
-      3 **3% Floor Rule:** Stoploss must stay at or above CMP × 0.97. Mul
-        tiple independent support references must sit inside that band.
-      4 
-      5 ---
-      7 ## SELECTED — None
-      8 
-      9 No stock in the 74-name universe passes the full 3% support-stack
-         test from today's closing price. See README for explanation of t
-        he structural challenge with a 30%+ return universe.
-     … +205 lines (ctrl+o to expand)
-
-● Write(docs/swing-trading/2026-04-18-103000-utc/3pct-rejected.md)
-  ⎿  Wrote 100 lines to
-     docs/swing-trading/2026-04-18-103000-utc/3pct-rejected.md
-      2 # Rejected — 2026-04-18
-        are possible: **Fundamental** (failed quality bar) or **Technical
-        rule).ily EMAs too far below CMP to satisfy the 3% support-stack 
-      5 For the Technical column, "EMA 10 dist" = how far daily EMA 10 si
-        ts below CMP as a percentage. Stocks not individually charted (ma
-        ked showed daily EMA 10 at least 3.7% below CMP; stocks with high
-        onfidence. returns are rejected by that extrapolation with high c
-      7 ---
-      9 ## Rejected — Fundamental Failure (Profit Decline, Net Loss, or R
-        OCE < 10%)
-     … +181 lines (ctrl+o to expand)
-
-● Write(docs/swing-trading/2026-04-18-103000-utc/screen-universe.md)
-  ⎿  Wrote 105 lines to
-     docs/swing-trading/2026-04-18-103000-utc/screen-universe.md
-       2 # Screen Universe — 2026-04-18
-       3 **Source:** https://www.screener.in/screens/3474384/return-over-
-         3-months/
-       4 **Filter:** Return over 3 months > 30 AND Market Capitalization 
-         > 3000
-       6 **Fetched:** All 3 pages via HTML. Deduplicated by company slug.
-       7 
-       8 ---
-       9 
-      10 ## Page 1 (S.No 1–25)
-     … +178 lines (ctrl+o to expand)
-● All four files written. Let me verify the report set.
-
-● Bash(for f in /workspaces/learn-trading-view-mcp/docs/swing-trading/2026-04-18
-      -103000-utc/*.md; do echo "$(wc -l < "$f") lines — $f"; done)
-  ⎿  100 lines — /workspaces/learn-trading-view-mcp/docs/swing-trading/2026
-     -04-18-103000-utc/3pct-rejected.md
-     136 lines — /workspaces/learn-trading-view-mcp/docs/swing-trading/2026
-     … +5 lines (ctrl+o to expand)
-
-● All files within limits. Report complete.
-
-  ---
-  Run Summary — 18 April 2026
-
-  Universe: 74 stocks from Screener.in screen #3474384 (Return > 30% / 3 months,
-   Market Cap > 3000 Cr), all 3 pages fetched.
-
-  Selected: 0 names
-  Watchlist: 1 name — NATCOPHARM
-  Rejected: 73 names
-
-  ---
-  The Core Finding
-
-  Every stock in this screen has risen 30–80% in three months. That pace means
-  daily EMA 10 sits 4–10% below current price — well outside the 3% floor.
-  Checked 16 stocks individually on TradingView; the closest was NATCOPHARM at
-  3.72% below CMP. No stock clears the 3% support-stack rule on the daily
-  timeframe.
-
-  ---
-  NATCOPHARM — Watchlist Only (Do Not Enter at CMP 1119.70)
-
-  Why watchlist, not selected:
-  - Daily structural support sits at 1075–1082 — below the 3% floor of 1086
-  - No daily EMA is inside the 3% band
-  - Today's breakout (1081→1129) is too fresh to have confirmed structure above
-  the floor
-
-  What qualifies it for watchlist:
-  - ROCE 32.78%, P/E 12.88, sales growth +36%
-  - 30min EMAs EMA 10/20/50/100 all within the 3% band (1085–1118)
-  - 15min EMAs EMA 10/20/50/100 all within the 3% band (1099–1120)
-
-  Trigger to convert to SELECTED: Pullback to 1086–1095, two 30min closes above
-  1086, higher low above 1078. Entry 1086–1095, stop below 1072–1075, first
-  trouble 1127–1135, swing target 1155–1180.
-
-  Report directory: docs/swing-trading/2026-04-18-103000-utc/
-
-✻ Worked for 21m 22s
-
-※ recap: Screened 74 stocks from the Screener.in universe for 3%-stop swing trades. Found zero selected names and one watchlist name (NATCOPHARM). Watch for a pullback to 1086–1095 before entering. (disable recaps in /config)
-
-
-----------------
-
-Also ensure that when main agent deploys sub agent for fundamental analysis, each sub agent should have proper context of what their goal is. And what the
-whole context is. The goal is to find out the sponsorship. The context is that stock is already in momentum for which we want to know the reason is legit
-or not.
-
-And also make sure that you improve the whole skill and not just methodology.
-The source code of skills is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
+The gaps which I can see is:
+claude coding agent while using the skill called fundamental sub agents putting multiple stocks in a single agent which was not my expectation.
+One fundamental sub agent should only analyse one stock.
+
+Below is the transcript:
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=1 Only fetch the first page. do not fetch the second or third 
+ page. and then do the technical analysis only for the top 5 fundamentally strongest stocks                                                                   
+                                                                                                                                                              
+● I'll execute the swing trading screen workflow. Starting by fetching the Screener.in URL and reading the reference contracts in parallel.                   
+                                                                                                                                                              
+● Fetch(https://www.screener.in/screens/3474384/return-over-3-months/?page=1)
+  ⎿  Received 39KB (200 OK)                                                                                                                                   
+                                                                                                                                                              
+  Read 2 files (ctrl+o to expand)                                                                                                                             
+                                                                                                                                                              
+● Got 25 stocks from page 1. Now reading the cache index and remaining reference files.                                                                       
+                                                                                                                                                              
+  Searched for 1 pattern, read 6 files (ctrl+o to expand)                                                                                                     
+                                                                                                                                                              
+● All 25 stocks are runtime missing (no cache exists). Dispatching 5 parallel fundamental agents, each covering 5 stocks.                                     
+                                                                                                                                                              
+● Running 5 agents… (ctrl+o to expand)                                                                                                                        
+   ├─ Fundamental analysis batch 1: SHILCTECH, GVT&D, ATLANTAELE, PREMIERENE, SCHNEIDER · 0 tool uses                                                         
+   │  ⎿  Done                                                                                                                                                 
+   ├─ Fundamental analysis batch 2: LLOYDSME, INOXINDIA, CGPOWER, WAAREEENER, NATCOPHARM · 1 tool use · 11.4k tokens                                          
+   │  ⎿  Done                                                                                                                                                 
+   ├─ Fundamental analysis batch 3: APARINDS, BAJAJCON, TDPOWERSYS, ABB, VOLTAMP · 12 tool uses · 25.1k tokens                                                
+   │  ⎿  Web Search: Voltamp Transformers VOLTAMP order book 2026 tran…                                                                                       
+   ├─ Fundamental analysis batch 4: KRISHANA, PRECWIRE, QPOWER, RUBICON, KSB · 1 tool use · 11.4k tokens                                                      
+   │  ⎿  Done                                                                                                                                                 
+   └─ Fundamental analysis batch 5: AVANTIFEED, SPLPETRO, ADANIPOWER, AEROFLEX, AGIIL · 0 tool uses                                                           
+      ⎿  Done                                                                                                                                                 
+     (ctrl+b to run in background)        
+--------------------
+
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=1 Only fetch the first page. do not fetch the second or third page. Technical analysis required only for the top 5 fundamentally strongest stocks 
+---------------------
+
+Improve the skill swing-trading-3pct-screen. 
+The source code of skill is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
 swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
+
+The current problem with the skill is as below:
+1. The main agent after receiving a response from fundamental sub agent - it doesn't immediately write it in the cache
+2. The main agent currently waits for response from all the sub agents before writing it in the cache.
+3. The main agent ideally should start writing the cache as soon as it receives the first response from the fundamental sub agent
+4. The number of parallel fundamental sub agents should not exceed 6
+5. Currently the number of fundamental sub agents goes rising even upto 20 which should be restricted
+--------------------------
+
+Use opus as the main agent.
+Use sonnet for the fundamental and technical sub agents.
+
+After fetching stocks from screener. sort it in descending order of their 3 month price movement percentage. highest on the top.
+And then pick top 15 stocks and do fundamental analysis. Limiting the number of stocks in the whole universe for fundamental analysis.
+and then out of the fundamentally strongest top 10 stocks do the technical analysis. 
+---------------------------
+
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=2 Only fetch the 2nd page. do not fetch the first or third page or any other page. Technical analysis required only for the top 10 fundamentally strongest stocks 
+
+Use opus as the main agent.
+Use sonnet for the fundamental and technical sub agents.
