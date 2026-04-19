@@ -50,3 +50,17 @@ The current problem with the skill is as below:
 3. The main agent ideally should start writing the cache as soon as it receives the first response from the fundamental sub agent
 4. The number of parallel fundamental sub agents should not exceed 6
 5. Currently the number of fundamental sub agents goes rising even upto 20 which should be restricted
+--------------------------
+
+Use opus as the main agent.
+Use sonnet for the fundamental and technical sub agents.
+
+After fetching stocks from screener. sort it in descending order of their 3 month price movement percentage. highest on the top.
+And then pick top 15 stocks and do fundamental analysis. Limiting the number of stocks in the whole universe for fundamental analysis.
+and then out of the fundamentally strongest top 10 stocks do the technical analysis. 
+---------------------------
+
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=1 Only fetch the first page. do not fetch the second or third page. Technical analysis required only for the top 5 fundamentally strongest stocks 
+
+Use opus as the main agent.
+Use sonnet for the fundamental and technical sub agents.
