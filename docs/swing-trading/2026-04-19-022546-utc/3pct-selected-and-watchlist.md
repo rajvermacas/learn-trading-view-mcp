@@ -2,9 +2,11 @@
 
 ## Summary verdict for this run
 
-**Zero names are `Selected` this run. All five technically reviewed names qualify as `Watchlist` only — entry on pullback, not at current price.**
+**Zero names are `Selected`. Six names qualify as `Watchlist` only — entry on pullback, not at current price.** Coverage was extended from the top 5 to the top 10 fundamentally ranked names in a follow-up batch.
 
-Every one of the top-5 fundamentally strongest stocks printed a **Near-Valid** technical verdict with a **Marginal — Needs Pullback** stop-survivability label. Their fundamentals are strong enough to keep them on the active watchlist, but at today's closing prices (2026-04-19) none of them can defend a practical 2–4% stop on structural grounds — each has an air pocket or an unconfirmed retest inside the stop band, driven by parabolic 2–5 week runs with no consolidation.
+Across the top-10 technical review, six names printed **Near-Valid / Marginal — Needs Pullback** (SHILCTECH, PREMIERENE, GVT&D, LLOYDSME, ATLANTAELE, TDPOWERSYS). Four names printed **Likely To Break / Likely To Break Stop** and are covered in `3pct-rejected.md` (QPOWER, BAJAJCON, SHRIPISTON, ENRIN). None of the 10 printed Best Aligned.
+
+At today's closing prices (2026-04-19) none of the watchlist names can defend a practical 2–4% stop on structural grounds — each has an air pocket or an unconfirmed retest inside the stop band, driven by parabolic 2–5 week runs with no consolidation.
 
 Selection discipline says: do not force a trade when the stop zone is not structurally defendable. Watchlist the names, wait for the retest, then re-evaluate.
 
@@ -256,9 +258,60 @@ Selection discipline says: do not force a trade when the stop zone is not struct
 
 ---
 
+---
+
+## Watchlist #6 — TDPOWERSYS (NSE:TDPOWERSYS)
+
+**Rank in combined view:** #6 of 25. Fundamental rank #9.
+
+### Verdict block
+- Technical verdict: **Near-Valid**
+- Stop survivability: **Marginal — Needs Pullback**
+- Technical review status: **technically reviewed**
+- Primary failure risk: Price is at all-time highs with declining intraday volume and no 15m micro higher-low base below ₹990; the ₹975–₹978 stop-zone shelf is a first-test-only level with an air pocket to ₹960 — one aggressive sell through ₹983 could breach the whole stop band without structural defense.
+
+### Fundamental snapshot
+- Company: TD Power Systems Ltd
+- Sponsorship: Moderately Sponsored / Medium
+- Recent trigger: Q3 FY26 consolidated revenue ₹443 Cr (+26.6% YoY); US gas-turbine data-center order confirmed (delivery Feb 2026–Aug 2027); new CEO Deepak Kumar Sinha (ex L&T-MHI, GE Power) effective Apr 3
+- 21% OPM held, near-zero debt (₹12 Cr vs ₹860 Cr equity), seven consecutive qtrs of growth; P/E 71–78x
+- Known fragilities: promoter holding 58.4%→26.9% over 3 years; 66–70% export revenue; WC 183 days; Q4 FY26 result inside the 8-week window
+
+### Multi-timeframe structure
+- Weekly: 2-week impulse from ₹765 base; last two weekly candles large-body surges on 2× avg volume; price +14% above weekly EMA10 (₹871); at all-time highs
+- Daily: 5 consecutive bullish bars, each day's low higher than prior — clean staircase; daily EMA10 ₹925 (−7.2%); no retest of breakout candle Apr 14
+- 60m: EMAs bullish-stacked; ₹983–₹985 is the nearest local support; air below ₹983 to ₹960–₹965
+- 30m: price sitting at EMA10 ₹995 / EMA20 ₹987; ₹975–₹978 (Apr 17 open cluster) is the lowest credible 30m demand shelf inside the stop zone
+- 15m: micro HLs ₹994.5→₹995.2→₹997.05→₹998.85 — tight compression at highs, no pullback-tested base; EMA10 ₹998 right at CMP
+
+### Support inventory
+| TF | Type | Level ₹ | Distance |
+|---|---|---|---|
+| 30m/15m | Intraday dip low (today) | 983–985 | −1.2% to −1.4% |
+| 30m | Apr 17 open cluster / demand shelf | 975–978 | −1.9% to −2.2% |
+| Daily/60m | Apr 16 candle lows (structural) | 960–965 | −3.2% to −3.7% |
+| Daily | Apr 16 candle body demand | 942–952 | −4.5% to −5.5% |
+| Daily/W | Breakout base / Apr 14 surge low | 905–927 | −7.0% to −9.2% |
+
+### Resistance inventory
+| TF | Type | Level ₹ | Distance |
+|---|---|---|---|
+| 30m/15m | Today's HOD / ATH | 1,009 | +1.2% |
+| Projected | 1.5R extension from base | 1,020–1,030 | +2.3% to +3.3% |
+| Projected | 2R extension from ₹905 | 1,060–1,080 | +6.3% to +8.3% |
+
+### Trade levels & reasoning
+- Entry zone (preferred): **₹975–₹985** — 30m demand shelf + intraday dip zone; tighter stop, cleaner R:R
+- Entry zone (CMP-only): Possible only if ₹983 holds on any intraday test; compressed HOD with declining volume argues against it
+- Stoploss: **₹966** (below ₹967 3% floor and below the ₹975–₹978 shelf's logical failure point; close below ₹975 should trigger early exit)
+- First trouble area: ₹1,009 (today's ATH; tested twice and failed with sub-average volume)
+- Swing target: ₹1,055–₹1,070 (~2R from pullback entry at ₹980 with ₹966 stop; respects the absence of overhead supply)
+
+---
+
 ## Overall handling guidance
 
-1. **No immediate selection.** None of the five defends a clean 2–4% stop at current price. The skill's stop-survivability rule takes priority over the fundamental conviction.
+1. **No immediate selection.** None of the six defends a clean 2–4% stop at current price. The skill's stop-survivability rule takes priority over the fundamental conviction.
 2. **Watchlist triggers are explicit.** Each watchlist entry above has a named pullback zone with a specific structural reference. Wait for the retest; confirm a close inside the zone; then size the position against the hard stop.
-3. **Event-risk calendar.** Q4 FY26 results in May 2026 are within the typical 8-week swing window for all five names except BAJAJCON (already reported) and ABSLAMC (imminent April 23 binary, which is outside top 5). Any position entered on a retest should be sized to tolerate an earnings-day gap.
-4. **Ranks 6–25** were not charted this run because of the user's top-5 coverage directive. They remain fundamentally plausible candidates and are preserved in `3pct-ranked-by-stop-safety.md` for a subsequent execution with an expanded coverage limit.
+3. **Event-risk calendar.** Q4 FY26 results in May 2026 are within the typical 8-week swing window for SHILCTECH, PREMIERENE, GVT&D, LLOYDSME, ATLANTAELE, TDPOWERSYS, ENRIN. BAJAJCON already reported. Any position entered on a retest should be sized to tolerate an earnings-day gap.
+4. **Ranks 11–25** were not charted this run — coverage was extended to 10 from the original 5. They remain fundamentally plausible candidates and are preserved in `3pct-ranked-by-stop-safety.md` for a subsequent execution with further-expanded coverage.

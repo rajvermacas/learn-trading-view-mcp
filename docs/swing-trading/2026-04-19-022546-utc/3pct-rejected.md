@@ -2,25 +2,76 @@
 
 ## Interpretation note
 
-There is **no name in this run that is a hard technical reject**. Every technically reviewed name (the top 5) came back as Near-Valid / Marginal, not Likely To Break — those five are in `3pct-selected-and-watchlist.md` as watchlist entries with pullback triggers.
-
-The 20 non-reviewed names below were **not charted** in this execution because of the explicit user coverage directive (top 5 only). They are labeled `technical review not run in this execution` — not rejected. They remain legitimate candidates for a later run with expanded technical coverage.
+Coverage was extended in this run from the original top 5 to the top 10 fundamentally ranked names. Of the 10 technically reviewed:
+- 6 returned Near-Valid / Marginal — Needs Pullback → `3pct-selected-and-watchlist.md` (watchlist, not selected)
+- 4 returned **Likely To Break / Likely To Break Stop** → Part A below (hard technical rejects for this run)
+- The remaining 15 names (ranks 11–25) were not charted → Part B below (`technical review not run in this execution`)
 
 ---
 
-## Part A — Stocks Not Technically Reviewed (Coverage-Limit Exclusions)
+## Part A — Hard Technical Rejects (Likely To Break Stop)
 
-The skill rule is: when the user specifies a coverage count, technical review starts at rank #1 and proceeds downward until the limit is reached. The remaining names keep their fundamental dossiers intact but are flagged as pending chart work.
+These four names are fundamentally strong enough to be in the top 10, but their current chart location makes a practical 2–4% stop structurally indefensible. The stop zone is an air pocket in each case.
 
-All rows below are status `pending technical review`. Any hold/reject decision on these names requires a subsequent run that covers them.
+### Reject #1 — QPOWER (Fund rank #6)
+
+- Verdict: **Likely To Break / Likely To Break Stop**
+- Technical review status: **technically reviewed**
+- One-line verdict reason: Single-day 15m blow-off to ATH ₹1,249 with no base — the practical 2–4% stop zone (₹1,170–₹1,185) is pure air above the last structural support at ₹1,133 (−6.3%).
+- Primary failing timeframe/structure: Daily breakout is only 4 days old, +22% in 4 sessions; 60m shows massive opening bar to ATH then sloppy churn; 30m EMAs (1,183–1,204) are the only supports in the stop band and they are fresh EMAs in a parabolic move, not structural support.
+- Best support found near the stop zone: 30m EMA20 at ₹1,183 (EMA-only, no structural confirmation).
+- Why that support is insufficient: EMA-only supports in a parabolic impulse have no bid structure. Nearest real structural support (yesterday's 30m close at ₹1,133) is 6.3% below CMP, outside the practical band.
+- Re-check candidate vs hard reject: **Re-check candidate** — fundamentals are strong; wait for a base-formation pullback to ₹1,100–₹1,135 before re-evaluating.
+
+### Reject #2 — BAJAJCON (Fund rank #7)
+
+- Verdict: **Likely To Break / Likely To Break Stop**
+- Technical review status: **technically reviewed**
+- One-line verdict reason: Today's 10.7× volume news-spike from ₹437.8 to ₹494.8 left the practical 2–4% stop zone (₹456–₹461) entirely inside the single spike candle body with no prior structural support in the band.
+- Primary failing timeframe/structure: Daily is a single-day spike candle; 60m and 30m show post-spike distribution (lower highs from ₹494.8 → ₹230 → ₹219 on 15m scale); 15m shows a 4% rejection in one bar from ₹477.5 to ₹458.05.
+- Best support found near the stop zone: 30m EMA10 at ₹460.97.
+- Why that support is insufficient: A freshly rising EMA after a one-day spike is not a tested demand zone. Next genuine structure is the pre-spike consolidation base at ₹418–₹448, which is −4.9% to −11.3% below CMP — outside the 4% stop band.
+- Re-check candidate vs hard reject: **Re-check candidate** — wait for pullback-base-rebreak at ₹430–₹448. Fundamentals (PAT +49%, NCLT cleared, no imminent earnings binary) remain intact.
+
+### Reject #3 — SHRIPISTON (Fund rank #8)
+
+- Verdict: **Likely To Break / Likely To Break Stop**
+- Technical review status: **technically reviewed**
+- One-line verdict reason: 4 trading days into a +24% single-week breakout with no consolidation base above ₹3,500; the practical 2–4% stop zone (₹3,598–₹3,673) is a confirmed air pocket with no prior price-action support.
+- Primary failing timeframe/structure: Weekly is parabolic (+24% in one week on 5.6× volume); daily shows 4 bars of impulse staircase with no retest; 30m shows single-step moves of 1–2 bars rather than consolidation bases; 15m has no micro HLs between ₹3,598 and ₹3,720.
+- Best support found near the stop zone: 60m EMA10 at ₹3,698 and 60m EMA20 at ₹3,654.
+- Why that support is insufficient: Both are rising EMAs in a one-week impulse, no swing-low or volume-node validation. The only real swing low (₹3,525, Apr 17) would require a 6.1% stop, violating the 2–4% mandate.
+- Re-check candidate vs hard reject: **Re-check candidate** — wait for a multi-day base or a confirmed higher-low pullback to ₹3,600+ before treating this as a 2–4% swing setup.
+
+### Reject #4 — ENRIN (Fund rank #10)
+
+- Verdict: **Likely To Break / Likely To Break Stop**
+- Technical review status: **technically reviewed**
+- One-line verdict reason: +21% in 8 sessions recovery from ₹2,521 low to ₹3,056 with no consolidation base; the entire practical stop zone (₹2,880–₹2,960) is a confirmed air pocket on 30m and 15m charts, and price has already printed micro rejection at ₹3,056.
+- Primary failing timeframe/structure: Daily is a 5-day vertical recovery with no retest; 60m and 30m have no volume node / consolidation cluster inside the stop band; 15m last 5 bars show a lower-drift pattern after the ₹3,056 peak (₹3,054 → ₹3,044 lows → ₹3,010); first resistance is only +0.9% away.
+- Best support found near the stop zone: Daily EMA5 (~EMA200) at ₹2,979 and 60m EMA2 at ₹2,952.
+- Why that support is insufficient: EMA-only supports; no prior swing low or consolidation base exists in the ₹2,880–₹2,960 band because price gapped through it on the way up. The structural stop at 15m/30m EMA5 cluster (₹2,849) is −5.9% — outside the practical band.
+- Re-check candidate vs hard reject: **Re-check candidate** — wait for a multi-day consolidation above ₹2,960 with a confirmed higher-low, ideally after the senior management-exit overhang clears.
+
+## Part A summary
+
+| Rank | Symbol | Primary Air Pocket | Nearest Real Support (% below CMP) |
+|---|---|---|---|
+| 6 | QPOWER | ₹1,135–₹1,185 | ₹1,133 (−6.3%) |
+| 7 | BAJAJCON | ₹430–₹455 | ₹448 (−4.9%) |
+| 8 | SHRIPISTON | ₹3,525–₹3,691 | ₹3,525 (−5.9%) |
+| 10 | ENRIN | ₹2,850–₹2,960 | ₹2,849 (−5.9%) |
+
+All four are re-check candidates — none is a hard fundamental reject.
+
+---
+
+## Part B — Stocks Not Technically Reviewed (Coverage-Limit Exclusions)
+
+The remaining 15 names (ranks 11–25) were not charted because coverage was capped at the top 10 for this run. They keep their fundamental dossiers intact but are flagged as pending chart work. They are NOT technical rejects.
 
 | Fund Rank | Symbol | Sponsorship | Why Fundamentals Alone Are Not Enough To Advance | Re-check or hard reject? |
 |---|---|---|---|---|
-| 6 | QPOWER | Strongly Sponsored | Consolidated OPM lumpiness (8%→38% across 9 qtrs); CCC worsened 23d→167d; P/E 87x consolidated is unforgiving. **technical review not run in this execution** | Re-check candidate |
-| 7 | BAJAJCON | Moderately Sponsored | Growth is pricing/mix led, not volume; working capital blowout 50d→124d; input cost inflation 50–60% on LLP/packaging. **technical review not run in this execution** | Re-check candidate |
-| 8 | SHRIPISTON | Moderately Sponsored | Antolin integration 3.5 months old; ₹1,000 Cr NCD will raise annual interest from ~₹25 Cr to ~₹90–100 Cr; promoter stake cut 46.75%→43.75% (reason undisclosed). **technical review not run in this execution** | Re-check candidate |
-| 9 | TDPOWERSYS | Moderately Sponsored | Promoter holding 58.4%→26.9% over 3 years unresolved; PEG 2.5–3.0x at normalised growth; working capital 183 days. **technical review not run in this execution** | Re-check candidate |
-| 10 | ENRIN | Moderately Sponsored | 43% recovery from Dec 2025 HVDC loss-induced dip mostly complete; 3 senior execution/finance exits in a 10-day window; P/E 88x. **technical review not run in this execution** | Re-check candidate |
 | 11 | RUBICON | Moderately Sponsored | P/E 72–88x vs pharma peers 29–36x; Q3 FY26 tax rate dropped to 20% (vs 27–30% norm) — inflates reported growth; CCC 403 days, inventory 574 days. **technical review not run in this execution** | Re-check candidate |
 | 12 | VOLTAMP | Moderately Sponsored | OPM peaked at 26% in Dec 2023, now 17–19%; promoter holding 50%→30% over 3 years; new plant commissioning Jun 2026 is FY27 story. **technical review not run in this execution** | Re-check candidate |
 | 13 | ABSLAMC | Moderately Sponsored | Apr 23 full-year result is hard binary within days; fee yield compression 46.4→43.1 bps; Passives head resigned Apr 17; analyst targets at/below CMP. **technical review not run in this execution** | Re-check candidate (post Apr 23 only) |
@@ -34,7 +85,7 @@ All rows below are status `pending technical review`. Any hold/reject decision o
 | 21 | ENGINERSIN | Moderately Sponsored | Q3 FY26 PAT ₹302 Cr was ~71% one-off Ind AS 115 settlement; 5-yr revenue CAGR is −1%; normalised P/E 32–36x. **technical review not run in this execution** | Re-check candidate |
 | 22 | ABB | Moderately Sponsored | OPM compressed 3 consecutive qtrs (20%→13%); PAT −18% YoY; analyst targets largely at/below CMP; Q1 CY26 result May 8 is hard binary in 19 days. **technical review not run in this execution** | Re-check candidate |
 
-## Part B — Fundamental-Quality Watchouts (Also Not Technically Reviewed)
+## Part C — Fundamental-Quality Watchouts (Also Not Technically Reviewed)
 
 These three names have `Mixed` sponsorship labels — the weakest bracket in the universe. Even without chart work, their fundamental write-ups flag structural concerns that would need to be resolved before any technical setup could justify a position.
 
@@ -46,7 +97,8 @@ These three names have `Mixed` sponsorship labels — the weakest bracket in the
 
 ## Summary
 
-- **0** hard technical rejects this run.
-- **5** watchlist names (top 5; all Near-Valid / Marginal — Needs Pullback) — see `3pct-selected-and-watchlist.md`.
-- **17** names labeled `technical review not run in this execution` with a fundamentally-grounded watchpoint but no chart verdict.
-- **3** names on Mixed sponsorship with explicit structural concerns; these remain pending technical review but carry extra caveats.
+- **0** selected.
+- **6** watchlist names (Near-Valid / Marginal) — see `3pct-selected-and-watchlist.md`.
+- **4** hard technical rejects this run (Likely To Break Stop) — QPOWER, BAJAJCON, SHRIPISTON, ENRIN. All are re-check candidates pending pullback-base formation.
+- **12** names labeled `technical review not run in this execution` (ranks 11–22).
+- **3** names on Mixed sponsorship (ranks 23–25) with explicit structural concerns; also pending technical review.
