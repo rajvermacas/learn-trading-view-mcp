@@ -64,3 +64,14 @@ and then out of the fundamentally strongest top 10 stocks do the technical analy
 
 Use opus as the main agent.
 Use sonnet for the fundamental and technical sub agents.
+---------------------------
+
+Improve the skill swing-trading-3pct-screen. 
+The source code of skill is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
+swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
+
+The current problem with the skill is as below:
+1. The main agent only creates the markdown for fundamental sponsor Dossier which to be used for caching - Ideally it should also create the technical dossier like for example, just use it for reference:
+/workspaces/learn-trading-view-mcp/docs/swing-trading/tmp-technical-2026-04-19/01-ACUTAAS.md
+2. The technical dossire will obviously not used for caching but for the end user to have the confidence around what the main agent and sub agents have been working on and how it has come to a certain point. that's why the dossier should be verbose.
+---------------------------

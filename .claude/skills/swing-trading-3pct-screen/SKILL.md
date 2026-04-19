@@ -1,6 +1,6 @@
 ---
 name: swing-trading-3pct-screen
-description: Use when screening Indian stocks from a Screener.in HTML universe for swing trades that must be ranked by full-universe fundamental sponsorship first, then strictly sequential technical review around a practical 2% to 4% stop zone.
+description: Use when screening Indian stocks from a Screener.in HTML universe for swing trades that must be ranked by full-universe fundamental sponsorship first, then strictly reviewed sequentially on TradingView with verbose per-stock technical dossiers around a practical 2% to 4% stop zone.
 ---
 
 # Swing Trading 3pct Screen
@@ -27,7 +27,8 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 12. Dispatch one technical sub-agent per stock only after the ranking exists.
 13. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
 14. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-15. Write the five-file report set with reviewed versus pending technical status explicit.
+15. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next chart.
+16. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
 
 ## Delegation Rules
 
@@ -86,6 +87,8 @@ Responsibility split is strict:
 - EMA proximity alone is not a valid decision rule.
 - Use the `30` minute chart as the main lower-timeframe execution and support-mapping frame.
 - Treat the `3%` reference as contextual, not binary; judge defendability across the practical `2%` to `4%` stop band.
+- Every technically reviewed stock must get one verbose main-agent technical dossier written immediately after that stock review completes.
+- Technical dossiers are user-facing audit records only and must never be reused as cache input.
 
 ## Reporting Rules
 
@@ -104,5 +107,7 @@ The report must make technical status explicit:
 - technical review not run because of a user-imposed coverage limit
 
 Use [references/fundamental-cache-contract.md](references/fundamental-cache-contract.md), [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md), [references/fundamental-worker-contract.md](references/fundamental-worker-contract.md), [references/technical-worker-contract.md](references/technical-worker-contract.md), [references/delegation-examples.md](references/delegation-examples.md), and [references/reporting-contract.md](references/reporting-contract.md) for the detailed cache, worker, and report contracts.
+
+Use [references/technical-dossier-contract.md](references/technical-dossier-contract.md) for the verbose technical dossier that the main agent must persist for every technically reviewed stock.
 
 Use [references/methodology.md](references/methodology.md) for ranking logic, filters, and number discipline.

@@ -11,6 +11,7 @@ The skill must:
 - run technical review only after the fundamental ranking exists
 - keep technical review sequential because TradingView MCP is shared mutable state
 - write a five-file report set with reviewed versus pending status made explicit
+- write one verbose technical dossier for every technically reviewed stock
 
 If any required input, chart state, or company data is missing, stop with a clear exception. Do not invent values.
 
@@ -40,10 +41,16 @@ If any required input, chart state, or company data is missing, stop with a clea
 9. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
 10. Dispatch technical workers only after the ranking exists.
 11. Run technical workers strictly one at a time.
-12. Synthesize three ranking views and five output files.
+12. After each accepted technical result, immediately write that stock's
+    technical dossier before dispatching the next technical worker.
+13. Synthesize three ranking views, five output files, and the technical
+    dossier directory.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
 The main agent alone compares one stock's fundamentals against another stock's fundamentals and assigns the sponsorship ranking across the universe.
+The main agent must turn every accepted technical worker result into a
+user-facing dossier immediately while the one-stock review context is still
+current.
 
 `index.md` is a registry and freshness surface only. Per-stock markdown dossiers are the authoritative ranking inputs, and the main agent must never rank from index rows alone.
 
@@ -243,6 +250,20 @@ If coverage is limited, pending names must not be presented as full technical re
 
 When the user explicitly requests a coverage limit, technical review must start at rank `#1` and proceed downward through the fundamentally ranked list until that limit is reached.
 
+## Technical Dossier Persistence
+
+Every technically reviewed stock must produce one dossier under the run folder:
+
+- `docs/swing-trading/YYYY-MM-DD-HHMMSS-utc/technical-dossiers/<RANK>-<SYMBOL>.md`
+
+Rules:
+
+- write the dossier immediately after the accepted one-stock technical result
+- use the stock's full-universe fundamental rank in the filename
+- do not create dossiers for stocks that were not technically reviewed
+- do not reuse dossier files as cache or ranking inputs on later runs
+- stop with a clear exception if dossier persistence fails
+
 ## Number Definitions
 
 - `CMP`: current TradingView price used for the decision
@@ -260,13 +281,14 @@ Create a fresh timestamped directory on each run:
 
 - `docs/swing-trading/YYYY-MM-DD-HHMMSS-utc/`
 
-Produce exactly five files:
+Produce exactly five files plus one dossier directory:
 
 1. `README.md`
 2. `3pct-selected-and-watchlist.md`
 3. `3pct-rejected.md`
 4. `screen-universe.md`
 5. `3pct-ranked-by-stop-safety.md`
+6. `technical-dossiers/`
 
 ### README.md
 
@@ -277,10 +299,12 @@ Include:
 - universe size
 - coverage mode
 - counts for fundamentally analyzed, technically reviewed, selected, watchlist, rejected, and pending technical review
+- count of technical dossiers written
 - top `5` fundamentally strongest
 - top `5` technically strongest among reviewed names
 - top `5` overall combined
 - a short explanation of how to read the fifth file
+- a short explanation of the technical dossier directory
 
 ### 3pct-selected-and-watchlist.md
 
@@ -300,6 +324,7 @@ For each name, include:
 - resistance inventory table
 - entry, stoploss, first trouble area, and swing target with reasoning
 - explicit technical review status
+- technical dossier filename for reviewed names
 
 ### 3pct-rejected.md
 

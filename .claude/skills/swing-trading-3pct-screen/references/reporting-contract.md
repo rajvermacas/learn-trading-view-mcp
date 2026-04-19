@@ -1,5 +1,19 @@
 # Reporting Contract
 
+# Run Output
+
+Each run output folder must contain:
+
+- `README.md`
+- `3pct-selected-and-watchlist.md`
+- `3pct-rejected.md`
+- `screen-universe.md`
+- `3pct-ranked-by-stop-safety.md`
+- `technical-dossiers/`
+
+`technical-dossiers/` must contain one verbose markdown dossier for every
+technically reviewed stock and no dossier for pending names.
+
 ## README.md
 
 - run date and screen URL
@@ -7,14 +21,17 @@
 - universe size
 - coverage mode
 - counts for analyzed, reviewed, selected, watchlist, rejected, and pending names
+- count and location of technical dossiers written
 - top previews for fundamental, technical, and combined rankings
 - a short explanation of the fifth file and its three sections
+- a short explanation of the technical dossier directory and how to read it
 
 ## 3pct-selected-and-watchlist.md
 
 - only names that deserve full trade-level writeups
 - explicit fundamentals, multi-timeframe structure, support inventory, resistance inventory, and trade levels
 - one concise verdict block per name
+- reference the corresponding technical dossier filename for every reviewed name
 
 ## 3pct-rejected.md
 

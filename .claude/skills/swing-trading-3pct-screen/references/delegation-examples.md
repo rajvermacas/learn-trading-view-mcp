@@ -102,3 +102,11 @@
 - What the worker should notice: ownership is malformed because one technical worker must own exactly one stock and TradingView work must stay sequential.
 - Correct verdict: reject the handoff and request a one-stock redo.
 - Why: shared-state chart work becomes ambiguous and error-prone when one worker owns more than one symbol.
+
+### Example: Immediate Technical Dossier Persistence
+
+- Input context: the technical worker returns a valid one-stock result for `ACUTAAS`, and the next fundamentally ranked stock is ready for chart review.
+- What the main agent should notice: the user-facing technical dossier is required output for every reviewed stock, not an optional end-of-run cleanup step.
+- Correct verdict: write `technical-dossiers/01-ACUTAAS.md` immediately, then move TradingView to the next symbol.
+- Why: immediate persistence keeps the technical audit trail aligned with sequential chart work and prevents the reviewed reasoning from being lost.
+- Output shape: one worker result becomes one main-agent dossier for that same stock before the next technical review starts.

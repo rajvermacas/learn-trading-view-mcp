@@ -31,6 +31,7 @@ The worker owns exactly one stock. If the handoff contains multiple stocks, a ba
 - supply and demand zones
 - chart patterns
 - market structure
+- volume analysis
 
 ## Decision Discipline
 
@@ -45,6 +46,7 @@ Do not make a technical verdict from:
 ## Output Schema
 
 - symbol
+- company
 - cmp
 - 3pct_floor
 - practical_stop_zone
@@ -63,5 +65,18 @@ Do not make a technical verdict from:
 - stop_survivability_label
 - primary_failure_risk
 - ranking_reason
+- summary_rationale
 
 The output must cover one stock only.
+
+## Output Quality Bar
+
+- each timeframe note must be detailed enough for the main agent to write a
+  user-facing technical dossier without re-reading the chart
+- each timeframe note must explicitly discuss market structure, chart patterns,
+  and volume analysis instead of implying them indirectly
+- `support_inventory` and `resistance_inventory` must preserve timeframe,
+  structure type, and price-level evidence instead of loose summaries
+- `summary_rationale` must tie the multi-timeframe evidence to the verdict in
+  plain language, including how market structure, chart patterns, and volume
+  evidence affected the decision
