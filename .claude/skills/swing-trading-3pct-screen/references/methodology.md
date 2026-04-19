@@ -18,7 +18,8 @@ If any required input, chart state, or company data is missing, stop with a clea
 
 - Screener.in HTML screen URL
 - TradingView MCP access
-- sequential stock-analysis sub-agents
+- fundamental stock-analysis sub-agents with hard concurrency cap `6`
+- technical stock-analysis sub-agents available for sequential TradingView review
 - `10 in 1 Different Moving Averages` configured as:
   - `EMA 10`
   - `EMA 20`
@@ -31,14 +32,15 @@ If any required input, chart state, or company data is missing, stop with a clea
 1. Fetch the full Screener universe across all HTML pages.
 2. Extract the screen thesis from the screen title, visible filters, and the user’s stated intent.
 3. Read `docs/swing-trading/fundamentals/index.md`.
-4. Create one fundamental worker task per stock for all runtime `missing` and all `hard_stale`.
-5. Create one fundamental worker task per stock for exactly top `3` `review_due`.
-6. Reuse all `fresh` and remaining `review_due`.
-7. Build the full-universe fundamental sponsorship ranking from dossiers only.
-8. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-9. Dispatch technical workers only after the ranking exists.
-10. Run technical workers strictly one at a time.
-11. Synthesize three ranking views and five output files.
+4. Build one fundamental refresh queue from all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+5. Dispatch fundamental workers from that queue with no more than `6` workers inflight at once, using one newly created fundamental worker per stock.
+6. As each accepted fundamental result arrives, immediately write the stock dossier and update `index.md` before dispatching another queued fundamental stock.
+7. Reuse all `fresh` and remaining `review_due`.
+8. Build the full-universe fundamental sponsorship ranking from dossiers only.
+9. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
+10. Dispatch technical workers only after the ranking exists.
+11. Run technical workers strictly one at a time.
+12. Synthesize three ranking views and five output files.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
 The main agent alone compares one stock's fundamentals against another stock's fundamentals and assigns the sponsorship ranking across the universe.
@@ -52,6 +54,10 @@ Sub-agent ownership is always one worker to one stock.
 - One fundamental worker analyzes exactly one stock.
 - One technical worker analyzes exactly one stock.
 - Fundamental workers may be dispatched multiple at a time with bounded concurrency because they do not touch TradingView, but each fundamental worker must process exactly one stock.
+- Fundamental worker concurrency is hard-capped at `6` inflight workers.
+- Every stock that needs fresh fundamental analysis must be assigned to a newly created fundamental worker.
+- A fundamental worker that has already analyzed one stock must never be reused for another stock.
+- When one fundamental worker finishes with an accepted dossier, the main agent must persist that dossier immediately before replenishing the queue.
 - Fundamental workers do not compare stocks against each other and do not assign cross-stock rank.
 - Technical workers must run sequentially because TradingView MCP is shared mutable state.
 
@@ -62,6 +68,17 @@ The main agent must never assign:
 - tranche-based prompts such as `analyze these five names together`
 
 If a worker handoff or worker output covers more than one stock, the result is invalid and the main agent must redo that work with one-stock ownership.
+
+## Incremental Fundamental Persistence
+
+Fundamental refresh is a queue, not a wait-for-everything batch.
+
+- The first accepted dossier must be written as soon as it arrives.
+- Each later accepted dossier must also be written immediately on receipt.
+- The main agent must never wait for all inflight fundamental workers to finish before updating cache files.
+- Queue replenishment must happen by creating a new fundamental worker for the next stock, not by reusing a completed one.
+- If a dossier is malformed, reject it and redo that one stock.
+- If a cache write cannot complete, stop with a clear exception instead of continuing with stale state.
 
 ## Screen Thesis Extraction
 

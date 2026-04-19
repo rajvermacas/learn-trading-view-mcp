@@ -42,6 +42,30 @@
 - Why: batched ownership degrades ranking clarity, cache writes, and acceptance checks.
 - Output shape: do not return a multi-stock dossier.
 
+### Example: Immediate Cache Persistence After First Fundamental Result
+
+- Input context: six fundamental workers are inflight and one valid dossier for `SCHNEIDER` returns before the others.
+- What the main agent should notice: accepted fundamental outputs are cache-authoritative immediately, not only after the whole batch completes.
+- Correct verdict: write `by-symbol/SCHNEIDER.md` and update its `index.md` row before waiting for the remaining five workers.
+- Why: eager cache persistence prevents lost work and keeps the authoritative dossier surface current throughout the run.
+- Output shape: persist the canonical dossier first, then continue queue orchestration.
+
+### Example: Invalid Fundamental Over-Parallelization
+
+- Input context: the main agent launches `12` or `20` fundamental workers because the universe is large.
+- What the main agent should notice: bounded concurrency is violated because the fundamental inflight cap is `6`.
+- Correct verdict: stop dispatching, reduce inflight count to at most `6`, and continue only with queue-based replenishment.
+- Why: unbounded dispatch makes cache persistence harder to control and breaks the skill contract.
+- Output shape: no worker should be told to own more than one stock to compensate.
+
+### Example: Invalid Fundamental Sub-Agent Reuse
+
+- Input context: a fundamental sub-agent finishes `SCHNEIDER`, then the main agent sends the same sub-agent `PREMIERENE`.
+- What the main agent should notice: one stock per fundamental sub-agent means one stock for that sub-agent's full lifecycle, not one stock at a time with later reuse.
+- Correct verdict: do not reuse that sub-agent; create a new fundamental sub-agent for `PREMIERENE`.
+- Why: every fresh fundamental stock analysis must be isolated to its own newly created worker.
+- Output shape: one worker, one stock, one dossier, then stop using that worker for fundamentals.
+
 ## Technical Few-Shots
 
 ### Example: Best Aligned

@@ -39,6 +39,13 @@ Reuse:
 - all `fresh`
 - all remaining `review_due`
 
+## Fundamental Queue Rule
+
+- Build one refresh queue from all required refresh names.
+- Keep no more than `6` fundamental workers inflight at the same time.
+- When one worker finishes, persist that accepted dossier before dispatching another queued refresh.
+- Waiting for the full refresh queue to complete before writing accepted dossiers is invalid.
+
 ## Review-Due Tie Breaker
 
 When more than `3` stocks are `review_due`, choose the refresh selection in this exact order:
@@ -50,5 +57,7 @@ When more than `3` stocks are `review_due`, choose the refresh selection in this
 ## Cache Update Rule
 
 - A fresh accepted analysis overwrites the existing cached dossier for that stock.
-- The main agent updates the stock row in `index.md` after writing the refreshed dossier.
+- The main agent writes each accepted dossier immediately when that worker returns.
+- The main agent updates the stock row in `index.md` in the same step after writing the refreshed dossier.
+- If the write or index update cannot complete immediately, stop with a clear exception.
 - Reused stocks keep their existing cached dossier and existing `index.md` row.

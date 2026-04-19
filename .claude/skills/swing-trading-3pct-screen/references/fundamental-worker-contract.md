@@ -6,6 +6,7 @@ Determine whether the stock's current momentum is credibly sponsored by recent b
 
 The worker owns exactly one stock. If the handoff contains multiple stocks, a batch, or a tranche, reject it and require a one-stock redo.
 The worker analyzes only the stock it was given.  
+The worker must not be reused for any other stock after completing that one-stock analysis.
 
 ## Context Required From Main Agent
 
@@ -37,6 +38,7 @@ Use news only when needed to resolve contradiction, validate a catalyst, or asse
 ## Output Requirement
 
 Return one canonical stock dossier candidate using the exact structure from `fundamental-dossier-contract.md`.
+The dossier must be cache-ready as returned so the main agent can persist it immediately after acceptance.
 
 ## Output Schema
 

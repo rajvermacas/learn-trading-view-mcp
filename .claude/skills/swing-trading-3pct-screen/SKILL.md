@@ -18,14 +18,16 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 3. Build the full stock universe and deduplicate it.
 4. Read `docs/swing-trading/fundamentals/index.md`.
 5. Derive which current-universe names are runtime `missing`, `fresh`, `review_due`, and `hard_stale`.
-6. Dispatch one fundamental sub-agent per stock for all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
-7. Reuse cached dossiers for all `fresh` and remaining `review_due`.
-8. Build the full-universe fundamental ranking from authoritative stock dossiers only.
-9. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
-10. Dispatch one technical sub-agent per stock only after the ranking exists.
-11. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
-12. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-13. Overwrite refreshed stock dossiers, update `index.md`, and write the five-file report set with reviewed versus pending technical status explicit.
+6. Build one fundamental refresh queue containing all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+7. Run that fundamental refresh queue with at most `6` inflight fundamental sub-agents at any time, creating one new fundamental sub-agent per stock.
+8. As soon as one fundamental sub-agent returns an accepted dossier, immediately overwrite that stock dossier and update its `index.md` row before waiting for any other fundamental result.
+9. Reuse cached dossiers for all `fresh` and remaining `review_due`.
+10. Build the full-universe fundamental ranking from authoritative stock dossiers only.
+11. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
+12. Dispatch one technical sub-agent per stock only after the ranking exists.
+13. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
+14. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
+15. Write the five-file report set with reviewed versus pending technical status explicit.
 
 ## Delegation Rules
 
@@ -42,6 +44,13 @@ Ownership is always singular:
 
 - one fundamental sub-agent owns exactly one stock
 - one technical sub-agent owns exactly one stock
+- every stock requiring fresh fundamental analysis must be assigned to a newly created fundamental sub-agent
+
+Fundamental sub-agent reuse is forbidden:
+
+- the same fundamental sub-agent must never be reused for a second stock
+- after one fundamental sub-agent returns its one-stock dossier, that sub-agent's fundamental work is finished
+- if another stock needs fresh fundamental analysis, the main agent must create a different new fundamental sub-agent for that stock
 
 A handoff that assigns multiple stocks, a tranche, or a batch to one sub-agent is invalid and must be redone.
 
@@ -57,11 +66,19 @@ Responsibility split is strict:
 - The main agent must never rank from `index.md`.
 - The main agent must treat a reused cached stock dossier as equivalent to a previously accepted fundamental sub-agent response.
 - The main agent must write refreshed stock dossiers in the exact canonical markdown structure defined in [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md).
+- The main agent must persist each accepted fresh fundamental dossier immediately when that worker returns.
+- The main agent must update the matching `index.md` row in the same step as the dossier write.
+- The main agent must never wait for all fundamental sub-agents to finish before persisting accepted results.
+- If an accepted dossier cannot be written immediately, stop with a clear exception instead of deferring that cache update.
 
 ## Analysis Rules
 
 - Fundamental analysis comes first for every stock in the fetched universe.
 - Fundamental sub-agents may be dispatched multiple at a time with bounded concurrency, but each fundamental sub-agent must process exactly one stock.
+- No more than `6` fundamental sub-agents may be inflight at once.
+- Each fresh fundamental analysis must run in its own newly created fundamental sub-agent.
+- A completed fundamental sub-agent must not be given another stock.
+- When one inflight fundamental sub-agent finishes, write that accepted dossier to cache immediately and only then dispatch the next queued fundamental stock if work remains.
 
 - Technical sub-agents must run one at a time and only one stock per worker.
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
