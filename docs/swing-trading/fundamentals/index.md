@@ -27,3 +27,28 @@
 | ENGINERSIN | Engineers India Ltd | by-symbol/ENGINERSIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KSB | KSB Ltd | by-symbol/KSB.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | AVANTIFEED | Avanti Feeds Ltd | by-symbol/AVANTIFEED.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SUPPETRO | Supreme Petrochemicals Ltd | by-symbol/SUPPETRO.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ADANIPOWER | Adani Power Ltd | by-symbol/ADANIPOWER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| AEROFLEX | Aeroflex Industries Ltd | by-symbol/AEROFLEX.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| AGIIL | AGI Infra Ltd | by-symbol/AGIIL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| HIRECT | Hind Rectifiers Ltd | by-symbol/HIRECT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| IMFA | Indian Metals & Ferro Alloys Ltd | by-symbol/IMFA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| WELCORP | Welspun Corp Ltd | by-symbol/WELCORP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SKYGOLD | Sky Gold & Diamonds Ltd | by-symbol/SKYGOLD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| DATAPATTNS | Data Patterns India Ltd | by-symbol/DATAPATTNS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| KRN | KRN Heat Exchanger and Refrigeration Ltd | by-symbol/KRN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| GARFIBRES | Garware Hi-Tech Films Ltd | by-symbol/GARFIBRES.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| PARKHOSPS | Park Medi World Ltd | by-symbol/PARKHOSPS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| CPPLUS | Aditya Infotech Ltd (CP Plus) | by-symbol/CPPLUS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| JINDALSAW | Jindal Saw Ltd | by-symbol/JINDALSAW.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| GALLANTT | Gallantt Ispat Ltd | by-symbol/GALLANTT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SONACOMS | Sona BLW Precision Forgings Ltd | by-symbol/SONACOMS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| PITTIENG | Pitti Engineering Ltd | by-symbol/PITTIENG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SHARDACROP | Sharda Cropchem Ltd | by-symbol/SHARDACROP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| THERMAX | Thermax Ltd | by-symbol/THERMAX.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| MANINDS | Man Industries India Ltd | by-symbol/MANINDS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
