@@ -35,3 +35,18 @@ Below is the transcript:
    └─ Fundamental analysis batch 5: AVANTIFEED, SPLPETRO, ADANIPOWER, AEROFLEX, AGIIL · 0 tool uses                                                           
       ⎿  Done                                                                                                                                                 
      (ctrl+b to run in background)        
+--------------------
+
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=1 Only fetch the first page. do not fetch the second or third page. Technical analysis required only for the top 5 fundamentally strongest stocks 
+---------------------
+
+Improve the skill swing-trading-3pct-screen. 
+The source code of skill is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
+swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
+
+The current problem with the skill is as below:
+1. The main agent after receiving a response from fundamental sub agent - it doesn't immediately write it in the cache
+2. The main agent currently waits for response from all the sub agents before writing it in the cache.
+3. The main agent ideally should start writing the cache as soon as it receives the first response from the fundamental sub agent
+4. The number of parallel fundamental sub agents should not exceed 6
+5. Currently the number of fundamental sub agents goes rising even upto 20 which should be restricted
