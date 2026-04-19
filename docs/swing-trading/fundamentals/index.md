@@ -52,3 +52,28 @@
 | SHARDACROP | Sharda Cropchem Ltd | by-symbol/SHARDACROP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | THERMAX | Thermax Ltd | by-symbol/THERMAX.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | MANINDS | Man Industries India Ltd | by-symbol/MANINDS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ISGEC | ISGEC Heavy Engineering Ltd | by-symbol/ISGEC.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| AMBER | Amber Enterprises India Ltd | by-symbol/AMBER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| GMDCLTD | Gujarat Mineral Development Corporation Ltd | by-symbol/GMDCLTD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SAMBHV | Sambhv Steel Tubes Ltd | by-symbol/SAMBHV.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| AXISCADES | AXISCADES Technologies Ltd | by-symbol/AXISCADES.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| KIRLOSENG | Kirloskar Oil Engines Ltd | by-symbol/KIRLOSENG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SANSERA | Sansera Engineering Ltd | by-symbol/SANSERA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| PAISALO | Paisalo Digital Ltd | by-symbol/PAISALO.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ARVIND | Arvind Ltd | by-symbol/ARVIND.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| LUXIND | Lux Industries Ltd | by-symbol/LUXIND.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SMSPHARMA | SMS Pharmaceuticals Ltd | by-symbol/SMSPHARMA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| BHARATFORG | Bharat Forge Ltd | by-symbol/BHARATFORG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| DEEPINDS | Deep Industries Ltd | by-symbol/DEEPINDS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| CENTUM | Centum Electronics Ltd | by-symbol/CENTUM.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SYRMA | Syrma SGS Technology Ltd | by-symbol/SYRMA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SGMART | SG Mart Ltd | by-symbol/SGMART.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| RPSGVENT | RPSG Ventures Ltd | by-symbol/RPSGVENT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| VTL | Vardhman Textiles Ltd | by-symbol/VTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| MTARTECH | MTAR Technologies Ltd | by-symbol/MTARTECH.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ADANIENSOL | Adani Energy Solutions Ltd | by-symbol/ADANIENSOL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SCI | Shipping Corporation of India Ltd | by-symbol/SCI.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| DALMIASUG | Dalmia Bharat Sugar and Industries Ltd | by-symbol/DALMIASUG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SGFIN | SG Finserve Ltd | by-symbol/SGFIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SEAMECLTD | SEAMEC Ltd | by-symbol/SEAMECLTD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ACMESOLAR | ACME Solar Holdings Ltd | by-symbol/ACMESOLAR.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |

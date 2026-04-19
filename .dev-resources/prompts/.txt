@@ -60,7 +60,7 @@ And then pick top 15 stocks and do fundamental analysis. Limiting the number of 
 and then out of the fundamentally strongest top 10 stocks do the technical analysis. 
 ---------------------------
 
-/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=2 Only fetch the 2nd page. do not fetch the first or third page or any other page. Technical analysis required only for the top 10 fundamentally strongest stocks 
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months/?page=3 Only fetch the 3rd page. do not fetch the first or second page or any other page. Technical analysis required only for the top 10 fundamentally strongest stocks 
 
 Use opus as the main agent.
 Use sonnet for the fundamental and technical sub agents.
