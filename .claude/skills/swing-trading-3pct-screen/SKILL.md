@@ -7,7 +7,7 @@ description: Use when screening Indian stocks from a Screener.in HTML universe f
 
 ## Purpose
 
-Use this skill for Screener.in HTML universes that need a dynamic screen thesis, a full-universe fundamental sponsorship ranking, and then stock-by-stock technical review against a practical `2%` to `4%` downside zone around the usual `3%` reference.
+Use this skill for Screener.in HTML universes that need a dynamic screen thesis, a user-capped pre-ranked universe, a full-universe fundamental sponsorship ranking inside that capped set, and then stock-by-stock technical review against a practical `2%` to `4%` downside zone around the usual `3%` reference.
 
 The analysis must not hardcode a specific screen recipe. Extract the screen thesis from the user-provided URL, title, and visible filters on each run.
 
@@ -15,20 +15,23 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 
 1. Fetch the user-provided Screener.in URL as HTML across every page.
 2. Extract a compact screen thesis from the title, visible filters, and screen intent.
-3. Build the full stock universe and deduplicate it.
-4. Read `docs/swing-trading/fundamentals/index.md`.
-5. Derive which current-universe names are runtime `missing`, `fresh`, `review_due`, and `hard_stale`.
-6. Build one fundamental refresh queue containing all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
-7. Run that fundamental refresh queue with at most `6` inflight fundamental sub-agents at any time, creating one new fundamental sub-agent per stock.
-8. As soon as one fundamental sub-agent returns an accepted dossier, immediately overwrite that stock dossier and update its `index.md` row before waiting for any other fundamental result.
-9. Reuse cached dossiers for all `fresh` and remaining `review_due`.
-10. Build the full-universe fundamental ranking from authoritative stock dossiers only.
-11. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
-12. Dispatch one technical sub-agent per stock only after the ranking exists.
-13. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
-14. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-15. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next chart.
-16. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
+3. Require the user prompt to specify the pre-ranked universe cap. If the cap is missing, stop with a clear exception instead of assuming any number.
+4. Build the full stock universe and deduplicate it.
+5. Compute `PreRankScore` plus soft penalties from the visible Screener columns defined in [references/methodology.md](references/methodology.md).
+6. Sort the full parsed universe by adjusted `PreRankScore` descending and keep only the top user-capped names as the working universe.
+7. Read `docs/swing-trading/fundamentals/index.md`.
+8. Derive which capped-universe names are runtime `missing`, `fresh`, `review_due`, and `hard_stale`.
+9. Build one fundamental refresh queue containing all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+10. Run that fundamental refresh queue with at most `6` inflight fundamental sub-agents at any time, creating one new fundamental sub-agent per stock.
+11. As soon as one fundamental sub-agent returns an accepted dossier, immediately overwrite that stock dossier and update its `index.md` row before waiting for any other fundamental result.
+12. Reuse cached dossiers for all `fresh` and remaining `review_due`.
+13. Build the capped-universe fundamental ranking from authoritative stock dossiers only.
+14. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
+15. Dispatch one technical sub-agent per stock only after the ranking exists.
+16. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
+17. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
+18. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next chart.
+19. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
 
 ## Delegation Rules
 
@@ -75,6 +78,12 @@ Responsibility split is strict:
 ## Analysis Rules
 
 - Fundamental analysis comes first for every stock in the fetched universe.
+- Before dispatching any fundamental sub-agent, the main agent must pre-rank the parsed Screener universe with `PreRankScore`, apply the defined soft penalties, and reduce the working universe to the user-specified cap.
+- The skill must never assume a pre-rank cap such as `15`; the user must provide that number in the prompt.
+- If the prompt does not specify a pre-rank cap, stop with a clear exception instead of defaulting to the full universe or any assumed cap.
+- Pre-rank must use only the values already present in the Screener HTML table for that run; the main agent must not fetch per-stock values separately for pre-rank.
+- If a required pre-rank column header is absent from the Screener HTML, stop with a clear exception.
+- If an individual stock row has a missing, blank, non-numeric, or distorted pre-rank value, apply the row-level scoring and penalty rules from [references/methodology.md](references/methodology.md) and continue without extra fetches.
 - Fundamental sub-agents may be dispatched multiple at a time with bounded concurrency, but each fundamental sub-agent must process exactly one stock.
 - No more than `6` fundamental sub-agents may be inflight at once.
 - Each fresh fundamental analysis must run in its own newly created fundamental sub-agent.
@@ -105,6 +114,9 @@ The report must make technical status explicit:
 - reviewed names
 - pending technical review names
 - technical review not run because of a user-imposed coverage limit
+- the full parsed universe size
+- the user-specified pre-rank cap
+- the names that survived the pre-rank cut into the working universe
 
 Use [references/fundamental-cache-contract.md](references/fundamental-cache-contract.md), [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md), [references/fundamental-worker-contract.md](references/fundamental-worker-contract.md), [references/technical-worker-contract.md](references/technical-worker-contract.md), [references/delegation-examples.md](references/delegation-examples.md), and [references/reporting-contract.md](references/reporting-contract.md) for the detailed cache, worker, and report contracts.
 

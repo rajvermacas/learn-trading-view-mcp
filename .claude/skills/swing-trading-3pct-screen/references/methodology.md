@@ -7,7 +7,9 @@ Rank a user-provided Screener.in stock screen by sponsorship strength and stop s
 The skill must:
 
 - extract the screen thesis from the user-provided screen before analysis starts
-- rank the full universe by fundamental sponsorship first
+- pre-rank the parsed universe with `PreRankScore` before any fundamental dispatch
+- require a user-provided pre-rank cap instead of assuming one
+- rank the capped working universe by fundamental sponsorship first
 - run technical review only after the fundamental ranking exists
 - keep technical review sequential because TradingView MCP is shared mutable state
 - write a five-file report set with reviewed versus pending status made explicit
@@ -18,6 +20,7 @@ If any required input, chart state, or company data is missing, stop with a clea
 ## Required Inputs
 
 - Screener.in HTML screen URL
+- user-provided pre-rank cap for the working universe
 - TradingView MCP access
 - fundamental stock-analysis sub-agents with hard concurrency cap `6`
 - technical stock-analysis sub-agents available for sequential TradingView review
@@ -32,22 +35,25 @@ If any required input, chart state, or company data is missing, stop with a clea
 
 1. Fetch the full Screener universe across all HTML pages.
 2. Extract the screen thesis from the screen title, visible filters, and the user’s stated intent.
-3. Read `docs/swing-trading/fundamentals/index.md`.
-4. Build one fundamental refresh queue from all runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
-5. Dispatch fundamental workers from that queue with no more than `6` workers inflight at once, using one newly created fundamental worker per stock.
-6. As each accepted fundamental result arrives, immediately write the stock dossier and update `index.md` before dispatching another queued fundamental stock.
-7. Reuse all `fresh` and remaining `review_due`.
-8. Build the full-universe fundamental sponsorship ranking from dossiers only.
-9. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full universe.
-10. Dispatch technical workers only after the ranking exists.
-11. Run technical workers strictly one at a time.
-12. After each accepted technical result, immediately write that stock's
+3. Require the user prompt to provide the pre-rank cap. If it is missing, stop with a clear exception.
+4. Compute `PreRankScore` from the visible Screener columns and apply the soft penalties defined below.
+5. Sort the parsed universe by adjusted `PreRankScore` descending and keep only the top user-capped names as the working universe.
+6. Read `docs/swing-trading/fundamentals/index.md`.
+7. Build one fundamental refresh queue from working-universe runtime `missing`, all `hard_stale`, and exactly top `3` `review_due`.
+8. Dispatch fundamental workers from that queue with no more than `6` workers inflight at once, using one newly created fundamental worker per stock.
+9. As each accepted fundamental result arrives, immediately write the stock dossier and update `index.md` before dispatching another queued fundamental stock.
+10. Reuse all `fresh` and remaining `review_due`.
+11. Build the capped-universe fundamental sponsorship ranking from dossiers only.
+12. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
+13. Dispatch technical workers only after the ranking exists.
+14. Run technical workers strictly one at a time.
+15. After each accepted technical result, immediately write that stock's
     technical dossier before dispatching the next technical worker.
-13. Synthesize three ranking views, five output files, and the technical
+16. Synthesize three ranking views, five output files, and the technical
     dossier directory.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
-The main agent alone compares one stock's fundamentals against another stock's fundamentals and assigns the sponsorship ranking across the universe.
+The main agent alone compares one stock's fundamentals against another stock's fundamentals and assigns the sponsorship ranking across the capped working universe.
 The main agent must turn every accepted technical worker result into a
 user-facing dossier immediately while the one-stock review context is still
 current.
@@ -99,6 +105,115 @@ Before any stock-level work starts, build a compact thesis package from the scre
 
 Use that thesis in every worker handoff. The thesis is the lens for both fundamental and technical interpretation.
 
+## Pre-Ranked Working Universe
+
+Before any fundamental worker is dispatched, the main agent must reduce the
+parsed Screener universe to a user-capped working universe.
+
+Fail fast rules:
+
+- if the user prompt does not specify the pre-rank cap, stop with a clear exception
+- if any required Screener column for `PreRankScore` is missing, stop with a clear exception
+- column presence is checked from the Screener HTML headers only
+- do not assume `15`, do not assume `top 10`, and do not assume the whole parsed universe
+
+### Required Screener Columns
+
+- `Qtr Sales Var %`
+- `Qtr Profit Var %`
+- `ROCE %`
+- `ROE %`
+- `Profit growth %`
+- `Sales Var 3Yrs %`
+- `6mth return %`
+- `1Yr return %`
+- `Debt / Eq`
+- `PEG`
+
+### PreRankScore
+
+Convert each required column into a percentile rank within the parsed Screener
+universe.
+
+Pre-rank must use only the values already present in the Screener HTML table for
+that run. The main agent must not fetch stock-specific pages or other endpoints
+to repair missing pre-rank values because that increases cost and defeats the
+purpose of this reduction step.
+
+- higher-is-better columns:
+  - `Qtr Sales Var %`
+  - `Qtr Profit Var %`
+  - `ROCE %`
+  - `ROE %`
+  - `Profit growth %`
+  - `Sales Var 3Yrs %`
+  - `6mth return %`
+  - `1Yr return %`
+- lower-is-better columns:
+  - `Debt / Eq`
+  - `PEG`
+
+### Row-Level Value Handling
+
+Column headers are mandatory. Individual row values are not.
+
+For each required metric on each stock row:
+
+- if the cell parses as a valid numeric value and is not distorted by the corner cases below, use it in the metric ranking pool
+- if the cell is blank, missing, `-`, `--`, `NaN`, or otherwise non-numeric, do not fetch that value elsewhere; assign that metric a percentile contribution of `0` and add a reporting flag
+- compute percentile ranks only from valid values for that metric
+- ties should receive the same percentile rank
+
+This keeps the run cheap while preventing sparse rows from breaking the flow.
+
+Compute:
+
+`PreRankScore = 0.24 * rank(Qtr Sales Var %) + 0.24 * rank(Qtr Profit Var %) + 0.14 * rank(ROCE %) + 0.10 * rank(ROE %) + 0.08 * rank(Profit growth %) + 0.07 * rank(Sales Var 3Yrs %) + 0.05 * rank(6mth return %) + 0.04 * rank(1Yr return %) + 0.03 * inverse_rank(Debt / Eq) + 0.01 * inverse_rank(PEG)`
+
+### Soft Penalties
+
+Apply these deductions after `PreRankScore` is computed:
+
+- if `Qtr Sales Var % <= 0`, subtract `12`
+- if `Qtr Profit Var % <= 0`, subtract `12`
+- if `Debt / Eq > 1`, subtract `8`
+- if `ROCE % < 15`, subtract `8`
+- if `PEG > 3`, subtract `4`
+
+### Distortion And Corner-Case Rules
+
+The pre-rank must explicitly neutralize row values that can distort the result.
+
+- if `PEG <= 0`, treat the `PEG` metric contribution as `0` and subtract `6`
+- if `ROCE % < 0`, treat the `ROCE` metric contribution as `0` and subtract `12`
+- if `ROE % < 0`, treat the `ROE` metric contribution as `0` and subtract `12`
+- if `Debt / Eq < 0`, treat the `Debt / Eq` metric contribution as `0` and subtract `10`
+- if `Qtr Sales Var %` is missing or invalid, keep that metric contribution at `0`
+- if `Qtr Profit Var %` is missing or invalid, keep that metric contribution at `0`
+- if `ROCE %` is missing or invalid, keep that metric contribution at `0`
+- if `ROE %` is missing or invalid, keep that metric contribution at `0`
+- if `Profit growth %` is missing or invalid, keep that metric contribution at `0`
+- if `Sales Var 3Yrs %` is missing or invalid, keep that metric contribution at `0`
+- if `6mth return %` is missing or invalid, keep that metric contribution at `0`
+- if `1Yr return %` is missing or invalid, keep that metric contribution at `0`
+- if `Debt / Eq` is missing or invalid, keep that metric contribution at `0`
+- if `PEG` is missing or invalid, keep that metric contribution at `0`
+
+Rationale:
+
+- negative `PEG` often reflects broken earnings or growth math and must not be rewarded as an attractive low value
+- negative `ROCE`, `ROE`, or `Debt / Eq` often signals capital destruction or negative net worth and must not be treated as favorable
+- percentile ranking already limits the damage from unusually large positive values, so extra clipping is not required here
+
+### Selection Rule
+
+- sort by adjusted `PreRankScore` descending
+- keep only the top user-capped names
+- use that reduced working universe for cache lookup, fundamental refresh,
+  fundamental ranking, and later technical review
+- do not dispatch any fundamental worker until this selection step is complete
+- do not fetch stock-specific pages or other endpoints to repair missing pre-rank values
+
 ## Fundamental Sponsorship Model
 
 The fundamental stage answers one question:
@@ -143,7 +258,7 @@ Do not browse news for every stock by default.
 
 ### Fundamental Ranking Rule
 
-The full universe must be ranked from strongest sponsorship to weakest sponsorship before any technical review begins.
+The capped working universe must be ranked from strongest sponsorship to weakest sponsorship before any technical review begins.
 That comparison is the main agent's responsibility.
 
 Technical review may not reorder the fundamental stage. It only refines stop survivability after sponsorship exists.
@@ -296,7 +411,9 @@ Include:
 
 - run date and screen URL
 - parsed screen thesis
-- universe size
+- parsed universe size
+- user-specified pre-rank cap
+- working-universe size after pre-rank
 - coverage mode
 - counts for fundamentally analyzed, technically reviewed, selected, watchlist, rejected, and pending technical review
 - count of technical dossiers written
@@ -305,6 +422,7 @@ Include:
 - top `5` overall combined
 - a short explanation of how to read the fifth file
 - a short explanation of the technical dossier directory
+- a short explanation of the pre-rank step and soft penalties
 
 ### 3pct-selected-and-watchlist.md
 
@@ -343,6 +461,13 @@ For each reject, include:
 ### screen-universe.md
 
 List every stock parsed from the full HTML universe.
+
+It must also show:
+
+- adjusted `PreRankScore`
+- whether the stock made the capped working universe
+- the key penalty flags that changed the adjusted score
+- the key missing or distorted metric flags that forced zero contribution
 
 ### 3pct-ranked-by-stop-safety.md
 
