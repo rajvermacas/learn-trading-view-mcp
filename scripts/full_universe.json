@@ -1,0 +1,1692 @@
+[
+  {
+    "prerank": 1,
+    "symbol": "QPOWER",
+    "name": "Quality Power El",
+    "adjusted_score": 88.83,
+    "base_score": 88.83,
+    "penalty": 0,
+    "profitvar": 169.18,
+    "salesvar": 291.22,
+    "roce": 26.6,
+    "ret3m": 93.64,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 2,
+    "symbol": "LLOYDSME",
+    "name": "Lloyds Metals",
+    "adjusted_score": 87.06,
+    "base_score": 87.06,
+    "penalty": 0,
+    "profitvar": 169.05,
+    "salesvar": 201.94,
+    "roce": 38.28,
+    "ret3m": 42.63,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 3,
+    "symbol": "ATLANTAELE",
+    "name": "Atlanta Electric",
+    "adjusted_score": 86.63,
+    "base_score": 86.63,
+    "penalty": 0,
+    "profitvar": 125.33,
+    "salesvar": 79.71,
+    "roce": 50.2,
+    "ret3m": 84.39,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 4,
+    "symbol": "WAAREEENER",
+    "name": "Waaree Energies",
+    "adjusted_score": 85.45,
+    "base_score": 85.45,
+    "penalty": 0,
+    "profitvar": 158.06,
+    "salesvar": 118.81,
+    "roce": 34.94,
+    "ret3m": 44.24,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 5,
+    "symbol": "GVT&D",
+    "name": "GE Vernova T&D",
+    "adjusted_score": 83.53,
+    "base_score": 83.53,
+    "penalty": 0,
+    "profitvar": 138.53,
+    "salesvar": 58.4,
+    "roce": 54.74,
+    "ret3m": 65.47,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 6,
+    "symbol": "INSOLATION",
+    "name": "Insolation Ener",
+    "adjusted_score": 83.52,
+    "base_score": 83.52,
+    "penalty": 0,
+    "profitvar": 173.57,
+    "salesvar": 77.05,
+    "roce": 34.73,
+    "ret3m": 40.4,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 7,
+    "symbol": "SAATVIK",
+    "name": "Saatvik Green",
+    "adjusted_score": 82.49,
+    "base_score": 82.49,
+    "penalty": 0,
+    "profitvar": 144.05,
+    "salesvar": 142.58,
+    "roce": 52.33,
+    "ret3m": 31.98,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 8,
+    "symbol": "BSE",
+    "name": "BSE",
+    "adjusted_score": 80.66,
+    "base_score": 80.66,
+    "penalty": 0,
+    "profitvar": 175.79,
+    "salesvar": 61.97,
+    "roce": 46.57,
+    "ret3m": 32.03,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 9,
+    "symbol": "EMMVEE",
+    "name": "Emmvee Photovol.",
+    "adjusted_score": 79.95,
+    "base_score": 79.95,
+    "penalty": 0,
+    "profitvar": 165.77,
+    "salesvar": 118.11,
+    "roce": 28.01,
+    "ret3m": 33.71,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 10,
+    "symbol": "CUPID",
+    "name": "Cupid",
+    "adjusted_score": 76.77,
+    "base_score": 76.77,
+    "penalty": 0,
+    "profitvar": 196.66,
+    "salesvar": 105.67,
+    "roce": 17.1,
+    "ret3m": 39.96,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 11,
+    "symbol": "KRISHANA",
+    "name": "Krishana Phosch.",
+    "adjusted_score": 76.27,
+    "base_score": 76.27,
+    "penalty": 0,
+    "profitvar": 152.83,
+    "salesvar": 59.76,
+    "roce": 27.24,
+    "ret3m": 35.77,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 12,
+    "symbol": "ENGINERSIN",
+    "name": "Engineers India",
+    "adjusted_score": 76.1,
+    "base_score": 76.1,
+    "penalty": 0,
+    "profitvar": 219.3,
+    "salesvar": 58.29,
+    "roce": 25.01,
+    "ret3m": 35.57,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 13,
+    "symbol": "ACUTAAS",
+    "name": "Acutaas Chemical",
+    "adjusted_score": 70.73,
+    "base_score": 70.73,
+    "penalty": 0,
+    "profitvar": 140.18,
+    "salesvar": 42.98,
+    "roce": 19.92,
+    "ret3m": 50.43,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 14,
+    "symbol": "BAJAJCON",
+    "name": "Bajaj Consumer",
+    "adjusted_score": 70.52,
+    "base_score": 70.52,
+    "penalty": 0,
+    "profitvar": 105.29,
+    "salesvar": 30.41,
+    "roce": 30.6,
+    "ret3m": 91.68,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 15,
+    "symbol": "RUBICON",
+    "name": "Rubicon Research",
+    "adjusted_score": 70.15,
+    "base_score": 70.15,
+    "penalty": 0,
+    "profitvar": 91.23,
+    "salesvar": 51.73,
+    "roce": 26.05,
+    "ret3m": 40.67,
+    "in_working_universe": true,
+    "flags": []
+  },
+  {
+    "prerank": 16,
+    "symbol": "PRECWIRE",
+    "name": "Prec. Wires (I)",
+    "adjusted_score": 69.55,
+    "base_score": 69.55,
+    "penalty": 0,
+    "profitvar": 98.94,
+    "salesvar": 37.19,
+    "roce": 26.78,
+    "ret3m": 66.63,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 17,
+    "symbol": "CPPLUS",
+    "name": "Aditya Infotech",
+    "adjusted_score": 69.11,
+    "base_score": 69.11,
+    "penalty": 0,
+    "profitvar": 138.82,
+    "salesvar": 37.32,
+    "roce": 19.49,
+    "ret3m": 65.2,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 18,
+    "symbol": "SHARDACROP",
+    "name": "Sharda Cropchem",
+    "adjusted_score": 68.5,
+    "base_score": 68.5,
+    "penalty": 0,
+    "profitvar": 365.87,
+    "salesvar": 38.68,
+    "roce": 16.5,
+    "ret3m": 37.34,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 19,
+    "symbol": "SEAMECLTD",
+    "name": "SEAMEC Ltd",
+    "adjusted_score": 66.54,
+    "base_score": 74.54,
+    "penalty": -8,
+    "profitvar": 3100.6,
+    "salesvar": 112.3,
+    "roce": 8.6,
+    "ret3m": 42.86,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 20,
+    "symbol": "KRN",
+    "name": "KRN Heat Exchan",
+    "adjusted_score": 66.4,
+    "base_score": 66.4,
+    "penalty": 0,
+    "profitvar": 65.04,
+    "salesvar": 37.46,
+    "roce": 20.75,
+    "ret3m": 100.71,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 21,
+    "symbol": "EBGNG",
+    "name": "GNG Electronics",
+    "adjusted_score": 66.38,
+    "base_score": 66.38,
+    "penalty": 0,
+    "profitvar": 102.78,
+    "salesvar": 40.26,
+    "roce": 19.84,
+    "ret3m": 61.13,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 22,
+    "symbol": "POWERINDIA",
+    "name": "Hitachi Energy",
+    "adjusted_score": 64.66,
+    "base_score": 64.66,
+    "penalty": 0,
+    "profitvar": 119.97,
+    "salesvar": 28.51,
+    "roce": 19.44,
+    "ret3m": 77.63,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 23,
+    "symbol": "HIRECT",
+    "name": "Hind Rectifiers",
+    "adjusted_score": 63.26,
+    "base_score": 63.26,
+    "penalty": 0,
+    "profitvar": 47.85,
+    "salesvar": 44.0,
+    "roce": 21.6,
+    "ret3m": 41.84,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 24,
+    "symbol": "RRWL",
+    "name": "Ram Ratna Wires",
+    "adjusted_score": 63.0,
+    "base_score": 63.0,
+    "penalty": 0,
+    "profitvar": 106.33,
+    "salesvar": 43.8,
+    "roce": 20.17,
+    "ret3m": 32.22,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 25,
+    "symbol": "DATAPATTNS",
+    "name": "Data Pattern",
+    "adjusted_score": 62.46,
+    "base_score": 62.46,
+    "penalty": 0,
+    "profitvar": 35.76,
+    "salesvar": 47.92,
+    "roce": 21.0,
+    "ret3m": 56.57,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 26,
+    "symbol": "MTARTECH",
+    "name": "MTAR Technologie",
+    "adjusted_score": 61.86,
+    "base_score": 69.86,
+    "penalty": -8,
+    "profitvar": 131.84,
+    "salesvar": 59.3,
+    "roce": 10.51,
+    "ret3m": 102.77,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 27,
+    "symbol": "ENRIN",
+    "name": "Siemens Ener.Ind",
+    "adjusted_score": 61.61,
+    "base_score": 61.61,
+    "penalty": 0,
+    "profitvar": 51.67,
+    "salesvar": 25.97,
+    "roce": 67.75,
+    "ret3m": 39.43,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 28,
+    "symbol": "SAMBHV",
+    "name": "Sambhv Steel",
+    "adjusted_score": 59.29,
+    "base_score": 67.29,
+    "penalty": -8,
+    "profitvar": 112.79,
+    "salesvar": 59.64,
+    "roce": 13.92,
+    "ret3m": 42.95,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 29,
+    "symbol": "VOLTAMP",
+    "name": "Volt.Transform.",
+    "adjusted_score": 59.14,
+    "base_score": 59.14,
+    "penalty": 0,
+    "profitvar": 34.99,
+    "salesvar": 30.36,
+    "roce": 29.11,
+    "ret3m": 52.05,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 30,
+    "symbol": "TDPOWERSYS",
+    "name": "TD Power Systems",
+    "adjusted_score": 55.81,
+    "base_score": 55.81,
+    "penalty": 0,
+    "profitvar": 25.35,
+    "salesvar": 26.36,
+    "roce": 30.35,
+    "ret3m": 62.29,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 31,
+    "symbol": "SYRMA",
+    "name": "Syrma SGS Tech.",
+    "adjusted_score": 55.29,
+    "base_score": 63.29,
+    "penalty": -8,
+    "profitvar": 108.8,
+    "salesvar": 45.36,
+    "roce": 11.67,
+    "ret3m": 50.49,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 32,
+    "symbol": "PFOCUS",
+    "name": "Prime Focus",
+    "adjusted_score": 53.96,
+    "base_score": 61.96,
+    "penalty": -8,
+    "profitvar": 237.06,
+    "salesvar": 32.74,
+    "roce": 7.95,
+    "ret3m": 49.47,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 33,
+    "symbol": "RASHI",
+    "name": "Rashi Peripheral",
+    "adjusted_score": 53.4,
+    "base_score": 61.4,
+    "penalty": -8,
+    "profitvar": 131.0,
+    "salesvar": 42.6,
+    "roce": 14.19,
+    "ret3m": 34.68,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 34,
+    "symbol": "INOXINDIA",
+    "name": "Inox India",
+    "adjusted_score": 53.36,
+    "base_score": 53.36,
+    "penalty": 0,
+    "profitvar": 26.34,
+    "salesvar": 28.45,
+    "roce": 37.98,
+    "ret3m": 33.64,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 35,
+    "symbol": "TRIL",
+    "name": "T R I L",
+    "adjusted_score": 53.34,
+    "base_score": 53.34,
+    "penalty": 0,
+    "profitvar": 34.89,
+    "salesvar": 31.71,
+    "roce": 27.97,
+    "ret3m": 32.03,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 36,
+    "symbol": "SGFIN",
+    "name": "SG Finserve",
+    "adjusted_score": 53.16,
+    "base_score": 61.16,
+    "penalty": -8,
+    "profitvar": 77.68,
+    "salesvar": 94.88,
+    "roce": 9.32,
+    "ret3m": 37.19,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 37,
+    "symbol": "PREMIERENE",
+    "name": "Premier Energies",
+    "adjusted_score": 52.66,
+    "base_score": 52.66,
+    "penalty": 0,
+    "profitvar": 53.48,
+    "salesvar": 13.02,
+    "roce": 41.12,
+    "ret3m": 42.12,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 38,
+    "symbol": "MAHLOG",
+    "name": "Mahindra Logis.",
+    "adjusted_score": 51.57,
+    "base_score": 51.57,
+    "penalty": 0,
+    "profitvar": 6.01,
+    "salesvar": 1898.03,
+    "roce": 19.06,
+    "ret3m": 5.64,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 39,
+    "symbol": "CGPOWER",
+    "name": "CG Power & Ind",
+    "adjusted_score": 51.34,
+    "base_score": 51.34,
+    "penalty": 0,
+    "profitvar": 18.42,
+    "salesvar": 26.22,
+    "roce": 37.48,
+    "ret3m": 38.31,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 40,
+    "symbol": "SCHNEIDER",
+    "name": "Schneider Elect.",
+    "adjusted_score": 50.87,
+    "base_score": 50.87,
+    "penalty": 0,
+    "profitvar": 16.65,
+    "salesvar": 20.06,
+    "roce": 40.9,
+    "ret3m": 87.82,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 41,
+    "symbol": "APARINDS",
+    "name": "Apar Inds.",
+    "adjusted_score": 50.75,
+    "base_score": 50.75,
+    "penalty": 0,
+    "profitvar": 29.8,
+    "salesvar": 16.18,
+    "roce": 32.7,
+    "ret3m": 71.94,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 42,
+    "symbol": "SCI",
+    "name": "S C I",
+    "adjusted_score": 50.51,
+    "base_score": 58.51,
+    "penalty": -8,
+    "profitvar": 436.24,
+    "salesvar": 22.5,
+    "roce": 9.81,
+    "ret3m": 48.03,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 43,
+    "symbol": "GEPOWER",
+    "name": "GE Power",
+    "adjusted_score": 49.92,
+    "base_score": 57.92,
+    "penalty": -8,
+    "profitvar": 431.62,
+    "salesvar": 21.69,
+    "roce": 6.09,
+    "ret3m": 77.97,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 44,
+    "symbol": "SHILCTECH",
+    "name": "Shilchar Tech.",
+    "adjusted_score": 49.79,
+    "base_score": 49.79,
+    "penalty": 0,
+    "profitvar": 21.77,
+    "salesvar": 10.75,
+    "roce": 71.3,
+    "ret3m": 66.97,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 45,
+    "symbol": "AXISCADES",
+    "name": "AXISCADES Tech.",
+    "adjusted_score": 48.89,
+    "base_score": 56.89,
+    "penalty": -8,
+    "profitvar": 110.65,
+    "salesvar": 25.01,
+    "roce": 13.76,
+    "ret3m": 65.78,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 46,
+    "symbol": "NATCOPHARM",
+    "name": "Natco Pharma",
+    "adjusted_score": 48.78,
+    "base_score": 48.78,
+    "penalty": 0,
+    "profitvar": 13.91,
+    "salesvar": 36.33,
+    "roce": 32.78,
+    "ret3m": 31.0,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 47,
+    "symbol": "TECHNOE",
+    "name": "Techno Elec.Engg",
+    "adjusted_score": 48.47,
+    "base_score": 48.47,
+    "penalty": 0,
+    "profitvar": 24.23,
+    "salesvar": 37.12,
+    "roce": 16.54,
+    "ret3m": 39.28,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 48,
+    "symbol": "APOLLOMICRO",
+    "name": "Apollo Micro Sys",
+    "adjusted_score": 48.03,
+    "base_score": 56.03,
+    "penalty": -8,
+    "profitvar": 40.64,
+    "salesvar": 69.97,
+    "roce": 13.98,
+    "ret3m": 30.05,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 49,
+    "symbol": "KIRLOSENG",
+    "name": "Kirloskar Oil",
+    "adjusted_score": 47.9,
+    "base_score": 55.9,
+    "penalty": -8,
+    "profitvar": 79.61,
+    "salesvar": 28.82,
+    "roce": 13.68,
+    "ret3m": 48.68,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 50,
+    "symbol": "MANINDS",
+    "name": "Man Industries",
+    "adjusted_score": 47.17,
+    "base_score": 47.17,
+    "penalty": 0,
+    "profitvar": 61.31,
+    "salesvar": 13.45,
+    "roce": 15.98,
+    "ret3m": 65.53,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 51,
+    "symbol": "DEEPINDS",
+    "name": "Deep Industries",
+    "adjusted_score": 45.95,
+    "base_score": 53.95,
+    "penalty": -8,
+    "profitvar": 56.07,
+    "salesvar": 43.06,
+    "roce": 12.06,
+    "ret3m": 34.75,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 52,
+    "symbol": "DHENU",
+    "name": "Dhenu Buildcon",
+    "adjusted_score": 45.08,
+    "base_score": 57.08,
+    "penalty": -12,
+    "profitvar": 4150.0,
+    "salesvar": -0.08,
+    "roce": 42.61,
+    "ret3m": null,
+    "in_working_universe": false,
+    "flags": [
+      "ret3m_missing",
+      "neg_sales",
+      "ret3m_missing_penalty_skip"
+    ]
+  },
+  {
+    "prerank": 53,
+    "symbol": "GOKULAGRO",
+    "name": "Gokul Agro",
+    "adjusted_score": 45.01,
+    "base_score": 45.01,
+    "penalty": 0,
+    "profitvar": 7.17,
+    "salesvar": 26.58,
+    "roce": 34.2,
+    "ret3m": 33.18,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 54,
+    "symbol": "GOLDIAM",
+    "name": "Goldiam Intl.",
+    "adjusted_score": 44.57,
+    "base_score": 44.57,
+    "penalty": 0,
+    "profitvar": 37.52,
+    "salesvar": 14.33,
+    "roce": 24.59,
+    "ret3m": 39.23,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 55,
+    "symbol": "AEROFLEX",
+    "name": "Aeroflex",
+    "adjusted_score": 44.22,
+    "base_score": 44.22,
+    "penalty": 0,
+    "profitvar": 8.42,
+    "salesvar": 21.13,
+    "roce": 22.34,
+    "ret3m": 85.95,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 56,
+    "symbol": "CENTUM",
+    "name": "Centum Electron",
+    "adjusted_score": 44.18,
+    "base_score": 52.18,
+    "penalty": -8,
+    "profitvar": 423.59,
+    "salesvar": 21.39,
+    "roce": 12.03,
+    "ret3m": 31.93,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 57,
+    "symbol": "INGERSOLL",
+    "name": "Ingersoll-Rand",
+    "adjusted_score": 43.88,
+    "base_score": 43.88,
+    "penalty": 0,
+    "profitvar": 15.75,
+    "salesvar": 19.39,
+    "roce": 60.02,
+    "ret3m": 32.78,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 58,
+    "symbol": "IMFA",
+    "name": "Indian Metals",
+    "adjusted_score": 43.11,
+    "base_score": 43.11,
+    "penalty": 0,
+    "profitvar": 40.69,
+    "salesvar": 9.27,
+    "roce": 21.29,
+    "ret3m": 40.18,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 59,
+    "symbol": "ROSSELLIND",
+    "name": "Rossell Techsys",
+    "adjusted_score": 42.5,
+    "base_score": 50.5,
+    "penalty": -8,
+    "profitvar": 18.27,
+    "salesvar": 71.55,
+    "roce": 8.18,
+    "ret3m": 45.07,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 60,
+    "symbol": "FINCABLES",
+    "name": "Finolex Cables",
+    "adjusted_score": 42.46,
+    "base_score": 42.46,
+    "penalty": 0,
+    "profitvar": 11.4,
+    "salesvar": 35.23,
+    "roce": 17.67,
+    "ret3m": 32.67,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 61,
+    "symbol": "IBULHSGFIN",
+    "name": "Indiabulls",
+    "adjusted_score": 42.35,
+    "base_score": 54.35,
+    "penalty": -12,
+    "profitvar": 2250.95,
+    "salesvar": -8.9,
+    "roce": 41.47,
+    "ret3m": null,
+    "in_working_universe": false,
+    "flags": [
+      "ret3m_missing",
+      "neg_sales",
+      "ret3m_missing_penalty_skip"
+    ]
+  },
+  {
+    "prerank": 62,
+    "symbol": "AARTIIND",
+    "name": "Aarti Industries",
+    "adjusted_score": 42.14,
+    "base_score": 50.14,
+    "penalty": -8,
+    "profitvar": 221.74,
+    "salesvar": 25.77,
+    "roce": 6.32,
+    "ret3m": 31.07,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 63,
+    "symbol": "SHILPAMED",
+    "name": "Shilpa Medicare",
+    "adjusted_score": 42.05,
+    "base_score": 50.05,
+    "penalty": -8,
+    "profitvar": 69.92,
+    "salesvar": 28.32,
+    "roce": 7.82,
+    "ret3m": 51.11,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 64,
+    "symbol": "KSHINTL",
+    "name": "KSH Internationa",
+    "adjusted_score": 42.04,
+    "base_score": 54.04,
+    "penalty": -12,
+    "profitvar": -4.62,
+    "salesvar": 58.52,
+    "roce": 21.45,
+    "ret3m": 61.14,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit"
+    ]
+  },
+  {
+    "prerank": 65,
+    "symbol": "AMBER",
+    "name": "Amber Enterp.",
+    "adjusted_score": 41.71,
+    "base_score": 49.71,
+    "penalty": -8,
+    "profitvar": 26.43,
+    "salesvar": 37.94,
+    "roce": 14.49,
+    "ret3m": 37.98,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 66,
+    "symbol": "KSB",
+    "name": "KSB",
+    "adjusted_score": 41.41,
+    "base_score": 41.41,
+    "penalty": 0,
+    "profitvar": 33.43,
+    "salesvar": 7.93,
+    "roce": 24.52,
+    "ret3m": 43.44,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 67,
+    "symbol": "STLTECH",
+    "name": "Sterlite Tech.",
+    "adjusted_score": 40.1,
+    "base_score": 48.1,
+    "penalty": -8,
+    "profitvar": 53.33,
+    "salesvar": 25.95,
+    "roce": 2.86,
+    "ret3m": 193.34,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 68,
+    "symbol": "ABSLAMC",
+    "name": "Aditya AMC",
+    "adjusted_score": 39.87,
+    "base_score": 39.87,
+    "penalty": 0,
+    "profitvar": 21.01,
+    "salesvar": 7.41,
+    "roce": 35.51,
+    "ret3m": 36.42,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 69,
+    "symbol": "SHRIPISTON",
+    "name": "Shriram Pistons",
+    "adjusted_score": 39.75,
+    "base_score": 39.75,
+    "penalty": 0,
+    "profitvar": 17.91,
+    "salesvar": 20.67,
+    "roce": 25.7,
+    "ret3m": 31.97,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 70,
+    "symbol": "ISGEC",
+    "name": "ISGEC Heavy",
+    "adjusted_score": 39.64,
+    "base_score": 47.64,
+    "penalty": -8,
+    "profitvar": 102.88,
+    "salesvar": 16.26,
+    "roce": 14.83,
+    "ret3m": 40.35,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 71,
+    "symbol": "AZAD",
+    "name": "Azad Engineering",
+    "adjusted_score": 38.65,
+    "base_score": 46.65,
+    "penalty": -8,
+    "profitvar": 40.14,
+    "salesvar": 31.38,
+    "roce": 12.23,
+    "ret3m": 34.83,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 72,
+    "symbol": "PARKHOSPS",
+    "name": "Park Medi World",
+    "adjusted_score": 38.28,
+    "base_score": 38.28,
+    "penalty": 0,
+    "profitvar": 11.38,
+    "salesvar": 17.76,
+    "roce": 20.36,
+    "ret3m": 47.83,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 73,
+    "symbol": "THERMAX",
+    "name": "Thermax",
+    "adjusted_score": 37.21,
+    "base_score": 37.21,
+    "penalty": 0,
+    "profitvar": 40.63,
+    "salesvar": 4.19,
+    "roce": 16.22,
+    "ret3m": 42.87,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 74,
+    "symbol": "AEQUS",
+    "name": "Aequs",
+    "adjusted_score": 36.47,
+    "base_score": 44.47,
+    "penalty": -8,
+    "profitvar": 17.87,
+    "salesvar": 50.77,
+    "roce": 1.11,
+    "ret3m": 43.7,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 75,
+    "symbol": "AVANTIFEED",
+    "name": "Avanti Feeds",
+    "adjusted_score": 36.43,
+    "base_score": 36.43,
+    "penalty": 0,
+    "profitvar": 10.4,
+    "salesvar": 1.31,
+    "roce": 23.99,
+    "ret3m": 101.35,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 76,
+    "symbol": "SANSERA",
+    "name": "Sansera Enginee.",
+    "adjusted_score": 34.98,
+    "base_score": 42.98,
+    "penalty": -8,
+    "profitvar": 44.51,
+    "salesvar": 24.71,
+    "roce": 13.38,
+    "ret3m": 32.38,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 77,
+    "symbol": "BHARATFORG",
+    "name": "Bharat Forge",
+    "adjusted_score": 34.86,
+    "base_score": 42.86,
+    "penalty": -8,
+    "profitvar": 40.77,
+    "salesvar": 24.96,
+    "roce": 12.18,
+    "ret3m": 35.23,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 78,
+    "symbol": "ATHERENRGY",
+    "name": "Ather Energy",
+    "adjusted_score": 34.47,
+    "base_score": 54.47,
+    "penalty": -20,
+    "profitvar": 59.76,
+    "salesvar": 50.2,
+    "roce": -65.71,
+    "ret3m": 45.04,
+    "in_working_universe": false,
+    "flags": [
+      "roce_negative",
+      "low_roce",
+      "neg_roce_extra"
+    ]
+  },
+  {
+    "prerank": 79,
+    "symbol": "SMSPHARMA",
+    "name": "SMS Pharma.",
+    "adjusted_score": 32.54,
+    "base_score": 40.54,
+    "penalty": -8,
+    "profitvar": 35.93,
+    "salesvar": 21.4,
+    "roce": 12.19,
+    "ret3m": 39.96,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 80,
+    "symbol": "ABDL",
+    "name": "Allied Blenders",
+    "adjusted_score": 30.12,
+    "base_score": 30.12,
+    "penalty": 0,
+    "profitvar": 19.51,
+    "salesvar": 2.98,
+    "roce": 21.08,
+    "ret3m": 31.44,
+    "in_working_universe": false,
+    "flags": []
+  },
+  {
+    "prerank": 81,
+    "symbol": "HFCL",
+    "name": "HFCL",
+    "adjusted_score": 28.31,
+    "base_score": 36.31,
+    "penalty": -8,
+    "profitvar": 32.55,
+    "salesvar": 19.65,
+    "roce": 7.55,
+    "ret3m": 50.44,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 82,
+    "symbol": "TRUALT",
+    "name": "TruAlt Bioenergy",
+    "adjusted_score": 26.04,
+    "base_score": 46.04,
+    "penalty": -20,
+    "profitvar": -7.79,
+    "salesvar": 71.82,
+    "roce": 14.18,
+    "ret3m": 35.82,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 83,
+    "symbol": "WELCORP",
+    "name": "Welspun Corp",
+    "adjusted_score": 24.62,
+    "base_score": 36.62,
+    "penalty": -12,
+    "profitvar": -32.91,
+    "salesvar": 25.43,
+    "roce": 21.24,
+    "ret3m": 43.49,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit"
+    ]
+  },
+  {
+    "prerank": 84,
+    "symbol": "AGIIL",
+    "name": "AGI Infra",
+    "adjusted_score": 23.42,
+    "base_score": 35.42,
+    "penalty": -12,
+    "profitvar": 36.92,
+    "salesvar": -4.28,
+    "roce": 22.03,
+    "ret3m": 35.59,
+    "in_working_universe": false,
+    "flags": [
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 85,
+    "symbol": "STEELCAST",
+    "name": "Steelcast",
+    "adjusted_score": 23.02,
+    "base_score": 35.02,
+    "penalty": -12,
+    "profitvar": 7.18,
+    "salesvar": -4.33,
+    "roce": 32.94,
+    "ret3m": 63.59,
+    "in_working_universe": false,
+    "flags": [
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 86,
+    "symbol": "BELRISE",
+    "name": "Belrise Industri",
+    "adjusted_score": 22.95,
+    "base_score": 30.95,
+    "penalty": -8,
+    "profitvar": 25.79,
+    "salesvar": 8.02,
+    "roce": 14.3,
+    "ret3m": 34.4,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 87,
+    "symbol": "ABB",
+    "name": "A B B",
+    "adjusted_score": 20.7,
+    "base_score": 32.7,
+    "penalty": -12,
+    "profitvar": -18.35,
+    "salesvar": 5.71,
+    "roce": 29.93,
+    "ret3m": 52.06,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit"
+    ]
+  },
+  {
+    "prerank": 88,
+    "symbol": "PAISALO",
+    "name": "Paisalo Digital",
+    "adjusted_score": 19.99,
+    "base_score": 27.99,
+    "penalty": -8,
+    "profitvar": 7.06,
+    "salesvar": 17.82,
+    "roce": 13.13,
+    "ret3m": 35.31,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 89,
+    "symbol": "ACMESOLAR",
+    "name": "ACME Solar Hold.",
+    "adjusted_score": 18.55,
+    "base_score": 38.55,
+    "penalty": -20,
+    "profitvar": -3.66,
+    "salesvar": 42.34,
+    "roce": 8.42,
+    "ret3m": 46.46,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 90,
+    "symbol": "PITTIENG",
+    "name": "Pitti Engg.",
+    "adjusted_score": 16.11,
+    "base_score": 28.11,
+    "penalty": -12,
+    "profitvar": -1.88,
+    "salesvar": 15.05,
+    "roce": 17.05,
+    "ret3m": 38.75,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit"
+    ]
+  },
+  {
+    "prerank": 91,
+    "symbol": "SINDHUTRAD",
+    "name": "Sindhu Trade",
+    "adjusted_score": 15.19,
+    "base_score": 35.19,
+    "penalty": -20,
+    "profitvar": 285.68,
+    "salesvar": -76.68,
+    "roce": 5.45,
+    "ret3m": 32.78,
+    "in_working_universe": false,
+    "flags": [
+      "neg_sales",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 92,
+    "symbol": "NAVA",
+    "name": "Nava",
+    "adjusted_score": 13.67,
+    "base_score": 25.67,
+    "penalty": -12,
+    "profitvar": -11.98,
+    "salesvar": 17.64,
+    "roce": 17.17,
+    "ret3m": 32.06,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit"
+    ]
+  },
+  {
+    "prerank": 93,
+    "symbol": "PFC",
+    "name": "Power Fin.Corpn.",
+    "adjusted_score": 12.36,
+    "base_score": 20.36,
+    "penalty": -8,
+    "profitvar": 8.14,
+    "salesvar": 8.57,
+    "roce": 9.73,
+    "ret3m": 32.21,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 94,
+    "symbol": "LUXIND",
+    "name": "Lux Industries",
+    "adjusted_score": 11.18,
+    "base_score": 31.18,
+    "penalty": -20,
+    "profitvar": -46.66,
+    "salesvar": 21.59,
+    "roce": 12.54,
+    "ret3m": 69.18,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 95,
+    "symbol": "JAYNECOIND",
+    "name": "Jayaswal Neco",
+    "adjusted_score": 11.03,
+    "base_score": 19.03,
+    "penalty": -8,
+    "profitvar": 6.08,
+    "salesvar": 4.25,
+    "roce": 12.59,
+    "ret3m": 30.76,
+    "in_working_universe": false,
+    "flags": [
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 96,
+    "symbol": "SGMART",
+    "name": "SG Mart",
+    "adjusted_score": 9.67,
+    "base_score": 29.67,
+    "penalty": -20,
+    "profitvar": -61.7,
+    "salesvar": 23.21,
+    "roce": 11.33,
+    "ret3m": 67.14,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 97,
+    "symbol": "SUVEN",
+    "name": "Suven Life Scie.",
+    "adjusted_score": 7.18,
+    "base_score": 39.18,
+    "penalty": -32,
+    "profitvar": -160.53,
+    "salesvar": 74.53,
+    "roce": -86.96,
+    "ret3m": 55.62,
+    "in_working_universe": false,
+    "flags": [
+      "roce_negative",
+      "neg_profit",
+      "low_roce",
+      "neg_roce_extra"
+    ]
+  },
+  {
+    "prerank": 98,
+    "symbol": "E2E",
+    "name": "E2E Networks",
+    "adjusted_score": 4.56,
+    "base_score": 36.56,
+    "penalty": -32,
+    "profitvar": -52.68,
+    "salesvar": 185.66,
+    "roce": -0.51,
+    "ret3m": 31.23,
+    "in_working_universe": false,
+    "flags": [
+      "roce_negative",
+      "neg_profit",
+      "low_roce",
+      "neg_roce_extra"
+    ]
+  },
+  {
+    "prerank": 99,
+    "symbol": "ADANIENSOL",
+    "name": "Adani Energy Sol",
+    "adjusted_score": 4.02,
+    "base_score": 24.02,
+    "penalty": -20,
+    "profitvar": -1.69,
+    "salesvar": 15.43,
+    "roce": 10.23,
+    "ret3m": 40.04,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 100,
+    "symbol": "DALMIASUG",
+    "name": "Dalmia Bharat Sugar",
+    "adjusted_score": 1.36,
+    "base_score": 21.36,
+    "penalty": -20,
+    "profitvar": 17.64,
+    "salesvar": -16.7,
+    "roce": 9.48,
+    "ret3m": 47.68,
+    "in_working_universe": false,
+    "flags": [
+      "neg_sales",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 101,
+    "symbol": "GARFIBRES",
+    "name": "Garware Hi Tech",
+    "adjusted_score": 1.24,
+    "base_score": 25.24,
+    "penalty": -24,
+    "profitvar": -8.29,
+    "salesvar": -1.64,
+    "roce": 20.57,
+    "ret3m": 47.07,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 102,
+    "symbol": "GALLANTT",
+    "name": "Gallantt Ispat",
+    "adjusted_score": 0.58,
+    "base_score": 24.58,
+    "penalty": -24,
+    "profitvar": -11.67,
+    "salesvar": -4.0,
+    "roce": 19.2,
+    "ret3m": 59.8,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 103,
+    "symbol": "RPSGVENT",
+    "name": "RPSG Ventures",
+    "adjusted_score": 0.21,
+    "base_score": 20.21,
+    "penalty": -20,
+    "profitvar": -203.72,
+    "salesvar": 15.57,
+    "roce": 11.33,
+    "ret3m": 43.7,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 104,
+    "symbol": "ADANIPOWER",
+    "name": "Adani Power",
+    "adjusted_score": 0.08,
+    "base_score": 24.08,
+    "penalty": -24,
+    "profitvar": -18.89,
+    "salesvar": -8.92,
+    "roce": 22.54,
+    "ret3m": 45.92,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 105,
+    "symbol": "SUPPETRO",
+    "name": "Supreme Petroch.",
+    "adjusted_score": -1.41,
+    "base_score": 22.59,
+    "penalty": -24,
+    "profitvar": -50.25,
+    "salesvar": -10.01,
+    "roce": 22.76,
+    "ret3m": 45.73,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "neg_sales"
+    ]
+  },
+  {
+    "prerank": 106,
+    "symbol": "VTL",
+    "name": "Vardhman Textile",
+    "adjusted_score": -4.89,
+    "base_score": 15.11,
+    "penalty": -20,
+    "profitvar": -21.02,
+    "salesvar": 1.62,
+    "roce": 10.83,
+    "ret3m": 36.47,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 107,
+    "symbol": "KTKBANK",
+    "name": "Karnataka Bank",
+    "adjusted_score": -5.49,
+    "base_score": 14.51,
+    "penalty": -20,
+    "profitvar": 2.54,
+    "salesvar": -1.02,
+    "roce": 6.33,
+    "ret3m": 35.88,
+    "in_working_universe": false,
+    "flags": [
+      "neg_sales",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 108,
+    "symbol": "ADANIGREEN",
+    "name": "Adani Green",
+    "adjusted_score": -7.72,
+    "base_score": 12.28,
+    "penalty": -20,
+    "profitvar": -106.78,
+    "salesvar": 11.88,
+    "roce": 8.7,
+    "ret3m": 31.18,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "low_roce"
+    ]
+  },
+  {
+    "prerank": 109,
+    "symbol": "GUJALKALI",
+    "name": "Gujarat Alkalies",
+    "adjusted_score": -18.63,
+    "base_score": 13.37,
+    "penalty": -32,
+    "profitvar": -77.65,
+    "salesvar": 1.46,
+    "roce": -0.34,
+    "ret3m": 60.33,
+    "in_working_universe": false,
+    "flags": [
+      "roce_negative",
+      "neg_profit",
+      "low_roce",
+      "neg_roce_extra"
+    ]
+  },
+  {
+    "prerank": 110,
+    "symbol": "JPFL",
+    "name": "Jindal Poly Film",
+    "adjusted_score": -21.31,
+    "base_score": 10.69,
+    "penalty": -32,
+    "profitvar": -453.42,
+    "salesvar": -68.66,
+    "roce": 5.36,
+    "ret3m": 94.8,
+    "in_working_universe": false,
+    "flags": [
+      "neg_profit",
+      "neg_sales",
+      "low_roce"
+    ]
+  }
+]

@@ -75,3 +75,40 @@ The current problem with the skill is as below:
 /workspaces/learn-trading-view-mcp/docs/swing-trading/tmp-technical-2026-04-19/01-ACUTAAS.md
 2. The technical dossire will obviously not used for caching but for the end user to have the confidence around what the main agent and sub agents have been working on and how it has come to a certain point. that's why the dossier should be verbose.
 ---------------------------
+
+/swing-trading-3pct-screen https://www.screener.in/screens/3474384/return-over-3-months 
+Do the prerank and select top 15 stocks for the stock universe.
+Then do the fundamental analysis for all the 15 stocks and select top ten 10 for techincal analysis.
+
+Use claude-opus-4-6[1m]  as the main agent.
+Use sonnet-4-6 for the fundamental and technical sub agents.
+
+---------------------------
+
+Improve the skill swing-trading-3pct-screen. 
+The source code of skill is present in .claude/skills/swing-trading-3pct-screen and then there is a symlink in .codex/skills/
+swing-trading-3pct-screen -> /workspaces/learn-trading-view-mcp/.claude/skills/swing-trading-3pct-screen
+
+The current problem with the skill is as below:
+The screen at screener url to be shared by user has these columns:
+CMP Rs., P/E, Mar Cap Rs.Cr., Div Yld %, NP Qtr Rs.Cr., Qtr Profit Var %, Sales Qtr Rs.Cr., Qtr Sales Var %, ROCE %, 3mth return %
+whereas the skill currently requires:
+The PreRank formula requires 10 columns. Only 3 are present (bold above). These 7 are missing:                                                                                                   
+                                                                                                                 
+  ┌──────────────────┬────────┐                                                                                                                                                                    
+  │  Missing Column  │ Weight │                                                                                  
+  ├──────────────────┼────────┤
+  │ ROE %            │ 0.10   │
+  ├──────────────────┼────────┤
+  │ Profit growth %  │ 0.08   │                                                                                                                                                                    
+  ├──────────────────┼────────┤
+  │ Sales Var 3Yrs % │ 0.07   │                                                                                                                                                                    
+  ├──────────────────┼────────┤                                                                                  
+  │ 6mth return %    │ 0.05   │
+  ├──────────────────┼────────┤                                                                                                                                                                    
+  │ 1Yr return %     │ 0.04   │
+  ├──────────────────┼────────┤                                                                                                                                                                    
+  │ Debt / Eq        │ 0.03   │                                                                                  
+  ├──────────────────┼────────┤
+  │ PEG              │ 0.01   │
+  └──────────────────┴────────┘

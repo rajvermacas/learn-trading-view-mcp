@@ -77,3 +77,8 @@
 | SGFIN | SG Finserve Ltd | by-symbol/SGFIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SEAMECLTD | SEAMEC Ltd | by-symbol/SEAMECLTD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ACMESOLAR | ACME Solar Holdings Ltd | by-symbol/ACMESOLAR.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| INSOLATION | Insolation Energy Ltd | by-symbol/INSOLATION.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| SAATVIKGL | Saatvik Green Energy Ltd | by-symbol/SAATVIKGL.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| BSE | BSE Ltd | by-symbol/BSE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |

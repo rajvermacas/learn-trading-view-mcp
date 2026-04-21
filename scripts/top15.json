@@ -1,0 +1,167 @@
+[
+  {
+    "prerank": 1,
+    "symbol": "QPOWER",
+    "name": "Quality Power El",
+    "adjusted_score": 88.83,
+    "profitvar": 169.18,
+    "salesvar": 291.22,
+    "roce": 26.6,
+    "ret3m": 93.64,
+    "flags": []
+  },
+  {
+    "prerank": 2,
+    "symbol": "LLOYDSME",
+    "name": "Lloyds Metals",
+    "adjusted_score": 87.06,
+    "profitvar": 169.05,
+    "salesvar": 201.94,
+    "roce": 38.28,
+    "ret3m": 42.63,
+    "flags": []
+  },
+  {
+    "prerank": 3,
+    "symbol": "ATLANTAELE",
+    "name": "Atlanta Electric",
+    "adjusted_score": 86.63,
+    "profitvar": 125.33,
+    "salesvar": 79.71,
+    "roce": 50.2,
+    "ret3m": 84.39,
+    "flags": []
+  },
+  {
+    "prerank": 4,
+    "symbol": "WAAREEENER",
+    "name": "Waaree Energies",
+    "adjusted_score": 85.45,
+    "profitvar": 158.06,
+    "salesvar": 118.81,
+    "roce": 34.94,
+    "ret3m": 44.24,
+    "flags": []
+  },
+  {
+    "prerank": 5,
+    "symbol": "GVT&D",
+    "name": "GE Vernova T&D",
+    "adjusted_score": 83.53,
+    "profitvar": 138.53,
+    "salesvar": 58.4,
+    "roce": 54.74,
+    "ret3m": 65.47,
+    "flags": []
+  },
+  {
+    "prerank": 6,
+    "symbol": "INSOLATION",
+    "name": "Insolation Ener",
+    "adjusted_score": 83.52,
+    "profitvar": 173.57,
+    "salesvar": 77.05,
+    "roce": 34.73,
+    "ret3m": 40.4,
+    "flags": []
+  },
+  {
+    "prerank": 7,
+    "symbol": "SAATVIK",
+    "name": "Saatvik Green",
+    "adjusted_score": 82.49,
+    "profitvar": 144.05,
+    "salesvar": 142.58,
+    "roce": 52.33,
+    "ret3m": 31.98,
+    "flags": []
+  },
+  {
+    "prerank": 8,
+    "symbol": "BSE",
+    "name": "BSE",
+    "adjusted_score": 80.66,
+    "profitvar": 175.79,
+    "salesvar": 61.97,
+    "roce": 46.57,
+    "ret3m": 32.03,
+    "flags": []
+  },
+  {
+    "prerank": 9,
+    "symbol": "EMMVEE",
+    "name": "Emmvee Photovol.",
+    "adjusted_score": 79.95,
+    "profitvar": 165.77,
+    "salesvar": 118.11,
+    "roce": 28.01,
+    "ret3m": 33.71,
+    "flags": []
+  },
+  {
+    "prerank": 10,
+    "symbol": "CUPID",
+    "name": "Cupid",
+    "adjusted_score": 76.77,
+    "profitvar": 196.66,
+    "salesvar": 105.67,
+    "roce": 17.1,
+    "ret3m": 39.96,
+    "flags": []
+  },
+  {
+    "prerank": 11,
+    "symbol": "KRISHANA",
+    "name": "Krishana Phosch.",
+    "adjusted_score": 76.27,
+    "profitvar": 152.83,
+    "salesvar": 59.76,
+    "roce": 27.24,
+    "ret3m": 35.77,
+    "flags": []
+  },
+  {
+    "prerank": 12,
+    "symbol": "ENGINERSIN",
+    "name": "Engineers India",
+    "adjusted_score": 76.1,
+    "profitvar": 219.3,
+    "salesvar": 58.29,
+    "roce": 25.01,
+    "ret3m": 35.57,
+    "flags": []
+  },
+  {
+    "prerank": 13,
+    "symbol": "ACUTAAS",
+    "name": "Acutaas Chemical",
+    "adjusted_score": 70.73,
+    "profitvar": 140.18,
+    "salesvar": 42.98,
+    "roce": 19.92,
+    "ret3m": 50.43,
+    "flags": []
+  },
+  {
+    "prerank": 14,
+    "symbol": "BAJAJCON",
+    "name": "Bajaj Consumer",
+    "adjusted_score": 70.52,
+    "profitvar": 105.29,
+    "salesvar": 30.41,
+    "roce": 30.6,
+    "ret3m": 91.68,
+    "flags": []
+  },
+  {
+    "prerank": 15,
+    "symbol": "RUBICON",
+    "name": "Rubicon Research",
+    "adjusted_score": 70.15,
+    "profitvar": 91.23,
+    "salesvar": 51.73,
+    "roce": 26.05,
+    "ret3m": 40.67,
+    "flags": []
+  }
+]
