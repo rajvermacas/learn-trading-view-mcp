@@ -82,3 +82,6 @@
 | BSE | BSE Ltd | by-symbol/BSE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| ORIANA | Oriana Power Ltd | by-symbol/ORIANA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
