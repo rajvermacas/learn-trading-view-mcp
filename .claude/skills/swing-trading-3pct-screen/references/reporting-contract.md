@@ -48,6 +48,13 @@ technically reviewed stock and no dossier for pending names.
 - pagination handling
 - deduplication
 - normalized raw universe used for analysis
+- the fixed visible screen schema used in the run
+- the four scoring columns used for `PreRankScore`
+- the six context-only visible columns
+- adjusted `PreRankScore`
+- working-universe inclusion status
+- key penalty flags
+- key zero-contribution metric flags
 
 ## 3pct-ranked-by-stop-safety.md
 

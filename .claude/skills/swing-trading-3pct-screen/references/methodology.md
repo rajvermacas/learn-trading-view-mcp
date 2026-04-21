@@ -113,26 +113,48 @@ parsed Screener universe to a user-capped working universe.
 Fail fast rules:
 
 - if the user prompt does not specify the pre-rank cap, stop with a clear exception
-- if any required Screener column for `PreRankScore` is missing, stop with a clear exception
+- if the Screener headers do not contain all four scoring columns below, stop with a clear exception
 - column presence is checked from the Screener HTML headers only
 - do not assume `15`, do not assume `top 10`, and do not assume the whole parsed universe
 
 ### Required Screener Columns
 
-- `Qtr Sales Var %`
+The skill assumes this exact visible screen schema:
+
+- `CMP Rs.`
+- `P/E`
+- `Mar Cap Rs.Cr.`
+- `Div Yld %`
+- `NP Qtr Rs.Cr.`
 - `Qtr Profit Var %`
+- `Sales Qtr Rs.Cr.`
+- `Qtr Sales Var %`
 - `ROCE %`
-- `ROE %`
-- `Profit growth %`
-- `Sales Var 3Yrs %`
-- `6mth return %`
-- `1Yr return %`
-- `Debt / Eq`
-- `PEG`
+- `3mth return %`
+
+### Pre-Rank Scoring Columns
+
+Only these visible columns contribute to `PreRankScore`:
+
+- `Qtr Profit Var %`
+- `Qtr Sales Var %`
+- `ROCE %`
+- `3mth return %`
+
+### Context-Only Visible Columns
+
+These columns are part of the screen and must remain available for context and reporting, but they do not contribute to `PreRankScore`:
+
+- `CMP Rs.`
+- `P/E`
+- `Mar Cap Rs.Cr.`
+- `Div Yld %`
+- `NP Qtr Rs.Cr.`
+- `Sales Qtr Rs.Cr.`
 
 ### PreRankScore
 
-Convert each required column into a percentile rank within the parsed Screener
+Convert each scoring column into a percentile rank within the parsed Screener
 universe.
 
 Pre-rank must use only the values already present in the Screener HTML table for
@@ -140,24 +162,23 @@ that run. The main agent must not fetch stock-specific pages or other endpoints
 to repair missing pre-rank values because that increases cost and defeats the
 purpose of this reduction step.
 
+- Base weights:
+  - `Qtr Profit Var %`: `0.35`
+  - `Qtr Sales Var %`: `0.35`
+  - `ROCE %`: `0.20`
+  - `3mth return %`: `0.10`
+
 - higher-is-better columns:
-  - `Qtr Sales Var %`
   - `Qtr Profit Var %`
+  - `Qtr Sales Var %`
   - `ROCE %`
-  - `ROE %`
-  - `Profit growth %`
-  - `Sales Var 3Yrs %`
-  - `6mth return %`
-  - `1Yr return %`
-- lower-is-better columns:
-  - `Debt / Eq`
-  - `PEG`
+  - `3mth return %`
 
 ### Row-Level Value Handling
 
 Column headers are mandatory. Individual row values are not.
 
-For each required metric on each stock row:
+For each scoring metric on each stock row:
 
 - if the cell parses as a valid numeric value and is not distorted by the corner cases below, use it in the metric ranking pool
 - if the cell is blank, missing, `-`, `--`, `NaN`, or otherwise non-numeric, do not fetch that value elsewhere; assign that metric a percentile contribution of `0` and add a reporting flag
@@ -168,41 +189,31 @@ This keeps the run cheap while preventing sparse rows from breaking the flow.
 
 Compute:
 
-`PreRankScore = 0.24 * rank(Qtr Sales Var %) + 0.24 * rank(Qtr Profit Var %) + 0.14 * rank(ROCE %) + 0.10 * rank(ROE %) + 0.08 * rank(Profit growth %) + 0.07 * rank(Sales Var 3Yrs %) + 0.05 * rank(6mth return %) + 0.04 * rank(1Yr return %) + 0.03 * inverse_rank(Debt / Eq) + 0.01 * inverse_rank(PEG)`
+`PreRankScore = 0.35 * rank(Qtr Profit Var %) + 0.35 * rank(Qtr Sales Var %) + 0.20 * rank(ROCE %) + 0.10 * rank(3mth return %)`
 
 ### Soft Penalties
 
-Apply these deductions after `PreRankScore` is computed:
+Apply these deductions after `PreRankScore` is computed.
 
-- if `Qtr Sales Var % <= 0`, subtract `12`
 - if `Qtr Profit Var % <= 0`, subtract `12`
-- if `Debt / Eq > 1`, subtract `8`
+- if `Qtr Sales Var % <= 0`, subtract `12`
 - if `ROCE % < 15`, subtract `8`
-- if `PEG > 3`, subtract `4`
+- if `3mth return % <= 0`, subtract `8`
 
 ### Distortion And Corner-Case Rules
 
 The pre-rank must explicitly neutralize row values that can distort the result.
 
-- if `PEG <= 0`, treat the `PEG` metric contribution as `0` and subtract `6`
 - if `ROCE % < 0`, treat the `ROCE` metric contribution as `0` and subtract `12`
-- if `ROE % < 0`, treat the `ROE` metric contribution as `0` and subtract `12`
-- if `Debt / Eq < 0`, treat the `Debt / Eq` metric contribution as `0` and subtract `10`
-- if `Qtr Sales Var %` is missing or invalid, keep that metric contribution at `0`
-- if `Qtr Profit Var %` is missing or invalid, keep that metric contribution at `0`
-- if `ROCE %` is missing or invalid, keep that metric contribution at `0`
-- if `ROE %` is missing or invalid, keep that metric contribution at `0`
-- if `Profit growth %` is missing or invalid, keep that metric contribution at `0`
-- if `Sales Var 3Yrs %` is missing or invalid, keep that metric contribution at `0`
-- if `6mth return %` is missing or invalid, keep that metric contribution at `0`
-- if `1Yr return %` is missing or invalid, keep that metric contribution at `0`
-- if `Debt / Eq` is missing or invalid, keep that metric contribution at `0`
-- if `PEG` is missing or invalid, keep that metric contribution at `0`
+- if `Qtr Profit Var % < 0`, keep the ranked contribution but still apply the negative-growth penalty
+- if `Qtr Sales Var % < 0`, keep the ranked contribution but still apply the negative-growth penalty
+- if `3mth return % < 0`, keep the ranked contribution but still apply the negative-momentum penalty
+- if any scoring metric is missing or invalid for a row, keep that metric contribution at `0`
 
 Rationale:
 
-- negative `PEG` often reflects broken earnings or growth math and must not be rewarded as an attractive low value
-- negative `ROCE`, `ROE`, or `Debt / Eq` often signals capital destruction or negative net worth and must not be treated as favorable
+- `Qtr Profit Var %`, `Qtr Sales Var %`, and `ROCE %` capture the recent operating sponsorship this screen is trying to surface
+- `3mth return %` keeps the pre-rank aligned with the user’s momentum-biased universe without overpowering operating evidence
 - percentile ranking already limits the damage from unusually large positive values, so extra clipping is not required here
 
 ### Selection Rule
@@ -465,6 +476,9 @@ List every stock parsed from the full HTML universe.
 It must also show:
 
 - adjusted `PreRankScore`
+- the fixed screen schema used in that run
+- the four scoring columns used for `PreRankScore`
+- the six context-only visible columns
 - whether the stock made the capped working universe
 - the key penalty flags that changed the adjusted score
 - the key missing or distorted metric flags that forced zero contribution

@@ -82,7 +82,8 @@ Responsibility split is strict:
 - The skill must never assume a pre-rank cap such as `15`; the user must provide that number in the prompt.
 - If the prompt does not specify a pre-rank cap, stop with a clear exception instead of defaulting to the full universe or any assumed cap.
 - Pre-rank must use only the values already present in the Screener HTML table for that run; the main agent must not fetch per-stock values separately for pre-rank.
-- If a required pre-rank column header is absent from the Screener HTML, stop with a clear exception.
+- If the Screener headers do not contain `Qtr Profit Var %`, `Qtr Sales Var %`, `ROCE %`, and `3mth return %`, stop with a clear exception that names the missing scoring columns.
+- `CMP Rs.`, `P/E`, `Mar Cap Rs.Cr.`, `Div Yld %`, `NP Qtr Rs.Cr.`, and `Sales Qtr Rs.Cr.` are context-only screen columns for this skill and must not contribute to `PreRankScore`.
 - If an individual stock row has a missing, blank, non-numeric, or distorted pre-rank value, apply the row-level scoring and penalty rules from [references/methodology.md](references/methodology.md) and continue without extra fetches.
 - Fundamental sub-agents may be dispatched multiple at a time with bounded concurrency, but each fundamental sub-agent must process exactly one stock.
 - No more than `6` fundamental sub-agents may be inflight at once.
