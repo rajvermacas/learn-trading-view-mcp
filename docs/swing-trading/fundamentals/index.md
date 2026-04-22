@@ -85,3 +85,5 @@
 | ORIANA | Oriana Power Ltd | by-symbol/ORIANA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
+| STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
