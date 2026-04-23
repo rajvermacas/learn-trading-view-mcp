@@ -87,3 +87,5 @@
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
+| UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
+| WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
