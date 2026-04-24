@@ -1,6 +1,6 @@
 ---
 name: swing-trading-3pct-screen
-description: Use when screening Indian stocks from a Screener.in HTML universe for swing trades that must be ranked by full-universe fundamental sponsorship first, then strictly reviewed sequentially on TradingView with verbose per-stock technical dossiers around a practical 2% to 4% stop zone.
+description: Use when screening Indian stocks from a Screener.in HTML universe for swing trades that need full-universe fundamental sponsorship ranking first, then technical review through TradingView MCP or deterministic public-data API mode when TradingView MCP is disconnected.
 ---
 
 # Swing Trading 3pct Screen
@@ -26,12 +26,14 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 11. As soon as one fundamental sub-agent returns an accepted dossier, immediately overwrite that stock dossier and update its `index.md` row before waiting for any other fundamental result.
 12. Reuse cached dossiers for all `fresh` and remaining `review_due`.
 13. Build the capped-universe fundamental ranking from authoritative stock dossiers only.
-14. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh) and verify TradingView plus the EMA study setup before chart work begins.
-15. Dispatch one technical sub-agent per stock only after the ranking exists.
-16. Run technical sub-agents strictly one at a time because TradingView MCP is shared mutable state.
-17. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
-18. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next chart.
-19. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
+14. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh), then select `technical_data_mode`.
+15. Use `technical_data_mode=tradingview_mcp` only after TradingView and the EMA study setup are verified.
+16. If TradingView MCP is disconnected or unreachable, use `technical_data_mode=api_fallback` and fetch deterministic technical data with this skill's local API scripts.
+17. Dispatch one technical sub-agent per stock only after the ranking exists.
+18. Run technical sub-agents strictly one at a time.
+19. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
+20. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next symbol.
+21. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
 
 ## Delegation Rules
 
@@ -93,6 +95,16 @@ Responsibility split is strict:
 
 - Technical sub-agents must run one at a time and only one stock per worker.
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
+- Each technical handoff must include `technical_data_mode`.
+- In `tradingview_mcp` mode, workers read the shared chart state from TradingView MCP.
+- In `api_fallback` mode, the main agent must fetch per-stock JSON before the handoff using:
+  - `scripts/fetch_stock_data.py`
+  - `scripts/fetch_indicator_bundle.py`
+- In `api_fallback` mode, read `references/api-workflow.md`, `references/api-output-schemas.md`, and `references/api-indicators.md`; keep stdout JSON and stderr logs separate.
+- In `api_fallback` mode, resolve an exchange-qualified ticker such as `ATLANTAELE.NS`, explicit ISO dates, and explicit look-back days before fetching. If any required input is missing or cannot be resolved, stop with a clear exception.
+- In `api_fallback` mode, TradingView is the source-of-truth capability floor: fetch `15m`, `30m`, `60m`, `1d`, and `1wk`, and fetch EMA `10`, `20`, `50`, `100`, and `200` on every interval. API fallback may include more indicators, but not fewer required timeframes or EMAs.
+- If API data cannot support one of the required timeframes or EMA periods, or returns empty price history, stop with a clear exception instead of inventing chart evidence.
+- If the indicator bundle returns only `null` current values, state that limitation and use OHLCV-derived price structure only; do not fabricate indicator signals.
 - Technical review must use EMA context, support and resistance zones, supply and demand zones, chart patterns, and market structure together.
 - EMA proximity alone is not a valid decision rule.
 - Use the `30` minute chart as the main lower-timeframe execution and support-mapping frame.
@@ -115,6 +127,7 @@ The report must make technical status explicit:
 - reviewed names
 - pending technical review names
 - technical review not run because of a user-imposed coverage limit
+- technical data mode used for each reviewed name
 - the full parsed universe size
 - the user-specified pre-rank cap
 - the names that survived the pre-rank cut into the working universe

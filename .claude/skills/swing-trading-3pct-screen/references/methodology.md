@@ -21,9 +21,10 @@ If any required input, chart state, or company data is missing, stop with a clea
 
 - Screener.in HTML screen URL
 - user-provided pre-rank cap for the working universe
-- TradingView MCP access
+- TradingView MCP access or explicit `api_fallback` technical-data mode when
+  TradingView MCP is disconnected or unreachable
 - fundamental stock-analysis sub-agents with hard concurrency cap `6`
-- technical stock-analysis sub-agents available for sequential TradingView review
+- technical stock-analysis sub-agents available for sequential technical review
 - `10 in 1 Different Moving Averages` configured as:
   - `EMA 10`
   - `EMA 20`
@@ -44,12 +45,13 @@ If any required input, chart state, or company data is missing, stop with a clea
 9. As each accepted fundamental result arrives, immediately write the stock dossier and update `index.md` before dispatching another queued fundamental stock.
 10. Reuse all `fresh` and remaining `review_due`.
 11. Build the capped-universe fundamental sponsorship ranking from dossiers only.
-12. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
-13. Dispatch technical workers only after the ranking exists.
-14. Run technical workers strictly one at a time.
-15. After each accepted technical result, immediately write that stock's
+12. Select `technical_data_mode` before technical work starts.
+13. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
+14. Dispatch technical workers only after the ranking exists.
+15. Run technical workers strictly one at a time.
+16. After each accepted technical result, immediately write that stock's
     technical dossier before dispatching the next technical worker.
-16. Synthesize three ranking views, five output files, and the technical
+17. Synthesize three ranking views, five output files, and the technical
     dossier directory.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
@@ -117,7 +119,7 @@ Fail fast rules:
 - column presence is checked from the Screener HTML headers only
 - do not assume `15`, do not assume `top 10`, and do not assume the whole parsed universe
 
-### Required Screener Columns
+### Fixed Screener Columns
 
 The skill assumes this exact visible screen schema:
 
@@ -322,6 +324,49 @@ Do not make a decision from:
 
 Reject or downgrade any setup where lower timeframes contradict the higher-timeframe thesis near the trade location.
 
+## Technical Data Source Selection
+
+The main agent must choose and record `technical_data_mode` before dispatching
+the first technical worker.
+
+- `tradingview_mcp`: allowed only after `scripts/ensure_socat.sh` succeeds and
+  TradingView plus the EMA study setup are verified.
+- `api_fallback`: allowed only when TradingView MCP is disconnected or
+  unreachable.
+
+When `technical_data_mode=api_fallback`, fetch deterministic technical data from
+this skill's local scripts instead of attempting chart actions:
+
+- read `references/api-workflow.md`, `references/api-output-schemas.md`, and
+  `references/api-indicators.md`
+- resolve an exchange-qualified ticker such as `ATLANTAELE.NS`
+- resolve explicit ISO `current_date`, price start date, and look-back days
+- run `scripts/fetch_stock_data.py` for OHLCV price history on every required
+  interval: `15m`, `30m`, `60m`, `1d`, `1wk`
+- run `scripts/fetch_indicator_bundle.py` with exact supported names such as
+  `close_10_ema`, `close_20_ema`, `close_50_ema`, `close_100_ema`,
+  `close_200_ema`, `close_50_sma`, `close_200_sma`, `macd`, `macds`, `macdh`,
+  `rsi`, `boll`, `boll_ub`, `boll_lb`, `atr`, `vwma`, and `mfi` on every
+  required interval
+- keep stdout JSON and stderr logs in separate files
+- read price rows from `stock.json["records"]`
+- read indicator rows from `indicators.json["indicators"]`
+- treat TradingView as the source-of-truth capability floor: API fallback may
+  include more indicators, but it must not include fewer timeframes or EMA
+  periods than TradingView mode
+
+Fail fast in API mode when:
+
+- the ticker cannot be resolved to an exchange-qualified symbol
+- price history is empty
+- a required interval or EMA cannot be supported by the fetched API data
+- JSON output is mixed with stderr logs
+- required payload keys are missing
+
+If the indicator bundle returns current values that are all `null`, state that
+limitation and analyze only OHLCV-derived price structure and volume. Do not
+fabricate EMA, momentum, volatility, or volume-indicator signals.
+
 ## Support Layer Logic
 
 Judge the practical stop zone by the density and quality of support references below `CMP`.
@@ -392,7 +437,7 @@ Rules:
 
 ## Number Definitions
 
-- `CMP`: current TradingView price used for the decision
+- `CMP`: current TradingView price or API close price used for the decision
 - `3% Floor`: `CMP x 0.97`
 - `Practical Stop Zone`: roughly `2%` to `4%` below `CMP`, centered on the usual `3%` reference
 - `Entry`: current price only if support is already underneath; otherwise a narrower pullback entry zone

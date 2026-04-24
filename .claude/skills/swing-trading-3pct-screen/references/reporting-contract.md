@@ -20,6 +20,7 @@ technically reviewed stock and no dossier for pending names.
 - screen thesis
 - universe size
 - coverage mode
+- technical data mode summary
 - counts for analyzed, reviewed, selected, watchlist, rejected, and pending names
 - count and location of technical dossiers written
 - top previews for fundamental, technical, and combined rankings
@@ -62,6 +63,7 @@ technically reviewed stock and no dossier for pending names.
 - `Technically Strongest Top Ten`
 - `Overall Combined Ranking`
 - every row must show technical review status
+- every row must show technical data mode for reviewed names
 - every row should include a technical label or combined verdict
 - every row should include a key reason for the ranking
 - reviewed and pending names must be distinguishable

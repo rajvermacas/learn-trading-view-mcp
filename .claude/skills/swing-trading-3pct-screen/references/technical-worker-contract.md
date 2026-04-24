@@ -15,6 +15,8 @@ The worker owns exactly one stock. If the handoff contains multiple stocks, a ba
 - sponsorship label
 - ranking reason
 - coverage mode
+- technical_data_mode
+- API payload paths when `technical_data_mode=api_fallback`
 
 ## Required Timeframes
 
@@ -43,10 +45,24 @@ Do not make a technical verdict from:
 - a higher-timeframe chart that looks fine while lower timeframes break the support path into the stop zone
 - lower-timeframe weakness ignored because one daily or weekly reference still looks attractive
 
+## Data Source Rules
+
+- `technical_data_mode=tradingview_mcp`: use the verified TradingView chart state.
+- `technical_data_mode=api_fallback`: use only the JSON payloads supplied by the
+  main agent from this skill's local API scripts.
+- In API mode, do not browse or invent missing chart levels.
+- In API mode, reject the handoff if the supplied data cannot support one of
+  `weekly`, `daily`, `60`, `30`, or `15`.
+- In API mode, reject the handoff if any timeframe lacks EMA `10`, `20`, `50`,
+  `100`, or `200`.
+- In API mode, if indicator values are unavailable, say so and use OHLCV price
+  structure only.
+
 ## Output Schema
 
 - symbol
 - company
+- technical_data_mode
 - cmp
 - 3pct_floor
 - practical_stop_zone

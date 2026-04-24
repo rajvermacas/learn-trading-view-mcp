@@ -40,3 +40,5 @@ pip install .
 
 npx skillfish add akhilgurrapu/kubera market-analysis
 -------------
+
+codex --sandbox danger-full-access --ask-for-approval never

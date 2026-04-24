@@ -1,0 +1,4 @@
+improve skill $swing-trading-3pct-screen
+idea is:
+when tradingView mcp disconnected fetch technical data over api
+refer $tradingagents-market-analysis extract logic for same

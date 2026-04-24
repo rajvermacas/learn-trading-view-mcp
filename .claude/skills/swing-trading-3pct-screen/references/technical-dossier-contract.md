@@ -56,6 +56,7 @@ Every technical dossier must use these sections in this exact order:
 Include:
 
 - `symbol`
+- `technical_data_mode`
 - `cmp`
 - `3pct_floor`
 - `practical_stop_zone`
@@ -81,6 +82,11 @@ Every timeframe note must explicitly cover:
 - EMA context
 - support and resistance context
 - supply and demand context
+
+If the dossier was produced in `api_fallback` mode, each timeframe note must
+name the API evidence used and explicitly state any indicator limitation
+accepted by the main agent. Unsupported required timeframes must fail before
+dossier writing.
 
 ### Support Inventory
 
