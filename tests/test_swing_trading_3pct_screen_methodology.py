@@ -158,6 +158,33 @@ class SwingTradingMethodologyTest(unittest.TestCase):
         self.assertIn("run `scripts/fetch_stock_data.py`", self.technical_worker_contract)
         self.assertIn("run `scripts/fetch_indicator_bundle.py`", self.technical_worker_contract)
 
+    def test_technical_worker_concurrency_depends_on_data_mode(self) -> None:
+        LOGGER.info("Checking technical worker concurrency by data mode")
+        combined_text = f"{self.skill}\n{self.methodology}"
+        delegation_examples = Path(
+            ".claude/skills/swing-trading-3pct-screen/references/delegation-examples.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("TradingView MCP is shared mutable state", combined_text)
+        self.assertIn("`tradingview_mcp` technical workers must run strictly one at a time", combined_text)
+        self.assertIn("`api_fallback` technical workers may run in parallel", combined_text)
+        self.assertIn("hard cap of `6` inflight technical workers", combined_text)
+        self.assertIn("bounded parallel worker queue", delegation_examples)
+        self.assertNotIn("Technical sub-agents must run one at a time", self.skill)
+        self.assertNotIn("Run technical workers strictly one at a time", self.methodology)
+
+    def test_api_fallback_parallel_workers_do_not_share_writable_resources(self) -> None:
+        LOGGER.info("Checking API fallback writable-resource isolation")
+        api_workflow = Path(
+            ".claude/skills/swing-trading-3pct-screen/references/api-workflow.md"
+        ).read_text(encoding="utf-8")
+        combined_text = f"{self.skill}\n{self.methodology}\n{self.technical_worker_contract}\n{api_workflow}"
+        self.assertIn("unique per-stock API output directory", combined_text)
+        self.assertIn("must not share writable resources", combined_text)
+        self.assertIn("Shared read-only script and reference paths are allowed", combined_text)
+        self.assertIn("Do not use a shared temp directory", api_workflow)
+        self.assertIn("API_OUTPUT_DIR=\"docs/swing-trading/2026-04-24-134528-utc/api/01-ATLANTAELE\"", api_workflow)
+        self.assertIn("reject the handoff if the API output directory is shared", self.technical_worker_contract)
+
     def test_skill_documents_each_bundled_script_usage(self) -> None:
         LOGGER.info("Checking SKILL.md documents each bundled script")
         self.assertIn("## Bundled Scripts", self.skill)

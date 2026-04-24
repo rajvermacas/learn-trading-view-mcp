@@ -11,7 +11,8 @@ The skill must:
 - require a user-provided pre-rank cap instead of assuming one
 - rank the capped working universe by fundamental sponsorship first
 - run technical review only after the fundamental ranking exists
-- keep technical review sequential because TradingView MCP is shared mutable state
+- keep TradingView MCP technical review sequential because TradingView MCP is shared mutable state
+- allow API fallback technical review to run in bounded parallel because it does not use TradingView MCP
 - write a five-file report set with reviewed versus pending status made explicit
 - write one crisp technical dossier for every technically reviewed stock
 
@@ -24,7 +25,7 @@ If any required input, chart state, or company data is missing, stop with a clea
 - TradingView MCP access or explicit `api_fallback` technical-data mode when
   TradingView MCP is disconnected or unreachable
 - fundamental stock-analysis sub-agents with hard concurrency cap `6`
-- technical stock-analysis sub-agents available for sequential technical review
+- technical stock-analysis sub-agents available for mode-specific technical review
 - `10 in 1 Different Moving Averages` configured as:
   - `EMA 10`
   - `EMA 20`
@@ -48,9 +49,12 @@ If any required input, chart state, or company data is missing, stop with a clea
 12. Select `technical_data_mode` before technical work starts.
 13. If the user specified a technical coverage count such as `analyze 12 stocks`, dispatch one technical worker per stock only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
 14. Dispatch technical workers only after the ranking exists.
-15. Run technical workers strictly one at a time.
+15. Run `tradingview_mcp` technical workers strictly one at a time; run
+    `api_fallback` technical workers in parallel with a hard cap of `6` inflight
+    workers and no shared writable resources.
 16. After each accepted technical result, immediately write that stock's
-    technical dossier before dispatching the next technical worker.
+    technical dossier. In `api_fallback`, write each accepted dossier before
+    replenishing the technical worker queue.
 17. Synthesize three ranking views, five output files, and the technical
     dossier directory.
 
@@ -74,7 +78,11 @@ Sub-agent ownership is always one worker to one stock.
 - A fundamental worker that has already analyzed one stock must never be reused for another stock.
 - When one fundamental worker finishes with an accepted dossier, the main agent must persist that dossier immediately before replenishing the queue.
 - Fundamental workers do not compare stocks against each other and do not assign cross-stock rank.
-- Technical workers must run sequentially because TradingView MCP is shared mutable state.
+- `tradingview_mcp` technical workers must run sequentially because TradingView MCP is shared mutable state.
+- `api_fallback` technical workers may run in parallel because they do not use TradingView MCP.
+- API fallback technical-worker concurrency is hard-capped at `6` inflight workers.
+- API fallback technical workers must not share writable resources. Shared read-only script and reference paths are allowed.
+- Each API fallback technical worker must receive a unique per-stock API output directory, for example `docs/swing-trading/<run-id>/api/<rank>-<symbol>/`.
 
 The main agent must never assign:
 
@@ -344,7 +352,7 @@ When `technical_data_mode=api_fallback`, the technical worker must fetch determi
 - use the exchange-qualified ticker such as `ATLANTAELE.NS` supplied in the
   handoff
 - use the explicit ISO `current_date`, price start date, look-back days, and
-  API output directory supplied in the handoff
+  unique per-stock API output directory supplied in the handoff
 - run `scripts/fetch_stock_data.py` for OHLCV price history on every required
   interval: `15m`, `30m`, `60m`, `1d`, `1wk`
 - run `scripts/fetch_indicator_bundle.py` with exact supported names such as
@@ -362,7 +370,9 @@ When `technical_data_mode=api_fallback`, the technical worker must fetch determi
 The main agent must not fetch API JSON for a stock before dispatching that
 stock's technical worker. In API fallback mode, the main-agent handoff owns only
 resolved inputs and paths; the technical worker owns the fetch, validation, and
-one-stock interpretation.
+one-stock interpretation. The main agent must reject any API fallback plan where
+two inflight technical workers would write into the same directory, JSON file,
+log file, temp directory, or report file.
 
 Fail fast in API mode when:
 

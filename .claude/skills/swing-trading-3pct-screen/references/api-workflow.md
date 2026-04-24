@@ -6,8 +6,12 @@ TradingView MCP is disconnected or unreachable. It is local to
 
 This workflow runs inside the one-stock technical sub-agent. The main agent must
 not pre-fetch API JSON; it only supplies resolved ticker/date/look-back inputs,
-an API output directory, and the script/reference paths in the technical
-handoff.
+a unique per-stock API output directory, and the script/reference paths in the
+technical handoff.
+
+API fallback technical workers must not share writable resources. Shared
+read-only script and reference paths are allowed, but JSON files, log files,
+temp directories, and report files must be unique to one stock's worker.
 
 Do not write ad hoc Python scripts for API fallback. If the local scripts are
 insufficient, patch the bundled scripts in `scripts/` and rerun verification;
@@ -23,7 +27,7 @@ Before inspecting JSON manually, review
 - explicit positive integer `PRICE_LOOKBACK_DAYS`
 - explicit ISO `PRICE_START_DATE`
 - explicit API interval from `15m`, `30m`, `60m`, `1d`, `1wk`
-- writable API output directory for JSON and log files
+- writable unique per-stock API output directory for JSON and log files
 
 If any input is missing, stop with a clear exception instead of assuming a
 default.
@@ -47,8 +51,12 @@ TICKER="ATLANTAELE.NS"
 CURRENT_DATE="2026-04-24"
 PRICE_LOOKBACK_DAYS=120
 PRICE_START_DATE="2025-12-25"
-API_OUTPUT_DIR="docs/swing-trading/2026-04-24-134528-utc/api/ATLANTAELE"
+API_OUTPUT_DIR="docs/swing-trading/2026-04-24-134528-utc/api/01-ATLANTAELE"
 ```
+
+Do not use a shared temp directory such as `/tmp/swing-trading-api` for parallel
+technical workers. Use the handoff's unique `API_OUTPUT_DIR`, and stop with a
+clear exception if another worker can write to the same directory or filenames.
 
 Fetch OHLCV price history for each required interval:
 

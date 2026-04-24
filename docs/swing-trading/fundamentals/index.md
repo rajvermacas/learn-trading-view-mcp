@@ -89,3 +89,4 @@
 | STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
 | WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
+| DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-04-24 | 2026-05-03 | 2026-05-15 |

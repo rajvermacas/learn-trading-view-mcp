@@ -20,7 +20,7 @@ The worker owns exactly one stock. If the handoff contains multiple stocks, a ba
 - explicit ISO current date when `technical_data_mode=api_fallback`
 - explicit price start date when `technical_data_mode=api_fallback`
 - explicit positive look-back days when `technical_data_mode=api_fallback`
-- API output directory when `technical_data_mode=api_fallback`
+- unique per-stock API output directory when `technical_data_mode=api_fallback`
 - API script and reference paths when `technical_data_mode=api_fallback`
 
 ## Required Timeframes
@@ -64,6 +64,13 @@ Do not make a technical verdict from:
   `close_100_ema`, and `close_200_ema`.
 - In API mode, write script stdout JSON and stderr logs separately in the API
   output directory.
+- In API mode, reject the handoff if the API output directory is shared with
+  another stock or worker.
+- In API mode, do not write shared temp files, shared JSON files, shared log
+  files, or report files. The main agent writes user-facing dossiers after
+  accepting one-stock worker results.
+- Shared read-only script and reference paths are allowed; writable paths must
+  be unique to this stock's worker.
 - In API mode, do not browse or invent missing chart levels.
 - In API mode, reject the handoff if the fetched data cannot support one of
   `weekly`, `daily`, `60`, `30`, or `15`.

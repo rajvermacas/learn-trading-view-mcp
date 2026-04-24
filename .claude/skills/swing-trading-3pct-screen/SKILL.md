@@ -30,7 +30,7 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 15. Use `technical_data_mode=tradingview_mcp` only after TradingView and the EMA study setup are verified.
 16. If TradingView MCP is disconnected or unreachable, use `technical_data_mode=api_fallback`; the technical sub-agent must fetch deterministic technical data with this skill's local API scripts inside its one-stock task.
 17. Dispatch one technical sub-agent per stock only after the ranking exists.
-18. Run technical sub-agents strictly one at a time.
+18. Dispatch technical sub-agents according to `technical_data_mode`: `tradingview_mcp` runs strictly one at a time, while `api_fallback` may run in parallel with at most `6` inflight technical sub-agents and no shared writable resources.
 19. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
 20. After each accepted technical result, immediately write one crisp technical dossier for that stock before moving to the next symbol.
 21. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
@@ -106,7 +106,10 @@ Use bundled scripts instead of writing new helper scripts. If a bundled script i
 - A completed fundamental sub-agent must not be given another stock.
 - When one inflight fundamental sub-agent finishes, write that accepted dossier to cache immediately and only then dispatch the next queued fundamental stock if work remains.
 
-- Technical sub-agents must run one at a time and only one stock per worker.
+- Technical sub-agents must process only one stock per worker.
+- `tradingview_mcp` technical workers must run strictly one at a time because TradingView MCP is shared mutable state.
+- `api_fallback` technical workers may run in parallel because they do not use TradingView MCP; keep a hard cap of `6` inflight technical workers.
+- In `api_fallback` mode, technical workers must not share writable resources. Shared read-only script and reference paths are allowed, but every worker must receive a unique per-stock API output directory.
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
 - Each technical handoff must include `technical_data_mode`.
 - In `tradingview_mcp` mode, workers read the shared chart state from TradingView MCP.
@@ -114,7 +117,7 @@ Use bundled scripts instead of writing new helper scripts. If a bundled script i
 - In `api_fallback` mode, the technical sub-agent must fetch per-stock JSON inside its own one-stock task using:
   - `scripts/fetch_stock_data.py`
   - `scripts/fetch_indicator_bundle.py`
-- In `api_fallback` mode, the main-agent handoff must provide only resolved ticker, current date, look-back days, output directory, `technical_data_mode`, and the required script/reference paths.
+- In `api_fallback` mode, the main-agent handoff must provide only resolved ticker, current date, look-back days, unique per-stock API output directory, `technical_data_mode`, and the required script/reference paths.
 - Do not write ad hoc Python scripts for API fallback. If the bundled scripts are insufficient, patch the bundled scripts and rerun verification; otherwise use the bundled scripts exactly.
 - In `api_fallback` mode, read `references/api-workflow.md`, `references/api-output-schemas.md`, and `references/api-indicators.md`; keep stdout JSON and stderr logs separate.
 - In `api_fallback` mode, the main-agent handoff must resolve an exchange-qualified ticker such as `ATLANTAELE.NS`, explicit ISO dates, and explicit look-back days before the technical sub-agent fetches. If any required input is missing or cannot be resolved, stop with a clear exception.

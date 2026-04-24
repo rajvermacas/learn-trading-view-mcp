@@ -99,14 +99,14 @@
 ### Example: Invalid Batched Technical Handoff
 
 - Input context: the main agent sends one worker `analyze these top 5 charts together`.
-- What the worker should notice: ownership is malformed because one technical worker must own exactly one stock and TradingView work must stay sequential.
+- What the worker should notice: ownership is malformed because one technical worker must own exactly one stock; concurrency is controlled by running multiple one-stock workers, not by batching stocks into one worker.
 - Correct verdict: reject the handoff and request a one-stock redo.
-- Why: shared-state chart work becomes ambiguous and error-prone when one worker owns more than one symbol.
+- Why: one-stock ownership keeps chart interpretation, API evidence, and output schema unambiguous in both TradingView and API fallback modes.
 
 ### Example: Immediate Technical Dossier Persistence
 
 - Input context: the technical worker returns a valid one-stock result for `ACUTAAS`, and the next fundamentally ranked stock is ready for chart review.
 - What the main agent should notice: the user-facing technical dossier is required output for every reviewed stock, not an optional end-of-run cleanup step.
-- Correct verdict: write `technical-dossiers/01-ACUTAAS.md` immediately, then move TradingView to the next symbol.
-- Why: immediate persistence keeps the technical audit trail aligned with sequential chart work and prevents the reviewed reasoning from being lost.
+- Correct verdict: write `technical-dossiers/01-ACUTAAS.md` immediately. In `tradingview_mcp`, do this before moving TradingView to the next symbol; in `api_fallback`, do this before replenishing the bounded parallel worker queue.
+- Why: immediate persistence keeps the technical audit trail aligned with each accepted one-stock result and prevents the reviewed reasoning from being lost.
 - Output shape: one worker result becomes one main-agent dossier for that same stock before the next technical review starts.
