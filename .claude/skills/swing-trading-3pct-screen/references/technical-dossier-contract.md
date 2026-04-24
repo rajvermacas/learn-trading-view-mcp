@@ -3,7 +3,7 @@
 ## Purpose
 
 `technical-dossiers/` is a user-facing audit surface for technically reviewed
-stocks.
+stocks. It must be crisp and correct, not a raw transcript.
 
 - It exists so the user can inspect how the main agent turned one stock's
   chart review into a final verdict.
@@ -51,6 +51,17 @@ Every technical dossier must use these sections in this exact order:
 
 ## Section Requirements
 
+## Brevity Rules
+
+- every technical dossier must be a maximum `90` lines
+- each timeframe subsection may use a maximum `3` bullets
+- each bullet must carry one decision-useful observation, not narration
+- Do not paste raw worker output, raw API JSON, raw chart dumps, or long
+  indicator series
+- prefer compact tables for support, resistance, and trade levels
+- include only evidence that affects stop survivability, ranking, or rejection
+  status
+
 ### Core Fields
 
 Include:
@@ -71,8 +82,8 @@ Include one subsection for each:
 - `30_note`
 - `15_note`
 
-The `30_note` section must be the most detailed because it is the primary
-execution frame.
+The `30_note` section may be the most detailed because it is the primary
+execution frame, but it must still obey the maximum `3` bullets rule.
 
 Every timeframe note must explicitly cover:
 
@@ -126,7 +137,7 @@ Include:
 
 ### Summary Rationale
 
-End with a verbose synthesis that explains:
+End with a crisp synthesis that explains:
 
 - why the stop zone is defendable or fragile
 - which timeframe alignment matters most
@@ -137,6 +148,7 @@ End with a verbose synthesis that explains:
 ## Main-Agent Acceptance
 
 - `accepted`: the dossier follows the canonical section order, preserves the
-  one-stock worker evidence, and makes the verdict auditable to the user
-- `redo`: the dossier is missing required sections, too shallow to audit, or
-  does not match the reviewed stock
+  decision-useful one-stock evidence, stays within the brevity limits, and
+  makes the verdict auditable to the user
+- `redo`: the dossier is missing required sections, too shallow to audit, too
+  large, padded with raw output, or does not match the reviewed stock

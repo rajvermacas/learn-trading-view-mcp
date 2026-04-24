@@ -45,6 +45,8 @@ def normalize_history_frame(frame: pd.DataFrame, ticker: str, start_date_raw: st
     if frame.empty:
         raise RuntimeError(f"No price history found for {ticker} between {start_date_raw} and {end_date_raw}")
     normalized_frame = frame.reset_index()
+    if "Datetime" in normalized_frame.columns and "Date" not in normalized_frame.columns:
+        normalized_frame.rename(columns={"Datetime": "Date"}, inplace=True)
     normalized_frame["Date"] = pd.to_datetime(normalized_frame["Date"], errors="raise").dt.tz_localize(None)
     numeric_columns = [name for name in ("Open", "High", "Low", "Close", "Adj Close", "Volume") if name in normalized_frame]
     normalized_frame[numeric_columns] = normalized_frame[numeric_columns].apply(pd.to_numeric, errors="raise")
@@ -119,7 +121,9 @@ def require_supported_interval(interval_raw: str) -> str:
 
 def load_indicator_history_frame(ticker: str, current_date: datetime, interval: str) -> pd.DataFrame:
     """Download the history frame used by stockstats indicators."""
-    start_date = (current_date - timedelta(days=365 * 5)).strftime("%Y-%m-%d")
+    intraday_max_days = {"15m": 55, "30m": 55, "60m": 500}
+    lookback_days = intraday_max_days.get(interval, 365 * 5)
+    start_date = (current_date - timedelta(days=lookback_days)).strftime("%Y-%m-%d")
     end_date = (current_date + timedelta(days=1)).strftime("%Y-%m-%d")
     LOGGER.info(
         "Downloading %s indicator history for %s from %s to %s",
@@ -143,6 +147,8 @@ def load_indicator_history_frame(ticker: str, current_date: datetime, interval: 
     if history_frame.empty:
         raise RuntimeError(f"No indicator history found for {ticker} up to {current_date.strftime('%Y-%m-%d')}")
     normalized_frame = history_frame.reset_index()
+    if "Datetime" in normalized_frame.columns and "Date" not in normalized_frame.columns:
+        normalized_frame.rename(columns={"Datetime": "Date"}, inplace=True)
     normalized_frame["Date"] = pd.to_datetime(normalized_frame["Date"], errors="raise").dt.tz_localize(None)
     end_cutoff = current_date + timedelta(days=1)
     return normalized_frame[normalized_frame["Date"] < end_cutoff]

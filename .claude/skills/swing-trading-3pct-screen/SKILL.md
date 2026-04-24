@@ -28,11 +28,11 @@ The analysis must not hardcode a specific screen recipe. Extract the screen thes
 13. Build the capped-universe fundamental ranking from authoritative stock dossiers only.
 14. Run [`scripts/ensure_socat.sh`](scripts/ensure_socat.sh), then select `technical_data_mode`.
 15. Use `technical_data_mode=tradingview_mcp` only after TradingView and the EMA study setup are verified.
-16. If TradingView MCP is disconnected or unreachable, use `technical_data_mode=api_fallback` and fetch deterministic technical data with this skill's local API scripts.
+16. If TradingView MCP is disconnected or unreachable, use `technical_data_mode=api_fallback`; the technical sub-agent must fetch deterministic technical data with this skill's local API scripts inside its one-stock task.
 17. Dispatch one technical sub-agent per stock only after the ranking exists.
 18. Run technical sub-agents strictly one at a time.
 19. If the user specifies a technical coverage count such as `analyze 12 stocks`, run technical sub-agents only for the top `12` fundamentally ranked names; otherwise continue through the full capped universe.
-20. After each accepted technical result, immediately write one verbose technical dossier for that stock before moving to the next symbol.
+20. After each accepted technical result, immediately write one crisp technical dossier for that stock before moving to the next symbol.
 21. Write the five-file report set with reviewed versus pending technical status explicit and include the technical dossier directory in the run output.
 
 ## Delegation Rules
@@ -77,6 +77,19 @@ Responsibility split is strict:
 - The main agent must never wait for all fundamental sub-agents to finish before persisting accepted results.
 - If an accepted dossier cannot be written immediately, stop with a clear exception instead of deferring that cache update.
 
+## Bundled Scripts
+
+Use bundled scripts instead of writing new helper scripts. If a bundled script is insufficient, patch that script and rerun verification.
+
+| Script | When to use | How to use |
+| --- | --- | --- |
+| `scripts/ensure_socat.sh` | Before any `tradingview_mcp` technical review. | Run once before chart work; continue only after TradingView MCP and EMA setup are verified. |
+| `scripts/fetch_stock_data.py` | In `api_fallback` mode, the technical sub-agent uses it for OHLCV data on each required interval. | Run inside the technical sub-agent task with `--ticker`, `--start-date`, `--end-date`, and `--interval`; write stdout to `stock-<interval>.json` and stderr to a separate log in the handoff's API output directory. |
+| `scripts/fetch_indicator_bundle.py` | In `api_fallback` mode, the technical sub-agent uses it for EMA and indicator data on each required interval. | Run inside the technical sub-agent task with `--ticker`, `--current-date`, `--look-back-days`, `--interval`, and explicit `--indicators`; write stdout to `indicators-<interval>.json` and stderr to a separate log in the handoff's API output directory. |
+| `scripts/common.py` | Shared validation, logging, JSON, and retry helpers for the public Python scripts. | Do not call directly; import only when patching bundled scripts. |
+| `scripts/indicator_catalog.py` | Supported indicator registry used by `fetch_indicator_bundle.py`. | Do not call directly; patch it when adding or changing supported indicators. |
+| `scripts/market_data_lib.py` | yfinance and stockstats implementation used by the public Python scripts. | Do not call directly; patch it when changing data-fetch or indicator behavior. |
+
 ## Analysis Rules
 
 - Fundamental analysis comes first for every stock in the fetched universe.
@@ -97,11 +110,14 @@ Responsibility split is strict:
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
 - Each technical handoff must include `technical_data_mode`.
 - In `tradingview_mcp` mode, workers read the shared chart state from TradingView MCP.
-- In `api_fallback` mode, the main agent must fetch per-stock JSON before the handoff using:
+- In `api_fallback` mode, the main agent must not fetch per-stock JSON before the handoff.
+- In `api_fallback` mode, the technical sub-agent must fetch per-stock JSON inside its own one-stock task using:
   - `scripts/fetch_stock_data.py`
   - `scripts/fetch_indicator_bundle.py`
+- In `api_fallback` mode, the main-agent handoff must provide only resolved ticker, current date, look-back days, output directory, `technical_data_mode`, and the required script/reference paths.
+- Do not write ad hoc Python scripts for API fallback. If the bundled scripts are insufficient, patch the bundled scripts and rerun verification; otherwise use the bundled scripts exactly.
 - In `api_fallback` mode, read `references/api-workflow.md`, `references/api-output-schemas.md`, and `references/api-indicators.md`; keep stdout JSON and stderr logs separate.
-- In `api_fallback` mode, resolve an exchange-qualified ticker such as `ATLANTAELE.NS`, explicit ISO dates, and explicit look-back days before fetching. If any required input is missing or cannot be resolved, stop with a clear exception.
+- In `api_fallback` mode, the main-agent handoff must resolve an exchange-qualified ticker such as `ATLANTAELE.NS`, explicit ISO dates, and explicit look-back days before the technical sub-agent fetches. If any required input is missing or cannot be resolved, stop with a clear exception.
 - In `api_fallback` mode, TradingView is the source-of-truth capability floor: fetch `15m`, `30m`, `60m`, `1d`, and `1wk`, and fetch EMA `10`, `20`, `50`, `100`, and `200` on every interval. API fallback may include more indicators, but not fewer required timeframes or EMAs.
 - If API data cannot support one of the required timeframes or EMA periods, or returns empty price history, stop with a clear exception instead of inventing chart evidence.
 - If the indicator bundle returns only `null` current values, state that limitation and use OHLCV-derived price structure only; do not fabricate indicator signals.
@@ -109,7 +125,7 @@ Responsibility split is strict:
 - EMA proximity alone is not a valid decision rule.
 - Use the `30` minute chart as the main lower-timeframe execution and support-mapping frame.
 - Treat the `3%` reference as contextual, not binary; judge defendability across the practical `2%` to `4%` stop band.
-- Every technically reviewed stock must get one verbose main-agent technical dossier written immediately after that stock review completes.
+- Every technically reviewed stock must get one crisp main-agent technical dossier written immediately after that stock review completes.
 - Technical dossiers are user-facing audit records only and must never be reused as cache input.
 
 ## Reporting Rules
@@ -134,6 +150,6 @@ The report must make technical status explicit:
 
 Use [references/fundamental-cache-contract.md](references/fundamental-cache-contract.md), [references/fundamental-dossier-contract.md](references/fundamental-dossier-contract.md), [references/fundamental-worker-contract.md](references/fundamental-worker-contract.md), [references/technical-worker-contract.md](references/technical-worker-contract.md), [references/delegation-examples.md](references/delegation-examples.md), and [references/reporting-contract.md](references/reporting-contract.md) for the detailed cache, worker, and report contracts.
 
-Use [references/technical-dossier-contract.md](references/technical-dossier-contract.md) for the verbose technical dossier that the main agent must persist for every technically reviewed stock.
+Use [references/technical-dossier-contract.md](references/technical-dossier-contract.md) for the crisp technical dossier that the main agent must persist for every technically reviewed stock.
 
 Use [references/methodology.md](references/methodology.md) for ranking logic, filters, and number discipline.

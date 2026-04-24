@@ -11,7 +11,7 @@ Each run output folder must contain:
 - `3pct-ranked-by-stop-safety.md`
 - `technical-dossiers/`
 
-`technical-dossiers/` must contain one verbose markdown dossier for every
+`technical-dossiers/` must contain one crisp markdown dossier for every
 technically reviewed stock and no dossier for pending names.
 
 ## README.md

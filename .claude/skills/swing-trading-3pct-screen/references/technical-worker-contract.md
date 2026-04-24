@@ -16,7 +16,12 @@ The worker owns exactly one stock. If the handoff contains multiple stocks, a ba
 - ranking reason
 - coverage mode
 - technical_data_mode
-- API payload paths when `technical_data_mode=api_fallback`
+- exchange-qualified ticker when `technical_data_mode=api_fallback`
+- explicit ISO current date when `technical_data_mode=api_fallback`
+- explicit price start date when `technical_data_mode=api_fallback`
+- explicit positive look-back days when `technical_data_mode=api_fallback`
+- API output directory when `technical_data_mode=api_fallback`
+- API script and reference paths when `technical_data_mode=api_fallback`
 
 ## Required Timeframes
 
@@ -48,10 +53,19 @@ Do not make a technical verdict from:
 ## Data Source Rules
 
 - `technical_data_mode=tradingview_mcp`: use the verified TradingView chart state.
-- `technical_data_mode=api_fallback`: use only the JSON payloads supplied by the
-  main agent from this skill's local API scripts.
+- `technical_data_mode=api_fallback`: fetch the one-stock JSON payloads inside
+  this technical worker using this skill's local API scripts.
+- In API mode, the main agent supplies resolved inputs and paths only. It must
+  not supply pre-fetched per-stock JSON for interpretation.
+- In API mode, run `scripts/fetch_stock_data.py` for `15m`, `30m`, `60m`,
+  `1d`, and `1wk` before making the technical verdict.
+- In API mode, run `scripts/fetch_indicator_bundle.py` for the same intervals
+  with at least `close_10_ema`, `close_20_ema`, `close_50_ema`,
+  `close_100_ema`, and `close_200_ema`.
+- In API mode, write script stdout JSON and stderr logs separately in the API
+  output directory.
 - In API mode, do not browse or invent missing chart levels.
-- In API mode, reject the handoff if the supplied data cannot support one of
+- In API mode, reject the handoff if the fetched data cannot support one of
   `weekly`, `daily`, `60`, `30`, or `15`.
 - In API mode, reject the handoff if any timeframe lacks EMA `10`, `20`, `50`,
   `100`, or `200`.
@@ -87,8 +101,8 @@ The output must cover one stock only.
 
 ## Output Quality Bar
 
-- each timeframe note must be detailed enough for the main agent to write a
-  user-facing technical dossier without re-reading the chart
+- each timeframe note must be crisp enough for the main agent to write a
+  decision-useful technical dossier without re-reading the chart
 - each timeframe note must explicitly discuss market structure, chart patterns,
   and volume analysis instead of implying them indirectly
 - `support_inventory` and `resistance_inventory` must preserve timeframe,

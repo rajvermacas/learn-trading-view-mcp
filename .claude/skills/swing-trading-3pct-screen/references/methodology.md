@@ -13,7 +13,7 @@ The skill must:
 - run technical review only after the fundamental ranking exists
 - keep technical review sequential because TradingView MCP is shared mutable state
 - write a five-file report set with reviewed versus pending status made explicit
-- write one verbose technical dossier for every technically reviewed stock
+- write one crisp technical dossier for every technically reviewed stock
 
 If any required input, chart state, or company data is missing, stop with a clear exception. Do not invent values.
 
@@ -334,13 +334,17 @@ the first technical worker.
 - `api_fallback`: allowed only when TradingView MCP is disconnected or
   unreachable.
 
-When `technical_data_mode=api_fallback`, fetch deterministic technical data from
-this skill's local scripts instead of attempting chart actions:
+When `technical_data_mode=api_fallback`, the technical worker must fetch deterministic technical data from this skill's local scripts inside its one-stock task instead of attempting chart actions:
 
 - read `references/api-workflow.md`, `references/api-output-schemas.md`, and
   `references/api-indicators.md`
-- resolve an exchange-qualified ticker such as `ATLANTAELE.NS`
-- resolve explicit ISO `current_date`, price start date, and look-back days
+- Do not write ad hoc Python scripts for API fallback. If the local scripts are
+  insufficient, patch the bundled scripts and rerun verification; otherwise use
+  the bundled scripts exactly.
+- use the exchange-qualified ticker such as `ATLANTAELE.NS` supplied in the
+  handoff
+- use the explicit ISO `current_date`, price start date, look-back days, and
+  API output directory supplied in the handoff
 - run `scripts/fetch_stock_data.py` for OHLCV price history on every required
   interval: `15m`, `30m`, `60m`, `1d`, `1wk`
 - run `scripts/fetch_indicator_bundle.py` with exact supported names such as
@@ -354,6 +358,11 @@ this skill's local scripts instead of attempting chart actions:
 - treat TradingView as the source-of-truth capability floor: API fallback may
   include more indicators, but it must not include fewer timeframes or EMA
   periods than TradingView mode
+
+The main agent must not fetch API JSON for a stock before dispatching that
+stock's technical worker. In API fallback mode, the main-agent handoff owns only
+resolved inputs and paths; the technical worker owns the fetch, validation, and
+one-stock interpretation.
 
 Fail fast in API mode when:
 

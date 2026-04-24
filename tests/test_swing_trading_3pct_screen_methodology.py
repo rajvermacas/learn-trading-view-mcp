@@ -11,6 +11,12 @@ METHODOLOGY_PATH = Path(
     ".claude/skills/swing-trading-3pct-screen/references/methodology.md"
 )
 SKILL_PATH = Path(".claude/skills/swing-trading-3pct-screen/SKILL.md")
+TECHNICAL_DOSSIER_CONTRACT_PATH = Path(
+    ".claude/skills/swing-trading-3pct-screen/references/technical-dossier-contract.md"
+)
+TECHNICAL_WORKER_CONTRACT_PATH = Path(
+    ".claude/skills/swing-trading-3pct-screen/references/technical-worker-contract.md"
+)
 
 
 def read_methodology() -> str:
@@ -27,6 +33,20 @@ def read_skill() -> str:
     return SKILL_PATH.read_text(encoding="utf-8")
 
 
+def read_technical_dossier_contract() -> str:
+    LOGGER.info("Reading technical dossier contract from %s", TECHNICAL_DOSSIER_CONTRACT_PATH)
+    if not TECHNICAL_DOSSIER_CONTRACT_PATH.exists():
+        raise FileNotFoundError(f"Missing technical dossier contract: {TECHNICAL_DOSSIER_CONTRACT_PATH}")
+    return TECHNICAL_DOSSIER_CONTRACT_PATH.read_text(encoding="utf-8")
+
+
+def read_technical_worker_contract() -> str:
+    LOGGER.info("Reading technical worker contract from %s", TECHNICAL_WORKER_CONTRACT_PATH)
+    if not TECHNICAL_WORKER_CONTRACT_PATH.exists():
+        raise FileNotFoundError(f"Missing technical worker contract: {TECHNICAL_WORKER_CONTRACT_PATH}")
+    return TECHNICAL_WORKER_CONTRACT_PATH.read_text(encoding="utf-8")
+
+
 def extract_base_weights(text: str) -> list[float]:
     LOGGER.info("Extracting documented base weights")
     pattern = re.compile(r"- `[^`]+`: `([0-9.]+)`")
@@ -41,6 +61,8 @@ class SwingTradingMethodologyTest(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.methodology = read_methodology()
         cls.skill = read_skill()
+        cls.technical_dossier_contract = read_technical_dossier_contract()
+        cls.technical_worker_contract = read_technical_worker_contract()
 
     def test_uses_fixed_schema_headings(self) -> None:
         LOGGER.info("Checking fixed schema headings")
@@ -113,6 +135,54 @@ class SwingTradingMethodologyTest(unittest.TestCase):
         ]
         for required_path in required_paths:
             self.assertTrue(required_path.exists(), f"Missing local API fallback file: {required_path}")
+
+    def test_api_fallback_forbids_ad_hoc_scripts(self) -> None:
+        LOGGER.info("Checking API fallback forbids ad hoc scripts")
+        combined_text = f"{self.skill}\n{self.methodology}"
+        self.assertIn("Do not write ad hoc Python scripts", combined_text)
+        self.assertIn("use the bundled scripts", combined_text)
+
+    def test_api_fallback_fetching_is_technical_worker_owned(self) -> None:
+        LOGGER.info("Checking API fallback data fetch ownership")
+        combined_text = f"{self.skill}\n{self.methodology}\n{self.technical_worker_contract}"
+        forbidden_phrases = [
+            "the main agent must fetch per-stock JSON before the handoff",
+            "JSON payloads supplied by the main agent",
+            "before dispatching the technical worker",
+        ]
+        for phrase in forbidden_phrases:
+            self.assertNotIn(phrase, combined_text)
+        self.assertIn("technical sub-agent must fetch", self.skill)
+        self.assertIn("technical worker must fetch deterministic technical data", self.methodology)
+        self.assertIn("API output directory", self.technical_worker_contract)
+        self.assertIn("run `scripts/fetch_stock_data.py`", self.technical_worker_contract)
+        self.assertIn("run `scripts/fetch_indicator_bundle.py`", self.technical_worker_contract)
+
+    def test_skill_documents_each_bundled_script_usage(self) -> None:
+        LOGGER.info("Checking SKILL.md documents each bundled script")
+        self.assertIn("## Bundled Scripts", self.skill)
+        expected_scripts = [
+            "scripts/ensure_socat.sh",
+            "scripts/fetch_stock_data.py",
+            "scripts/fetch_indicator_bundle.py",
+            "scripts/common.py",
+            "scripts/indicator_catalog.py",
+            "scripts/market_data_lib.py",
+        ]
+        for script_path in expected_scripts:
+            self.assertIn(script_path, self.skill)
+        self.assertIn("When to use", self.skill)
+        self.assertIn("How to use", self.skill)
+        self.assertIn("Do not call directly", self.skill)
+
+    def test_technical_dossiers_are_crisp_not_huge(self) -> None:
+        LOGGER.info("Checking technical dossier brevity contract")
+        contract = self.technical_dossier_contract
+        self.assertIn("maximum `90` lines", contract)
+        self.assertIn("maximum `3` bullets", contract)
+        self.assertIn("Do not paste raw worker output", contract)
+        self.assertIn("crisp", contract.lower())
+        self.assertNotIn("verbose synthesis", contract)
 
 
 if __name__ == "__main__":
