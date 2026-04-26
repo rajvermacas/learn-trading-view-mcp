@@ -11,13 +11,13 @@
 | LLOYDSME | Lloyds Metals & Energy Ltd | by-symbol/LLOYDSME.md | 2026-04-26 | 2026-05-10 | 2026-05-26 |
 | INOXINDIA | INOX India Ltd | by-symbol/INOXINDIA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | CGPOWER | CG Power and Industrial Solutions Ltd | by-symbol/CGPOWER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ABSLAMC | Aditya Birla Sun Life AMC Ltd | by-symbol/ABSLAMC.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ABSLAMC | Aditya Birla Sun Life AMC Ltd | by-symbol/ABSLAMC.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | WAAREEENER | Waaree Energies Ltd | by-symbol/WAAREEENER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | NATCOPHARM | Natco Pharma Ltd | by-symbol/NATCOPHARM.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| APARINDS | Apar Industries Ltd | by-symbol/APARINDS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| APARINDS | Apar Industries Ltd | by-symbol/APARINDS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | BAJAJCON | Bajaj Consumer Care Ltd | by-symbol/BAJAJCON.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | TDPOWERSYS | TD Power Systems Ltd | by-symbol/TDPOWERSYS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ABB | ABB India Ltd | by-symbol/ABB.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ABB | ABB India Ltd | by-symbol/ABB.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | VOLTAMP | Voltamp Transformers Ltd | by-symbol/VOLTAMP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KRISHANA | Krishana Phoschem Ltd | by-symbol/KRISHANA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PRECWIRE | Precision Wires India Ltd | by-symbol/PRECWIRE.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -28,9 +28,9 @@
 | KSB | KSB Ltd | by-symbol/KSB.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | AVANTIFEED | Avanti Feeds Ltd | by-symbol/AVANTIFEED.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SUPPETRO | Supreme Petrochemicals Ltd | by-symbol/SUPPETRO.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ADANIPOWER | Adani Power Ltd | by-symbol/ADANIPOWER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| AEROFLEX | Aeroflex Industries Ltd | by-symbol/AEROFLEX.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| AGIIL | AGI Infra Ltd | by-symbol/AGIIL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ADANIPOWER | Adani Power Ltd | by-symbol/ADANIPOWER.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
+| AEROFLEX | Aeroflex Industries Ltd | by-symbol/AEROFLEX.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
+| AGIIL | AGI Infra Ltd | by-symbol/AGIIL.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | HIRECT | Hind Rectifiers Ltd | by-symbol/HIRECT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | IMFA | Indian Metals & Ferro Alloys Ltd | by-symbol/IMFA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -41,7 +41,7 @@
 | GARFIBRES | Garware Hi-Tech Films Ltd | by-symbol/GARFIBRES.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PARKHOSPS | Park Medi World Ltd | by-symbol/PARKHOSPS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | CPPLUS | Aditya Infotech Ltd (CP Plus) | by-symbol/CPPLUS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -53,7 +53,7 @@
 | THERMAX | Thermax Ltd | by-symbol/THERMAX.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | MANINDS | Man Industries India Ltd | by-symbol/MANINDS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ISGEC | ISGEC Heavy Engineering Ltd | by-symbol/ISGEC.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| AMBER | Amber Enterprises India Ltd | by-symbol/AMBER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| AMBER | Amber Enterprises India Ltd | by-symbol/AMBER.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | GMDCLTD | Gujarat Mineral Development Corporation Ltd | by-symbol/GMDCLTD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SAMBHV | Sambhv Steel Tubes Ltd | by-symbol/SAMBHV.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | AXISCADES | AXISCADES Technologies Ltd | by-symbol/AXISCADES.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -71,12 +71,12 @@
 | RPSGVENT | RPSG Ventures Ltd | by-symbol/RPSGVENT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | VTL | Vardhman Textiles Ltd | by-symbol/VTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | MTARTECH | MTAR Technologies Ltd | by-symbol/MTARTECH.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ADANIENSOL | Adani Energy Solutions Ltd | by-symbol/ADANIENSOL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ADANIENSOL | Adani Energy Solutions Ltd | by-symbol/ADANIENSOL.md | 2026-04-26 | 2026-05-01 | 2026-05-17 |
 | SCI | Shipping Corporation of India Ltd | by-symbol/SCI.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | DALMIASUG | Dalmia Bharat Sugar and Industries Ltd | by-symbol/DALMIASUG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SGFIN | SG Finserve Ltd | by-symbol/SGFIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SEAMECLTD | SEAMEC Ltd | by-symbol/SEAMECLTD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ACMESOLAR | ACME Solar Holdings Ltd | by-symbol/ACMESOLAR.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ACMESOLAR | ACME Solar Holdings Ltd | by-symbol/ACMESOLAR.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | INSOLATION | Insolation Energy Ltd | by-symbol/INSOLATION.md | 2026-04-26 | 2026-05-31 | 2026-07-25 |
 | SAATVIKGL | Saatvik Green Energy Ltd | by-symbol/SAATVIKGL.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | BSE | BSE Ltd | by-symbol/BSE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
