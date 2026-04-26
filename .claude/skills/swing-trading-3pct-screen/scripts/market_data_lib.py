@@ -132,6 +132,19 @@ def load_indicator_history_frame(ticker: str, current_date: datetime, interval: 
         start_date,
         end_date,
     )
+    history_frame = download_indicator_history_frame(ticker, start_date, end_date, interval)
+    if history_frame.empty:
+        raise RuntimeError(f"No indicator history found for {ticker} up to {current_date.strftime('%Y-%m-%d')}")
+    normalized_frame = history_frame.reset_index()
+    if "Datetime" in normalized_frame.columns and "Date" not in normalized_frame.columns:
+        normalized_frame.rename(columns={"Datetime": "Date"}, inplace=True)
+    normalized_frame["Date"] = pd.to_datetime(normalized_frame["Date"], errors="raise").dt.tz_localize(None)
+    end_cutoff = current_date + timedelta(days=1)
+    return normalized_frame[normalized_frame["Date"] < end_cutoff]
+
+
+def download_indicator_history_frame(ticker: str, start_date: str, end_date: str, interval: str) -> pd.DataFrame:
+    """Download indicator history, falling back to Ticker.history if needed."""
     history_frame = run_with_retry(
         "fetch_indicator_history",
         lambda: yf.download(
@@ -144,14 +157,19 @@ def load_indicator_history_frame(ticker: str, current_date: datetime, interval: 
             multi_level_index=False,
         ),
     )
-    if history_frame.empty:
-        raise RuntimeError(f"No indicator history found for {ticker} up to {current_date.strftime('%Y-%m-%d')}")
-    normalized_frame = history_frame.reset_index()
-    if "Datetime" in normalized_frame.columns and "Date" not in normalized_frame.columns:
-        normalized_frame.rename(columns={"Datetime": "Date"}, inplace=True)
-    normalized_frame["Date"] = pd.to_datetime(normalized_frame["Date"], errors="raise").dt.tz_localize(None)
-    end_cutoff = current_date + timedelta(days=1)
-    return normalized_frame[normalized_frame["Date"] < end_cutoff]
+    if not history_frame.empty:
+        return history_frame
+    LOGGER.warning("yf.download returned no %s history for %s; trying Ticker.history", interval, ticker)
+    ticker_object = yf.Ticker(ticker)
+    return run_with_retry(
+        "fetch_indicator_history_fallback",
+        lambda: ticker_object.history(
+            start=start_date,
+            end=end_date,
+            interval=interval,
+            auto_adjust=True,
+        ),
+    )
 
 
 def compute_indicator_frame(history_frame: pd.DataFrame, indicator_name: str) -> pd.DataFrame:

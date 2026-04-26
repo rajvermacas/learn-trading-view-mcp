@@ -5,6 +5,7 @@ import logging
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import Mock, patch
 
 import pandas as pd
 
@@ -62,6 +63,32 @@ class SwingTradingApiFallbackTest(unittest.TestCase):
             TRADINGVIEW_INTERVALS.issubset(supported),
             f"Missing intervals: {sorted(TRADINGVIEW_INTERVALS - supported)}",
         )
+
+    def test_indicator_history_falls_back_to_ticker_history_when_download_is_empty(self) -> None:
+        LOGGER.info("Checking indicator history fallback to Ticker.history")
+        market_data_lib = importlib.import_module("market_data_lib")
+        expected_frame = pd.DataFrame(
+            {
+                "Datetime": pd.date_range("2026-04-24 09:15:00", periods=2, freq="15min"),
+                "Open": [100.0, 101.0],
+                "High": [102.0, 103.0],
+                "Low": [99.0, 100.0],
+                "Close": [101.0, 102.0],
+                "Volume": [1000, 1200],
+            }
+        )
+        ticker_object = Mock()
+        ticker_object.history.return_value = expected_frame
+        with patch.object(market_data_lib.yf, "download", return_value=pd.DataFrame()):
+            with patch.object(market_data_lib.yf, "Ticker", return_value=ticker_object):
+                frame = market_data_lib.load_indicator_history_frame(
+                    "GVTD.BO",
+                    pd.Timestamp("2026-04-26"),
+                    "15m",
+                )
+        self.assertEqual(len(frame), 2)
+        self.assertIn("Date", frame.columns)
+        ticker_object.history.assert_called_once()
 
     def test_cli_requires_interval_arguments(self) -> None:
         LOGGER.info("Checking API fallback CLI interval arguments")

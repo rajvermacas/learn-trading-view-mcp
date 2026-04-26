@@ -1,56 +1,51 @@
----
-# QPOWER — Fundamental Sponsorship Dossier
+## Ranking Packet
 
-### Ranking Packet
+- **Symbol:** QPOWER
+- **Company:** Quality Power Electrical Equipments Ltd
+- **Analysis Date:** 2026-04-26
+- **Screen Thesis Fit:** Strong fit. The pre-rank lead is backed by Q3 FY26 revenue, EBITDA, PAT, ROCE, and order-flow evidence rather than price momentum alone.
+- **Sponsorship Verdict:** Strongly Sponsored
+- **Confidence:** Medium-High
+- **Recent Trigger:** Strong - Q3 FY26 was a record quarter, with consolidated revenue of INR 2,843 million, EBITDA of INR 793 million, and PAT of INR 628 million. February-March 2026 order disclosures added follow-through.
+- **Operating Evidence:** Strong - Q3 revenue grew 256.5% YoY and 29.9% QoQ; EBITDA grew 222.7% YoY and 60.6% QoQ, supported by execution, capacity use, and order conversion.
+- **Earnings Quality:** Good but monitor - the growth appears mostly operating-led, though consolidated uplift includes Turkish operations and subsidiary consolidation, so cash conversion and receivables need tracking.
+- **Balance Sheet Comfort:** Good - FY25 standalone debt-equity was very low and consolidated cash exceeded borrowings after IPO proceeds.
+- **Catalyst Credibility:** Strong - disclosed catalysts include reactor, HVDC reactor, instrument-transformer, and BESS orders, plus grid-transition capex exposure.
+- **Evidence-to-Price Alignment:** Strong but stretched - the 133.49% three-month move fits the operating acceleration, but a large part of the near-term story is already capitalized.
+- **Near-Term Fragility:** Medium - execution timing, receivables, commodity costs, customer audits, and the April 2026 price-movement clarification add event risk after a sharp rally.
+- **Why It Ranks Here:** QPOWER has the best pre-rank blend of growth, ROCE, momentum, order visibility, and balance-sheet comfort.
+- **What Keeps It From Ranking Higher:** Consolidated growth still needs repeat-quarter cash-flow confirmation, and some catalysts have long execution timelines.
+- **What Kind Of Peer Should Rank Above It:** A peer with similar acceleration, cleaner owner-attributable earnings visibility, lower price extension, and stronger cash conversion.
+- **What Kind Of Peer Should Rank Below It:** A peer with price momentum but weaker operating growth, thin order evidence, lower ROCE, or balance-sheet strain.
+- **Next Review On:** 2026-05-30
+- **Hard Stale On:** 2026-06-30
 
-- **Symbol**: QPOWER
-- **Company**: Quality Power Electrical Equipments Ltd
-- **Analysis Date**: 2026-04-19
-- **Screen Thesis Fit**: Strong fit. QPOWER's 72.59% 3-month return and ₹9,340 Cr market cap clear both thresholds. The move is tightly associated with identifiable business evidence released within the 3-month window — a massive Dec 2025 quarterly beat and a dated international order announcement — not diffuse sector momentum.
-- **Sponsorship Verdict**: Strongly Sponsored
-- **Confidence**: Medium
+## Sponsorship Reasoning
 
-**Comparison Dimensions**:
-- **Recent Trigger**: Present and dated — Dec 2025 consolidated results (released late Jan/early Feb 2026) showed revenue +289% YoY and PAT +215% YoY on a nearly clean P&amp;L (Other Income contributed only ₹0 Cr vs ₹13–21 Cr in prior quarters). The Feb 2026 concall sits exactly in the 3-month price window.
-- **Operating Evidence**: Improving at scale with lumpiness risk — standalone OPM trajectory shows structural improvement (18% → 26% → 30% TTM), while consolidated OPM oscillates (8%, 34%, 38%, 9%, 24%, 15%, 18%, 18%, 28%) due to project-revenue recognition timing. The Dec 2025 quarter OPM of 28% on a much higher revenue base (₹284 Cr) is stronger signal than prior spikes.
-- **Earnings Quality**: Good in the Dec 2025 quarter specifically — Other Income was ₹0 Cr, meaning nearly all of ₹63 Cr PAT was operational. Earlier quarters had materially higher other-income contributions (Jun 2024: ₹18 Cr other income on ₹33 Cr PAT; Mar 2025: ₹21 Cr on ₹30 Cr PAT). Q3 FY26 breaks that pattern positively.
-- **Balance Sheet Comfort**: Adequate post-IPO — borrowings remained modest at ₹36 Cr (Sep 2025 consolidated) against a net-equity base of ~₹469 Cr. The company is effectively debt-light. However, debtor days rose sharply (96 → 149 days, FY24 to FY25) and consolidated working capital days swung from -33 to +122 days, which signals receivables-heavy execution as scale accelerates.
-- **Catalyst Credibility**: Credible and named — (1) India's PGCIL-led green energy corridor and HVDC/FACTS capex cycle; (2) March 27, 2026 announcement: step-down subsidiary received an international BESS order of ~₹152 Cr (with option to ₹292 Cr), execution by December 2027. The company's products (SVC, STATCOM, reactive power compensation, HVDC-side equipment) sit at the intersection of Indian and global grid-modernization spend.
-- **Evidence-to-Price Alignment**: Stretched but defensible at consolidated view — screener shows standalone P/E ~199x but consolidated P/E ~87x. Dec 2025 quarterly EPS (₹5.03) annualised projects to ~₹20 EPS, implying a forward P/E of approximately 60x. With PAT CAGR at 57% (3-year) and TTM growth at 51%, the PEG is not obviously broken, but it leaves zero room for an execution miss. The 87x trailing multiple prices in continued hypergrowth.
-- **Near-Term Fragility**: Moderate — Q4 FY26 results will likely be released in May 2026, within the 8-week swing window. Any sequential softness after the Dec 2025 beat would be punished sharply at this multiple. Working capital stretch and lumpy OPM raise the probability of a non-linear result. Post-IPO anchor lock-up expiry (Feb 2026) was a latent risk that has now been absorbed — FII stake trimmed from 3.99% to 2.28% while public rose from 13.35% to 17.85%, suggesting the overhang cleared without breaking price.
+### Why Sponsorship Is Present Or Not
 
-**Ranking Summary**:
-- **Why It Ranks Here**: The 73% price move is anchored to two specific, dated, verifiable events — a Dec 2025 quarterly result with clean, operationally-sourced PAT growth at scale, and a named international BESS order. Promoter stake is unchanged at 73.91% across all five recent quarters. The business serves a structural capex cycle (HVDC, FACTS, BESS, grid connectivity) where order durations extend beyond 1 year, providing revenue visibility.
-- **What Keeps It From Ranking Higher**: OPM has no stable trend at the consolidated level — it has ranged from 8% to 38% across the last nine quarters. Working capital has deteriorated sharply (CCC went from 23 days to 167 days). At 87x trailing and ~60x forward, the multiple tolerates no negative surprise. Confidence is Medium, not High, because one clean quarter does not confirm that lumpiness is resolved.
-- **What Kind Of Peer Should Rank Above It**: A peer with multiple consecutive quarters of improving OPM on the consolidated view, a cleaner receivables trajectory, and a lower multiple relative to its earnings growth rate — for example, a capital goods or transformer company trading at 40–50x with similar or higher PAT CAGR and stable working capital.
-- **What Kind Of Peer Should Rank Below It**: A peer whose 3-month rally is driven by sector re-rating without a company-specific quarterly beat or named order catalyst, or one with promoter stake decline, rising debt, or a P&amp;L dominated by other income rather than operational profit.
+Sponsorship is present. QPOWER combines the screen's strongest visible operating acceleration with concrete company disclosures: record Q3 FY26 revenue, EBITDA, PAT, management commentary on execution and capacity, and multiple order announcements.
 
-**Refresh Timing**:
-- **Next Review On**: 2026-04-28
-- **Hard Stale On**: 2026-05-10
+### Recent Trigger And What Likely Drove The Move
 
----
+The likely driver is the combination of Q3 FY26 results and rapid order-flow validation. Q3 showed a step-change in consolidated scale, while February-March 2026 disclosures added HVDC reactors, 800 kV products, instrument transformers, and BESS orders.
 
-### Sponsorship Reasoning
+### Business And Financial Evidence
 
-- **Why Sponsorship Is Present Or Not**: Sponsorship is present because the price move is traceable to a specific, timestamped business event — the Dec 2025 quarterly results showing consolidated revenue of ₹284 Cr (+289% YoY, +38% QoQ) and PAT of ₹63 Cr (+215% YoY), with Other Income contributing ₹0 Cr. This is operationally pure earnings growth at a new revenue scale, not a one-off or re-rating event. The Feb 2026 concall would have amplified the narrative with order book commentary, and the Mar 27 BESS order announcement provided a secondary public catalyst within the same window.
+The business is positioned in high-voltage electrical equipment, power-quality products, reactors, transformers, FACTS/HVDC-related equipment, and energy-transition infrastructure. Q3 FY26 consolidated EBITDA margin was 27.9% and PAT margin was 22.1%. FY25 balance-sheet indicators were comfortable, but working-capital discipline must be monitored as execution scales.
 
-- **Recent Trigger And What Likely Drove The Move**: The primary trigger was Q3 FY26 (Dec 2025) results, likely published late January or early February 2026. The revenue scale-up is dramatic — in Q1 FY26 (Jun 2024), consolidated sales were only ₹61 Cr; by Dec 2025 they reached ₹284 Cr. This kind of acceleration (roughly 4.6x in six quarters) on a stock with a visible HVDC/FACTS/BESS growth thesis attracts institutional attention quickly. A secondary trigger was the March 27, 2026 BESS order (₹152 Cr base, ₹292 Cr option) received by a step-down subsidiary — visible, publicly announced, and specific in size and timeline. The 1-year post-IPO lock-up expiry in February 2026 was a potential headwind that the market absorbed without disrupting the price trend, which itself is a bullish data point.
+### Catalyst Context
 
-- **Business And Financial Evidence**: Standalone P&amp;L (the core India business) shows steady improvement: revenue grew from ₹95 Cr (FY23) to ₹130 Cr (FY24) to ₹152 Cr (FY25) and ₹195 Cr TTM. OPM improved from 18% (FY22–FY24) to 26% (FY25) to 30% TTM. Net profit CAGR is 36% over 5 years and 55% over 3 years. On the consolidated view (which includes HVDC Technologies and other subsidiaries acquired post-IPO), revenue has exploded: ₹302 Cr (FY24) → ₹337 Cr (FY25) → ₹775 Cr TTM, a 3-year CAGR of 23% but TTM growth of 190%. PAT on consolidated basis: ₹55 Cr (FY24) → ₹100 Cr (FY25) → ₹165 Cr TTM. Balance sheet: consolidated equity ~₹469 Cr, borrowings ₹36 Cr (Sep 2025), effectively near-zero leverage. Free cash flow positive: ₹39 Cr in FY25. ROCE at the consolidated level stands at 27% (FY24) and 26.6% current — respectable for a capital goods company at this stage. The deterioration in debtor days (149 days, up from 96) and working capital (CCC 167 days vs 23 in FY24) is the most important financial concern — this is consistent with large project execution cycles but could compress reported cash flows if receivable collection slips.
+Catalysts connect directly to QPOWER's core product set: HVDC reactors, 800 kV class equipment, instrument transformers through Mehru, and BESS integration through Endoks. Sangli capacity expansion and customer audits add forward operating evidence.
 
-- **Catalyst Context**: QPOWER manufactures reactive power compensation systems (SVCs, STATCOMs), HVDC-related equipment, BESS integration systems, and grid automation products. These are direct beneficiaries of India's PGCIL transmission capex (₹9.15 lakh Cr National Electricity Plan) and the global shift to integrating renewables into high-voltage grids. Internationally, the company has demonstrated the ability to win orders in competitive markets — the March 2026 BESS order is for an unnamed international client. The subsidiary structure (HVDC Technologies acquired likely via IPO proceeds, noting ₹121 Cr cash-from-investing in FY25) has meaningfully expanded the revenue footprint. Concalls are available from Feb 2026, Nov 2025, Aug 2025, Jun 2025, and Mar 2025 — confirming active institutional engagement and management transparency.
+### Why The Rally Looks Legit Or Fragile For 1-8 Weeks
 
-- **Why The Rally Looks Legit Or Fragile For 1-8 Weeks**: Legit: the earnings base is genuinely higher (not inflated by other income), the order pipeline appears live (public announcement March 2026), and promoter ownership is locked and stable. Fragile: Q4 FY26 results are likely due in May 2026, within the 8-week window, and the market is pricing approximately 50–60% forward earnings growth — any miss or margin compression in Q4 relative to Dec 2025's 28% OPM would be a sharp negative catalyst. The working capital stretch means cash conversion could disappoint even if revenue holds up.
+The rally is fundamentally explainable because operating growth, margins, and order announcements arrived together. It is fragile because the stock has already moved sharply and the company clarified that there was no undisclosed event behind the price movement.
 
-- **Contradictions, Weaknesses, And Open Risks**:
-  1. OPM lumpiness at consolidated level is unresolved — swings from 8% to 38% across nine quarters suggest project-based revenue recognition where a single large contract can distort any given quarter in either direction.
-  2. Working capital deterioration is significant: consolidated CCC went from 23 days (FY24) to 167 days (FY25), and debtor days rose to 149. This creates receivables-collection risk as the company scales further.
-  3. Trailing P/E of 87x (consolidated) and standalone P/E of ~199x leave the stock with no margin of error. The TTM PAT of ₹165 Cr is heavily weighted toward one outperforming quarter (Dec 2025: ₹63 Cr); if Q4 FY26 reverts toward Q2/Q3 levels (₹35–37 Cr range), annualised earnings compress.
-  4. FII stake has declined from 3.99% (Mar 2025) to 2.28% (Mar 2026) — not alarming but indicates some institutional distribution that retail has absorbed (public: 13.35% → 17.85%). If further institutional exits occur without earnings support, the price lacks institutional floor.
-  5. The consolidated revenue surge (₹337 Cr FY25 → ₹775 Cr TTM) includes recently acquired subsidiaries — the organic growth rate for the legacy India business is harder to isolate and may be slower.
-  6. The BESS order (step-down subsidiary) is for delivery by December 2027 — it adds to the order book narrative but has no near-term revenue or earnings impact within the 8-week swing window.
+### Contradictions, Weaknesses, And Open Risks
 
-- **Peer Placement Notes**: Relevant peers in the HVDC/FACTS/reactor equipment space include GE Vernova T&amp;D India (formerly ABB Power Products), CG Power (power equipment division), and smaller specialists like Transformers &amp; Rectifiers India. QPOWER's differentiation is its focus on reactive power compensation and energy transition equipment, which is more specialized and higher-margin than commodity transformer makers. Against its immediate universe (stocks with 3M return &gt;30%, Market Cap &gt;₹3,000 Cr), QPOWER should rank ahead of names where momentum lacks a company-specific earnings beat and order catalyst within the look-back window, and behind names where OPM trend is cleaner, working capital is under control, and the forward P/E is supported by three or more consecutive quarters of evidence rather than one.
+Risks include execution slippage on large or conditional orders, customer approval delays, commodity-price pass-through, receivable build-up, subsidiary integration, and the possibility that consolidated growth flatters the near-term trend versus standalone performance.
 
----
+### Peer Placement Notes
+
+QPOWER should rank above stocks where momentum is not backed by quarterly operating acceleration or disclosed order flow. It should not receive an automatic top slot solely for its three-month return; the ranking must weigh post-rally fragility.
