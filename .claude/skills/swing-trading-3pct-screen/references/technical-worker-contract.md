@@ -16,6 +16,9 @@ The worker owns exactly one stock. If the handoff contains multiple stocks, a ba
 - ranking reason
 - coverage mode
 - technical_data_mode
+- required timeframes
+- required technical factors
+- verified TradingView MCP and EMA study status when `technical_data_mode=tradingview_mcp`
 - exchange-qualified ticker when `technical_data_mode=api_fallback`
 - explicit ISO current date when `technical_data_mode=api_fallback`
 - explicit price start date when `technical_data_mode=api_fallback`
@@ -52,9 +55,20 @@ Do not make a technical verdict from:
 
 ## Data Source Rules
 
-- `technical_data_mode=tradingview_mcp`: use the verified TradingView chart state.
+- `technical_data_mode=tradingview_mcp`: navigate/read the verified
+  TradingView chart state inside this one-stock worker task.
 - `technical_data_mode=api_fallback`: fetch the one-stock JSON payloads inside
   this technical worker using this skill's local API scripts.
+- The main agent must not supply pre-fetched OHLCV bars, EMA values, study
+  output, screenshots, support/resistance notes, or timeframe summaries for
+  interpretation.
+- Reject any handoff that asks the worker to interpret main-agent-collected
+  per-stock technical data.
+- In TradingView MCP mode, reject any handoff that includes batch-collected
+  chart data for this stock or for multiple stocks.
+- In TradingView MCP mode, use the shared MCP state only during this worker's
+  one-stock turn, cover every required timeframe, and return only the output
+  schema fields. Do not leave a second stock partially analyzed.
 - In API mode, the main agent supplies resolved inputs and paths only. It must
   not supply pre-fetched per-stock JSON for interpretation.
 - In API mode, run `scripts/fetch_stock_data.py` for `15m`, `30m`, `60m`,

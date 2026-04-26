@@ -110,3 +110,19 @@
 - Correct verdict: write `technical-dossiers/01-ACUTAAS.md` immediately. In `tradingview_mcp`, do this before moving TradingView to the next symbol; in `api_fallback`, do this before replenishing the bounded parallel worker queue.
 - Why: immediate persistence keeps the technical audit trail aligned with each accepted one-stock result and prevents the reviewed reasoning from being lost.
 - Output shape: one worker result becomes one main-agent dossier for that same stock before the next technical review starts.
+
+### Example: Invalid Main-Agent Technical Pre-Fetch
+
+- Input context: after selecting `technical_data_mode=tradingview_mcp`, the main agent collects OHLCV bars, EMA study values, screenshots, or batch chart data for all top-ranked names before dispatching technical workers.
+- What the main agent should notice: this violates the technical ownership split because the one-stock technical worker must acquire and validate its own chart evidence.
+- Correct verdict: stop the pre-fetch plan, discard the main-agent-collected technical evidence, and dispatch one one-stock technical worker with only identity, ranking context, required timeframes/factors, `technical_data_mode`, and verified MCP/EMA setup status.
+- Why: keeping data acquisition inside the worker prevents stale shared chart state, batch interpretation drift, and unclear responsibility for technical evidence.
+- Output shape: the worker returns one stock's technical output schema; the main agent then writes that stock's dossier immediately.
+
+### Example: Valid TradingView MCP Handoff
+
+- Input context: TradingView MCP and EMA setup are verified, and `LLOYDSME` is fundamental rank `#1`.
+- What the main agent should send: one-stock identity, screen thesis, fundamental rank, sponsorship context, coverage mode, `technical_data_mode=tradingview_mcp`, required timeframes, required factors, and confirmation that MCP/EMA preflight passed.
+- Correct verdict: the worker navigates/reads TradingView MCP for `LLOYDSME` inside its own task across `weekly`, `daily`, `60`, `30`, and `15`, then returns the output schema.
+- Why: the main agent selected the mode and built the handoff, while the worker owns technical evidence collection and interpretation.
+- Output shape: no pre-fetched chart packets appear in the handoff.

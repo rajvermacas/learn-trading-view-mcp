@@ -52,10 +52,13 @@ If any required input, chart state, or company data is missing, stop with a clea
 15. Run `tradingview_mcp` technical workers strictly one at a time; run
     `api_fallback` technical workers in parallel with a hard cap of `6` inflight
     workers and no shared writable resources.
-16. After each accepted technical result, immediately write that stock's
+16. Let each technical worker acquire and validate its own one-stock technical
+    data inside the worker task. The main agent must not pre-fetch per-stock
+    TradingView or API technical evidence for the worker.
+17. After each accepted technical result, immediately write that stock's
     technical dossier. In `api_fallback`, write each accepted dossier before
     replenishing the technical worker queue.
-17. Synthesize three ranking views, five output files, and the technical
+18. Synthesize three ranking views, five output files, and the technical
     dossier directory.
 
 The main agent should orchestrate, verify, and synthesize. It should not hold raw per-stock detail longer than necessary.
@@ -83,6 +86,15 @@ Sub-agent ownership is always one worker to one stock.
 - API fallback technical-worker concurrency is hard-capped at `6` inflight workers.
 - API fallback technical workers must not share writable resources. Shared read-only script and reference paths are allowed.
 - Each API fallback technical worker must receive a unique per-stock API output directory, for example `docs/swing-trading/<run-id>/api/<rank>-<symbol>/`.
+- Technical workers own their one-stock technical data collection. In
+  `tradingview_mcp` mode, the worker reads TradingView MCP chart/study evidence
+  for its own symbol and required timeframes. In `api_fallback` mode, the worker
+  runs the bundled local scripts for its own symbol and required intervals.
+- The main agent must not call batch OHLCV, EMA, study, screenshot, or
+  indicator tools for the technical coverage list before dispatching workers.
+- The main agent may perform only capability preflight before technical
+  dispatch: run `ensure_socat.sh`, verify TradingView MCP connectivity, verify
+  the EMA study setup, and choose `technical_data_mode`.
 
 The main agent must never assign:
 
@@ -373,6 +385,14 @@ resolved inputs and paths; the technical worker owns the fetch, validation, and
 one-stock interpretation. The main agent must reject any API fallback plan where
 two inflight technical workers would write into the same directory, JSON file,
 log file, temp directory, or report file.
+
+When `technical_data_mode=tradingview_mcp`, the same ownership principle
+applies to chart evidence. The main agent owns only MCP capability preflight and
+handoff construction. The one-stock technical worker owns chart navigation,
+timeframe reading, EMA/study inspection, support/resistance evidence, supply and
+demand evidence, pattern interpretation, volume analysis, and the final
+one-stock technical output. The main agent must reject any TradingView MCP plan
+that bulk-collects technical data for several stocks before worker dispatch.
 
 Fail fast in API mode when:
 

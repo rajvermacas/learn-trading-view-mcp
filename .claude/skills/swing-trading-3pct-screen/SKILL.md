@@ -65,6 +65,9 @@ Responsibility split is strict:
 - the main agent compares one stock's fundamentals against another stock's fundamentals
 - the main agent assigns sponsorship rank across the universe
 - each fundamental sub-agent only analyzes the single stock it is given and returns that stock's dossier
+- each technical sub-agent owns technical data acquisition, validation, and interpretation for the single stock it is given
+- the main agent must not pre-fetch, batch-fetch, or summarize per-stock technical chart data for a technical sub-agent
+- the main agent may only perform technical-data preflight checks needed to select `technical_data_mode`, such as running `ensure_socat.sh` and verifying TradingView MCP plus EMA study availability
 
 ## Cache Rules
 
@@ -112,7 +115,9 @@ Use bundled scripts instead of writing new helper scripts. If a bundled script i
 - In `api_fallback` mode, technical workers must not share writable resources. Shared read-only script and reference paths are allowed, but every worker must receive a unique per-stock API output directory.
 - Technical analysis must cover `weekly`, `daily`, `60`, `30`, and `15`.
 - Each technical handoff must include `technical_data_mode`.
-- In `tradingview_mcp` mode, workers read the shared chart state from TradingView MCP.
+- In `tradingview_mcp` mode, the main agent must not collect OHLCV, EMA, study, screenshot, support/resistance, or timeframe evidence before dispatching the one-stock technical worker.
+- In `tradingview_mcp` mode, each one-stock technical worker must navigate/read the verified TradingView MCP chart state for its own symbol and required timeframes inside that worker task.
+- In `tradingview_mcp` mode, the main-agent handoff must provide only symbol/company identity, fundamental ranking context, `technical_data_mode`, required timeframes, required factors, and the verified MCP/EMA setup status.
 - In `api_fallback` mode, the main agent must not fetch per-stock JSON before the handoff.
 - In `api_fallback` mode, the technical sub-agent must fetch per-stock JSON inside its own one-stock task using:
   - `scripts/fetch_stock_data.py`
