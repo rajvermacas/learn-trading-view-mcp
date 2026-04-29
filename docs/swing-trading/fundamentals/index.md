@@ -20,11 +20,11 @@
 | ABB | ABB India Ltd | by-symbol/ABB.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | VOLTAMP | Voltamp Transformers Ltd | by-symbol/VOLTAMP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KRISHANA | Krishana Phoschem Ltd | by-symbol/KRISHANA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| PRECWIRE | Precision Wires India Ltd | by-symbol/PRECWIRE.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| PRECWIRE | Precision Wires India Ltd | by-symbol/PRECWIRE.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | QPOWER | Quality Power Electrical Equipments Ltd | by-symbol/QPOWER.md | 2026-04-26 | 2026-05-30 | 2026-06-30 |
 | RUBICON | Rubicon Research Ltd | by-symbol/RUBICON.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SHRIPISTON | Shriram Pistons & Rings Ltd | by-symbol/SHRIPISTON.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| ENGINERSIN | Engineers India Ltd | by-symbol/ENGINERSIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| ENGINERSIN | Engineers India Ltd | by-symbol/ENGINERSIN.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | KSB | KSB Ltd | by-symbol/KSB.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | AVANTIFEED | Avanti Feeds Ltd | by-symbol/AVANTIFEED.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | SUPPETRO | Supreme Petrochemicals Ltd | by-symbol/SUPPETRO.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -42,7 +42,7 @@
 | PARKHOSPS | Park Medi World Ltd | by-symbol/PARKHOSPS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | CPPLUS | Aditya Infotech Ltd (CP Plus) | by-symbol/CPPLUS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | JINDALSAW | Jindal Saw Ltd | by-symbol/JINDALSAW.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -90,3 +90,5 @@
 | UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
 | WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
 | DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-04-24 | 2026-05-03 | 2026-05-15 |
+| INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
+| NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
