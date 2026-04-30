@@ -22,7 +22,7 @@
 | KRISHANA | Krishana Phoschem Ltd | by-symbol/KRISHANA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PRECWIRE | Precision Wires India Ltd | by-symbol/PRECWIRE.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | QPOWER | Quality Power Electrical Equipments Ltd | by-symbol/QPOWER.md | 2026-04-26 | 2026-05-30 | 2026-06-30 |
-| RUBICON | Rubicon Research Ltd | by-symbol/RUBICON.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| RUBICON | Rubicon Research Ltd | by-symbol/RUBICON.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
 | SHRIPISTON | Shriram Pistons & Rings Ltd | by-symbol/SHRIPISTON.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ENGINERSIN | Engineers India Ltd | by-symbol/ENGINERSIN.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | KSB | KSB Ltd | by-symbol/KSB.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -35,12 +35,12 @@
 | KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | IMFA | Indian Metals & Ferro Alloys Ltd | by-symbol/IMFA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | WELCORP | Welspun Corp Ltd | by-symbol/WELCORP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| SKYGOLD | Sky Gold & Diamonds Ltd | by-symbol/SKYGOLD.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| SKYGOLD | Sky Gold & Diamonds Ltd | by-symbol/SKYGOLD.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
 | DATAPATTNS | Data Patterns India Ltd | by-symbol/DATAPATTNS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KRN | KRN Heat Exchanger and Refrigeration Ltd | by-symbol/KRN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | GARFIBRES | Garware Hi-Tech Films Ltd | by-symbol/GARFIBRES.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PARKHOSPS | Park Medi World Ltd | by-symbol/PARKHOSPS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
 | ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | CPPLUS | Aditya Infotech Ltd (CP Plus) | by-symbol/CPPLUS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
@@ -92,3 +92,4 @@
 | DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-04-24 | 2026-05-03 | 2026-05-15 |
 | INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
+| HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
