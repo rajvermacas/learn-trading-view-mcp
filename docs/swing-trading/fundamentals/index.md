@@ -44,7 +44,7 @@
 | ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | CPPLUS | Aditya Infotech Ltd (CP Plus) | by-symbol/CPPLUS.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | JINDALSAW | Jindal Saw Ltd | by-symbol/JINDALSAW.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | GALLANTT | Gallantt Ispat Ltd | by-symbol/GALLANTT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SONACOMS | Sona BLW Precision Forgings Ltd | by-symbol/SONACOMS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -80,8 +80,8 @@
 | INSOLATION | Insolation Energy Ltd | by-symbol/INSOLATION.md | 2026-04-26 | 2026-05-31 | 2026-07-25 |
 | SAATVIKGL | Saatvik Green Energy Ltd | by-symbol/SAATVIKGL.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | BSE | BSE Ltd | by-symbol/BSE.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
-| CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
+| CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | ORIANA | Oriana Power Ltd | by-symbol/ORIANA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
@@ -93,3 +93,4 @@
 | INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
+| DEEDEV | DEE Development Engineers Ltd | by-symbol/DEEDEV.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
