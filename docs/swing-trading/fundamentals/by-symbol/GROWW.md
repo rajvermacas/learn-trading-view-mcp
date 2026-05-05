@@ -1,79 +1,60 @@
-# GROWW — Fundamental Sponsorship Dossier
-
-## Ranking Packet
+# Ranking Packet
 
 - **Symbol:** GROWW
-- **Company:** Billionbrains Garage Ventures Ltd (Groww)
-- **Analysis Date:** 2026-04-21
-- **Screen Thesis Fit:** High. Recently-IPO'd large-cap fintech with 32.70% 3-month return driven by verifiable earnings acceleration, analyst initiations by global bulge-bracket firms, and material YoY improvement in revenue and profitability.
-- **Sponsorship Verdict:** Strongly Sponsored
-- **Confidence:** Medium-High
+- **Company:** Billionbrains Garage Ventures Ltd
+- **Analysis Date:** 2026-05-05
+- **Screen Thesis Fit:** Medium-High. Large-cap fintech with verified 122% YoY profit growth in Q4 FY26 and 88% YoY revenue growth — earnings acceleration is real. However, primary catalysts are 15 days old and substantially priced in, and IPO lock-in expiry is now active.
+- **Sponsorship Verdict:** Moderately Sponsored
+- **Confidence:** Medium
 
-### Comparison Dimensions
+## Comparison Dimensions
 
-**Recent Trigger — Strong**
-Multiple converging catalysts: BofA Securities Buy initiation with PT Rs 235 (April 16, 2026) — stock surged 43% in April. Q4 FY26 results (April 20, 2026): net profit up 122% YoY to Rs 686 Cr on revenue Rs 1,505 Cr (+88% YoY). EBITDA up 141% YoY with platform EBITDA margin 66.93%. Jefferies Buy initiation (Dec 2025, Rs 180 PT) was first institutional anchor.
+- **Recent Trigger:** Decayed — Q4 FY26 beat (net profit +122% YoY, revenue +88% YoY) was April 20; BofA Buy initiation (Rs 235 PT) was April 16 — both 15 days old and absorbed. Price moved only ~3.5% since, indicating limited fresh absorption.
+- **Operating Evidence:** Strong — Consolidated revenue sequential: Rs 904 Cr → Rs 1,019 Cr → Rs 1,216 Cr → Rs 1,505 Cr (Mar-26). Net profit: Rs 378 Cr → Rs 471 Cr → Rs 547 Cr → Rs 686 Cr. Operating margin expanded to 62-67%. Five-quarter unbroken acceleration.
+- **Earnings Quality:** Medium — Revenue is market-cycle dependent. FY26 FCF near-zero (-Rs 33 Cr) despite Rs 2,083 Cr PAT. Q4 122% YoY partly reflects weak base.
+- **Balance Sheet Comfort:** Strong — Borrowings declined to Rs 270-292 Cr vs reserves Rs 8,404 Cr. ROCE 35-37%, interest coverage 931x. Near-zero debt.
+- **Catalyst Credibility:** Weakening — BofA Rs 235 target implies only ~6% upside. Next earnings (Q1 FY27) is July 2026, outside swing window. Lock-in overhang is a headwind.
+- **Evidence-to-Price Alignment:** Stretched — P/E 66-85x, P/B 14-17x. CMP Rs 221.56 vs IPO Rs 100 is +121% in ~5 months. Only ~6% upside to nearest target.
+- **Near-Term Fragility:** High — IPO lock-in now active or imminent. Muted post-Q4 price response consistent with supply absorbing demand. Capital market sensitivity and SEBI F&O regulatory risk structural.
 
-**Operating Evidence — Strong**
-Sequential revenue inflection: Sep-25 Rs 1,019 Cr → Dec-25 Rs 1,216 Cr → Mar-26 Rs 1,505 Cr. Profit track: Sep-25 Rs 471 Cr → Dec-25 Rs 547 Cr → Mar-26 Rs 686 Cr. EBITDA margin expansion to 66.93% in Q4 from 59.1% full-year shows operating leverage is real and accelerating. Transacting user base grew 25% YoY to 21.6 million.
+## Ranking Summary
 
-**Earnings Quality — Medium-High**
-Revenue is primarily brokerage and mutual fund distribution — market-cycle sensitive. FCF negative for FY25 and near-zero for FY26 (-Rs 33 Cr), a concern for Rs 134K Cr market cap company. FY25 Q4 (Rs 309 Cr) was weak base due to SEBI F&O crackdown — 122% YoY jump partly base-effect. Absolute trajectory genuinely improving.
+- **Why It Ranks Here:** Five quarters of sequential revenue and profit acceleration, near-zero debt, ROCE above 35%, tier-1 institutional coverage. Moderate rank because catalysts have decayed and lock-in overhang is now active.
+- **What Keeps It From Ranking Higher:** Catalyst freshness gone (15+ days post Q4). Lock-in expiry active. FCF contradicts PAT. P/E 66-85x with only 6% upside to analyst target. Muted price action post-Q4 is warning of distribution.
+- **What Kind Of Peer Should Rank Above It:** Fresh catalyst not yet priced, similar sequential acceleration, positive FCF, no lock-in overhang, more than 15% upside to target.
+- **What Kind Of Peer Should Rank Below It:** Declining sequential profits, no institutional coverage, speculative-only momentum.
 
-**Balance Sheet Comfort — Medium**
-Post-IPO: equity capital Rs 1,248 Cr (FY26), reserves Rs 8,404 Cr. Borrowings reduced Rs 610 Cr to Rs 270 Cr. ROCE 37.4%. Promoter holding 27.38% — low for Indian company. Key risk: 6-month lock-in expiry in May 2026 (~5 weeks away) could create supply pressure.
+## Refresh Timing
 
-**Catalyst Credibility — Strong**
-Q4 FY26 earnings beat is confirmed and public. BofA Buy/Rs 235 target is 5 days old. BofA projects 30% revenue CAGR FY26-28 and 35% EPS CAGR. SEBI F&O regulations remain a risk — NSE active clients declined 7% in FY26 even as Groww's share rose 26.26% to 28.31%.
+- **Next Review On:** 2026-05-12
+- **Hard Stale On:** 2026-05-26
 
-**Evidence-to-Price Alignment — Medium**
-CMP Rs 214 vs IPO price Rs 100 — up 114% in ~5 months. P/E 64.3x, P/B 13.9x — rich for Indian financial services in cyclically elevated environment. BofA target Rs 235 implies only ~10% upside. Upside from primary catalyst is narrowing.
+# Sponsorship Reasoning
 
-**Near-Term Fragility — Medium-High**
-Lock-in expiry May 2026 (~2-4 weeks); capital markets sensitivity; post-earnings-beat drift risk — Q4 announced April 20, screener captures at Rs 214 on April 21.
+## Why Sponsorship Is Present Or Not
 
-### Ranking Summary
+Sponsorship is present at moderate conviction. Three core fundamentals remain: five-quarter sequential revenue acceleration at Rs 1,505 Cr in Q4 FY26, operating leverage via margin expansion from 48% to 62-67%, and institutional coverage from BofA and Jefferies. However, sponsorship is now backward-looking — all confirmed events are 15+ days old. Lock-in expiry shifts supply-demand against new buyers.
 
-- **Why It Ranks Here:** Cleanest catalyst-evidence alignment — 122% YoY profit surge confirmed, analyst initiation cycle in mid-flight, business proving operating leverage at scale.
-- **What Keeps It From Ranking Higher:** Negative FCF despite profits; earnings quality reflects base effects and cyclicality; lock-in expiry May 2026; 64x P/E limits safety margin.
-- **What Kind Of Peer Should Rank Above It:** Similar earnings acceleration with positive FCF, no lock-in overhang, forward-looking catalyst not yet priced.
-- **What Kind Of Peer Should Rank Below It:** Momentum from sector rotation without company-specific earnings event; declining quarterly profits; no institutional research coverage.
+## Recent Trigger And What Likely Drove The Move
 
-### Refresh Timing
+Primary move driven by BofA Buy initiation (April 16) and Q4 FY26 results (April 20) — stock surged ~43% in April. Since April 21, price moved only ~3.5% despite outstanding earnings. Muted absorption is the key diagnostic: institutional demand largely satisfied or countered by pre-IPO supply unlocking.
 
-- **Next Review On:** 2026-04-30
-- **Hard Stale On:** 2026-05-12
+## Business And Financial Evidence
 
----
+FY26: Revenue Rs 4,645 Cr, PAT Rs 2,083 Cr, OPM 59%. 3-year sales CAGR 60%, profit CAGR 66%. Market share in NSE active clients rose 22% → 28.31% even as industry declined 7%. FCF near-zero despite Rs 2,083 Cr PAT. Quarterly trajectory shows five unbroken quarters of sequential acceleration.
 
-## Sponsorship Reasoning
+## Catalyst Context
 
-### Why Sponsorship Is Present Or Not
-Three independently verifiable signals: 122% YoY profit jump in Q4 FY26 with EBITDA margin 67%; BofA Buy initiation Rs 235 target; 88% YoY revenue growth with positive sequential acceleration across 3 quarters. Fresh-IPO stock acquiring institutional research coverage — a classically powerful institutional demand signal.
+All confirmed catalysts are digested. Forward catalysts (wealth management, AMC expansion, lending) are structural multi-quarter stories, not swing catalysts. Lock-in expiry is the dominant near-term event and it is a risk, not a catalyst.
 
-### Recent Trigger And What Likely Drove The Move
-Two triggers compounded: Jefferies Buy initiation (Dec 2025, Rs 180 PT) re-rated from IPO listing. BofA April 16 Buy at Rs 235 triggered current leg — stock moved 43% in April. Q4 results April 20 provided fundamental confirmation.
+## Why The Rally Looks Legit Or Fragile For 1-8 Weeks
 
-### Business And Financial Evidence
-- Revenue quarterly: Rs 975 Cr (Dec-24) → Rs 801 Cr (Mar-25, F&O crackdown) → Rs 904 Cr → Rs 1,019 Cr → Rs 1,216 Cr → Rs 1,505 Cr (Mar-26)
-- Net profit: Rs 757 Cr → Rs 309 Cr → Rs 378 Cr → Rs 471 Cr → Rs 547 Cr → Rs 686 Cr
-- Full-year FY26: PAT Rs 2,083 Cr on revenue Rs 4,645 Cr, 59% operating margin
-- ROCE 37.4%, borrowings Rs 270 Cr vs reserves Rs 8,404 Cr
-- Transacting users 21.6 million (+25% YoY)
+Underlying business is legitimate. 1-8 week window is fragile: primary catalysts absorbed, lock-in active, price flat since Q4 beat, analyst consensus offers only ~6% upside. More suitable for hold-from-prior-entry than fresh-entry swing.
 
-### Catalyst Context
-Q4 FY26 results confirmed and public. BofA Buy is 5 days old. BofA projects 30% revenue CAGR and 35% EPS CAGR FY26-28. Wealth management/AMC expansion and lending-against-securities product are forward catalysts not yet in price.
+## Contradictions, Weaknesses, And Open Risks
 
-### Why The Rally Looks Legit Or Fragile For 1-8 Weeks
-Legit 1-4 weeks: Q4 beat confirmed, BofA note fresh, institutional players now have research justification to build positions. Fragile weeks 4-8: lock-in expiry May 2026, capital market weakness risk, brokerage revenue sensitivity.
+FCF paradox: Rs 2,083 Cr PAT vs near-zero FCF. Lock-in expiry active with 62.88% public float. Market-share growth in shrinking market. SEBI regulatory risk. Promoter pledging at 1.30%. Low promoter holding at 27.38%. P/E 66-85x with no room for miss. Post-Q4 price stall is distribution signal.
 
-### Contradictions, Weaknesses, And Open Risks
-1. FCF contradiction: Rs 2,083 Cr profit but FCF -Rs 33 Cr
-2. NSE active clients declined 7% in FY26 — Groww's growth is market-share capture, not expansion
-3. Regulatory overhang: additional SEBI F&O rules cannot be ruled out
-4. Lock-in expiry May 2026: pre-IPO investors (62.88% public float) free to exit
-5. Promoter holding 27.38% — low for Indian company
-6. P/B 13.9x and P/E 64.3x price in significant growth
+## Peer Placement Notes
 
-### Peer Placement Notes
-Top quartile on sponsorship evidence quality. Most identifiable catalyst (post-IPO analyst initiation + earnings beat), highest confidence on earnings acceleration (reported not estimated). Ranks below peers with positive FCF, no lock-in overhang, and still-forward catalysts.
+Middle tier as of May 5, 2026. Was top-tier on April 21 when catalysts were fresh. Ranks above peers with declining profits or no institutional research. Ranks below peers with fresh unpriced catalysts, positive FCF, expired lock-ins, and more reasonable forward valuations.

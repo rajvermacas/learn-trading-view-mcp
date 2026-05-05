@@ -19,7 +19,7 @@
 | TDPOWERSYS | TD Power Systems Ltd | by-symbol/TDPOWERSYS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ABB | ABB India Ltd | by-symbol/ABB.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | VOLTAMP | Voltamp Transformers Ltd | by-symbol/VOLTAMP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| KRISHANA | Krishana Phoschem Ltd | by-symbol/KRISHANA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| KRISHANA | Krishana Phoschem Ltd | by-symbol/KRISHANA.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
 | PRECWIRE | Precision Wires India Ltd | by-symbol/PRECWIRE.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | QPOWER | Quality Power Electrical Equipments Ltd | by-symbol/QPOWER.md | 2026-04-26 | 2026-05-30 | 2026-06-30 |
 | RUBICON | Rubicon Research Ltd | by-symbol/RUBICON.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
@@ -83,14 +83,15 @@
 | EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | ORIANA | Oriana Power Ltd | by-symbol/ORIANA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
-| GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
+| GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-05-05 | 2026-05-12 | 2026-05-26 |
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
-| UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
+| UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
 | WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
 | DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-04-24 | 2026-05-03 | 2026-05-15 |
 | INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
 | DEEDEV | DEE Development Engineers Ltd | by-symbol/DEEDEV.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
+| TIMEX | Timex Group India Ltd | by-symbol/TIMEX.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
