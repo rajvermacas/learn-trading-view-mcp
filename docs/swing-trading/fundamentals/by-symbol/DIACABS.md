@@ -1,49 +1,51 @@
-# DIACABS — Fundamental Sponsorship Dossier
+## Ranking Packet
 
-### Ranking Packet
+- **Symbol:** DIACABS
+- **Company:** Diamond Power Infrastructure Ltd
+- **Analysis Date:** 2026-05-07
+- **Screen Thesis Fit:** Strong fit. QPV 692.98%, QSV 54.21%, ROCE 36.59%. Multi-quarter confirming trend with genuine T&D infrastructure tailwind.
+- **Sponsorship Verdict:** Moderately Sponsored
+- **Confidence:** Medium
+- **Recent Trigger:** Strong — Q3 FY26 NP +693% YoY, Revenue +54%, EBITDA 4.4x, OPM 15% vs 5%. Multi-line confirmation.
+- **Operating Evidence:** Strong — Multi-quarter confirming: Q2 FY26 NP +593%, Q3 FY26 NP +693%. Rs 3,500 Cr order book = 2.3x revenue visibility.
+- **Earnings Quality:** Mixed-to-Positive — ROCE 36.6% strong but flattered by negative book value. Debtor days improved 91.8→57.5. FCF only Rs 10 Cr in FY25.
+- **Balance Sheet Comfort:** Uncomfortable — Negative net worth Rs -714 Cr. Debt ~Rs 610 Cr. Near-zero institutional ownership (0.5%) anomalous at Rs 8,500 Cr MCap.
+- **Catalyst Credibility:** Strong — India T&D capex super-cycle structural. Adani anchor client with Rs 208+ Cr April LOIs. EHV capacity expansion in progress.
+- **Evidence-to-Price Alignment:** Stretched — P/E 81-85x TTM. Forward ~40-42x. Holds only if Q4 FY26 confirms margin continuation.
+- **Near-Term Fragility:** Moderate-High — Q4 result (~May 22) is binary event within swing window. Adani LOIs non-binding. Thin float. Negative net worth.
+- **Why It Ranks Here:** Triple confirmation QPV/QSV/ROCE in top decile. Multi-quarter trajectory. Rs 3,500 Cr order book visibility. Active capacity expansion. Durable sector catalyst.
+- **What Keeps It From Ranking Higher:** Negative net worth Rs -714 Cr. Near-zero institutional ownership. P/E 81x front-loaded. Q4 result is live binary risk.
+- **What Kind Of Peer Should Rank Above It:** Cable peer with comparable metrics, positive net worth, D/E below 1x, institutional ownership above 5%.
+- **What Kind Of Peer Should Rank Below It:** Single-metric movers (QPV% without QSV%), ROCE below 20%, no structural sector catalyst.
+- **Next Review On:** 2026-05-16
+- **Hard Stale On:** 2026-05-28
 
-- **Symbol**: DIACABS
-- **Company**: Diamond Power Infrastructure Ltd
-- **Analysis Date**: 2026-04-24
-- **Screen Thesis Fit**: Partial fit. The stock qualifies on market cap (Rs 8,505 Cr) and Mar 2026 quarterly results (Sales Rs 474 Cr, NP Rs 49.72 Cr, profit growth 693%). However, the 3-month return figure is missing from screen data. The business is a turnaround story in power cable/transmission infrastructure, riding India's power capex cycle. Negative net worth and P/E of 80.8x on a turnaround base are notable complications.
-- **Sponsorship Verdict**: Moderately Sponsored
-- **Confidence**: Medium
+## Sponsorship Reasoning
 
-**Comparison Dimensions**:
+### Why Sponsorship Is Present Or Not
 
-- **Recent Trigger**: Real and identifiable — Mar 2026 quarter: Sales Rs 474 Cr (+54% YoY), NP Rs 49.72 Cr (+693% YoY), OPM expanding to 15% from 5%. Cluster of Adani group LOIs in early April 2026 totaling Rs 189 Cr across three announcements.
-- **Operating Evidence**: Strong sequential improvement — OPM went from 4-5% (Sep-Dec 2024) to 10% (Jun-Sep 2025) to 15% (Mar 2026). Sales doubled in 8 quarters from Rs 224 Cr to Rs 474 Cr. Annual sales from zero in FY22 to Rs 1,548 Cr TTM.
-- **Earnings Quality**: Mixed — 693% growth is off a very low base (Rs 6.25 Cr). Negative net worth of Rs -714 Cr means profits first absorb historical losses. Borrowings growing from Rs 463 Cr to Rs 610 Cr even as profits grow. FCF only Rs 10 Cr in FY25.
-- **Balance Sheet Comfort**: Uncomfortable — negative net worth Rs -714 Cr, total debt Rs 610 Cr. Promoter holding 84.02% with very thin public float. FII + DII combined 0.43%.
-- **Catalyst Credibility**: Credible near-term — three Adani LOIs totaling Rs 189 Cr. India's power infrastructure capex is structural driver. But all orders from single conglomerate (Adani).
-- **Evidence-to-Price Alignment**: Stretched — P/E 81x TTM, forward P/E ~42x on annualized run-rate. Price-to-sales 5.5x elevated for cable manufacturer. ROCE of 31% may be distorted by negative equity.
-- **Near-Term Fragility**: Moderate-to-high — growing debt, Adani LOIs not binding, thin float, OPM expansion from 5% to 15% may face reversion risk.
+Sponsorship is moderately present. Q3 FY26 delivered 693% profit growth with genuine revenue expansion (+54%). Order book at Rs 3,500 Cr provides visibility. However, negative net worth and near-zero institutional ownership limit conviction.
 
-**Ranking Summary**:
+### Recent Trigger And What Likely Drove The Move
 
-- **Why It Ranks Here**: Dramatic revenue acceleration (54% YoY), extraordinary profit growth (693%), improving margins (15% OPM), credible industry tailwind, named order wins.
-- **What Keeps It From Ranking Higher**: Negative net worth (Rs -714 Cr), near-zero institutional ownership (0.43%), P/E 81x on turnaround base, missing 3-month return data.
-- **What Kind Of Peer Should Rank Above It**: Similar revenue momentum but positive net worth, D/E below 1x, institutional ownership above 5%, P/E below 40x forward.
-- **What Kind Of Peer Should Rank Below It**: Similar momentum but purely one-off triggers, 20-30% sales growth without margin expansion, even lower float liquidity.
+Multi-quarter profit recovery from low base in T&D super-cycle. Adani anchor orders. EHV capacity expansion announcement. Q3 FY26 margins expanding from 5% to 15%.
 
-**Refresh Timing**:
-- **Next Review On**: 2026-05-03
-- **Hard Stale On**: 2026-05-15
+### Business And Financial Evidence
 
----
+Q3 FY26: Revenue Rs 474 Cr (+54%), NP Rs 49.72 Cr (+693%), OPM 15% vs 5% YoY. Order book Rs 3,500+ Cr. Capacity expansion: HT cables 2,500 km, LT cables 25,000 km, new EHV plant (132-400 KVA, 2,000 km/yr). ROCE 36.6%.
 
-### Sponsorship Reasoning
+### Catalyst Context
 
-- **Why Sponsorship Is Present Or Not**: Moderately present. Diamond Power emerged from near-defunct state (zero revenue FY21-22) through restructuring, re-entered operations at scale, and delivered eight consecutive quarters of growing revenue with accelerating margins. The Mar 2026 quarter is the strongest yet. However, negative net worth, near-zero institutional ownership, and 81x P/E cap the sponsorship at moderate.
+India T&D capex super-cycle structural. Adani LOIs ~Rs 208+ Cr. EHV capacity moves up value chain. Q4 FY26 results ~May 22 are both upgrade catalyst and binary risk.
 
-- **Recent Trigger And What Likely Drove The Move**: Primary trigger is Mar 2026 quarterly result (profit +693%, sales +54%, OPM 15%). Secondary catalyst is Adani LOIs totaling Rs 189 Cr in early April 2026.
+### Why The Rally Looks Legit Or Fragile For 1-8 Weeks
 
-- **Business And Financial Evidence**: Revenue: Rs 0 (FY22) → Rs 15 Cr (FY23) → Rs 343 Cr (FY24) → Rs 1,115 Cr (FY25) → Rs 1,548 Cr TTM. OPM: negative/zero → 4-5% → 10% → 15%. Borrowings Rs 610 Cr, negative net worth Rs -714 Cr. Debtor days improved 91.8 to 57.5 days. FY25 FCF only Rs 10 Cr.
+Legitimate: multi-quarter improvement, structural sector tailwind, order book visibility. Fragile: Q4 results are binary within window. Negative net worth. Near-zero institutional floor. P/E 81x demands continued execution.
 
-- **Catalyst Context**: India's power sector capex is multi-year structural driver. Diamond Power's products (power cables, control cables, transmission equipment) are directly in this demand stream. Adani group is high-credibility client anchor.
+### Contradictions, Weaknesses, And Open Risks
 
-- **Why The Rally Looks Legit Or Fragile For 1-8 Weeks**: Legitimate: multi-quarter improving trend, Adani order flow, policy-backed sector. Fragile: 81x P/E with negative book, thin float, input cost risk (copper, aluminum), Adani LOIs are not binding orders.
+Negative net worth Rs -714 Cr. Institutional ownership 0.5% at Rs 8,500 Cr MCap. Adani LOIs non-binding. FCF only Rs 10 Cr in FY25. Low base effect flatters growth rates. Thin float amplifies volatility.
 
-- **Contradictions, Weaknesses, And Open Risks**: (1) Negative net worth Rs -714 Cr vs Rs 8,505 Cr market cap; (2) Growing debt even as profitability improves; (3) ROCE 31% distorted by negative equity; (4) Near-zero institutional ownership at Rs 8,505 Cr market cap; (5) Missing 3-month return data; (6) Adani client concentration.
+### Peer Placement Notes
 
-- **Peer Placement Notes**: Operationally compelling, financially fragile, valuationally stretched. A high-beta turnaround play requiring tight stops. Ranks below peers with positive net worth and institutional validation.
+Mid-tier. Above stocks without structural catalyst or order visibility. Below peers with positive net worth, institutional backing, and lower P/E. Upgrade path to Strongly Sponsored contingent on Q4 FY26 results.

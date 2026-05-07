@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | SHILCTECH | Shilchar Technologies Ltd | by-symbol/SHILCTECH.md | 2026-04-18 | 2026-04-27 | 2026-05-09 |
 | GVT&D | GE Vernova T&D India Ltd | by-symbol/GVT&D.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| ATLANTAELE | Atlanta Electricals Ltd | by-symbol/ATLANTAELE.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
+| ATLANTAELE | Atlanta Electricals Ltd | by-symbol/ATLANTAELE.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
 | ENRIN | Siemens Energy India Ltd | by-symbol/ENRIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PREMIERENE | Premier Energies Ltd | by-symbol/PREMIERENE.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SCHNEIDER | Schneider Electric Infrastructure Ltd | by-symbol/SCHNEIDER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -88,10 +88,12 @@
 | GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
-| WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-04-23 | 2026-05-02 | 2026-05-14 |
-| DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-04-24 | 2026-05-03 | 2026-05-15 |
+| WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
+| DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
 | INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-04-30 | 2026-05-09 | 2026-05-21 |
 | DEEDEV | DEE Development Engineers Ltd | by-symbol/DEEDEV.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | TIMEX | Timex Group India Ltd | by-symbol/TIMEX.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
+| RAYMOND | Raymond Limited | by-symbol/RAYMOND.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
+| ASMTEC | ASM Technologies Ltd | by-symbol/ASMTEC.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
