@@ -25,7 +25,7 @@ Only names that deserve full trade-level writeups are listed here.
 - Trade: entry `1798-1817`, stop `1748-1760`, target `1867.9-1886.8`.
 - Verdict: selected, good stop defense, `technical-dossiers/04-ATLANTAELE.md`.
 
-### JAINREC
+### JAINREC - buy
 - Fundamental: rank 6; breakout sponsorship is still fresh and the chart is one of the cleanest in the set.
 - Multi-timeframe: weekly/daily uptrend is intact; 60m/30m/15m show a breakout-and-retest above the support shelf.
 - Levels: support `560-563`, `547-550`, `541-542`; resistance `573-574`, `580.8`, `593.95`.
@@ -46,7 +46,7 @@ Only names that deserve full trade-level writeups are listed here.
 - Trade: entry `670-678`, stop `650.45-664.00`, target `703.95-712.5`.
 - Verdict: selected, defendable, `technical-dossiers/15-KRISHANA.md`.
 
-### LLOYDSENGG
+### LLOYDSENGG - buy
 - Fundamental: rank 9; the order book and strategy wins still back the move, even though the tape is extended.
 - Multi-timeframe: weekly/daily are constructive; 60m/30m/15m show a shallow bull flag above layered support.
 - Levels: support `70.36-70.65`, `70.23-70.52`, `68.21-68.60`; resistance `71.45-72.50`.
