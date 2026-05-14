@@ -1,51 +1,49 @@
-## Ranking Packet
+## 1. Ranking Packet
 
-- **Symbol:** QPOWER
-- **Company:** Quality Power Electrical Equipments Ltd
-- **Analysis Date:** 2026-04-26
-- **Screen Thesis Fit:** Strong fit. The pre-rank lead is backed by Q3 FY26 revenue, EBITDA, PAT, ROCE, and order-flow evidence rather than price momentum alone.
-- **Sponsorship Verdict:** Strongly Sponsored
-- **Confidence:** Medium-High
-- **Recent Trigger:** Strong - Q3 FY26 was a record quarter, with consolidated revenue of INR 2,843 million, EBITDA of INR 793 million, and PAT of INR 628 million. February-March 2026 order disclosures added follow-through.
-- **Operating Evidence:** Strong - Q3 revenue grew 256.5% YoY and 29.9% QoQ; EBITDA grew 222.7% YoY and 60.6% QoQ, supported by execution, capacity use, and order conversion.
-- **Earnings Quality:** Good but monitor - the growth appears mostly operating-led, though consolidated uplift includes Turkish operations and subsidiary consolidation, so cash conversion and receivables need tracking.
-- **Balance Sheet Comfort:** Good - FY25 standalone debt-equity was very low and consolidated cash exceeded borrowings after IPO proceeds.
-- **Catalyst Credibility:** Strong - disclosed catalysts include reactor, HVDC reactor, instrument-transformer, and BESS orders, plus grid-transition capex exposure.
-- **Evidence-to-Price Alignment:** Strong but stretched - the 133.49% three-month move fits the operating acceleration, but a large part of the near-term story is already capitalized.
-- **Near-Term Fragility:** Medium - execution timing, receivables, commodity costs, customer audits, and the April 2026 price-movement clarification add event risk after a sharp rally.
-- **Why It Ranks Here:** QPOWER has the best pre-rank blend of growth, ROCE, momentum, order visibility, and balance-sheet comfort.
-- **What Keeps It From Ranking Higher:** Consolidated growth still needs repeat-quarter cash-flow confirmation, and some catalysts have long execution timelines.
-- **What Kind Of Peer Should Rank Above It:** A peer with similar acceleration, cleaner owner-attributable earnings visibility, lower price extension, and stronger cash conversion.
-- **What Kind Of Peer Should Rank Below It:** A peer with price momentum but weaker operating growth, thin order evidence, lower ROCE, or balance-sheet strain.
-- **Next Review On:** 2026-05-30
-- **Hard Stale On:** 2026-06-30
+**Symbol:** QPOWER
+**Company:** Quality Power Electrical Equipments Ltd
+**Analysis Date:** 2026-05-13
+**Screen Thesis Fit:** Strong fit. QPOWER matches the screen with 51.89% three-month return, market cap of Rs 9,416.81 Cr, latest quarter sales of Rs 283.99 Cr, latest quarter net profit of Rs 62.76 Cr, Qtr Sales Var of 291.22%, Qtr Profit Var of 169.18%, ROCE of 26.60%, and no pre-rank penalty flags. It is exactly the type of high-momentum, high-growth electrical equipment name the screen is designed to surface.
+**Sponsorship Verdict:** Strongly Sponsored, but with elevated event and valuation fragility.
+**Confidence:** Medium. Operating evidence and order flow are strong, but the stock is expensive, working-capital quality needs monitoring, and Q4/FY26 results are due immediately.
 
-## Sponsorship Reasoning
+**Recent Trigger:** Strong. The move is plausibly linked to Q3 FY26 results and subsequent order disclosures. Q3 FY26 total revenue was Rs 2,843 Mn, up 256.5% YoY, EBITDA was Rs 793 Mn, up 222.7% YoY, and PAT was Rs 628 Mn, up 220.7% YoY in the company release. After that, the company disclosed multiple HVDC/reactor orders in February and a BESS order in March.
 
-### Why Sponsorship Is Present Or Not
+**Operating Evidence:** Strong. The latest reported quarter showed record revenue, record EBITDA, and improved sequential execution. Management attributed Q3 growth to better execution, capacity utilization, operating leverage, and large-value execution in the Turkish operation. Order book stood around Rs 895 Cr in the Q3 release, with further disclosed orders after quarter-end.
 
-Sponsorship is present. QPOWER combines the screen's strongest visible operating acceleration with concrete company disclosures: record Q3 FY26 revenue, EBITDA, PAT, management commentary on execution and capacity, and multiple order announcements.
+**Earnings Quality:** Good but not clean enough for the highest tier. Q3 appears operationally stronger than earlier periods, with Screener showing operating profit of Rs 79 Cr, other income near zero, PBT of Rs 74 Cr, and PAT of Rs 63 Cr for Dec 2025. However, TTM other income remains meaningful historically, and cash conversion/working capital has deteriorated, so profit quality needs confirmation in FY26 audited numbers.
 
-### Recent Trigger And What Likely Drove The Move
+**Balance Sheet Comfort:** Moderate to good. Screener lists the company as almost debt-free, and the company's Q3 presentation showed low debt/equity around 0.05x at H1 FY26. The offset is working-capital stretch: Screener shows debtor days rising to 149 days, inventory days to 185 days, cash conversion cycle to 167 days, and working capital days to 122 days in FY25. H1 FY26 operating cash flow was negative in the company presentation, so balance sheet comfort is acceptable, not pristine.
 
-The likely driver is the combination of Q3 FY26 results and rapid order-flow validation. Q3 showed a step-change in consolidated scale, while February-March 2026 disclosures added HVDC reactors, 800 kV products, instrument transformers, and BESS orders.
+**Catalyst Credibility:** Strong. Catalysts are not merely narrative: they include record Q3 results, Rs 895 Cr order book, multiple disclosed HVDC/reactor orders of about Rs 146 Cr, Rs 57 Cr conditional, Rs 34 Cr, plus an international BESS order of about Rs 152 Cr with an option up to Rs 292 Cr. Capacity expansion at Cochin is operational, Sangli completion is targeted for June 2026, and Mehru expansion is underway.
 
-### Business And Financial Evidence
+**Evidence-to-Price Alignment:** Good but stretched. A 51.89% three-month move is supported by real operating acceleration and order intake. Still, at P/E 88, price has already capitalized a large part of the FY26 growth story. The rally is evidence-backed, but the valuation leaves little tolerance for a soft Q4 print, weak cash flow, or order-execution delays.
 
-The business is positioned in high-voltage electrical equipment, power-quality products, reactors, transformers, FACTS/HVDC-related equipment, and energy-transition infrastructure. Q3 FY26 consolidated EBITDA margin was 27.9% and PAT margin was 22.1%. FY25 balance-sheet indicators were comfortable, but working-capital discipline must be monitored as execution scales.
+**Near-Term Fragility:** High. The company has a board meeting on 2026-05-13 for audited FY26 results/dividend, and an earnings call scheduled for 2026-05-14. There was also a BSE price-movement clarification on 2026-04-21 where the company said it had no undisclosed price-sensitive information and that the move was market-driven. This makes the next few sessions event-sensitive.
 
-### Catalyst Context
+**Why It Ranks Here:** QPOWER deserves a high fundamental sponsorship rank because the price move is backed by exceptional Q3 growth, large order visibility, disclosed post-quarter orders, low leverage, and a credible power transmission/grid modernization theme.
 
-Catalysts connect directly to QPOWER's core product set: HVDC reactors, 800 kV class equipment, instrument transformers through Mehru, and BESS integration through Endoks. Sangli capacity expansion and customer audits add forward operating evidence.
+**What Keeps It From Ranking Higher:** Expensive valuation, stretched receivables/working capital, historical reliance on other income, H1 FY26 negative operating cash flow, and immediate Q4/FY26 result risk prevent a topmost conviction placement.
 
-### Why The Rally Looks Legit Or Fragile For 1-8 Weeks
+**What Kind Of Peer Should Rank Above It:** A peer with similar price momentum and operating growth, but cleaner cash conversion, lower valuation, less dependence on large project execution, and no immediate binary earnings event should rank above QPOWER.
 
-The rally is fundamentally explainable because operating growth, margins, and order announcements arrived together. It is fragile because the stock has already moved sharply and the company clarified that there was no undisclosed event behind the price movement.
+**What Kind Of Peer Should Rank Below It:** A peer whose rally is based mainly on sector narrative or order announcements without matching quarterly revenue/PAT acceleration should rank below QPOWER.
 
-### Contradictions, Weaknesses, And Open Risks
+**Next Review On:** 2026-05-14, after FY26 audited results and the Q4/FY26 earnings call are available.
+**Hard Stale On:** 2026-05-20, because the current dossier is stale if it does not incorporate the May 2026 audited FY26 result event.
 
-Risks include execution slippage on large or conditional orders, customer approval delays, commodity-price pass-through, receivable build-up, subsidiary integration, and the possibility that consolidated growth flatters the near-term trend versus standalone performance.
+## 2. Sponsorship Reasoning
 
-### Peer Placement Notes
+**Why Sponsorship Is Present Or Not:** Sponsorship is present. QPOWER's move is not just a price chart move: it is supported by a sharp operating inflection in Q3 FY26, expanding order book, multiple disclosed orders, and capacity-expansion progress. The company's Q3 release reported Rs 2,843 Mn total revenue, Rs 793 Mn EBITDA, and Rs 628 Mn PAT, all sharply higher YoY. That is enough to treat the rally as fundamentally sponsored. The caveat is that this is a high-expectation stock. At P/E 88 and 20x book value, the market is paying for continued execution, order conversion, and margin durability. Sponsorship is strong, but fragility is also high.
 
-QPOWER should rank above stocks where momentum is not backed by quarterly operating acceleration or disclosed order flow. It should not receive an automatic top slot solely for its three-month return; the ranking must weigh post-rally fragility.
+**Recent Trigger And What Likely Drove The Move:** The likely trigger stack is Q3 FY26 results, order-flow disclosures, and the market's willingness to pay for grid capex/HVDC/FACTS exposure. Q3 FY26 showed record quarterly revenue and EBITDA. The company then disclosed multiple domestic HVDC/reactor orders in late February and a significant international BESS order through ENDOKS in March. The April 2026 BSE price-movement clarification is important: the company said there was no undisclosed event or impending announcement known to it. That means the move should be interpreted as market repricing of already disclosed growth, orders, and sector momentum, not as confirmed undisclosed news.
+
+**Business And Financial Evidence:** The operating evidence is strong. Q3 FY26 total revenue rose 256.5% YoY and 29.9% QoQ. EBITDA rose 222.7% YoY and 60.6% QoQ. PAT rose 220.7% YoY and 78.5% QoQ. For 9M FY26, revenue rose 165.7% YoY and PAT rose 93.8% YoY. Screener's Dec 2025 quarterly table also supports the quality of the latest quarter: sales Rs 284 Cr, operating profit Rs 79 Cr, OPM 28%, other income near zero, PBT Rs 74 Cr, and net profit Rs 63 Cr. This is cleaner than a rally driven by other income alone. Balance-sheet leverage is comfortable, but cash conversion is the weak link. The company is low-debt, but debtor days, inventory days, and working-capital days have expanded. For a project and equipment business scaling quickly, that can be normal during growth, but it must convert into cash in FY26/FY27.
+
+**Catalyst Context:** The catalyst context is credible. Quality Power is positioned in high-voltage electrical equipment, HVDC, FACTS, STATCOM/SVC, grid stability, power-quality systems, transformers, reactors, and related energy-transition equipment. The company's Q3 material cited an order book of about Rs 895 Cr. Recent disclosures include about Rs 146 Cr of HVDC reactor orders, about Rs 34 Cr of HVDC reactor orders, about Rs 57 Cr of conditional reactor orders, and an international BESS order of about Rs 152 Cr with optional expansion up to Rs 292 Cr. Capacity catalysts also matter. Cochin expansion is complete and operational. Sangli plant completion is targeted for June 2026, subject to approvals. Mehru Bhiwadi expansion is targeted around Q4 FY26. These are tangible enough to support the growth narrative, though execution and customer approvals remain key.
+
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** The rally looks legitimate because operating acceleration and order disclosures line up with the price move. The screen's 51.89% three-month return is aggressive, but it is not disconnected from fundamentals. Q3 results were genuinely strong, and the company has a visible order/capacity story. For a 1-8 week swing, the fragility is valuation and event timing. FY26 audited results and the earnings call are imminent. If Q4 confirms revenue scale, margins, order-book conversion, and cash discipline, the rally can stay sponsored. If Q4 shows margin normalization, working-capital stress, delayed approvals, or muted order commentary, the stock can derate quickly because expectations are already high.
+
+**Contradictions, Weaknesses, And Open Risks:** The main contradiction is strong accounting growth versus weaker cash-conversion signals. Screener flags debtor days rising from 113 to 149 days and working-capital days rising from 31.7 to 122 days. The company's Q3 presentation also showed H1 FY26 operating cash flow weakness. That does not invalidate sponsorship, but it reduces confidence. Other risks are valuation, customer concentration or lumpy project execution, NDA-limited order disclosure, commodity volatility in aluminium/copper, regulatory approvals for new capacity, and the possibility that recent order wins convert slower than the market expects. The BSE price-movement clarification also adds a cautionary note: near-term price action may include momentum flows beyond disclosed fundamentals.
+
+**Peer Placement Notes:** Within the top-20 pre-ranked universe, QPOWER should place near the upper tier on sponsorship because it combines price momentum, recent quarterly acceleration, order visibility, and sector relevance. It should not be placed above equally strong companies with cleaner cash conversion and lower valuation risk. It should rank above names where the three-month return is strong but the latest quarter lacks comparable sales/PAT acceleration or where catalysts are less specifically disclosed.

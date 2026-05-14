@@ -27,17 +27,36 @@ def fetch_stock_history_payload(
     end_date = parse_iso_date(end_date_raw, "end_date")
     interval = require_supported_interval(interval_raw)
     validate_date_order(start_date, end_date)
+    fetch_start_date_raw = resolve_history_start_date(start_date, end_date, interval)
     ticker_object = yf.Ticker(ticker)
     history_frame = run_with_retry(
         "fetch_stock_history",
         lambda: ticker_object.history(
-            start=start_date_raw,
+            start=fetch_start_date_raw,
             end=end_date_raw,
             interval=interval,
         ),
     )
     normalized_frame = normalize_history_frame(history_frame, ticker, start_date_raw, end_date_raw)
     return build_stock_history_payload(ticker, start_date_raw, end_date_raw, interval, normalized_frame)
+
+
+def resolve_history_start_date(start_date: datetime, end_date: datetime, interval: str) -> str:
+    """Return a provider-supported history start date for the requested interval."""
+    intraday_max_days = {"15m": 55, "30m": 55}
+    max_days = intraday_max_days.get(interval)
+    if max_days is None:
+        return start_date.strftime("%Y-%m-%d")
+    earliest_supported = end_date - timedelta(days=max_days)
+    if start_date >= earliest_supported:
+        return start_date.strftime("%Y-%m-%d")
+    LOGGER.warning(
+        "Capping %s stock-history start from %s to %s due to provider intraday limits",
+        interval,
+        start_date.strftime("%Y-%m-%d"),
+        earliest_supported.strftime("%Y-%m-%d"),
+    )
+    return earliest_supported.strftime("%Y-%m-%d")
 
 
 def normalize_history_frame(frame: pd.DataFrame, ticker: str, start_date_raw: str, end_date_raw: str) -> pd.DataFrame:

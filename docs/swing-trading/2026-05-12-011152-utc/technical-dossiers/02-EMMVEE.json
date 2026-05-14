@@ -1,0 +1,35 @@
+{
+  "symbol": "EMMVEE.NS",
+  "company": "Emmvee Photovoltaic Power Ltd",
+  "technical_data_mode": "api_fallback",
+  "cmp": 276.55,
+  "3pct_floor": 268.25,
+  "practical_stop_zone": "265.50-271.00",
+  "weekly_note": "Constructive higher-timeframe breakout structure above weekly EMA10/20/50/100/200 at 248.07/234.14/224.19/221.01/219.51, with current close near weekly upper Bollinger 279.29 and overhead supply at 284.90-299.50.",
+  "daily_note": "Daily trend remains constructive above EMA10/20/50/100/200 at 266.76/260.18/242.21/229.88/223.04; May 11 reclaimed the 270-273 shelf on 9.25M volume, but first supply is close at 284.75-288.00.",
+  "60_note": "Hourly price is above EMA10/20/50/100/200 at 274.21/271.13/268.34/264.18/253.02; EMA20/50 and the 268.00 breakout retest sit inside the practical stop band.",
+  "30_note": "Primary execution frame is constructive above EMA10/20/50/100/200 at 275.89/273.62/269.68/268.03/264.13; support stack is 275.50-276.00, 269.40-268.00, then 264.13.",
+  "15_note": "Micro chart is basing near EMA10/20 at 276.59/275.90 and above EMA50/100/200 at 272.48/269.60/267.92; Rs. 267.80-269.60 is the key stop-survival zone.",
+  "support_inventory": [
+    "15m EMA200 / daily prior low: Rs. 267.80-267.92 (-3.1%)",
+    "60m EMA50: Rs. 268.34 (-3.0%)",
+    "30m EMA100: Rs. 268.03 (-3.1%)",
+    "Daily EMA10: Rs. 266.76 (-3.5%)",
+    "30m EMA200: Rs. 264.13 (-4.5%)",
+    "Daily/60m swing demand: Rs. 260.00-261.10 (-5.6% to -6.0%)"
+  ],
+  "resistance_inventory": [
+    "15m/30m/60m May 11 supply: Rs. 284.75-284.90 (+3.0%)",
+    "Daily April 23 high: Rs. 288.00 (+4.1%)",
+    "Daily/weekly prior high supply: Rs. 294.90-299.50 (+6.6% to +8.3%)"
+  ],
+  "entry_zone": "Rs. 269.00-276.50; prefer Rs. 269-272 retest, or buy strength only after a clean Rs. 285 breakout.",
+  "stop_zone": "Rs. 264.00-266.50; below daily EMA10 and near 30m EMA200, while a strict Rs. 268.25 3% stop is tight for current ATR.",
+  "first_trouble_area": "Rs. 284.75-288.00",
+  "swing_target": "Rs. 294.90-299.50 first; trail only if Rs. 300 is accepted on volume.",
+  "technical_verdict": "Best Aligned, but buy only on retest or a clean Rs. 285 breakout.",
+  "stop_survivability_label": "Strong-to-Moderate",
+  "primary_failure_risk": "Supply absorption fails near Rs. 285-288, followed by a volume break below Rs. 267.80 that opens an air pocket to Rs. 261-255.50.",
+  "ranking_reason": "Strongly Sponsored fundamental rank #2 combines with improved technical alignment: higher timeframe trend is constructive and lower timeframe support is stacked around the practical stop band, though supply is nearby.",
+  "summary_rationale": "EMMVEE fits the better stop-survivability pattern: weekly and daily trends are constructive, while 60m/30m/15m support clusters around the 2-4% downside band from Rs. 276.55. The stop survives if Rs. 267.80-268.35 holds on retest; losing that zone with volume invalidates the breakout and shifts risk toward Rs. 261-255.50."
+}

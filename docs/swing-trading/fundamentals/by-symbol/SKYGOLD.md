@@ -1,68 +1,49 @@
-# SKYGOLD — Fundamental Sponsorship Dossier
+## Ranking Packet
 
-### Ranking Packet
+**Symbol:** SKYGOLD
+**Company:** Sky Gold & Diamonds Ltd
+**Analysis Date:** 2026-05-12
+**Screen Thesis Fit:** Fits the `3 month Return 30` screen: >30% three-month return and market capitalization above Rs.3,000 crore, reviewed for whether momentum is backed by business evidence.
+**Sponsorship Verdict:** Strongly Sponsored
+**Confidence:** Medium-High
 
-- **Symbol**: SKYGOLD
-- **Company**: Sky Gold & Diamonds Ltd
-- **Analysis Date**: 2026-04-30
-- **Screen Thesis Fit**: Strong fit. The 49.43% 3-month return is confirmation-driven, not anticipatory — Q3 FY26 (Dec 2025) reported 77% YoY revenue growth and 120% NP growth, released squarely inside the rally window. Business is a B2B design-led gold jewellery manufacturer supplying large organised retailers; the volume-led market-share capture is real. Sponsorship is present but gated by a leverage-driven funding model and promoter dilution that introduce material fragility.
-- **Sponsorship Verdict**: Moderately Sponsored
-- **Confidence**: Medium
+**Recent Trigger:** Q3 FY26 revenue from operations rose 77.12% YoY to Rs.1,767.68 crore, EBITDA rose 101.53% and PAT rose 120.38%.
 
-**Comparison Dimensions**:
+**Operating Evidence:** Strong: growth is supported by scale, value-added jewellery, exports, customer additions, capacity plans, Dubai office and acquisitions.
 
-- **Recent Trigger**: Confirmed earnings beat — Q3 FY26 (Dec 2025 quarter): Sales Rs 1,768 Cr (+77.13% YoY, +19.1% QoQ), NP Rs 81 Cr (+120.42% YoY, +20.2% QoQ). Sequential OPM at 7% (highest in seven quarters). The 49% 3-month price move is confirmation-backed. Since the Apr 19 dossier the stock has extended another +7.3% to Rs 454 — the Q3 beat is now more fully priced in and the incremental move is running ahead of incremental evidence.
+**Earnings Quality:** Mixed-to-positive: PAT growth is operating-led, but working capital is intensive and Q3 benefited modestly from a depreciation-method change.
 
-- **Operating Evidence**: Volume-led market-share capture remains credible — 631 kg/month in Q3 FY26 vs 544 kg/month in Q2 (+16% QoQ), while sector average YoY growth was ~23% vs SKYGOLD's 77%. OPM expanded from 6% to 7% sequentially on a higher gold-price base, arguing against pure price-inflation pass-through. ROCE 21%, ROE 25.5%. Three-year sales CAGR 65%, three-year profit CAGR 136%. New customers added in FY26: GIVA, C. Krishniah Chetty, PMJ, DAMAS UAE, KANZ UAE. TTM sales growth 81%, TTM profit growth 112%.
+**Balance Sheet Comfort:** Mixed: equity base improved, but borrowings, receivables and inventory remain material; historical CFO has been weak.
 
-- **Earnings Quality**: Qualified — reported profits are real but cash conversion is absent. FY25 CFO negative Rs 273 Cr (FY24: negative Rs 158 Cr), FCF negative Rs 288 Cr. Operating cash flow negative for four consecutive years. Growth is financed by debt (borrowings Rs 814 Cr at Sep 2025) and equity dilution, not internal cash generation. Interest cost surged 59.6% YoY to Rs 21.18 Cr in Q3 FY26 — fastest-growing P&L line. EBIT/interest coverage 3.81x. Debtor days deteriorated from 29.7 to 46.5 — collections slowing as volumes scale. Profit is real; cash is absent. No improvement in this dimension since prior dossier.
+**Catalyst Credibility:** Strong: Dubai office, 24-carat diamond jewellery launch, partnerships, acquisitions, gold-metal-loan program and ERP rollout.
 
-- **Balance Sheet Comfort**: Moderate concern. D/E was 0.92x at Mar 2025 (equity base expanded via ESOP + QIP) and borrowings rose to Rs 814 Cr at Sep 2025. Debt projected to reach Rs 1,375 Cr by FY27 with gold metal loans at 30% of total. Land monetisation (Rs 105 Cr) announced Feb 2026 — if executed within 6 months, reduces borrowings by over 20%. Fixed assets jumped from Rs 106 Cr (Mar 2025) to Rs 328 Cr (Sep 2025) with CWIP Rs 110 Cr — substantial capex cycle underway. DII holding rose to 13.14% (Mar 2026) and shareholder count to 89,118, indicating genuine retail and institutional interest.
+**Evidence-to-Price Alignment:** Good: 50.67% move is backed by earnings acceleration and margin expansion, though valuation is not cheap.
 
-- **Catalyst Credibility**: High for the 1-8 week window. Q4 FY26 results (Jan-Mar 2026 quarter) are expected in May 2026 — within the current swing window. Based on 9M FY26 NP of Rs 192 Cr (81+67+44) and full-year guidance of Rs 6,100 Cr revenue, Q4 needs Rs ~1,700-2,000 Cr revenue and NP Rs ~80-100+ Cr to confirm trajectory. If delivered with continued OPM expansion, the thesis gets a second confirmation beat. Sky Gold 3.0 (Feb 2026) — pivot to leased manufacturing, promoters forgoing salaries from FY27 — is a governance signal. Land monetisation execution (targeted within 6 months of Feb 2026 announcement) would be a visible debt-reduction catalyst by August 2026.
+**Near-Term Fragility:** Medium: gold-price volatility, working-capital slippage, auditor-transition optics and Q4 cash-flow delivery matter.
 
-- **Evidence-to-Price Alignment**: Stretched on trailing, moderately reasonable on forward. At Rs 454 and TTM NP ~Rs 230 Cr (37+38+44+67+81 minus Dec 2024 37 = approximately Rs 230 Cr for the last four quarters), trailing P/E is ~30.6x. FY26 guidance Rs 6,100 Cr at ~5.5% net margin implies NP ~Rs 335 Cr → forward P/E ~20.9x. FY27 guidance Rs 8,100 Cr implies NP ~Rs 445 Cr → forward P/E ~15.8x. The stock is priced for execution. The incremental +7.3% since Apr 19 has pushed valuation slightly ahead of the unchanged evidence base. The Q4 FY26 results are the circuit-breaker — a beat re-validates, a miss resets.
+**Why It Ranks Here:** Strong simultaneous sales growth, profit growth, margin improvement, ROCE above 20% and operating catalysts justify upper sponsorship.
 
-- **Near-Term Fragility**: High — three independent fragility vectors within 8 weeks: (1) Q4 FY26 results (~May 2026) — binary within-window event; a volume miss, margin compression, or debtor-days deterioration would break the confirmation narrative sharply; (2) Gold price reversal risk — gold near historical highs; the business carries significant gold inventory and any 15-20% reversal would compress revenue and trigger working-capital stress on an already-negative CFO base; (3) Promoter dilution overhang — promoters sold 4.77% in Sep 2025, stake now 51.74% (from 73.55% three years ago); any new block deal or QIP would be an immediate sentiment negative. Interest costs rising faster than revenue is a slow-burn fragility.
+**What Keeps It From Ranking Higher:** Valuation, cash conversion, working-capital or event-risk caveats keep it from outranking cleaner peers with comparable growth.
 
-**Ranking Summary**:
+**What Kind Of Peer Should Rank Above It:** A similarly fast grower with cleaner cash conversion, lower leverage, lower valuation stress and fewer governance or event risks.
 
-- **Why It Ranks Here**: The 120% NP beat in Q3 FY26 is a hard confirmation event — volume-led, margin-expanding, and customer-diversified. ROCE 21%, FY27 forward P/E ~15.8x on management guidance, and the governance catalyst (promoters to dividend-only from FY27) make the thesis readable. Q4 FY26 results arrive within the 8-week window as a potential second confirmation beat. DII accumulation to 13.14% validates institutional conviction.
+**What Kind Of Peer Should Rank Below It:** A momentum name lacking fresh revenue/PAT acceleration, margin improvement, or credible operating catalysts.
 
-- **Verdict shift from prior dossier**: Downgraded from "Present (with leverage caveat)" to "Moderately Sponsored". The 7.3% rally since Apr 19 has occurred without new earnings evidence — the stock has outrun its own catalyst. The Q4 FY26 results remain the key re-rating event but are not yet in hand. Risk-reward has compressed; sponsorship is real but the incremental move is running on fumes until Q4 confirms.
+**Next Review On:** 2026-06-11
+**Hard Stale On:** 2026-08-10
 
-- **What Keeps It From Ranking Higher**: Persistent negative operating cash flow (four consecutive years, FY25 CFO negative Rs 273 Cr). Debtor days deteriorating (29.7 → 46.5) at scale is a structural red flag. D/E rising alongside debt-to-EBITDA ~3.9x limits balance sheet buffer. Promoter continuous stake reduction from 73.55% to 51.74% signals capital pressure at promoter level. Customer concentration (top 5 at ~30-55% of revenue) means a Kalyan or Malabar pullback would be immediately material. No new evidence has arrived since Apr 19 to justify the 7.3% incremental move.
+## Sponsorship Reasoning
 
-- **What Kind Of Peer Should Rank Above It**: A company with confirmed Q3 FY26 volume-led growth AND positive or improving CFO/FCF, lower D/E (below 0.5x), stable or rising promoter stake, and comparable or higher ROCE. Alternatively, a business with a hard within-window catalyst (demerger, institutional event) and confirmed earnings acceleration from a cleaner balance sheet.
+**Why Sponsorship Is Present Or Not:** Sponsorship is present because the stock's 3-month move is connected to fresh operating evidence rather than only a momentum screen signal.
 
-- **What Kind Of Peer Should Rank Below It**: Companies with similar or higher trailing P/E but earnings still anticipatory (not confirmed), or companies where OPM trend is flat or compressing QoQ, or businesses with comparable leverage but weaker ROCE (below 15%) without a credible de-leveraging narrative.
+**Recent Trigger And What Likely Drove The Move:** Q3 FY26 revenue from operations rose 77.12% YoY to Rs.1,767.68 crore, EBITDA rose 101.53% and PAT rose 120.38%.
 
-**Refresh Timing**:
-- **Next Review On**: 2026-05-09
-- **Hard Stale On**: 2026-05-21
+**Business And Financial Evidence:** Strong: growth is supported by scale, value-added jewellery, exports, customer additions, capacity plans, Dubai office and acquisitions. Mixed-to-positive: PAT growth is operating-led, but working capital is intensive and Q3 benefited modestly from a depreciation-method change.
 
----
+**Catalyst Context:** Strong: Dubai office, 24-carat diamond jewellery launch, partnerships, acquisitions, gold-metal-loan program and ERP rollout.
 
-### Sponsorship Reasoning
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** Good: 50.67% move is backed by earnings acceleration and margin expansion, though valuation is not cheap. Medium: gold-price volatility, working-capital slippage, auditor-transition optics and Q4 cash-flow delivery matter.
 
-- **Why Sponsorship Is Present Or Not**: Sponsorship is moderately present. The three-month rally is backed by a hard confirmation event — Q3 FY26 delivered 77% YoY revenue and 120% YoY NP growth released inside the rally window. Volume growth (631 kg/month) is verified real share gain, not gold-price inflation. OPM expanded sequentially to the highest level in seven quarters. The Sky Gold 3.0 pivot and governance upgrade (promoters to dividend-only from FY27) provide institutional narrative support. The verdict is downgraded to Moderate (from Present/Medium-High) because the stock has moved +7.3% since the Apr 19 analysis without any new incremental evidence — the Q3 beat is fully priced, and the next catalyst (Q4 results) is not yet delivered. Sponsorship is real for the underlying business but incremental price action since mid-April is running ahead of evidence.
+**Contradictions, Weaknesses, And Open Risks:** The key risks are valuation compression, working-capital stress, execution slippage, and any result or disclosure event that weakens the growth narrative.
 
-- **Recent Trigger And What Likely Drove The Move**: The primary trigger for the broader 3-month move remains Q3 FY26 results (late Jan/early Feb 2026): Revenue Rs 1,768 Cr (+77% YoY), NP Rs 81 Cr (+120% YoY), sequential OPM to 7%. The simultaneous Sky Gold 3.0 announcement (Feb 27, 2026) provided governance re-rating support. The incremental move from Rs 423 to Rs 454 between Apr 19-30 appears driven by broader market momentum and general sector strength rather than any new SKYGOLD-specific catalyst — no new quarterly results, no land monetisation confirmation, no analyst upgrades verified since Apr 19.
-
-- **Business And Financial Evidence**: Sky Gold is a pure-play B2B design-led gold jewellery manufacturer (lightweight casting) supplying organised retail chains — Kalyan, Malabar, Joyalukkas, GRT, Senco, Titan-Caratlane — without operating any retail stores. Revenue trajectory: FY22 Rs 786 Cr → FY23 Rs 1,154 Cr → FY24 Rs 1,745 Cr → FY25 Rs 3,548 Cr → 9M FY26 Rs 4,383 Cr (run-rate Rs 5,800+ Cr). Quarterly NP progression: Mar 2025 Rs 38 Cr → Jun 2025 Rs 44 Cr → Sep 2025 Rs 67 Cr → Dec 2025 Rs 81 Cr — consistent sequential acceleration. OPM: 6% (FY22-FY25) → 7% (Q3 FY26) — thin but expanding. ROCE 21%, ROE 25.5%. Balance sheet: borrowings Rs 814 Cr (Sep 2025), D/E ~0.92x (Mar 2025). CFO negative Rs 273 Cr (FY25). Cash conversion cycle 88 days (receivables 47 days, inventory 44 days, payables only 3 days). Promoter holding 51.74%, DII 13.14%, FII 1.20%.
-
-- **Catalyst Context**: (1) Q4 FY26 results (~May 2026) — the most immediate and highest-impact catalyst. 9M FY26 NP Rs 192 Cr versus full-year guidance implies Q4 contribution of Rs ~80-120 Cr would confirm trajectory. A beat with OPM at 7%+ would trigger re-rating; a miss would reset sharply. This is the binary event within the swing window. (2) Land monetisation Rs 105 Cr — committed within 6 months of Feb 2026, execution by Aug 2026; debt-reduction narrative supports de-leveraging story. (3) Promoters-to-dividends from FY27 — removes Rs 15-20 Cr salary outflow and signals confidence in cash generation. (4) FY27 Rs 8,100 Cr revenue guidance — current P/E of 30.6x looks temporary on a 12-month forward basis at ~15.8x forward P/E. (5) Analyst/investor meeting held Mar 9, 2026 — institutional engagement is active and ongoing.
-
-- **Why The Rally Looks Legit Or Fragile For 1-8 Weeks**: The structural rally looks legitimate — grounded in a hard Q3 earnings beat, confirmed physical throughput acceleration, and a within-window Q4 catalyst. At forward P/E ~20.9x on FY26 guidance, there is runway for further institutional accumulation. However, the incremental move since Apr 19 is fragile: it carries no new evidence, has extended the stock to the upper bound of what Q3 evidence can justify, and now depends entirely on Q4 FY26 results for its next leg. The risk-reward has become asymmetric — a Q4 beat provides limited incremental upside (already partially priced) while a Q4 miss (margin compression, debtor deterioration) would trigger outsized downside from an already-extended level.
-
-- **Contradictions, Weaknesses, And Open Risks**:
-  1. Negative operating cash flow four consecutive years (FY22: -Rs 7 Cr, FY23: -Rs 6 Cr, FY24: -Rs 158 Cr, FY25: -Rs 273 Cr). Each year of growth widens the WC hole. The business model does not self-fund.
-  2. Debtor days 29.7 → 46.5 — deteriorating faster than revenue growth rate. At Rs 6,100 Cr FY26 revenue and 46.5 days, receivables are ~Rs 780 Cr. Any large customer payment dispute freezes a material portion of the balance sheet instantly.
-  3. Gold metal loan concentration — GML is 30% of projected borrowings by FY27. GML rates linked to gold lease rates internationally; a gold market dislocation could spike cost-of-funds unexpectedly.
-  4. Promoter stake from 73.55% → 51.74% over 3 years (-21.8pp). The September 2025 sale of 4.77% stake signals ongoing capital needs at promoter-entity level and creates an overhang at any price rally.
-  5. OPM of 6-7% is structurally thin — any gold-price reversal compresses revenue while fixed/semi-fixed costs (interest, employee, overhead) stay flat, potentially turning the business breakeven or loss-making quickly.
-  6. Customer concentration — top 5 customers at ~30-55% of gross revenue. A strategic shift by Kalyan or Malabar to in-house manufacturing or competing B2B supplier would be immediately material with no forward warning.
-  7. Incremental price action since Apr 19 is not backed by new evidence — the +7.3% move in 11 days is momentum-driven, creating a more fragile entry point for new swing positions than 11 days ago.
-  8. ESOP dilution continuing — share count creep dilutes per-share metrics. Promoter ESOP allotments (Feb 2026) and ongoing options outstanding.
-
-- **Peer Placement Notes**: Within a momentum screen universe ranked by fundamental sponsorship, SKYGOLD sits in the middle tier — above names with pure-anticipatory rallies or declining earnings trajectories, but below names where confirmed earnings growth is accompanied by positive or improving CFO, stable promoter ownership, and D/E below 0.5x. The business model's structural WC-intensity and funding dependency place it below capital-efficient manufacturers (ROCE 25%+, FCF positive) with comparable growth rates. It ranks above companies where the recent quarter was weak, the rally was sentiment-only, or where P/E exceeds 40x without a confirmed beat. For a 1-8 week swing, the Q4 catalyst makes it tradeable; but the incremental risk-reward has compressed since Apr 19 and a tighter stop (2-3%) is warranted at current levels given the evidence gap until Q4 release.
+**Peer Placement Notes:** Strong simultaneous sales growth, profit growth, margin improvement, ROCE above 20% and operating catalysts justify upper sponsorship.

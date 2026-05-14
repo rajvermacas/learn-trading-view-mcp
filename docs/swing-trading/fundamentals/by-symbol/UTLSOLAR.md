@@ -1,60 +1,49 @@
-# Ranking Packet
+## Ranking Packet
 
-- **Symbol:** UTLSOLAR
-- **Company:** Fujiyama Power Systems Ltd
-- **Analysis Date:** 2026-05-05
-- **Screen Thesis Fit:** Moderate-Strong fit. Stock satisfies all screen criteria with demonstrable multi-quarter revenue and profit acceleration. Fit slightly diluted by escalating BIS regulatory actions (two seizure events) and rising debt without cash flow conversion.
-- **Sponsorship Verdict:** Moderately Sponsored
-- **Confidence:** Medium
+**Symbol:** UTLSOLAR
+**Company:** Fujiyama Power Systems Ltd
+**Analysis Date:** 2026-05-12
+**Screen Thesis Fit:** High fit. The stock is in the 3-month momentum screen with market cap above Rs.3,000 crore; Screener context shows 3-month return 31.18%, market cap Rs.8,574.84 crore, P/E 44.28, quarterly sales variation 73.8%, quarterly profit variation 124.29%, and ROCE 38.88%.
+**Sponsorship Verdict:** Strongly Sponsored, but event-fragile
+**Confidence:** Medium-high
 
-## Comparison Dimensions
+**Recent Trigger:** Strong. Q3 FY26 operating disclosure showed revenue from operations of Rs.5,885 million, up 73.8% YoY, EBITDA of Rs.1,099 million, and PAT of Rs.673 million, up 124.3% YoY.
 
-- **Recent Trigger:** Medium — No fresh catalysts since April 23. Motilal Oswal Buy at Rs 340 target increasingly priced in. April 25 acquisition of 31% in ZEPL/ZCPL is ambiguous. April 28 BIS seizure at Bawal (Rs 1.9 Cr) is negative — second regulatory action within six weeks.
-- **Operating Evidence:** Strong — Q3 FY26: revenue Rs 588 Cr (+73.8% YoY), EBITDA Rs 110 Cr (+109.8% YoY), OPM 18.7% vs 15.5%, PAT Rs 67 Cr (+124.3% YoY). 9M FY26 revenue Rs 1,754 Cr already exceeds full FY25 of Rs 1,541 Cr.
-- **Earnings Quality:** Moderate — Revenue growth is clean and multi-quarter. FY25 CFO was only Rs 18 Cr vs PAT Rs 156 Cr. FCF deeply negative at Rs -101 Cr. CRISIL A rating provides external validation.
-- **Balance Sheet Comfort:** Mixed — Borrowings surged from Rs 395 Cr to Rs 730 Cr (+85%). D/E ~1.38x and rising. ROCE 38.88% excellent. IPO raised Rs 828 Cr partially offsets.
-- **Catalyst Credibility:** Moderate — Ratlam 2 GW facility commissioning unconfirmed. PM Surya Ghar structural tailwind intact. Only ~20% upside to institutional target. Two BIS seizures establish pattern.
-- **Evidence-to-Price Alignment:** Mixed — Trailing P/E 45x. Forward P/E ~33x on annualized run rate. P/B 16.5x. ROCE partially justifies premium but thin upside to target.
-- **Near-Term Fragility:** High — Two BIS seizures across two facilities; IPO lock-in expiry ~May 2026; Q4 results pending with high bar; thin float (~13%); D/E rising.
+**Operating Evidence:** Strong. Screener shows standalone sales rising from Rs.339 crore in Dec 2024 to Rs.588 crore in Dec 2025, operating profit from Rs.52 crore to Rs.110 crore, and OPM expanding from 15% to 19%.
 
-## Ranking Summary
+**Earnings Quality:** Good, with caveats. Margin expansion is linked to scale and backward integration, but FY25 operating cash conversion was weak versus operating profit and inventory intensity remains a watch item.
 
-- **Why It Ranks Here:** Credible multi-quarter revenue and margin acceleration (73.8% revenue growth, 124.3% PAT growth). Government policy tailwind structural. ROCE 38.88% class-leading. Fresh institutional coverage.
-- **What Keeps It From Ranking Higher:** Two BIS regulatory seizures. Cash conversion gap unresolved. D/E 1.38x rising. IPO lock-in expiry within window. Only ~20% upside to target at 45x trailing P/E.
-- **What Kind Of Peer Should Rank Above It:** Comparable 70%+ revenue growth, clean cash flow conversion, no regulatory actions, lower D/E, more headroom to targets.
-- **What Kind Of Peer Should Rank Below It:** Momentum driven by sector rotation or single-quarter spike rather than sustained multi-quarter evidence.
+**Balance Sheet Comfort:** Mixed-positive. Management said post-IPO debt repayment lowered pro-forma net debt/equity, but Screener still shows borrowings rising materially during expansion.
 
-## Refresh Timing
+**Catalyst Credibility:** Strong. Dadri 1 GW solar cell commissioning, Ratlam 2 GW integrated facility progress, channel expansion, and DCR/domestic rooftop demand directly connect to the model.
 
-- **Next Review On:** 2026-05-14
-- **Hard Stale On:** 2026-05-26
+**Evidence-to-Price Alignment:** Good. A 31.18% 3-month move is supported by fresh YoY growth, margin expansion, capacity integration, and channel additions; valuation at about 44x P/E prevents a clean cheap-growth label.
 
-# Sponsorship Reasoning
+**Near-Term Fragility:** Elevated. The upcoming result date around 2026-05-14 exposes the 1-8 week setup to result-day disappointment, execution commentary, inventory/capex absorption, and multiple compression.
 
-## Why Sponsorship Is Present Or Not
+**Why It Ranks Here:** Rank #10/89 and PreRankScore 73.52 are justified by strong recent earnings acceleration, high ROCE, visible capacity catalysts, and direct alignment with rooftop solar demand.
 
-Sponsorship is present but marginally weakened since April 23. Core operating thesis remains — multi-quarter revenue and profit acceleration driven by rooftop solar demand. Two incremental negatives: second BIS seizure at Bawal establishes pattern rather than one-off; IPO lock-in expiry now imminent. Moderate because business evidence is genuinely strong but regulatory overhang and valuation tightening create friction.
+**What Keeps It From Ranking Higher:** High valuation, recent IPO/listing history, capex execution risk, working-capital intensity, and near-term event risk around the May 2026 result.
 
-## Recent Trigger And What Likely Drove The Move
+**What Kind Of Peer Should Rank Above It:** A company with comparable quarterly growth but lower valuation, better operating cash conversion, less capex stabilization risk, and no imminent binary earnings event.
 
-Primary price move from March lows (Rs 170.55) to Rs 280-290 driven by Q3 FY26 results, Dadri solar cell plant commissioning, and Motilal Oswal Buy initiation. Since April 23, no fresh positive catalysts. Stock traded sideways, suggesting triggers priced in.
+**What Kind Of Peer Should Rank Below It:** A company whose price move is mostly thematic, lacks fresh sales/profit acceleration, has weaker ROCE, or has no credible near-term business catalyst.
 
-## Business And Financial Evidence
+**Next Review On:** 2026-05-14
+**Hard Stale On:** 2026-05-20
 
-Revenue: Q3 FY26 Rs 588 Cr (+73.8% YoY). 9M FY26 Rs 1,754 Cr exceeds full FY25 of Rs 1,541 Cr. Five-year sales CAGR 39%, profit CAGR 71%. EBITDA margin expanded to 18.7%. Distribution: 8,200+ channel partners. Cash flow concern: FY25 CFO Rs 18 Cr vs PAT Rs 156 Cr.
+## Sponsorship Reasoning
 
-## Catalyst Context
+**Why Sponsorship Is Present Or Not:** Sponsorship is present. The move is backed by fresh operating evidence rather than only solar-sector sentiment: revenue, EBITDA, PAT, margins, capacity commissioning, and distribution expansion all point in the same direction.
 
-Ratlam 2 GW facility targeted Q4 FY26, unconfirmed. PM Surya Ghar structural driver. ZEPL/ZCPL acquisitions add optionality with integration risk. Two BIS seizures (Rs 4.4 Cr combined) — modest vs revenue but pattern concerning.
+**Recent Trigger And What Likely Drove The Move:** The likely trigger is the Q3 FY26 result plus capacity news: revenue up 73.8% YoY, PAT up 124.3% YoY, commissioning of Dadri cell capacity, and progress on the Ratlam integrated facility.
 
-## Why The Rally Looks Legit Or Fragile For 1-8 Weeks
+**Business And Financial Evidence:** Fujiyama is an integrated rooftop solar products and solutions provider across panels, inverters, batteries, chargers, and power-electronics systems. Annual standalone sales rose from Rs.925 crore in FY24 to Rs.1,541 crore in FY25, operating profit from Rs.99 crore to Rs.249 crore, and net profit from Rs.45 crore to Rs.156 crore.
 
-Legit: Every quarter of FY26 showed 70%+ revenue growth with improving margins. CRISIL A rating confirms lender confidence. Government policy driver structural. Fragile: +68% move completed. Only ~20% upside to target. BIS pattern active. IPO lock-in expiry creates selling pressure. Q4 pending with high bar.
+**Catalyst Context:** The catalyst is credible because panel/cell expansion is positioned as backward integration for captive/channel demand, not just merchant module exposure. Channel expansion above 8,200 partners adds a distribution-led demand angle.
 
-## Contradictions, Weaknesses, And Open Risks
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** The rally looks legitimate because sales growth, profit growth, margin expansion, capacity commissioning, and distribution expansion arrived recently. It remains fragile because the next result event is close and new capacity must ramp without pressuring working capital or margins.
 
-Cash conversion gap (Rs 18 Cr CFO vs Rs 156 Cr PAT). BIS compliance pattern (two facilities, two seizures, no company statement). Thin float (~13%). IPO lock-in expiry imminent. Ratlam commissioning unconfirmed. ZEPL/ZCPL valuations undisclosed.
+**Contradictions, Weaknesses, And Open Risks:** The main contradiction is strong accounting growth versus weak cash/working-capital conversion. Risks include solar module oversupply, DCR supply/cost volatility, high valuation, post-IPO supply behavior, and result-day volatility.
 
-## Peer Placement Notes
-
-Mid-tier ranking warranted. Above pure momentum stocks with single-quarter spikes. Below stocks with comparable growth plus positive FCF, clean regulatory history, and D/E below 0.5x. ROCE of 38.88% is genuinely exceptional. Active BIS pattern is the key differentiator preventing top-tier ranking.
+**Peer Placement Notes:** UTLSOLAR belongs in the upper sponsorship bucket versus peers lacking current-quarter acceleration or capacity/channel evidence, but below similarly fast growers with cleaner cash conversion and less event risk.

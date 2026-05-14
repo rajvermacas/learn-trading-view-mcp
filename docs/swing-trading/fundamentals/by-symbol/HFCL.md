@@ -1,63 +1,49 @@
-# HFCL Ltd — Fundamental Dossier
+## 1. Ranking Packet
 
-## Ranking Packet
+**Symbol:** HFCL
+**Company:** HFCL Limited
+**Analysis Date:** 2026-05-13
+**Screen Thesis Fit:** Fits the momentum screen: CMP Rs 153.46, market cap Rs 23,461.63 Cr, 3-month return 114.27%, PreRankScore rank #12, score 70.87, flag low_roce.
+**Sponsorship Verdict:** Mixed Sponsored, leaning strong on operating trigger but fragile on valuation and cash conversion.
+**Confidence:** Medium-High
 
-- **Symbol:** HFCL
-- **Company:** HFCL Ltd
-- **Analysis Date:** 2026-04-30
-- **Screen Thesis Fit:** Partial fit. The +69% 3-month return and +319% QoQ profit / +128% QoQ revenue look explosive, but the QoQ comparison is against an anomalously bad Q4 FY25 (loss quarter). Full-year PAT grew 90% and revenue 22%, genuinely strong but less spectacular. Operating sponsorship is partially present.
-- **Sponsorship Verdict:** Moderately Sponsored
-- **Confidence:** Medium
+**Recent Trigger:** Strong. The move is backed by 2026-04-30 Q4/FY26 results, a 2026-03-13 five-year OFC supply agreement worth about USD 1.10 billion / Rs 10,159 Cr, and follow-on OFC orders in April/May 2026.
 
-### Comparison Dimensions
+**Operating Evidence:** Strong. Q4FY26 revenue was Rs 1,824.12 Cr, up 127.81% YoY and 50.66% QoQ; Q4 PAT was Rs 184.45 Cr versus a loss in Q4FY25. FY26 revenue rose 21.77%, EBITDA 63.15%, PAT 90.14%, and exports rose to Rs 2,047 Cr.
 
-| Dimension | Judgment | Reason |
-|---|---|---|
-| Recent Trigger | Real but partly inflated by base-effect | Q4 FY26 delivered ₹1,824 Cr revenue (+128% YoY) and ₹184 Cr profit (+319% YoY) against a loss quarter. Full-year FY26: revenue ₹4,949 Cr (+22%), PAT ₹329 Cr (+90%). Export surge from 12% to 41% of revenue. Record order book ₹21,206 Cr. |
-| Operating Evidence | Improving but structurally constrained | EBITDA margin 16.7% (+423 bps YoY), Q4 EBITDA 18.5%. Telecom products 60% of revenue. But 5-year revenue CAGR only 2.3%, debtor days 163, working capital days 212. |
-| Earnings Quality | Acceptable but not clean | No exceptional items. But interest expenses +25.6%, borrowings doubled to ₹1,744 Cr. 9M FY26 PAT was actually down 48% before Q4 rescued full year. Revenue recognition lumpy. |
-| Balance Sheet Comfort | Adequate but stretched | D/E 0.36x manageable. Debt/EBITDA ~2.1x. But debtor days 163, inventory days 161, working capital days 212. Large government receivables create collection risk. |
-| Catalyst Credibility | Strong catalysts present | Record order book ₹21,206 Cr (4x+ revenue cover). Demerger committee formed. Global OFC demand from hyperscalers/AI. Defence fuze trials completing Apr 2026. Export target 50% by FY27. |
-| Evidence-to-Price Alignment | Stretched but not irrational | P/E 56.9x on FY26 EPS ~₹2.04. Forward FY27E P/E could compress to 33-38x on execution. But limited margin of safety. The 69% move has priced in FY26 AND FY27 expectations. |
-| Near-Term Fragility | Elevated | Promoter stake fell to 28.29% (below 30%). 56.9% promoter shares pledged. MFs sold 5.18pp in one quarter. Q4 revenue concentration (37% of full year). Trading window reopens May 4 — insider selling risk. |
+**Earnings Quality:** Mixed. The P&L inflection is real, but FY26 consolidated operating cash flow was negative Rs 378.13 Cr despite PAT of Rs 329.44 Cr, mainly from inventory, receivables, and other current asset absorption.
 
-### Ranking Summary
+**Balance Sheet Comfort:** Moderate. Consolidated equity of Rs 4,948.59 Cr gives some cushion against consolidated borrowings of about Rs 1,713 Cr, but finance cost of Rs 242.06 Cr and negative operating cash flow keep leverage/working-capital risk relevant.
 
-- **Why It Ranks Here:** Genuine tailwinds — OFC global cycle, AI-driven demand, BharatNet Phase-3, export diversification, record order book. EBITDA margin expansion is real. But +319% profit headline is base-effect artifact, promoter selling below 30%, MF exodus, working capital at 212 days, ROCE only 11%.
-- **What Keeps It From Ranking Higher:** Promoter below 30% with pledging, MF selling, ROCE below cost of capital, 9M PAT was down 48% before Q4 rescue, no cash flow data, P/E 57x on 2.3% 5-year CAGR.
-- **What Kind Of Peer Should Rank Above It:** Cleaner promoter holding, ROCE above 15%, working capital days below 100, confirmed cash-generative ops, similar order book without collection stretch.
-- **What Kind Of Peer Should Rank Below It:** Comparable or weaker order book, no export diversification, promoter pledging without business improvement, purely sector-rotation momentum.
+**Catalyst Credibility:** Strong. Catalysts include record order book of Rs 21,206 Cr, OFC order book of Rs 13,483 Cr, five-year global OFC agreement, export mix expansion, data-centre interconnect capacity, preform backward integration, and defence/aerospace optionality.
 
-### Refresh Timing
+**Evidence-to-Price Alignment:** Partial. A 114.27% three-month return is aligned with the earnings/order-book reset, but P/E 75.26 and ROCE 10.86% imply much of FY27 execution is priced.
 
-- **Next Review On:** 2026-05-09
-- **Hard Stale On:** 2026-05-21
+**Near-Term Fragility:** Elevated. Fragility comes from valuation, low ROCE, working-capital drag, execution timing on large contracts, margin sustainability after a sharp Q4, and possible disappointment if orders do not convert into cash-backed revenue quickly.
 
-## Sponsorship Reasoning
+**Why It Ranks Here:** HFCL deserves a sponsored placement because recent price strength has hard operating evidence: Q4 revenue/PAT breakout, export-led order visibility, and a credible OFC demand cycle.
 
-### Why Sponsorship Is Present Or Not
-Partially present. FY26 showed genuine operating improvement — revenue +22%, EBITDA margin +423 bps, record order book ₹21,206 Cr. Export surge from 12% to 41% is structural. But profit headline flattered by weak base, promoter reducing stake, institutions exiting, ROCE 11% below cost of capital.
+**What Keeps It From Ranking Higher:** Negative operating cash flow, high valuation, low ROCE flag, and heavy working-capital needs prevent a clean strong sponsorship classification.
 
-### Recent Trigger And What Likely Drove The Move
-The 69% 3-month move driven by: (1) Global OFC re-rating from AI/hyperscaler demand, (2) Q3 FY26 export revenue jump to 27%, (3) Order book doubling to ₹21,206 Cr, (4) Demerger speculation (announced Apr 30), (5) Q4 FY26 confirming recovery narrative.
+**What Kind Of Peer Should Rank Above It:** A similarly fast momentum stock with accelerating revenue/PAT, positive operating cash conversion, higher ROCE, and lower valuation stretch.
 
-### Business And Financial Evidence
-FY26: Revenue ₹4,949 Cr, EBITDA ₹827 Cr (16.7%), PAT ₹329 Cr. Q4 FY26: Revenue ₹1,824 Cr, EBITDA 18.5%, PAT ₹184 Cr (highest ever). Exports ₹2,047 Cr (4x YoY). Borrowings ₹1,744 Cr (D/E 0.36x). Working capital days 212 (elevated).
+**What Kind Of Peer Should Rank Below It:** A momentum stock where price has moved without fresh orders, margin expansion, or visible revenue conversion.
 
-### Catalyst Context
-Demerger committee could unlock segment valuations. Defence fuze trials completing. OFC demand multi-year. BharatNet Phase-3 executing. All identifiable but execution-dependent.
+**Next Review On:** 2026-05-27
+**Hard Stale On:** 2026-06-12
 
-### Why The Rally Looks Legit Or Fragile For 1-8 Weeks
-Foundation is credible but fragility elevated. Trading window reopens May 4. Demerger timeline could be catalyst if announced. Q1 FY27 comparison will be favorable (Q1 FY26 was a loss). But at ₹116 and P/E 57x, significant expectation embedded. 2-4% stop band is narrow against potential volatility.
+## 2. Sponsorship Reasoning
 
-### Contradictions, Weaknesses, And Open Risks
-1. Promoter selling below 30% while recommending dividend — mixed signals
-2. MFs sold aggressively in Q3 FY26 at lower prices
-3. 56.9% pledged promoter shares — forced selling risk
-4. Working capital days 212, rising not falling
-5. Q4 revenue concentration (37% of full year) — lumpiness risk
-6. No FY26 operating cash flow data available
-7. ROCE 11% barely above debt cost — marginal value creation
+**Why Sponsorship Is Present Or Not:** Sponsorship is present, but not clean. The rally is connected to a genuine fundamental reset: record Q4, FY26 margin expansion, export scale-up, and order-book visibility. The discount is that accounting profit has not yet converted into operating cash flow.
 
-### Peer Placement Notes
-Should rank below peers with cleaner promoter alignment, ROCE above 15%, confirmed cash conversion. Should rank above stocks with similar momentum but purely one-off drivers, no order book, or higher leverage.
+**Recent Trigger And What Likely Drove The Move:** The likely trigger cluster is the March 2026 USD 1.10 billion OFC supply agreement, the April 2026 Rs 1,366 Cr OFC order at HTL, the 2026-04-30 FY26 result release, and the May 2026 Rs 84.23 Cr OFC order.
+
+**Business And Financial Evidence:** HFCL reported Q4FY26 revenue of Rs 1,824.12 Cr and PAT of Rs 184.45 Cr. FY26 revenue was Rs 4,949.27 Cr, EBITDA Rs 826.75 Cr, EBITDA margin 16.70%, and PAT Rs 329.44 Cr. The order book reached Rs 21,206 Cr.
+
+**Catalyst Context:** The strongest catalyst is OFC demand tied to global data-centre, AI, cloud, and telecom infrastructure capex. Preform manufacturing can improve cost control if executed well. Defence/aerospace adds optionality but carries integration and approval-cycle risk.
+
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** Legit because the rally has fresh earnings, order, export, and margin evidence. Fragile because the stock doubled in three months, trades at a high P/E, and FY26 cash flow shows absorption rather than generation.
+
+**Contradictions, Weaknesses, And Open Risks:** Main contradiction is strong PAT versus negative operating cash flow. Risks include receivables, inventory, execution slippage, export concentration, capex for backward integration, and valuation compression if momentum cools.
+
+**Peer Placement Notes:** HFCL should rank above price-only momentum names and below cleaner compounders with similar growth but stronger cash conversion, higher ROCE, and less valuation stretch.

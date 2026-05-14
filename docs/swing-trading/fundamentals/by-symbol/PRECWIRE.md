@@ -1,42 +1,49 @@
-# PRECWIRE — Fundamental Sponsorship Dossier
+## 1. Ranking Packet
 
-## Ranking Packet
+**Symbol:** PRECWIRE
+**Company:** Precision Wires India Ltd
+**Analysis Date:** 2026-05-13
+**Screen Thesis Fit:** Fits the screen: 39.29% three-month return, market cap Rs 7,103.91 Cr, Q3 FY26 profit growth 98.94%, sales growth 37.19%, ROCE 26.78%.
+**Sponsorship Verdict:** Strongly Sponsored, but extended
+**Confidence:** Medium-high
 
-- **Symbol**: PRECWIRE
-- **Company**: Precision Wires India Ltd
-- **Analysis Date**: 2026-04-29
-- **Screen Thesis Fit**: Partial fit — 65.82% 3-month return is real and earnings acceleration genuine, but P/E expanded to 58x on structural OPM of 5-6%, creating valuation overhang. Valvada backward-integration catalyst confirmed operational but zero incremental quarterly proof yet.
-- **Sponsorship Verdict**: Moderately Sponsored
-- **Confidence**: Medium
+**Recent Trigger:** Strong. Q3 FY26 was the clear trigger: net profit rose to Rs 37.70 Cr from Rs 18.95 Cr YoY, with sales at Rs 1,336.94 Cr, up 36.55% YoY. The stock reacted with a record-high move after the result.
 
-### Comparison Dimensions
+**Operating Evidence:** Strong. Revenue, operating profit, and margins all improved; OPM moved to about 5.6% versus 4.1% YoY. The company also completed 6,000 MTPA copper winding wire capacity at Silvassa, taking installed capacity to about 55,000 MTPA.
 
-- **Recent Trigger**: Positive. Q2 FY26 delivered OPM 6% on revenue ₹1,237 Cr, PAT ₹36 Cr (~90% YoY). Q3 FY26 confirmed: revenue ₹1,348 Cr (+37%), PAT ₹38 Cr (~99%). Valvada plant BIS certification March 18, commercial production March 26. Since prior review: stock +9.4% with no new quarterly result — pure multiple expansion.
-- **Operating Evidence**: Positive with caveat. Revenue compounded 41% over six quarters. OPM inflected from 4% to 5-6% band durably. Three consecutive quarters at 5-6% is genuine structural improvement. OCF ₹168 Cr FY25, working capital days 26.
-- **Earnings Quality**: Mixed but improving. 9M FY26 PAT ₹101 Cr vs full FY25 ₹90 Cr. No one-time items. Revenue partly copper price pass-through. P/E expanded from 53x to 58x since last review with no new earnings.
-- **Balance Sheet Comfort**: Adequate. D/E 0.20x, ROCE 27%, OCF ₹168 Cr, reserves ₹643 Cr, borrowings ₹128 Cr. Promoter stable 56.61%. Negligible institutional presence (FII 1.65%, DII 0.11%).
-- **Catalyst Credibility**: Moderate. Valvada live March 26 but Q4 shows only 5 days of operation. Meaningful impact not before Q1 FY27 (August 2026). India power capex tailwind real and durable.
-- **Evidence-to-Price Alignment**: Stretched. Stock +250% over 12 months on ~78% earnings growth. Multiple expanded from ~24x to 58x. Analyst consensus ₹300-330 is 20-25% below CMP. Requires FY27 PAT ₹175-200 Cr just to trade at 40x forward.
-- **Near-Term Fragility**: Elevated and increasing. Q4 result due late May within swing window at 58x with no Valvada contribution. No institutional buying support. Stock 20-25% above analyst consensus.
+**Earnings Quality:** Good, not perfect. Profit growth is backed by sales growth and operating leverage, not only other income. However, raw material cost remains very large relative to revenue, finance cost rose YoY, and the business is copper-price and working-capital sensitive.
 
-### Ranking Summary
+**Balance Sheet Comfort:** Acceptable. ROCE is healthy at 26.78%, but borrowings and working-capital facilities are expanding. Additional secured/unsecured working-capital facilities and borrowing-power increase support growth but raise leverage/discipline risk.
 
-- **Why It Ranks Here**: Three consecutive quarters of earnings acceleration, durable OPM inflection, strong ROCE 27%, clean balance sheet, confirmed Valvada plant, India power capex macro tailwind.
-- **What Keeps It From Ranking Higher**: P/E 58x (worsened from 53x), no new earnings evidence since April 19, analyst consensus 20-25% below CMP, no institutional anchor, Valvada unconfirmed financially until August 2026.
-- **What Kind Of Peer Should Rank Above It**: Similar earnings momentum at P/E <40x, disclosed order book, institutional ownership >5%, OPM >8%.
-- **What Kind Of Peer Should Rank Below It**: Rally from sector re-rating without earnings step-change, compressing margins, higher debt, single-quarter acceleration.
+**Catalyst Credibility:** Strong. Catalysts are operating: capacity additions, copper rod project trials, copper refining/recycling project, and value-added winding wire mix. Ongoing projects point to capacity rising toward about 68,500 MTPA by FY28 subject to execution.
 
-### Refresh Timing
+**Evidence-to-Price Alignment:** Positive but stretched. The 39.29% three-month move is supported by Q3 earnings acceleration and capacity news, but P/E 54.65 already prices in a lot of FY27/FY28 execution.
 
-- **Next Review On**: 2026-05-08
-- **Hard Stale On**: 2026-05-20
+**Near-Term Fragility:** Medium. Main fragilities are valuation, sharp prior run, copper/input-cost volatility, working-capital debt, execution timing on new projects, and Q4 FY26 result risk.
 
-## Sponsorship Reasoning
+**Why It Ranks Here:** Rank #20 with adjusted PreRankScore 59.83 because the stock has real operating sponsorship, high ROCE, and strong profit acceleration, but mid-pack screen strength and elevated valuation cap the rank.
 
-- **Why Sponsorship Is Present Or Not**: Present but under valuation strain. 9M FY26 PAT ₹101 Cr vs full FY25 ₹90 Cr is decisive step-change. OPM held 5-6% for three quarters after years at 4%. ROCE 27%, OCF ₹168 Cr. Problem is price not business — multiple expanded from 24x to 58x.
-- **Recent Trigger And What Likely Drove The Move**: Q2 FY26 OPM jump from 4% to 6%, Q3 confirmation, Valvada plant announcement. Since April 19, no new catalyst — 9.4% gain is pure momentum.
-- **Business And Financial Evidence**: Revenue trajectory ₹884 Cr (Mar 24) → ₹1,348 Cr (Dec 25). OPM improved 4% → 6%. Annual PAT: FY24 ₹73 Cr, FY25 ₹90 Cr, FY26 run-rate ₹130-135 Cr. D/E 0.20x. ROCE 27%.
-- **Catalyst Context**: Valvada live but only 5 days in Q4. Meaningful financial proof August 2026. India power infra: 86,433 MVA transformers FY25 (+22%), ₹9 trillion grid capex through 2032.
-- **Why The Rally Looks Legit Or Fragile For 1-8 Weeks**: Legit fundamental spine through historical evidence. Fragile — past catalysts fully priced, Q4 event potential disappointment, next confirmatory proof 3-4 months away.
-- **Contradictions, Weaknesses, And Open Risks**: P/E 58x with no new earnings data. Analyst consensus 20-25% below CMP. Institutional vacuum. Q4 binary imminent. Revenue inflation from copper pass-through. Finance costs rising. Promoter holding drifted 305 bps over 3 years.
-- **Peer Placement Notes**: Middle tier of power/electrical equipment names. Above names riding sector re-rating without earnings step-change. Below peers with disclosed order books, OPM >8%, institutional ownership >5%.
+**What Keeps It From Ranking Higher:** High P/E, rising finance cost, larger working-capital needs, and dependence on continued margin expansion.
+
+**What Kind Of Peer Should Rank Above It:** A stock with similar sales/profit acceleration, lower valuation stress, cleaner cash conversion, and less working-capital leverage.
+
+**What Kind Of Peer Should Rank Below It:** A stock whose price momentum is not backed by recent revenue/profit acceleration or whose catalyst is only narrative-driven.
+
+**Next Review On:** 2026-05-27
+**Hard Stale On:** 2026-06-14
+
+## 2. Sponsorship Reasoning
+
+**Why Sponsorship Is Present Or Not:** Sponsorship is present. PRECWIRE is not moving only on screen momentum; the move is backed by Q3 FY26 earnings acceleration, operating margin improvement, capacity completion, and visible forward catalysts.
+
+**Recent Trigger And What Likely Drove The Move:** The February 2026 Q3 result was the trigger. Net profit nearly doubled YoY, revenue rose more than 36%, PBT rose more than 108%, and the market re-rated the stock to a new high.
+
+**Business And Financial Evidence:** Q3 FY26 revenue from operations was Rs 1,336.94 Cr and PAT was Rs 37.70 Cr. Screener row shows ROCE 26.78%, supporting that growth is not coming from structurally weak capital efficiency. TTM sales and profit have improved materially.
+
+**Catalyst Context:** Catalyst stack is capacity and integration. The completed 6,000 MTPA Silvassa expansion lifted copper winding wire capacity to about 55,000 MTPA. Valvada copper rod project trials and Zaroli copper refining/recycling project add forward optionality.
+
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** Legit because price follows earnings evidence and project execution. Fragile because P/E 54.65 and a sharp three-month move leave little room for Q4 disappointment or project delay.
+
+**Contradictions, Weaknesses, And Open Risks:** Quality growth conflicts with expensive price. Finance cost rose, working-capital lines expanded, and copper price swings can inflate revenue while squeezing spreads if pass-through timing is unfavorable.
+
+**Peer Placement Notes:** PRECWIRE deserves sponsored classification, above price-only momentum names, but below peers with similar momentum plus cleaner balance-sheet expansion, lower valuation pressure, and stronger cash conversion.

@@ -1,67 +1,49 @@
-# ACUTAAS — Fundamental Sponsorship Dossier
+## 1. Ranking Packet
 
-### Ranking Packet
+**Symbol:** ACUTAAS
+**Company:** Acutaas Chemicals
+**Analysis Date:** 2026-05-13
+**Screen Thesis Fit:** Fits the 3 month Return 30 thesis: 3-month return 35.08%, market cap Rs 23,146.03 Cr, Q4 sales growth 40.28%, Q4 profit growth 110.88%, ROCE 31.56%.
+**Sponsorship Verdict:** Strongly Sponsored
+**Confidence:** Medium-High
 
-- **Symbol**: ACUTAAS
-- **Company**: Acutaas Chemicals Limited (formerly Ami Organics Limited; renamed May 2025)
-- **Analysis Date**: 2026-04-26
-- **Screen Thesis Fit**: Strong fit. The 3-month return remains momentum-backed by the Q3 FY26 earnings inflection (NP +140% YoY, OPM 38%, revenue +43% YoY). Since the Apr 19 review, the stock hit an all-time high of Rs 2,688 on Apr 1 before correcting 9% to the Rs 2,325-2,400 range. At CMP Rs 2,395, the rally remains confirmation-backed by business evidence, not narrative-driven. The correction from the ATH actually improves risk/reward slightly versus the prior review.
-- **Sponsorship Verdict**: Sponsored
-- **Confidence**: High
+**Recent Trigger:** Strong. Q4 FY26 revenue rose 40.3% YoY to Rs 4,328 Mn, EBITDA rose 116.0%, and PAT rose 114.1% to Rs 1,343 Mn, with PAT margin at 31.0%.
 
-**Comparison Dimensions**:
+**Operating Evidence:** Strong. FY26 revenue rose 33.0%, EBITDA rose 107.0%, and PAT rose 122.2%; margin expansion was tied to cost efficiencies, product mix, and higher CDMO contribution.
 
-- **Recent Trigger**: Unchanged from prior review. Q3 FY26 results (Dec 2025 quarter, released ~Feb 2026) remain the primary catalyst: NP surged 140% YoY (Rs 45 Cr to Rs 106 Cr), EBITDA margin expanded 1,370 bps YoY to 38.3%, revenue +43% YoY to Rs 393 Cr. Management raised FY26 revenue growth guidance from 25% to 30% and EBITDA margin guidance from 28-30% to 32-35%. Additionally, the battery electrolyte plant at Jhagadia was inaugurated on Jan 19, 2026, adding a secondary narrative catalyst. Stock hit ATH Rs 2,688 on Apr 1 (100% rally in 8 months per Business Standard), then corrected 9% on profit-taking after failing to hold above Rs 2,600. No new earnings data since prior review.
+**Earnings Quality:** Strong but not spotless. The move is backed by operating profit, not only other income: Q4 gross profit rose 83.8% and EBITDA margin expanded to 42.4%. Other income contributed Rs 111 Mn in Q4 but was not the core driver.
 
-- **Operating Evidence**: No new quarterly data since Q3 FY26. Quarterly trajectory intact: Jun 2025 (Rs 207 Cr / OPM 25% / NP Rs 44 Cr) -> Sep 2025 (Rs 306 Cr / OPM 31% / NP Rs 72 Cr) -> Dec 2025 (Rs 393 Cr / OPM 38% / NP Rs 106 Cr). Annual FY25: Revenue Rs 1,007 Cr / OPM 23% / NP Rs 160 Cr. TTM revenue ~Rs 1,215 Cr. Fermion Block 3 utilization reached 50% in Q4 FY25 (up from 35% in Q2 FY25), expected fully utilized by FY27. Battery electrolyte plant inaugurated Jan 19, 2026 with Q4 FY26 being trial production quarter; commercial ramp expected from Q1 FY27. ROCE at 21.3% (H1 FY26 record). 5-year sales CAGR 33%, profit CAGR 41%.
+**Balance Sheet Comfort:** Strong. FY26 shareholder equity was Rs 17,108 Mn against total liabilities of Rs 2,732 Mn; cash and bank balances were about Rs 2,249 Mn versus borrowings/financial liabilities around Rs 356 Mn.
 
-- **Earnings Quality**: High and improving. Pharma CDMO earnings are contract-backed with the Fermion/Bayer 10-year contract covering five intermediates, patent protection through 2033-2035. IDBI Capital projects 54% NP CAGR FY25-FY28. CFO/OP ratio 71-116% over three years. Negative FCF concern persists (Rs -76 Cr FY25, Rs -240 Cr FY24) due to Ankleshwar build and electrolyte plant capex (FY26 capex guided at Rs 220 Cr including second phase battery chemicals and pilot plant). Growth capex, not value-destruction, but earnings still not self-funding expansion.
+**Catalyst Credibility:** Strong. Management guided for 25% FY27 revenue growth and framed growth around Battery Chemicals, Semiconductors, and Pharmaceutical CDMO.
 
-- **Balance Sheet Comfort**: Very strong. Borrowings collapsed from Rs 217 Cr (Mar 2024) to Rs 13 Cr (Mar 2025). MarketsMojo confirms net-debt-free status with negative debt-to-equity (-0.16). Total equity grew from Rs 674 Cr (Mar 2024) to Rs 1,414 Cr (Sep 2025). CWIP at Rs 152 Cr (Sep 2025) reflecting active Ankleshwar and electrolyte plant spend. No leverage risk; balance sheet is not a constraint.
+**Evidence-to-Price Alignment:** Good. A 35.08% three-month move is aggressive, but aligned with real FY26/Q4 acceleration rather than disconnected price action.
 
-- **Catalyst Credibility**: High for near-term. (1) Q4 FY26 results (Mar 2026 quarter, expected May 2026) are the primary near-term catalyst within the 1-8 week window. If OPM sustains 32-35% vs Q4 FY25's 28%, this validates the full-year guidance upgrade and serves as a second consecutive confirmation event. (2) Battery electrolyte plant inaugurated Jan 19, 2026 — trial production in Q4 FY26, commercial ramp from Q1 FY27. This is now closer to revenue contribution than at prior review. (3) Darolutamide label expansion in US/Europe/Japan continues driving Fermion contract volumes. (4) Second phase battery chemical capex completion expected within 6 months of Jan 2026 inauguration. (5) Another large European originator CDMO deal reportedly in final negotiations (Value Research report). Medium-term: semiconductor JV in South Korea targeting H2 FY27; Rs 1,000 Cr CDMO revenue target by FY28.
+**Near-Term Fragility:** Medium. P/E 64.97 leaves little room for disappointment; receivables and inventory increased with scale; CWIP rose sharply, so execution and utilization matter.
 
-- **Evidence-to-Price Alignment**: Slightly improved from prior review due to the 9% correction from ATH. CMP Rs 2,395 implies P/E of ~68x on TTM earnings, P/B of 13.8x, EV/EBITDA 50.8x. However, the 9-analyst consensus average target is Rs 2,131 (high Rs 2,501, low Rs 1,170) — CMP is 12% above the average target. Value Research analysis frames it starkly: at 60x trailing earnings, the stock requires 25% annual profit growth to deliver 15% investor returns over 5 years (assuming compression to 40x). PEG ratio of 0.50 partially offsets the headline P/E concern given the 54% projected NP CAGR. The valuation still prices in flawless execution: CDMO revenue must roughly double annually for two years, Ankleshwar must reach 3x asset-turnover utilization. Any guidance trim triggers sharp multiple compression.
+**Why It Ranks Here:** Rank #16 with Adjusted PreRankScore 64.77 is reasonable: operating sponsorship is hard and current, but valuation and execution sensitivity cap the rank.
 
-- **Near-Term Fragility**: Moderate, elevated slightly from prior review. Key risks within 1-8 weeks: (1) Q4 FY26 results (~May 2026) — if EBITDA margin slips below 30% (vs guidance 32-35%), re-rating narrative breaks; (2) stock already corrected 9% from ATH Rs 2,688 to Rs 2,395 after failing at Rs 2,600 resistance — further technical weakness possible if Rs 2,000 support is tested; (3) CMP 12% above 9-analyst consensus average target of Rs 2,131 — overvaluation signal from sell-side; (4) RSI moderated to ~54 from elevated levels, indicating weakened momentum; (5) promoter stake stable at 32.66-32.7% but the 3-year decline of ~6.75% remains a concern; (6) Jun 2025 quarter (Rs 207 Cr / OPM 25%) showed CDMO lumpiness risk; (7) generic intermediates (~50% revenue) face Chinese undercutting by 40-50%.
+**What Keeps It From Ranking Higher:** High valuation, rapid price appreciation, elevated margin base, and dependence on CDMO/product-mix continuation.
 
-**Ranking Summary**:
+**What Kind Of Peer Should Rank Above It:** A similarly fast grower with lower valuation, cleaner cash conversion evidence, and less capex/execution risk.
 
-- **Why It Ranks Here**: Highest-quality confirmed earnings acceleration in the screened universe with contract-backed CDMO revenue (Fermion/Bayer, patent-protected to 2033-2035), NP +140% YoY, structural margin transformation (25% to 38% OPM), and near-debt-free balance sheet. The 9% correction from ATH slightly improves entry risk/reward versus the prior review. Battery electrolyte plant inauguration adds a tangible new growth vector. Sponsorship is clearly present and confirmation-backed.
+**What Kind Of Peer Should Rank Below It:** A stock with price momentum but weaker sales/PAT growth, weaker margin expansion, higher leverage, or no clear operating trigger.
 
-- **What Keeps It From Ranking Higher**: Valuation remains demanding at 68x TTM P/E, with CMP 12% above the 9-analyst average target of Rs 2,131. Negative FCF for two consecutive years means capital efficiency is deferred. CDMO revenue lumpiness (Jun 2025 weak quarter) persists. Promoter stake decline over 3 years is a persistent negative. Stock technically failed at Rs 2,600 resistance and corrected 9%, indicating near-term exhaustion. Single-contract concentration on Fermion (~60-70% of CDMO revenue) remains a tail risk.
+**Next Review On:** 2026-06-12
+**Hard Stale On:** 2026-08-15
 
-- **What Kind Of Peer Should Rank Above It**: A specialty chemicals or CDMO stock with confirmed earnings acceleration, comparable ROCE/ROE, trading at P/E 30-50x (significantly below ACUTAAS's 68x) where evidence-to-price alignment is clearly favorable, and where the most recent quarter momentum is similarly confirmed — not trading above sell-side consensus.
+## 2. Sponsorship Reasoning
 
-- **What Kind Of Peer Should Rank Below It**: Any specialty chemicals or pharma name where the earnings beat is base-effect recovery rather than structural acceleration, where contracts are spot/non-binding, where balance sheet carries meaningful leverage, or where management guidance track record is weaker than ACUTAAS's clean recent stretch.
+**Why Sponsorship Is Present Or Not:** Sponsorship is clearly present. The price move is supported by Q4 and FY26 operating acceleration: Q4 revenue +40.3%, EBITDA +116.0%, PAT +114.1%, and FY26 PAT +122.2%.
 
-**Refresh Timing**:
-- **Next Review On**: 2026-05-05
-- **Hard Stale On**: 2026-05-17
+**Recent Trigger And What Likely Drove The Move:** The likely trigger is the April 2026 Q4/FY26 result. Highest-ever quarterly PAT margin of 31.0%, Q4 EBITDA margin of 42.4%, and 25% FY27 revenue growth guidance plausibly explain the 35.08% three-month return.
 
----
+**Business And Financial Evidence:** Pharma Intermediates showed strong Q4 momentum, with CDMO continuing to grow and non-CDMO steady. Specialty Chemicals recovered in Q4. FY26 revenue was Rs 13,394 Mn versus Rs 10,069 Mn in FY25; EBITDA was Rs 4,804 Mn versus Rs 2,321 Mn; PAT was Rs 3,564 Mn versus Rs 1,604 Mn.
 
-### Sponsorship Reasoning
+**Catalyst Context:** The next sponsorship leg depends on FY27 execution. Management's growth engines are Battery Chemicals, Semiconductors, and Pharmaceutical CDMO. CWIP rising to Rs 3,324 Mn indicates capacity buildout that can become a catalyst if it converts without margin compression.
 
-- **Why Sponsorship Is Present**: Sponsorship is clearly present and confirmation-backed. The multi-month rally tracks directly against the Q3 FY26 result (NP +140% YoY, OPM +1,370 bps YoY, guidance raised mid-year). The Fermion/Bayer CDMO contract is a 10-year, patent-protected revenue anchor (darolutamide patent expiry beyond 2033, most geographies 2035). Label expansion of darolutamide approved in US, Europe, and Japan directly increases prescription volumes and contract demand. Institutional sponsorship is strong at 39.1% combined FII (19.48%) + DII (19.60%) holding. The battery electrolyte plant inauguration on Jan 19, 2026 adds a secondary narrative driver. The business transformation from generic intermediates to high-margin CDMO is structural and measurable.
+**Why The Rally Looks Legit Or Fragile For 1-8 Weeks:** Legit because the rally follows a large, recent operating beat with improving margins and a low-debt balance sheet. Fragile because the stock trades at a high P/E and the base margin is now very strong.
 
-- **Recent Trigger And What Likely Drove The Move**: The primary trigger remains the Q3 FY26 results (~Feb 2026): NP Rs 106 Cr (+140% YoY), revenue Rs 393 Cr (+43% YoY), OPM 38.3% (record high). Management simultaneously raised revenue growth guidance to 30% (from 25%) and EBITDA margin guidance to 32-35% (from 28-30%). Since the prior Apr 19 review, the stock hit an all-time high of Rs 2,688 on Apr 1, 2026, representing a 100% rally in 8 months (Business Standard). It then corrected 9% on Apr 1 after failing to sustain above Rs 2,600 resistance, settling into the Rs 2,325-2,400 range. The correction appears to be profit-taking and technical exhaustion rather than fundamental deterioration — no negative news or earnings disappointment drove the decline.
+**Contradictions, Weaknesses, And Open Risks:** FY26 specialty chemicals growth was only 8.0% despite Q4 recovery, so sponsorship is more CDMO/pharma-intermediates led than broad-based. Receivables, inventory, and CWIP increases make cash conversion and execution important.
 
-- **Business And Financial Evidence**: Quarterly sequence (FY25-FY26): Q4 FY25 (Mar 2025): Rs 308 Cr / OPM 28% / NP Rs 63 Cr; Q1 FY26 (Jun 2025): Rs 207 Cr / OPM 25% / NP Rs 44 Cr; Q2 FY26 (Sep 2025): Rs 306 Cr / OPM 31% / NP Rs 72 Cr; Q3 FY26 (Dec 2025): Rs 393 Cr / OPM 38.3% / NP Rs 106 Cr. YoY comparison for Q3: Dec 2024 was Rs 275 Cr / OPM 25% / NP Rs 45 Cr. Annual FY25: Revenue Rs 1,007 Cr / OPM 23% / NP Rs 160 Cr. TTM revenue ~Rs 1,215 Cr / NP ~Rs 285 Cr. Market cap Rs 19,608 Cr. P/E 68.3x, P/B 13.78x, EV/EBITDA 50.78x, PEG 0.50. Balance sheet: borrowings Rs 13 Cr (Mar 2025), net-debt-free (D/E -0.16), equity Rs 1,414 Cr (Sep 2025), CWIP Rs 152 Cr. ROCE 21.3% (H1 FY26 record). Shareholding (Mar 2026): promoters 32.66%, FII 19.48%, DII 19.60%, public 28.24%. Fermion Block 3 at 50% utilization, targeting full utilization by FY27. Battery electrolyte plant inaugurated Jan 19, 2026, trial production in Q4 FY26, commercial from Q1 FY27. FY26 capex guided at Rs 220 Cr. 5-year sales CAGR 33%, profit CAGR 41%.
-
-- **Catalyst Context**: (1) Q4 FY26 results (expected May 2026) — the key near-term binary event within the 1-8 week swing window. If EBITDA margin sustains 32-35% and revenue growth remains at or above 30% YoY, this validates the full-year guidance upgrade and serves as a second consecutive confirmation. (2) Battery electrolyte plant now inaugurated and in trial production — closer to revenue contribution than at prior review. Second phase capex completion expected by mid-2026. (3) Darolutamide label expansion continues driving Fermion volumes — 5-year guidance remains intact. (4) New large European CDMO originator deal reportedly in final negotiations (per Value Research). (5) Medium-term: semiconductor JV (South Korea, H2 FY27), Rs 1,000 Cr CDMO revenue target by FY28, 60-80 molecules in clinical trials. The Q4 results are the dominant catalyst; everything else is narrative support.
-
-- **Why The Rally Looks Legit For 1-8 Weeks**: The rally origin is legitimate — earnings-confirmation-driven with contract-backed CDMO revenue. The 9% correction from ATH (Rs 2,688 to Rs 2,395) has modestly improved entry risk/reward. Technical structure remains positive: stock trades above 50-DMA (~Rs 2,090), broader trend shows higher highs and higher lows. RSI at ~54 is neutral, not overbought. Q4 FY26 results arriving in May 2026 provide a catalyst within the window. Battery electrolyte plant commercial ramp from Q1 FY27 adds forward visibility. FII+DII at 39.1% provides institutional floor. However, the rally's continuation depends entirely on Q4 execution — any margin disappointment will trigger sharp selling given the 68x P/E and CMP above sell-side consensus. The stock is more a "hold for Q4 confirmation" than a "fresh entry with asymmetric upside" at current levels.
-
-- **Contradictions, Weaknesses, And Open Risks**:
-  1. CMP Rs 2,395 is 12% above the 9-analyst consensus average target of Rs 2,131, with the median sell-side desk seeing no upside — this is a clear overvaluation signal from the analyst community.
-  2. Stock corrected 9% from ATH Rs 2,688 after failing at Rs 2,600 resistance on Apr 1. Technical support at Rs 2,000; a break below would signal deeper correction. RSI at 54 shows weakened momentum.
-  3. Jun 2025 quarter (Rs 207 Cr / OPM 25% / NP Rs 44 Cr) was conspicuously weak, demonstrating real CDMO revenue lumpiness. Q4 FY26 could show similar seasonal/mix-driven softness.
-  4. Generic intermediates (~50% of revenue) face Chinese manufacturers undercutting by 40-50%. Specialty chemicals segment grew only 16.5% YoY in Q3 vs 47% for pharma intermediates — structural divergence persists.
-  5. Promoter stake at 32.66%, down ~6.75% over 3 years. Low and declining promoter ownership in a 68x P/E stock is a persistent institutional concern.
-  6. Negative FCF for two consecutive years (Rs -240 Cr FY24, Rs -76 Cr FY25). FY26 capex guided at Rs 220 Cr — FCF unlikely to turn positive in FY26 either.
-  7. Single-contract concentration: Fermion contract is ~60-70% of CDMO revenue, the key growth engine. Value Research notes this relies entirely on Bayer's prescription volumes — factors beyond Acutaas's control.
-  8. At 60x trailing earnings, stock requires 25% annual profit growth to deliver 15% returns over 5 years assuming valuation compression to 40x (Value Research analysis). Any growth slowdown to 20% yields only 10% returns.
-  9. Battery electrolyte plant is in trial production — execution risk remains on commercial ramp timeline and customer acceptance.
-
-- **Peer Placement Notes**: Within the screened universe, ACUTAAS occupies the position of highest-quality confirmed earnings acceleration paired with highest valuation risk. The 9% correction from ATH slightly improves the positioning versus prior review. Peers with confirmed earnings beats at materially lower P/E multiples (30-50x range) and comparable ROCE should rank above it because evidence-to-price alignment is better. Peers with weaker earnings quality, spot contracts, or higher debt should rank below regardless of lower multiples. Fresh swing entries at Rs 2,395 carry compressed risk/reward — the business quality is compelling but the price demands flawless Q4 execution.
+**Peer Placement Notes:** ACUTAAS should rank above momentum names without earnings acceleration or balance-sheet support, but below comparable growers with lower valuation, cleaner working-capital conversion, and less dependence on sustaining unusually high margins.
