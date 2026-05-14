@@ -29,12 +29,12 @@
 | AVANTIFEED | Avanti Feeds Ltd | by-symbol/AVANTIFEED.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | SUPPETRO | Supreme Petrochemicals Ltd | by-symbol/SUPPETRO.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | ADANIPOWER | Adani Power Ltd | by-symbol/ADANIPOWER.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| AEROFLEX | Aeroflex Industries Ltd | by-symbol/AEROFLEX.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
+| AEROFLEX | Aeroflex Industries Ltd | by-symbol/AEROFLEX.md | 2026-05-14 | 2026-05-21 | 2026-06-04 |
 | AGIIL | AGI Infra Ltd | by-symbol/AGIIL.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | HIRECT | Hind Rectifiers Ltd | by-symbol/HIRECT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | IMFA | Indian Metals & Ferro Alloys Ltd | by-symbol/IMFA.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
-| WELCORP | Welspun Corp Ltd | by-symbol/WELCORP.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
+| WELCORP | Welspun Corp Ltd | by-symbol/WELCORP.md | 2026-05-14 | 2026-05-24 | 2026-06-04 |
 | SKYGOLD | Sky Gold & Diamonds Ltd | by-symbol/SKYGOLD.md | 2026-05-12 | 2026-06-11 | 2026-08-10 |
 | DATAPATTNS | Data Patterns India Ltd | by-symbol/DATAPATTNS.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | KRN | KRN Heat Exchanger and Refrigeration Ltd | by-symbol/KRN.md | 2026-05-13 | 2026-05-15 | 2026-05-20 |
@@ -86,7 +86,7 @@
 | GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-05-05 | 2026-05-12 | 2026-05-26 |
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
-| STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
+| STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-05-14 | 2026-05-28 | 2026-06-11 |
 | UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-05-12 | 2026-05-14 | 2026-05-20 |
 | WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-05-13 | 2026-05-27 | 2026-06-28 |
 | DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-05-13 | 2026-05-20 | 2026-05-27 |
@@ -99,7 +99,9 @@
 | ASMTEC | ASM Technologies Ltd | by-symbol/ASMTEC.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
 | MCX | Multi Commodity Exchange of India Ltd | by-symbol/MCX.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
 | IBULLSLTD | Indiabulls Ltd | by-symbol/IBULLSLTD.md | 2026-05-13 | 2026-06-12 | 2026-07-29 |
+| IDEAFORGE | ideaForge Technology Limited | by-symbol/IDEAFORGE.md | 2026-05-14 | 2026-05-28 | 2026-06-25 |
 | JAINREC | Jain Resource Recycling Ltd | by-symbol/JAINREC.md | 2026-05-13 | 2026-05-18 | 2026-06-12 |
+| KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-05-14 | 2026-05-28 | 2026-06-25 |
 | GVPIL | GE Power India Ltd | by-symbol/GVPIL.md | 2026-05-13 | 2026-06-12 | 2026-08-15 |
 | LLOYDSENGG | Lloyds Engineering Works Ltd | by-symbol/LLOYDSENGG.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
 | KENNAMET | Kennametal India Ltd | by-symbol/KENNAMET.md | 2026-05-13 | 2026-06-12 | 2026-08-11 |
