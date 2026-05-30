@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | SHILCTECH | Shilchar Technologies Ltd | by-symbol/SHILCTECH.md | 2026-04-18 | 2026-04-27 | 2026-05-09 |
 | GVT&D | GE Vernova T&D India Ltd | by-symbol/GVT&D.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
-| ATLANTAELE | Atlanta Electricals Ltd | by-symbol/ATLANTAELE.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
+| ATLANTAELE | Atlanta Electricals Ltd | by-symbol/ATLANTAELE.md | 2026-05-30 | 2026-06-13 | 2026-06-29 |
 | ENRIN | Siemens Energy India Ltd | by-symbol/ENRIN.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | PREMIERENE | Premier Energies Ltd | by-symbol/PREMIERENE.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | SCHNEIDER | Schneider Electric Infrastructure Ltd | by-symbol/SCHNEIDER.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -43,7 +43,7 @@
 | RRWL | Ram Ratna Wires Ltd | by-symbol/RRWL.md | 2026-05-14 | 2026-05-23 | 2026-06-04 |
 | ACUTAAS | Acutaas Chemicals Ltd | by-symbol/ACUTAAS.md | 2026-05-13 | 2026-06-12 | 2026-08-15 |
 | EBGNG | GNG Electronics Ltd | by-symbol/EBGNG.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
-| CPPLUS | Aditya Infotech Ltd / CP Plus | by-symbol/CPPLUS.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
+| CPPLUS | Aditya Infotech Ltd / CP Plus | by-symbol/CPPLUS.md | 2026-05-30 | 2026-06-13 | 2026-06-29 |
 | POWERINDIA | Hitachi Energy India Ltd | by-symbol/POWERINDIA.md | 2026-05-04 | 2026-05-13 | 2026-05-25 |
 | JINDALSAW | Jindal Saw Ltd | by-symbol/JINDALSAW.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
 | GALLANTT | Gallantt Ispat Ltd | by-symbol/GALLANTT.md | 2026-04-19 | 2026-04-28 | 2026-05-10 |
@@ -79,27 +79,32 @@
 | ACMESOLAR | ACME Solar Holdings Ltd | by-symbol/ACMESOLAR.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
 | INSOLATION | Insolation Energy Ltd | by-symbol/INSOLATION.md | 2026-04-26 | 2026-05-31 | 2026-07-25 |
 | SAATVIKGL | Saatvik Green Energy Ltd | by-symbol/SAATVIKGL.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
-| BSE | BSE Ltd | by-symbol/BSE.md | 2026-04-26 | 2026-05-05 | 2026-05-17 |
+| BSE | BSE Ltd | by-symbol/BSE.md | 2026-05-30 | 2026-06-06 | 2026-06-14 |
 | EMMVEE | Emmvee Photovoltaic Power Ltd | by-symbol/EMMVEE.md | 2026-05-12 | 2026-06-11 | 2026-08-10 |
-| CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-05-13 | 2026-05-15 | 2026-05-20 |
+| CUPID | Cupid Ltd | by-symbol/CUPID.md | 2026-05-30 | 2026-08-15 | 2026-08-20 |
 | ORIANA | Oriana Power Ltd | by-symbol/ORIANA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GROWW | Billionbrains Garage Ventures Ltd | by-symbol/GROWW.md | 2026-05-05 | 2026-05-12 | 2026-05-26 |
 | MANORAMA | Manorama Industries Ltd | by-symbol/MANORAMA.md | 2026-04-21 | 2026-04-30 | 2026-05-12 |
 | GEPOWERINF | GE Power India Ltd | by-symbol/GEPOWERINF.md | 2026-04-22 | 2026-05-01 | 2026-05-13 |
 | STLTECH | Sterlite Technologies Ltd | by-symbol/STLTECH.md | 2026-05-14 | 2026-05-28 | 2026-06-11 |
-| UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-05-12 | 2026-05-14 | 2026-05-20 |
+| UTLSOLAR | Fujiyama Power Systems Ltd | by-symbol/UTLSOLAR.md | 2026-05-30 | 2026-06-13 | 2026-06-30 |
 | WEBELSOLAR | Websol Energy System Ltd | by-symbol/WEBELSOLAR.md | 2026-05-13 | 2026-05-27 | 2026-06-28 |
 | DIACABS | Diamond Power Infrastructure Ltd | by-symbol/DIACABS.md | 2026-05-13 | 2026-05-20 | 2026-05-27 |
 | INDIABULLS | Indiabulls Limited | by-symbol/INDIABULLS.md | 2026-04-29 | 2026-05-08 | 2026-05-20 |
 | NETWEB | Netweb Technologies India Ltd | by-symbol/NETWEB.md | 2026-05-12 | 2026-05-27 | 2026-06-12 |
-| HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
+| HFCL | HFCL Ltd | by-symbol/HFCL.md | 2026-05-30 | 2026-06-13 | 2026-06-29 |
 | DEEDEV | DEE Development Engineers Ltd | by-symbol/DEEDEV.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
-| TIMEX | Timex Group India Ltd | by-symbol/TIMEX.md | 2026-05-05 | 2026-05-14 | 2026-05-26 |
+| TIMEX | Timex Group India Ltd | by-symbol/TIMEX.md | 2026-05-30 | 2026-06-13 | 2026-07-29 |
 | RAYMOND | Raymond Limited | by-symbol/RAYMOND.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
 | ASMTEC | ASM Technologies Ltd | by-symbol/ASMTEC.md | 2026-05-07 | 2026-05-16 | 2026-05-28 |
 | MCX | Multi Commodity Exchange of India Ltd | by-symbol/MCX.md | 2026-05-13 | 2026-05-27 | 2026-06-12 |
 | IBULLSLTD | Indiabulls Ltd | by-symbol/IBULLSLTD.md | 2026-05-13 | 2026-06-12 | 2026-07-29 |
 | IDEAFORGE | ideaForge Technology Limited | by-symbol/IDEAFORGE.md | 2026-05-14 | 2026-05-28 | 2026-06-25 |
+| SIGMAADV | Sigma Advanced Systems Ltd | by-symbol/SIGMAADV.md | 2026-05-30 | 2026-06-15 | 2026-06-30 |
+| VMARCIND | V-Marc India Ltd | by-symbol/VMARCIND.md | 2026-05-30 | 2026-06-30 | 2026-08-13 |
+| FCL | Fineotex Chemical Ltd | by-symbol/FCL.md | 2026-05-30 | 2026-06-13 | 2026-06-30 |
+| SASKEN | Sasken Technologies Ltd | by-symbol/SASKEN.md | 2026-05-30 | 2026-06-08 | 2026-06-20 |
+| SPARC | Sun Pharma Advanced Research Company Ltd | by-symbol/SPARC.md | 2026-05-30 | 2026-06-12 | 2026-06-30 |
 | JAINREC | Jain Resource Recycling Ltd | by-symbol/JAINREC.md | 2026-05-13 | 2026-05-18 | 2026-06-12 |
 | KSHINTL | KSH International Ltd | by-symbol/KSHINTL.md | 2026-05-14 | 2026-05-28 | 2026-06-25 |
 | GVPIL | GE Power India Ltd | by-symbol/GVPIL.md | 2026-05-13 | 2026-06-12 | 2026-08-15 |
