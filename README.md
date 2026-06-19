@@ -44,3 +44,7 @@ npx skillfish add akhilgurrapu/kubera market-analysis
 codex --sandbox danger-full-access --ask-for-approval never
 
 claude --model claude-opus-4-6[1m]
+-------------
+
+prompts:
+use trading view mcp and take screenshots of southbank hourly and half hourly charts and find out its pullback pattern, rhythm of trend, repetable structural pattern from historical chart snapshots. and tell is this a good time to buy?
